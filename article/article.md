@@ -53,7 +53,7 @@ The simulated world includes three sources, variation between cohorts and leads,
 
 ## Let the forecast change with the evidence
 
-The model represents response rates with an early-decay component and a slower tail. Cohorts can differ while sharing information within a source. It also learns about operational exits, accepted sends, positive click values and ordinary revisions. The response curve uses a fixed candidate grid. The complete economic path combines several modules and approximations, rather than claiming one exact joint posterior over every report.
+The model represents response rates with an early-decay component and a slower tail. Cohorts can differ through within-source partial pooling. Each source starts from an independent copy of the same fixed priors; this version does not learn a global prior across sources. It also learns about operational exits, accepted sends, positive click values and ordinary revisions. The response curve uses a fixed candidate grid. The complete economic path combines several modules and approximations, rather than claiming one exact joint posterior over every report.
 
 At an observation cutoff, Bayes' rule reweights the candidate explanations:
 
@@ -63,11 +63,11 @@ posterior ∝ likelihood × prior
 
 A predictive simulation then draws model parameters and possible future outcomes. Each draw produces a complete economic path, including costs and pending revenue. The shaded intervals describe possible realized contribution under the model, rather than just uncertainty about an average response rate.
 
-The cold-start example follows the first cohort, with no older cohorts to learn from. For the fictional middle source, the estimated probability of positive contribution at day 180 moves from 36.4% at age three to 17.6% at age fourteen, then to 99.4% at age thirty. Later evidence changes the story; there is no rule that confidence must increase smoothly.
+The cold-start example follows the first cohort, which has no older cohort history at launch. Later forecasts also use the observations available from younger cohorts in the same source. For the fictional middle source, the estimated probability of positive contribution at day 180 moves from 36.4% at age three to 17.6% at age fourteen, then to 99.4% at age thirty. Later evidence changes the story; there is no rule that confidence must increase smoothly.
 
 ![Median and 80% and 95% predictive intervals for day-180 contribution per lead, updating at cohort ages 3, 7, 14, 30 and 60. The early intervals are broad and shift before concentrating near the evaluator-only outcome.](assets/02-learning.png)
 
-*Figure 2. One fictional middle-source cohort, seed 211, with 180 leads and 500 predictive draws per forecast. The line is the predictive median. The dashed outcome is shown only for evaluation; the model could not see it. Intervals are conditional on the chosen model and priors.*
+*Figure 2. One fictional middle-source cohort, seed 211, with 180 leads and 500 predictive draws per forecast. The line is the predictive median. The dashed outcome is shown only for evaluation; the model could not see it. Intervals are conditional on the chosen model and priors. Later forecasts also use the observations available from younger cohorts in the same source.*
 
 An estimated 100% means all 500 sampled outcomes were positive. It doesn't mean risk has disappeared. Even before model error, finite simulation adds numerical uncertainty to probabilities and quantiles.
 
@@ -79,7 +79,7 @@ For the middle-source cold-start forecast made at age three, 40.6% of paths pay 
 
 ![Two panels show predicted cumulative contribution at age 60, followed by unconditional payback curves updated at ages 3, 14 and 60. The age-three payback curve ends at 40.6%.](assets/03-margin-payback.png)
 
-*Figure 3. Top: median and 80%/95% predictive ranges for cumulative contribution, forecast at age sixty; the dashed curve is evaluator-only truth. Bottom: all 500 predictive paths stay in each payback denominator. “Never” means no crossing through day 425 under the declared sending policy. Different lines are updated forecasts of the same fictional cohort. A finite-draw 0% or 100% is not certainty.*
+*Figure 3. Top: median and 80%/95% predictive ranges for cumulative contribution, forecast at age sixty; the dashed curve is evaluator-only truth. Bottom: all 500 predictive paths stay in each payback denominator. “Never” means no crossing through day 425 under the declared sending policy. Different lines are updated forecasts of the same fictional cohort. A finite-draw 0% or 100% is not certainty. Later forecasts also use the observations available from younger cohorts in the same source.*
 
 This also clarifies two different business decisions. Stopping acquisition changes future purchases of leads. Stopping sends to an existing cohort changes future avoidable costs and revenue; its acquisition cost has already been incurred. Using the same profitability threshold for both can hide that difference.
 
@@ -89,7 +89,7 @@ Source differences matter, but the comparison needs a common age and horizon. Th
 
 ![Day-180 predictive contribution for the low, middle and high fictional sources at the common forecast age of 60, with 95% intervals and evaluator-only outcomes.](assets/04-sources.png)
 
-*Figure 4. The same seed-211 cold-start example, normalized per original acquired lead. Dots are predictive means and bars are 95% predictive intervals. Crosses are realized simulated outcomes. This is an illustrative source comparison, not a causal comparison or a validated recommendation for the next acquisition batch.*
+*Figure 4. The same seed-211 cold-start example, normalized per original acquired lead. Dots are predictive means and bars are 95% predictive intervals. Crosses are realized simulated outcomes. This is an illustrative source comparison, not a causal comparison or a validated recommendation for the next acquisition batch. Later forecasts also use the observations available from younger cohorts in the same source.*
 
 The later-cohort version of the same seed is a useful counterexample. It can learn from older cohorts, yet at age sixty all three realized day-180 outcomes fall outside their nominal 95% intervals. Narrower can still be wrong. The supporting value tables keep that mature-history result separate from the cold-start illustration.
 

@@ -23,3 +23,7 @@ Scientific source snapshot: [research commit 8e3443fe](https://github.com/rothni
 | Sixty tests | Research `tests/` and `docs/INDEPENDENT_REVIEW.md` | Independently rerun before article delivery; passing implementation checks do not imply full-pipeline calibration |
 
 `chart_provenance.json` includes SHA-256 hashes for each chart's input files. `essential_values.csv` contains selected normalized values used by the HTML's readable tables. The five main figures and their mobile variants show the same underlying data; the optional appendix diagnostic retains all nine late-reactivation cases at one fixed origin.
+
+## Information available to the first cohort
+
+The first cohort w00 has no older cohort history at launch. Later forecasts also use the observations available from younger cohorts in the same source. `World.as_of(cutoff)` includes every acquired cohort by the cutoff; `_fit` visits every visible cohort within each source. Source fits start from independent copies of the same fixed priors. There is within-source partial pooling and no learned global hyperprior across sources. These figures therefore do not isolate target-only learning or demonstrate a pooling benefit; that requires an ablation. This clarification changes no simulation, forecast or plotted value.

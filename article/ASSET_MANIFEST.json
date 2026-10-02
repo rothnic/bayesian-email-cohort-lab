@@ -7,18 +7,18 @@
   "files": [
     {
       "path": "article.md",
-      "bytes": 17549,
-      "sha256": "eb2724234eb0132cb7a889b108f05ff0e3a85d1c926819699c3f001942562538"
+      "bytes": 18054,
+      "sha256": "72de8dc6adb9e6e6648e13c8ecaf6c379f38cd7d3b18b7b6bebaece44f26a79e"
     },
     {
       "path": "article.mdx",
-      "bytes": 17549,
-      "sha256": "950d35387184f063a43309cfbd4b38273f084bd749c236c1f3936e97d0d1de47"
+      "bytes": 18054,
+      "sha256": "23fa2dea801f9955572c589a4e07a1697db7a9663a8a6011805af5a1a7e7b901"
     },
     {
       "path": "index.html",
-      "bytes": 30672,
-      "sha256": "975d766a1535a5cef8480b98575d8b963e8f9bdaae62e70900382adcc7cdffb1"
+      "bytes": 31177,
+      "sha256": "8dd15870a59fb5cb20a0df5cd74a4ab580478e26b707fd63d01cae086574fe2b"
     },
     {
       "path": "README.md",
@@ -27,8 +27,8 @@
     },
     {
       "path": "ARTICLE_SOURCES.md",
-      "bytes": 3947,
-      "sha256": "9f3ddcab9b95b3b6c61f95ea40169e55fe65f5c2895b2f5e51f9fe2448b7e31b"
+      "bytes": 4616,
+      "sha256": "20910e4447998fada0b8339519129c37694109dce02d92a5f6085b4280ce4a38"
     },
     {
       "path": "chart_provenance.json",
@@ -180,5 +180,6 @@
       "bytes": 14045,
       "sha256": "6f8c8eb6ce15f68922e928a96eee061de2710380ef7b7605e76dfc5d684e4d24"
     }
-  ]
+  ],
+  "information_scope_clarified": true
 }
