@@ -1,0 +1,95 @@
+--- initial/model.py
++++ final/model.py
+@@ -124,6 +124,10 @@
+             raise ValueError("Counts, exposure and report fractions cannot be negative")
+         if (d.response_report_fraction > 1).any() or (d.payout_complete_fraction > 1).any():
+             raise ValueError("Completeness fractions cannot exceed one")
++        if not d.payout_complete_fraction.isin((0., 1.)).all():
++            raise ValueError("Payout completeness must be binary: unavailable or fully settled")
++        if (d.net_human_revenue.dropna() < 0).any():
++            raise ValueError("Individual negative net-revenue rows are outside this unsigned net-mark model")
+         a = d.dropna(subset=["audit_n", "audit_human"])
+         if ((a.audit_n < a.audit_human) | (a.audit_human < 0) |
+             (a.audit_n > a.raw_events)).any():
+@@ -170,7 +174,11 @@
+             human = raw * ph
+             # Delta-method uncertainty includes audit fraction, event count and
+             # independent daily NB cell frailty; the latter varies on the grid.
+-            variance = (human + raw ** 2 * vp) / (human + .5) ** 2
++            # The same half-count smoothing must enter both log mean AND its
++            # delta variance. Gamma(shape=human+.5) moment approximation gives
++            # Var(log rate) approximately 1/(human+.5), hence variance2 at zero;
++            # an unadjusted numerator would make zero bins spuriously precise.
++            variance = (human + .5 + raw ** 2 * vp) / (human + .5) ** 2
+             value = np.log((human + .5) / total_exposure)
+             dispersion_multiplier = float(np.square(exposure).sum() / total_exposure ** 2)
+             wt = exposure
+@@ -245,7 +253,11 @@
+                 self.cohort_cols = {c: n + i for i, c in enumerate(self.cohorts)}
+                 n += len(self.cohorts)
+                 if mode == "dynamic_hierarchy" and cutoff > 0:
+-                    self.knots = np.unique(np.r_[np.arange(0, cutoff, config.calendar_bin_days), cutoff]).astype(float)
++                    # Fixed global knot grid. Inserting the cutoff as a knot
++                    # would change the prior law of previously observed days.
++                    # The last endpoint may be latent and later than cutoff.
++                    endpoint = int(np.ceil(cutoff / config.calendar_bin_days)) * config.calendar_bin_days
++                    self.knots = np.arange(0, endpoint + 1, config.calendar_bin_days, dtype=float)
+                     self.calendar_cols = list(range(n, n + len(self.knots) - 1))
+                     n += len(self.calendar_cols)
+         # No-data independent modes still need a proper prior draw.
+@@ -273,7 +285,7 @@
+         hierarchy = mode in ("static_hierarchy", "dynamic_hierarchy")
+         source_grid = list(zip(config.source_sds, config.effect_weights)) if hierarchy else [(0., 1.)]
+         cohort_grid = list(zip(config.cohort_sds, config.effect_weights)) if hierarchy else [(0., 1.)]
+-        calendar_grid = list(zip(config.calendar_sds, config.calendar_weights)) if self.calendar_cols else [(0., 1.)]
++        calendar_grid = list(zip(config.calendar_sds, config.calendar_weights)) if mode == "dynamic_hierarchy" else [(0., 1.)]
+         dispersion_grid = list(zip(config.count_dispersions, config.dispersion_weights)) if outcome == "response" else [(40., 1.)]
+         m0 = np.zeros(self.dimension)
+         if self.global_col is not None:
+@@ -385,24 +397,36 @@
+ 
+     def _states(self, mixture, params, scales, dates, scenario, rng):
+         states = np.zeros((len(params), len(dates)))
+-        if not mixture.calendar_cols:
++        if mixture.mode != "dynamic_hierarchy":
+             return states
+-        past = dates <= self.cutoff
+-        states[:, past] = params[:, mixture.calendar_cols] @ mixture.calendar_basis(dates[past]).T
+-        end = params[:, mixture.calendar_cols].sum(axis=1)
++        step = self.config.calendar_bin_days
++        final_endpoint = int(np.ceil(dates[-1] / step)) * step
++        knots = np.arange(0, final_endpoint + 1, step, dtype=float)
++        increments = np.zeros((len(params), max(len(knots) - 1, 0)))
++        old_count = len(mixture.calendar_cols)
++        if old_count:
++            increments[:, :old_count] = params[:, mixture.calendar_cols]
++        if increments.shape[1] > old_count:
++            # Draw the same weekly process used by historical inference,
++            # including the latent endpoint spanning a non-knot cutoff.
++            increments[:, old_count:] = rng.normal(size=(len(params), increments.shape[1] - old_count)) * scales[:, 2, None] * np.sqrt(step)
++        if len(knots) > 1:
++            basis = np.clip((dates[:, None] - knots[:-1]) / step, 0., 1.)
++            states = increments @ basis.T
+         future = dates > self.cutoff
+         if not np.any(future):
+             return states
+         if scenario == "fixed_price" and mixture.outcome == "payout":
+-            return states  # future log payout state = declared calendar-zero anchor
+-        drift = np.zeros(len(params))
++            states[:, future] = 0.  # declared calendar-zero payout anchor
++            return states
+         if scenario == "continue_recent_trend":
+             start = max(0, self.cutoff - self.config.trend_window_days)
+-            before = params[:, mixture.calendar_cols] @ mixture.calendar_basis([start])[0]
++            cutoff_basis = np.clip((self.cutoff - knots[:-1]) / step, 0., 1.)
++            start_basis = np.clip((start - knots[:-1]) / step, 0., 1.)
++            end = increments @ cutoff_basis
++            before = increments @ start_basis
+             drift = (end - before) / max(self.cutoff - start, 1)
+-        increments = rng.normal(size=(len(params), int(dates[future][-1] - self.cutoff))) * scales[:, 2, None]
+-        paths = end[:, None] + np.cumsum(increments + drift[:, None], axis=1)
+-        states[:, future] = paths[:, dates[future] - self.cutoff - 1]
++            states[:, future] += drift[:, None] * (dates[future] - self.cutoff)
+         return states
+ 
+     def _amplitudes(self, mixture, parameters, scales, targets, rng):

@@ -1,0 +1,29 @@
+{
+  "scientific_source_sha256": {
+    "model.py": "ad89ab0f55bb9ef6d76ede414777168f2b6592541e35306a13122c438444cb94",
+    "simulation.py": "188c1f5bc1e4ecd6781374f9f8d081e25026da7de48513ed9046152471aa9f51",
+    "evaluate.py": "84c4e78e7c34855186191a7f8de8c780ef5bcf2627675978555f64c3b51ec144",
+    "run_config.json": "0f5b9f596994f8c831b0f2adb3605c60baa4518de551f5532794e966dce51776"
+  },
+  "output_csv_sha256": {
+    "calendar_economics.csv": "bb0b292c7ff064a68607f54f01a1a8f764ced51e0f6f1a5421142c87aaae3a59",
+    "calendar_states.csv": "bedd2e03a89edde0f2224b40bfd33cca7eff54b4d6f77dc42bbe03d679a910e3",
+    "cohort_predictions.csv": "35bbfbd6a1b25529b0e5b8a095f92ad65e25b4f16e50deec9af2198e2ec51c53",
+    "forecasts_unscored.csv": "4e471eb9a599001418316bcfcf5dc5085e7b932b056284a321a4f5d25259ae05",
+    "heldout_scores.csv": "465f9d3b2af357075843b53d38fc65f153f5494bc8610936f5a18c682dd574e7",
+    "heldout_unscored.csv": "5afe5eee7b99ec046175c9d03b100dba6b456b2a037c0e16ae70047657a04b0f",
+    "measurement.csv": "21be6757bebbab3e96b1103675534985b1a2a1d3b02440343e2029e556b178f4",
+    "metrics.csv": "e4d4576a288232f45932ab0c85e46eef340e7c426e7e75e5117f998b2f8ceed3",
+    "payback_cdf.csv": "ef576c31ec793faf0f348872b3de95c670183765abefd7123448dffd5963895f",
+    "portfolio_draws.csv": "7dd6f07ab3a03f13c5f435f22d1556fbeca2576b65eb9ba6a0a1a643c06119df",
+    "portfolio_summary.csv": "8471265b7eb8518b7e8e1fa1c91bd59614285316b2d9bb373c8a6359450ec4eb",
+    "quote_sensitivity.csv": "02ddeb4507fe98067a212142461064fb6bfed63e369980598f8dfe2a85b3357b",
+    "trajectories.csv": "95217f93369da89f1cd1311aff7341cecdd281c0be10407e0999d1ce52eb77ef",
+    "transfer.csv": "625014f96caf07a5a7297b9007a29b301a2725c3d65334f3f6a2b933527f445b"
+  },
+  "phase": "all",
+  "quick": false,
+  "heldout_worlds": 18,
+  "method": "Approximate Gaussian measurement likelihood with integrated finite hyperprior",
+  "truth_boundary": "Model receives as-of observations only; forecasts sealed before scoring; demo evaluator truth separately plotted"
+}

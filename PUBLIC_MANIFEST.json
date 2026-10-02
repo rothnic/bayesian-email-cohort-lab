@@ -19,8 +19,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9381,
-      "sha256": "66a5193fbb59eaff4f427de58f23d5ac84f9a5396ec34720d50f796f83324f85"
+      "bytes": 9955,
+      "sha256": "f3448941237f9760798c838379f9684eca06a46227ed08cc9e10e0542b001998"
     },
     {
       "path": "article/ARTICLE_SOURCES.md",
@@ -976,6 +976,131 @@
       "path": "docs/VALIDATION.md",
       "bytes": 5700,
       "sha256": "a6e999ba2d91b3a5df5710b15fe5a967362c7ee05753289592bb4d93a98b925a"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/EXPERIMENT.md",
+      "bytes": 7686,
+      "sha256": "53e4374720102c2779d8574ecfc418bea746cc31eac2c70015ab3d35a8c87706"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/MODEL.md",
+      "bytes": 20776,
+      "sha256": "409b46ec60c9c20c79ee1b88616f0723651242b020e73541e1d8cb694c9fac81"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/MODEL_CORRECTIONS.patch",
+      "bytes": 6092,
+      "sha256": "4fe85441f445aafee344bd280ff4f6caf94118ea2e14b32eba5f98e3dd49d7d8"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/ZERO_COUNT_DERIVATION.md",
+      "bytes": 2133,
+      "sha256": "fceb58360f6c8aeee19161b659074d27b9c45150b1b0cc84d3a6981c3065a917"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/cohort_predictions.csv",
+      "bytes": 175792,
+      "sha256": "35bbfbd6a1b25529b0e5b8a095f92ad65e25b4f16e50deec9af2198e2ec51c53"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/forecast_seal.json",
+      "bytes": 98,
+      "sha256": "e74b6cde351f2bd63370ce1957da69bb4dfdfabb4f5f3a4bb9264add4a2517dd"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/forecasts_unscored.csv",
+      "bytes": 142270,
+      "sha256": "4e471eb9a599001418316bcfcf5dc5085e7b932b056284a321a4f5d25259ae05"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/heldout_scores.csv",
+      "bytes": 668104,
+      "sha256": "465f9d3b2af357075843b53d38fc65f153f5494bc8610936f5a18c682dd574e7"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/heldout_seal.json",
+      "bytes": 99,
+      "sha256": "8ae1d80c7dce7550757b760ce486c780339114e6b5f97a0f6279a06e7e2186e7"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/heldout_unscored.csv",
+      "bytes": 542890,
+      "sha256": "5afe5eee7b99ec046175c9d03b100dba6b456b2a037c0e16ae70047657a04b0f"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/metrics.csv",
+      "bytes": 24560,
+      "sha256": "e4d4576a288232f45932ab0c85e46eef340e7c426e7e75e5117f998b2f8ceed3"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/portfolio_draws.csv",
+      "bytes": 62106,
+      "sha256": "7dd6f07ab3a03f13c5f435f22d1556fbeca2576b65eb9ba6a0a1a643c06119df"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/portfolio_summary.csv",
+      "bytes": 1534,
+      "sha256": "8471265b7eb8518b7e8e1fa1c91bd59614285316b2d9bb373c8a6359450ec4eb"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/quote_sensitivity.csv",
+      "bytes": 4035,
+      "sha256": "02ddeb4507fe98067a212142461064fb6bfed63e369980598f8dfe2a85b3357b"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/run_manifest.json",
+      "bytes": 2025,
+      "sha256": "2b215d7b5152f45bc49806e8e32eecf58cc438a9bcbf1187d9146f21df8ec309"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/transfer.csv",
+      "bytes": 2571,
+      "sha256": "625014f96caf07a5a7297b9007a29b301a2725c3d65334f3f6a2b933527f445b"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/evaluate.py",
+      "bytes": 20988,
+      "sha256": "84c4e78e7c34855186191a7f8de8c780ef5bcf2627675978555f64c3b51ec144"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/model.py",
+      "bytes": 32918,
+      "sha256": "ad89ab0f55bb9ef6d76ede414777168f2b6592541e35306a13122c438444cb94"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/prior_tail_summary.json",
+      "bytes": 8974,
+      "sha256": "562520947a99f598c49b7238599b3f4c90ba9fe2d5f7db1b0b21b3a9ff649a6d"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/run_config.json",
+      "bytes": 1118,
+      "sha256": "0f5b9f596994f8c831b0f2adb3605c60baa4518de551f5532794e966dce51776"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/simulation.py",
+      "bytes": 6987,
+      "sha256": "188c1f5bc1e4ecd6781374f9f8d081e25026da7de48513ed9046152471aa9f51"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/test_model.py",
+      "bytes": 14245,
+      "sha256": "b869da3369d878c7b3702a1bccd023cdf726ce6ff3b21d1ea24f8d5cb47930cb"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/test_model_contract.py",
+      "bytes": 5735,
+      "sha256": "e02e77cb0ae6d74253c0b20ca31698a2651c100d6bca6b399a0f7df46310ba85"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/test_simulation.py",
+      "bytes": 2156,
+      "sha256": "d928862eb2d50d2b42153afdbb508c90fa21da2e76838e6e543e8b046bab6e93"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/zero_count_reference.csv",
+      "bytes": 618,
+      "sha256": "4ab188c3f6ba744b03dcb9629ad0f3a02b8c3253f255d213c3df6054f4d497f4"
     },
     {
       "path": "parameters.json",

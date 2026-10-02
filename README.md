@@ -100,3 +100,7 @@ artifacts/calibration/            Held-out stress results and coverage diagnosti
 The original baseline replay remains available with `python run_pilot.py smoke`, `python run_pilot.py heldout`, then `python build_report.py`. Those commands evaluate the baseline layer only; Bayesian results live in the separate demo/calibration outputs.
 
 MIT licensed. See [LICENSE](LICENSE).
+
+## Changing prices and overlapping cohorts
+
+The [calendar extension](extensions/calendar/dynamic_lab/MODEL.md) fits global, source, cohort, and shared calendar effects from as-of evidence. The [experiment](extensions/calendar/dynamic_lab/EXPERIMENT.md) includes offered-price sensitivity, unseen sources, joint portfolio forecasts, and 1,530 held-out forecasts across 18 synthetic worlds. This approximate model remains severely undercalibrated: its nominal 95% contribution intervals cover about 56.5% of held-out outcomes. Future price paths are conditional assumptions.

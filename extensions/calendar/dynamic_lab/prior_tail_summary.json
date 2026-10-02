@@ -1,0 +1,336 @@
+{
+  "evidence": "Prior/component check, not held-out calibration or empirical Bayes tuning",
+  "mean_derivation": "100*exp(mu_R+mu_V+location_sd^2)*(Eexp(source_sd^2/2)*Eexp(cohort_sd^2/2))^2*sum_age[f(age)*(Eexp(calendar_sd^2*(step*floor(age/step)+(age mod step)^2/step)/2))^2]",
+  "rows": [
+    {
+      "accepted_exposure": 100,
+      "analytic_mean_lifetime_revenue": 59.03625650030928,
+      "config": {
+        "audit_beta_alpha": 1.0,
+        "audit_beta_beta": 1.0,
+        "audit_sensitivity": 0.95,
+        "audit_specificity": 0.98,
+        "calendar_bin_days": 7,
+        "calendar_sds": [
+          0.002,
+          0.0075,
+          0.0175
+        ],
+        "calendar_weights": [
+          0.35,
+          0.45,
+          0.2
+        ],
+        "cohort_sds": [
+          0.05,
+          0.15,
+          0.325
+        ],
+        "count_dispersions": [
+          8.0,
+          40.0
+        ],
+        "dispersion_weights": [
+          0.5,
+          0.5
+        ],
+        "effect_weights": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "feature_sd": 0.5,
+        "location_sd": 1.0,
+        "measurement_variance_floor": 0.02,
+        "net_mark_cv": 1.5,
+        "payout_log_location": -0.4307829160924542,
+        "response_log_location": -4.422848629194137,
+        "send_last_age": 365,
+        "source_sds": [
+          0.06,
+          0.2,
+          0.425
+        ],
+        "trend_window_days": 28
+      },
+      "config_hash": "a3306eb4d6d2c71c8f6c2dd1e358ad0fa58863ed0e788cb45f68348c224e0dd4",
+      "cutoff": 1,
+      "draws": 8192,
+      "horizon": 425,
+      "largest_one_percent_draw_revenue_share": 0.21661159827404078,
+      "last_send_age": 365,
+      "mean_lifetime_revenue": 58.501418728869155,
+      "monte_carlo_standard_error": 1.9786651134876865,
+      "observed_rows": 0,
+      "relative_monte_carlo_standard_error": 0.03382251501725135,
+      "scale_multiplier": 0.5,
+      "scale_sensitivity": "smaller_scales",
+      "scenario": "hold_current",
+      "seed": 1777
+    },
+    {
+      "accepted_exposure": 100,
+      "analytic_mean_lifetime_revenue": 84.39702629608422,
+      "config": {
+        "audit_beta_alpha": 1.0,
+        "audit_beta_beta": 1.0,
+        "audit_sensitivity": 0.95,
+        "audit_specificity": 0.98,
+        "calendar_bin_days": 7,
+        "calendar_sds": [
+          0.004,
+          0.015,
+          0.035
+        ],
+        "calendar_weights": [
+          0.35,
+          0.45,
+          0.2
+        ],
+        "cohort_sds": [
+          0.1,
+          0.3,
+          0.65
+        ],
+        "count_dispersions": [
+          8.0,
+          40.0
+        ],
+        "dispersion_weights": [
+          0.5,
+          0.5
+        ],
+        "effect_weights": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "feature_sd": 0.5,
+        "location_sd": 1.0,
+        "measurement_variance_floor": 0.02,
+        "net_mark_cv": 1.5,
+        "payout_log_location": -0.4307829160924542,
+        "response_log_location": -4.422848629194137,
+        "send_last_age": 365,
+        "source_sds": [
+          0.12,
+          0.4,
+          0.85
+        ],
+        "trend_window_days": 28
+      },
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "cutoff": 1,
+      "draws": 512,
+      "horizon": 425,
+      "largest_one_percent_draw_revenue_share": 0.23238305334773832,
+      "last_send_age": 365,
+      "mean_lifetime_revenue": 68.70394040150802,
+      "monte_carlo_standard_error": 8.850215683614147,
+      "observed_rows": 0,
+      "relative_monte_carlo_standard_error": 0.12881671170377135,
+      "scale_multiplier": 1.0,
+      "scale_sensitivity": "default",
+      "scenario": "hold_current",
+      "seed": 1777
+    },
+    {
+      "accepted_exposure": 100,
+      "analytic_mean_lifetime_revenue": 84.39702629608422,
+      "config": {
+        "audit_beta_alpha": 1.0,
+        "audit_beta_beta": 1.0,
+        "audit_sensitivity": 0.95,
+        "audit_specificity": 0.98,
+        "calendar_bin_days": 7,
+        "calendar_sds": [
+          0.004,
+          0.015,
+          0.035
+        ],
+        "calendar_weights": [
+          0.35,
+          0.45,
+          0.2
+        ],
+        "cohort_sds": [
+          0.1,
+          0.3,
+          0.65
+        ],
+        "count_dispersions": [
+          8.0,
+          40.0
+        ],
+        "dispersion_weights": [
+          0.5,
+          0.5
+        ],
+        "effect_weights": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "feature_sd": 0.5,
+        "location_sd": 1.0,
+        "measurement_variance_floor": 0.02,
+        "net_mark_cv": 1.5,
+        "payout_log_location": -0.4307829160924542,
+        "response_log_location": -4.422848629194137,
+        "send_last_age": 365,
+        "source_sds": [
+          0.12,
+          0.4,
+          0.85
+        ],
+        "trend_window_days": 28
+      },
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "cutoff": 1,
+      "draws": 2048,
+      "horizon": 425,
+      "largest_one_percent_draw_revenue_share": 0.21134645896300577,
+      "last_send_age": 365,
+      "mean_lifetime_revenue": 79.79117320035587,
+      "monte_carlo_standard_error": 4.691148698924603,
+      "observed_rows": 0,
+      "relative_monte_carlo_standard_error": 0.05879282771222218,
+      "scale_multiplier": 1.0,
+      "scale_sensitivity": "default",
+      "scenario": "hold_current",
+      "seed": 1777
+    },
+    {
+      "accepted_exposure": 100,
+      "analytic_mean_lifetime_revenue": 84.39702629608422,
+      "config": {
+        "audit_beta_alpha": 1.0,
+        "audit_beta_beta": 1.0,
+        "audit_sensitivity": 0.95,
+        "audit_specificity": 0.98,
+        "calendar_bin_days": 7,
+        "calendar_sds": [
+          0.004,
+          0.015,
+          0.035
+        ],
+        "calendar_weights": [
+          0.35,
+          0.45,
+          0.2
+        ],
+        "cohort_sds": [
+          0.1,
+          0.3,
+          0.65
+        ],
+        "count_dispersions": [
+          8.0,
+          40.0
+        ],
+        "dispersion_weights": [
+          0.5,
+          0.5
+        ],
+        "effect_weights": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "feature_sd": 0.5,
+        "location_sd": 1.0,
+        "measurement_variance_floor": 0.02,
+        "net_mark_cv": 1.5,
+        "payout_log_location": -0.4307829160924542,
+        "response_log_location": -4.422848629194137,
+        "send_last_age": 365,
+        "source_sds": [
+          0.12,
+          0.4,
+          0.85
+        ],
+        "trend_window_days": 28
+      },
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "cutoff": 1,
+      "draws": 8192,
+      "horizon": 425,
+      "largest_one_percent_draw_revenue_share": 0.30568070787643087,
+      "last_send_age": 365,
+      "mean_lifetime_revenue": 83.43633549360024,
+      "monte_carlo_standard_error": 4.907814480046347,
+      "observed_rows": 0,
+      "relative_monte_carlo_standard_error": 0.05882106939395472,
+      "scale_multiplier": 1.0,
+      "scale_sensitivity": "default",
+      "scenario": "hold_current",
+      "seed": 1777
+    },
+    {
+      "accepted_exposure": 100,
+      "analytic_mean_lifetime_revenue": 129.58714526235377,
+      "config": {
+        "audit_beta_alpha": 1.0,
+        "audit_beta_beta": 1.0,
+        "audit_sensitivity": 0.95,
+        "audit_specificity": 0.98,
+        "calendar_bin_days": 7,
+        "calendar_sds": [
+          0.0054,
+          0.02025,
+          0.04725000000000001
+        ],
+        "calendar_weights": [
+          0.35,
+          0.45,
+          0.2
+        ],
+        "cohort_sds": [
+          0.135,
+          0.405,
+          0.8775000000000001
+        ],
+        "count_dispersions": [
+          8.0,
+          40.0
+        ],
+        "dispersion_weights": [
+          0.5,
+          0.5
+        ],
+        "effect_weights": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "feature_sd": 0.5,
+        "location_sd": 1.0,
+        "measurement_variance_floor": 0.02,
+        "net_mark_cv": 1.5,
+        "payout_log_location": -0.4307829160924542,
+        "response_log_location": -4.422848629194137,
+        "send_last_age": 365,
+        "source_sds": [
+          0.162,
+          0.54,
+          1.1475
+        ],
+        "trend_window_days": 28
+      },
+      "config_hash": "fcc696ae54f29dc48770fdc4cb67a36ebc5549448541092c33e307597889a9ee",
+      "cutoff": 1,
+      "draws": 8192,
+      "horizon": 425,
+      "largest_one_percent_draw_revenue_share": 0.4020607834938213,
+      "last_send_age": 365,
+      "mean_lifetime_revenue": 126.68296600772761,
+      "monte_carlo_standard_error": 11.830537570162326,
+      "observed_rows": 0,
+      "relative_monte_carlo_standard_error": 0.0933869638751643,
+      "scale_multiplier": 1.35,
+      "scale_sensitivity": "larger_scales",
+      "scenario": "hold_current",
+      "seed": 1777
+    }
+  ]
+}
