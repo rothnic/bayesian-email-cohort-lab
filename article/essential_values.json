@@ -1,0 +1,464 @@
+[
+  {
+    "figure": "01-engagement",
+    "source": "low",
+    "age": 3,
+    "metric": "trailing_daily_clicker_fraction",
+    "value": 0.0526041666666666
+  },
+  {
+    "figure": "01-engagement",
+    "source": "low",
+    "age": 30,
+    "metric": "trailing_daily_clicker_fraction",
+    "value": 0.0132936507936507
+  },
+  {
+    "figure": "01-engagement",
+    "source": "low",
+    "age": 180,
+    "metric": "trailing_daily_clicker_fraction",
+    "value": 0.0016865079365079
+  },
+  {
+    "figure": "01-engagement",
+    "source": "middle",
+    "age": 3,
+    "metric": "trailing_daily_clicker_fraction",
+    "value": 0.0975694444444444
+  },
+  {
+    "figure": "01-engagement",
+    "source": "middle",
+    "age": 30,
+    "metric": "trailing_daily_clicker_fraction",
+    "value": 0.0267857142857142
+  },
+  {
+    "figure": "01-engagement",
+    "source": "middle",
+    "age": 180,
+    "metric": "trailing_daily_clicker_fraction",
+    "value": 0.0031746031746031
+  },
+  {
+    "figure": "01-engagement",
+    "source": "high",
+    "age": 3,
+    "metric": "trailing_daily_clicker_fraction",
+    "value": 0.2119791666666666
+  },
+  {
+    "figure": "01-engagement",
+    "source": "high",
+    "age": 30,
+    "metric": "trailing_daily_clicker_fraction",
+    "value": 0.0563492063492063
+  },
+  {
+    "figure": "01-engagement",
+    "source": "high",
+    "age": 180,
+    "metric": "trailing_daily_clicker_fraction",
+    "value": 0.0071428571428571
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 3,
+    "metric": "median_per_lead",
+    "value": -0.08665688155116884
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 3,
+    "metric": "q025_per_lead",
+    "value": -0.2140231444982752
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 3,
+    "metric": "q975_per_lead",
+    "value": 1.8474982980221097
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 3,
+    "metric": "probability_profitable",
+    "value": 0.364
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 7,
+    "metric": "median_per_lead",
+    "value": 0.0009940923466224911
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 7,
+    "metric": "q025_per_lead",
+    "value": -0.19374828336769398
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 7,
+    "metric": "q975_per_lead",
+    "value": 2.5881278912310606
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 7,
+    "metric": "probability_profitable",
+    "value": 0.5
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 14,
+    "metric": "median_per_lead",
+    "value": -0.1342107538229121
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 14,
+    "metric": "q025_per_lead",
+    "value": -0.1799049562666383
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 14,
+    "metric": "q975_per_lead",
+    "value": 0.6449141181690522
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 14,
+    "metric": "probability_profitable",
+    "value": 0.176
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 30,
+    "metric": "median_per_lead",
+    "value": 0.18346708323220381
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 30,
+    "metric": "q025_per_lead",
+    "value": 0.00904037233511671
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 30,
+    "metric": "q975_per_lead",
+    "value": 0.3932651192766871
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 30,
+    "metric": "probability_profitable",
+    "value": 0.994
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 60,
+    "metric": "median_per_lead",
+    "value": 0.07329513225136036
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 60,
+    "metric": "q025_per_lead",
+    "value": 0.049050501282977395
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 60,
+    "metric": "q975_per_lead",
+    "value": 0.09555884745778331
+  },
+  {
+    "figure": "02-learning",
+    "source": "middle",
+    "age": 60,
+    "metric": "probability_profitable",
+    "value": 1.0
+  },
+  {
+    "figure": "03-margin-payback",
+    "source": "middle",
+    "age": 3,
+    "metric": "first_payback_by_180",
+    "value": 0.372
+  },
+  {
+    "figure": "03-margin-payback",
+    "source": "middle",
+    "age": 3,
+    "metric": "first_payback_by_425",
+    "value": 0.406
+  },
+  {
+    "figure": "03-margin-payback",
+    "source": "middle",
+    "age": 14,
+    "metric": "first_payback_by_180",
+    "value": 0.184
+  },
+  {
+    "figure": "03-margin-payback",
+    "source": "middle",
+    "age": 14,
+    "metric": "first_payback_by_425",
+    "value": 0.19
+  },
+  {
+    "figure": "03-margin-payback",
+    "source": "middle",
+    "age": 60,
+    "metric": "first_payback_by_180",
+    "value": 1.0
+  },
+  {
+    "figure": "03-margin-payback",
+    "source": "middle",
+    "age": 60,
+    "metric": "first_payback_by_425",
+    "value": 1.0
+  },
+  {
+    "figure": "04-sources",
+    "source": "low",
+    "age": 60,
+    "metric": "mean_per_lead",
+    "value": -0.14051039438475216
+  },
+  {
+    "figure": "04-sources",
+    "source": "low",
+    "age": 60,
+    "metric": "q025_per_lead",
+    "value": -0.14920375780482162
+  },
+  {
+    "figure": "04-sources",
+    "source": "low",
+    "age": 60,
+    "metric": "q975_per_lead",
+    "value": -0.12999526301990358
+  },
+  {
+    "figure": "04-sources",
+    "source": "low",
+    "age": 60,
+    "metric": "true_margin_per_lead",
+    "value": -0.1322627090537267
+  },
+  {
+    "figure": "04-sources",
+    "source": "middle",
+    "age": 60,
+    "metric": "mean_per_lead",
+    "value": 0.07276289698187047
+  },
+  {
+    "figure": "04-sources",
+    "source": "middle",
+    "age": 60,
+    "metric": "q025_per_lead",
+    "value": 0.049050501282977395
+  },
+  {
+    "figure": "04-sources",
+    "source": "middle",
+    "age": 60,
+    "metric": "q975_per_lead",
+    "value": 0.09555884745778331
+  },
+  {
+    "figure": "04-sources",
+    "source": "middle",
+    "age": 60,
+    "metric": "true_margin_per_lead",
+    "value": 0.08605680957040913
+  },
+  {
+    "figure": "04-sources",
+    "source": "high",
+    "age": 60,
+    "metric": "mean_per_lead",
+    "value": 0.673975033210431
+  },
+  {
+    "figure": "04-sources",
+    "source": "high",
+    "age": 60,
+    "metric": "q025_per_lead",
+    "value": 0.6177319591985957
+  },
+  {
+    "figure": "04-sources",
+    "source": "high",
+    "age": 60,
+    "metric": "q975_per_lead",
+    "value": 0.7375187044514573
+  },
+  {
+    "figure": "04-sources",
+    "source": "high",
+    "age": 60,
+    "metric": "true_margin_per_lead",
+    "value": 0.6964472983509259
+  },
+  {
+    "figure": "04-sources-mature-counterexample",
+    "source": "low",
+    "age": 60,
+    "metric": "q025_per_lead",
+    "value": -0.15113331904763164
+  },
+  {
+    "figure": "04-sources-mature-counterexample",
+    "source": "low",
+    "age": 60,
+    "metric": "q975_per_lead",
+    "value": -0.13368359038435473
+  },
+  {
+    "figure": "04-sources-mature-counterexample",
+    "source": "low",
+    "age": 60,
+    "metric": "true_margin_per_lead",
+    "value": -0.13047037414320295
+  },
+  {
+    "figure": "04-sources-mature-counterexample",
+    "source": "middle",
+    "age": 60,
+    "metric": "q025_per_lead",
+    "value": 0.14917517024900068
+  },
+  {
+    "figure": "04-sources-mature-counterexample",
+    "source": "middle",
+    "age": 60,
+    "metric": "q975_per_lead",
+    "value": 0.20179654496475957
+  },
+  {
+    "figure": "04-sources-mature-counterexample",
+    "source": "middle",
+    "age": 60,
+    "metric": "true_margin_per_lead",
+    "value": 0.2104708271418395
+  },
+  {
+    "figure": "04-sources-mature-counterexample",
+    "source": "high",
+    "age": 60,
+    "metric": "q025_per_lead",
+    "value": 1.4949668731999526
+  },
+  {
+    "figure": "04-sources-mature-counterexample",
+    "source": "high",
+    "age": 60,
+    "metric": "q975_per_lead",
+    "value": 1.6472035833050291
+  },
+  {
+    "figure": "04-sources-mature-counterexample",
+    "source": "high",
+    "age": 60,
+    "metric": "true_margin_per_lead",
+    "value": 1.7133657657643173
+  },
+  {
+    "figure": "05-coverage",
+    "source": "controlled_95_coverage",
+    "age": 3,
+    "metric": "coverage95",
+    "value": 0.953
+  },
+  {
+    "figure": "05-coverage",
+    "source": "stress_95_coverage",
+    "age": 3,
+    "metric": "coverage95",
+    "value": 0.6388888888888888
+  },
+  {
+    "figure": "05-coverage",
+    "source": "controlled_95_coverage",
+    "age": 7,
+    "metric": "coverage95",
+    "value": 0.942
+  },
+  {
+    "figure": "05-coverage",
+    "source": "stress_95_coverage",
+    "age": 7,
+    "metric": "coverage95",
+    "value": 0.5833333333333334
+  },
+  {
+    "figure": "05-coverage",
+    "source": "controlled_95_coverage",
+    "age": 14,
+    "metric": "coverage95",
+    "value": 0.9475
+  },
+  {
+    "figure": "05-coverage",
+    "source": "stress_95_coverage",
+    "age": 14,
+    "metric": "coverage95",
+    "value": 0.5277777777777778
+  },
+  {
+    "figure": "05-coverage",
+    "source": "controlled_95_coverage",
+    "age": 30,
+    "metric": "coverage95",
+    "value": 0.955
+  },
+  {
+    "figure": "05-coverage",
+    "source": "stress_95_coverage",
+    "age": 30,
+    "metric": "coverage95",
+    "value": 0.611111111111111
+  },
+  {
+    "figure": "05-coverage",
+    "source": "controlled_95_coverage",
+    "age": 60,
+    "metric": "coverage95",
+    "value": 0.953
+  },
+  {
+    "figure": "05-coverage",
+    "source": "stress_95_coverage",
+    "age": 60,
+    "metric": "coverage95",
+    "value": 0.611111111111111
+  }
+]

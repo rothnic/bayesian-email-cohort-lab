@@ -16,6 +16,8 @@ Bayesian updating narrows uncertainty **within its assumptions**. In the richer 
 
 ## Start here
 
+Read the draft article **[When does an email subscriber pay for itself?](article/article.md)**, or download this repository and open the [HTML preview](article/index.html). The [article folder](article/README.md) contains Markdown, MDX, responsive HTML, five main figures with mobile variants, source bindings and numeric tables. Desktop and phone browser layout review is still pending before publication to nickroth.com.
+
 1. [Cold-start learning](artifacts/cold_start/RESULTS.md): follow the first cohort with no older history
 2. [Reproduced demo results](artifacts/demo/RESULTS.md): what the chosen fictional cohorts did, with uncertainty and payback charts
 3. [The implemented Bayesian mathematics](docs/MODEL_IMPLEMENTATION.md): priors, likelihood, finite-grid integration, predictive simulation and limitations

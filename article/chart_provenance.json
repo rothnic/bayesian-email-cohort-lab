@@ -1,0 +1,120 @@
+{
+  "synthetic_only": true,
+  "simulation_refit": false,
+  "charts": [
+    {
+      "id": "02-learning",
+      "files": [
+        "assets/02-learning.png",
+        "assets/02-learning.svg",
+        "assets/02-learning-mobile.png",
+        "assets/02-learning-mobile.svg"
+      ],
+      "source_files": [
+        {
+          "path": "artifacts/cold_start/summary.csv",
+          "sha256": "c4008e7285137fc7c32d6a5e4f1bc63228cd6b47aa92358811c0fd4d380cb6a3"
+        }
+      ],
+      "selection": "source_id=middle; horizon=180; all five origin ages; normalized by n_leads",
+      "alt": "Median and 80% and 95% predictive intervals for day-180 contribution per acquired lead across five forecast snapshots."
+    },
+    {
+      "id": "05-coverage",
+      "files": [
+        "assets/05-coverage.png",
+        "assets/05-coverage.svg",
+        "assets/05-coverage-mobile.png",
+        "assets/05-coverage-mobile.svg"
+      ],
+      "source_files": [
+        {
+          "path": "artifacts/controlled_scenario/metrics_by_origin.csv",
+          "sha256": "e54797c45fed1f94cb003544501086ac88403d61385796f0b0c941a860a829a2"
+        },
+        {
+          "path": "artifacts/calibration/metrics_by_origin.csv",
+          "sha256": "3bdeae13f127340b664d7ca9086d4007a611ccb1a24567bcc9baa0de4f6ca59f"
+        }
+      ],
+      "selection": "controlled: coverage95 with Wilson bounds; stress: metric=coverage95, whole-world bootstrap bounds",
+      "alt": "Controlled 95% intervals cover about 94\u201396% of outcomes while the richer model covers about 53\u201364%."
+    },
+    {
+      "id": "appendix-reactivation",
+      "files": [
+        "assets/appendix-reactivation.png",
+        "assets/appendix-reactivation.svg",
+        "assets/appendix-reactivation-mobile.png",
+        "assets/appendix-reactivation-mobile.svg"
+      ],
+      "source_files": [
+        {
+          "path": "artifacts/calibration/scores.csv",
+          "sha256": "7f9533dc49c44e162f182dbba9957d8a5dc1c3d6a82c07f91f8e947505aef068"
+        }
+      ],
+      "selection": "scenario=late_reactivation; origin_age=60; horizon=180; all 9 source/seed rows; normalized by n_leads",
+      "alt": "Eight of nine outcomes lie outside nominal 95% intervals in three late-reactivation worlds."
+    },
+    {
+      "id": "03-margin-payback",
+      "files": [
+        "assets/03-margin-payback.png",
+        "assets/03-margin-payback.svg",
+        "assets/03-margin-payback-mobile.png",
+        "assets/03-margin-payback-mobile.svg"
+      ],
+      "source_files": [
+        {
+          "path": "artifacts/cold_start/payback_cdf.csv.gz",
+          "sha256": "e638a77ecc672c2846ebff10253f060d5bd198600ba42244272a10a109865a19"
+        },
+        {
+          "path": "artifacts/cold_start/trajectories.csv.gz",
+          "sha256": "c4281094da69b726c0fa0245c3f7ba2ed2a522e36d7404d1fbf597d7417b185b"
+        }
+      ],
+      "selection": "middle source; margin forecast at origin60; payback origins3/14/60; full ages0\u2013425; every predictive path retained",
+      "alt": "Two panels show the day-sixty cumulative contribution forecast and unconditional payback curves; the day-three curve ends at40.6%."
+    },
+    {
+      "id": "04-sources",
+      "files": [
+        "assets/04-sources.png",
+        "assets/04-sources.svg",
+        "assets/04-sources-mobile.png",
+        "assets/04-sources-mobile.svg"
+      ],
+      "source_files": [
+        {
+          "path": "artifacts/cold_start/summary.csv",
+          "sha256": "c4008e7285137fc7c32d6a5e4f1bc63228cd6b47aa92358811c0fd4d380cb6a3"
+        }
+      ],
+      "selection": "origin_age=60; horizon=180; all three first source cohorts, same seed211; normalized by n_leads",
+      "alt": "A common-age comparison shows different day-180 modeled contribution for low, middle and high sources."
+    },
+    {
+      "id": "01-engagement",
+      "files": [
+        "assets/01-engagement.png",
+        "assets/01-engagement.svg",
+        "assets/01-engagement-mobile.png",
+        "assets/01-engagement-mobile.svg"
+      ],
+      "source_files": [
+        {
+          "path": "artifacts/demo/synthetic_observations/leads.csv.gz",
+          "sha256": "3cd115a98913d991664f313857ddc5a3a93d2636754054fd8dd7048e274a16e2"
+        },
+        {
+          "path": "artifacts/demo/synthetic_observations/engagement_events.csv.gz",
+          "sha256": "464b927350970fd69b52883e87eed244277300e7a3147cd5245bc4b6abe93616"
+        }
+      ],
+      "selection": "latest reported human qualification; unique lead per occurrence-age day; all8cohorts/source; denominator1440original leads/source; trailing7day average",
+      "alt": "Daily reported human clickers divided by original acquired leads show early decline and a long response tail."
+    }
+  ]
+}
