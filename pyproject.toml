@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bayesian-email-cohort-lab"
+version = "0.1.0"
+description = "Synthetic Bayesian paid-email cohort profitability, uncertainty, and payback research demo"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.2,<3", "pandas>=2.2,<3", "scipy>=1.15,<2", "matplotlib>=3.9,<4"]
+
+[tool.setuptools.packages.find]
+include = ["cohort_lab*", "bayes_cohort*"]

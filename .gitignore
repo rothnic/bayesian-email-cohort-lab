@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.mpl-cache/
+artifacts/mpl-cache/
+artifacts/tmp*/
+
+# Locally reproducible row-level exports excluded from the release bundle
+artifacts/**/ledger.csv.gz
+artifacts/**/complete_ledger.csv.gz
+artifacts/**/exposure_daily.csv.gz

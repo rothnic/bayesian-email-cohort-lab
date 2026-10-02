@@ -1,0 +1,11 @@
+{
+  "scenario": "calendar_attribution_shock",
+  "seed": 20303,
+  "draws": 250,
+  "cohorts_per_source": 6,
+  "leads_per_cohort": 100,
+  "forecasts": 15,
+  "generator_seconds": 0.5895459970051888,
+  "total_seconds": 2.399283673003083,
+  "peak_rss_mib": 189.00390625
+}

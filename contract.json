@@ -1,0 +1,25 @@
+{
+  "schema_version": "cohort-lab/0.1.0",
+  "currency": "USD",
+  "synthetic_only": true,
+  "timestamp_unit": "integer days since fictional world start, UTC midnight",
+  "policy": {"policy_id": "daily_to_365_response30_settlement30", "last_send_age": 365, "max_response_delay": 30, "max_accounting_delay": 30, "terminal_age": 425},
+  "tables": {
+    "leads": ["lead_id", "source_id", "cohort_id", "acquired_at", "acquisition_cost", "currency", "arm", "assignment_probability", "eligibility_rule_version"],
+    "exposure_daily": ["cohort_id", "source_id", "date", "age", "arm", "attempted", "accepted", "eligible", "exits", "observed_at", "telemetry_status", "content_id"],
+    "engagement_events": ["record_id", "event_id", "lead_id", "cohort_id", "source_id", "message_id", "arm", "send_at", "occurred_at", "observed_at", "qualification", "revision_sequence", "filter_version"],
+    "ledger": ["entry_id", "event_id", "cohort_id", "source_id", "arm", "amount", "economic_at", "observed_at", "kind", "revision_id", "revises_entry_id", "currency"],
+    "operational_exits": ["lead_id", "cohort_id", "source_id", "occurred_at", "observed_at", "reason"],
+    "forecasts": ["schema_version", "model", "model_version", "scenario", "seed", "cutoff", "cohort_id", "policy_id", "horizon", "draw_id", "forecast_type", "margin", "first_payback_age", "payback_state", "positive_at_horizon", "remains_positive_after_payback", "probability_profitable"]
+  },
+  "semantics": {
+    "immutable": "Ledger corrections append new signed entries; engagement reclassification appends a version with later observed_at",
+    "as_of": "Only acquired leads and records with occurrence/economic and observed timestamps <= cutoff; engagement uses latest revision visible then; missing observation time is unavailable, not zero",
+    "engagement": "Distinct final-qualified human lead clickers at an occurrence date divided by original acquired leads; never a death definition",
+    "contactability": "Operationally eligible leads, including inactive/dormant leads; acceptance means recipient-server acceptance only",
+    "payback_state": "by_180, later_than_180, never_under_policy; endpoint refers to finite policy, not unrestricted lifetime",
+    "point_forecast": "draw_id=0, forecast_type=point, probability_profitable=null; deterministic point paths are not posterior draws or calibrated probabilities",
+    "truth_access": "GeneratorTruth separate from World; model functions receive Snapshot and Policy, never GeneratorTruth",
+    "accounting": "Negative acquisition and sending ledger entries, signed revenue/reversal/revision entries; margin uses economic date and as-of report availability"
+  }
+}

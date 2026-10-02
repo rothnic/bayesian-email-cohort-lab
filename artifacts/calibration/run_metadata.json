@@ -1,0 +1,325 @@
+{
+  "synthetic_only": true,
+  "mode": "calibration",
+  "quick": false,
+  "runs": [
+    {
+      "scenario": "stationary",
+      "seed": 101,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.5510778550087707,
+      "total_seconds": 2.0330027060117573,
+      "peak_rss_mib": 142.16796875
+    },
+    {
+      "scenario": "stationary",
+      "seed": 202,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.40756361500825733,
+      "total_seconds": 1.885927460010862,
+      "peak_rss_mib": 144.734375
+    },
+    {
+      "scenario": "stationary",
+      "seed": 303,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.5099165790015832,
+      "total_seconds": 1.9505729550000979,
+      "peak_rss_mib": 149.75390625
+    },
+    {
+      "scenario": "collapse_tail",
+      "seed": 10101,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.6186870469973655,
+      "total_seconds": 2.2466892969969194,
+      "peak_rss_mib": 154.359375
+    },
+    {
+      "scenario": "collapse_tail",
+      "seed": 10202,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.642301393992966,
+      "total_seconds": 2.571575298992684,
+      "peak_rss_mib": 179.13671875
+    },
+    {
+      "scenario": "collapse_tail",
+      "seed": 10303,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.5870179070043378,
+      "total_seconds": 2.5292565660056425,
+      "peak_rss_mib": 181.2421875
+    },
+    {
+      "scenario": "calendar_attribution_shock",
+      "seed": 20101,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.6152577859902522,
+      "total_seconds": 2.5953832489904016,
+      "peak_rss_mib": 181.2421875
+    },
+    {
+      "scenario": "calendar_attribution_shock",
+      "seed": 20202,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.5863082160067279,
+      "total_seconds": 2.2633685450127814,
+      "peak_rss_mib": 181.2421875
+    },
+    {
+      "scenario": "calendar_attribution_shock",
+      "seed": 20303,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.5895459970051888,
+      "total_seconds": 2.399283673003083,
+      "peak_rss_mib": 189.00390625
+    },
+    {
+      "scenario": "late_reactivation",
+      "seed": 30101,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.717859269992914,
+      "total_seconds": 2.4189661179989344,
+      "peak_rss_mib": 189.00390625
+    },
+    {
+      "scenario": "late_reactivation",
+      "seed": 30202,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.6975238070008345,
+      "total_seconds": 2.4626445250032702,
+      "peak_rss_mib": 189.00390625
+    },
+    {
+      "scenario": "late_reactivation",
+      "seed": 30303,
+      "draws": 250,
+      "cohorts_per_source": 6,
+      "leads_per_cohort": 100,
+      "forecasts": 15,
+      "generator_seconds": 0.6568354249902768,
+      "total_seconds": 2.3270516579941614,
+      "peak_rss_mib": 189.00390625
+    }
+  ],
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "python": "3.12.14",
+  "source_sha256": {
+    "bayes_cohort/__init__.py": "12df34494de57da5cb054c5eebef656738429dc0380c7a95065aa580fdd9cedf",
+    "bayes_cohort/config.py": "60c2dc730ecf2c4229a18eb23c4904cd80f48887160fe56325c69fcd12f50c03",
+    "bayes_cohort/model.py": "f0db53e8ebe3f6f662d6b52b28a6b83a5fbaf5bc397ef0d71a47916ad2b1a8c2",
+    "cohort_lab/__init__.py": "8a72b57c07a7be3742831c5c978e69c9103c435172a31611c4a2f97f10aa2d60",
+    "cohort_lab/accounting.py": "c2df53387f2ecd35756887304879a1a70731469bd392e5ca433362d4cfee37f4",
+    "cohort_lab/baselines.py": "d3f1a68e087705e681750fb203f5265cf104b1680e274c5523aaeb5c8af4d63e",
+    "cohort_lab/evaluation.py": "94fc6c7491b1ee0156cb410a53c44a931db12cd33da9288161e355cd37b95eee",
+    "cohort_lab/generator.py": "7cf04e7eb2de2a0c409e9ce9b63c87efa14999ad2ac8d61a47b2290f8c47aa33",
+    "demo_config.json": "8073ae6520e21715199b152c3de72a15394497dc0b2a8528f16cca4669264a46",
+    "parameters.json": "fd43a322cdeec47d309014b44bfcc49d6401f49291564d5102aefc875dcd60d3",
+    "run_bayesian_demo.py": "e6f5d4abb948d8b9ef3401476d7f32e8aa20a3d5a0a1f0e3585036541612f465",
+    "run_sensitivity.py": "298c92c5e7959f74b06e288a5ffb1f11064f6fc201f591c81880e7e2f3e0cf77",
+    "scripts/plot_results.py": "250398f6ad5f7f6e017a18b6dc86272ee4d4d2edabe9f02bfdcfb3c752ad3300",
+    "scripts/validate_conjugate_scenario.py": "8e8445e3339fea68727a946e051d67e58d090fc3507e9a5ca99fd73ca2861bf6",
+    "scripts/validate_public_artifacts.py": "18e20ad6fcc1f795fe6bfb6e17d0d5f41a331576becd57e8d4a784490231ff9f"
+  },
+  "wall_seconds": 27.910629913996672,
+  "calibration_note": "Stress validation under four deliberately misspecified generators, not simulation-based calibration from the Bayesian prior. Worlds are the bootstrap unit; only three seeds per scenario.",
+  "config": {
+    "configuration_version": "bayesian-demo/1.0.0",
+    "demo_seed": 211,
+    "demo_scenario": "collapse_tail",
+    "demo_leads_per_cohort": 180,
+    "demo_cohorts_per_source": 8,
+    "posterior_draws": 500,
+    "origin_ages": [
+      3,
+      7,
+      14,
+      30,
+      60
+    ],
+    "horizons": [
+      30,
+      90,
+      180,
+      425
+    ],
+    "calibration_seeds": [
+      101,
+      202,
+      303
+    ],
+    "calibration_scenarios": [
+      "stationary",
+      "collapse_tail",
+      "calendar_attribution_shock",
+      "late_reactivation"
+    ],
+    "calibration_draws": 250,
+    "calibration_leads_per_cohort": 100,
+    "calibration_cohorts_per_source": 6,
+    "notes": "Frozen synthetic-only illustration and modest misspecification stress suite. No seed selection by outcome; calibration worlds differ from demo. Repeated origins and sources within a world are correlated. Each scenario adds its index times calibration_seed_stride to base seeds, creating 12 distinct random streams.",
+    "calibration_seed_stride": 10000
+  },
+  "model_config": {
+    "source_means": [
+      0.008,
+      0.02,
+      0.05,
+      0.12,
+      0.3,
+      0.7,
+      1.5
+    ],
+    "fast_weights": [
+      0.2,
+      0.5,
+      0.8,
+      0.95
+    ],
+    "fast_timescales": [
+      0.4,
+      1.0,
+      3.0
+    ],
+    "tail_timescales": [
+      20.0,
+      60.0,
+      180.0,
+      400.0
+    ],
+    "log_source_mean_prior_location": -2.302585092994046,
+    "log_source_mean_prior_scale": 1.2,
+    "cohort_shape": 8.0,
+    "hazard_alpha": 1.0,
+    "hazard_beta": 499.0,
+    "acceptance_alpha": 19.0,
+    "acceptance_beta": 1.0,
+    "positive_alpha": 2.0,
+    "positive_beta": 2.0,
+    "log_mark_prior_mean": -2.302585092994046,
+    "log_mark_prior_precision": 0.5,
+    "log_mark_prior_shape": 3.0,
+    "log_mark_prior_scale": 1.0,
+    "max_log_mark_variance": 4.0,
+    "revision_alpha": 1.0,
+    "revision_beta": 19.0,
+    "mark_maturity_days": 30,
+    "response_delay": [
+      [
+        0,
+        0.8
+      ],
+      [
+        1,
+        0.13
+      ],
+      [
+        3,
+        0.04
+      ],
+      [
+        10,
+        0.02
+      ],
+      [
+        30,
+        0.01
+      ]
+    ],
+    "event_report_delay": [
+      [
+        0,
+        0.85
+      ],
+      [
+        1,
+        0.1
+      ],
+      [
+        2,
+        0.05
+      ]
+    ],
+    "settlement_delay": [
+      [
+        0,
+        0.5
+      ],
+      [
+        2,
+        0.3
+      ],
+      [
+        7,
+        0.15
+      ],
+      [
+        14,
+        0.05
+      ]
+    ],
+    "ledger_report_delay": [
+      [
+        0,
+        0.8
+      ],
+      [
+        1,
+        0.15
+      ],
+      [
+        3,
+        0.05
+      ]
+    ],
+    "revision_delay_min": 8,
+    "revision_delay_max": 25,
+    "revision_report_delay": 3,
+    "revision_fraction_min": 0.25,
+    "revision_fraction_max": 1.0,
+    "invoice_economic_age": 21,
+    "invoice_report_age": 24,
+    "invoice_fraction_mean": 0.01,
+    "invoice_fraction_sd": 0.025,
+    "forecast_invoice_revisions": true
+  }
+}

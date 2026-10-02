@@ -1,0 +1,11 @@
+{
+  "scenario": "collapse_tail",
+  "seed": 211,
+  "draws": 500,
+  "cohorts_per_source": 8,
+  "leads_per_cohort": 180,
+  "forecasts": 15,
+  "generator_seconds": 1.3963950089964783,
+  "total_seconds": 6.367643692996353,
+  "peak_rss_mib": 242.56640625
+}

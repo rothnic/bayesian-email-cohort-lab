@@ -1,0 +1,37 @@
+{
+  "configuration_version": "bayesian-demo/1.0.0",
+  "demo_seed": 211,
+  "demo_scenario": "collapse_tail",
+  "demo_leads_per_cohort": 180,
+  "demo_cohorts_per_source": 8,
+  "posterior_draws": 500,
+  "origin_ages": [
+    3,
+    7,
+    14,
+    30,
+    60
+  ],
+  "horizons": [
+    30,
+    90,
+    180,
+    425
+  ],
+  "calibration_seeds": [
+    101,
+    202,
+    303
+  ],
+  "calibration_scenarios": [
+    "stationary",
+    "collapse_tail",
+    "calendar_attribution_shock",
+    "late_reactivation"
+  ],
+  "calibration_draws": 250,
+  "calibration_leads_per_cohort": 100,
+  "calibration_cohorts_per_source": 6,
+  "notes": "Frozen synthetic-only illustration and modest misspecification stress suite. No seed selection by outcome; calibration worlds differ from demo. Repeated origins and sources within a world are correlated. Each scenario adds its index times calibration_seed_stride to base seeds, creating 12 distinct random streams.",
+  "calibration_seed_stride": 10000
+}

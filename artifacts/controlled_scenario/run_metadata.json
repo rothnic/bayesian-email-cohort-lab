@@ -1,0 +1,62 @@
+{
+  "configuration": {
+    "configuration_version": "controlled-gamma-poisson/1.0.0",
+    "seed": 2026100201,
+    "worlds": 2000,
+    "original_leads": 100,
+    "accepted_per_day": 100,
+    "horizon": 180,
+    "origins": [
+      3,
+      7,
+      14,
+      30,
+      60
+    ],
+    "cohort_shape": 8.0,
+    "source_mean": 0.12,
+    "fast_weight": 0.8,
+    "fast_timescale": 1.0,
+    "tail_timescale": 60.0,
+    "value_per_click": 0.125,
+    "acquisition_per_lead": 0.15,
+    "send_cost_per_exposure": 0.00025,
+    "module_crosscheck_draws": 4000
+  },
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "python": "3.12.14",
+  "all_worlds_retained": true,
+  "independent_worlds": 2000,
+  "correlated_origin_cases": 10000,
+  "predictive_quantiles": "exact negative-binomial PPF; discrete central intervals can be conservative",
+  "scope": "Known-shape Gamma-Poisson rate component with fixed value/cost/exposure only; not full modular pipeline validation",
+  "module_crosscheck": {
+    "origin_age": 30,
+    "observed_count": 48,
+    "posterior_shape": 56.0,
+    "posterior_rate": 681.4642478114713,
+    "exact_mean": 0.08217599115411339,
+    "sample_mean": 0.08208640543955965,
+    "exact_variance": 0.00012058738432430218,
+    "sample_variance": 0.00011905381216396728,
+    "draws": 4000,
+    "mean_error_standard_errors": 0.5159621220577173,
+    "variance_relative_error": 0.012717517416337532,
+    "passed": true,
+    "scope": "main package known-shape conditional Gamma rate posterior only"
+  },
+  "total_known_horizon_cost": 19.525,
+  "paired_stress_scores": "artifacts/calibration/scores.csv",
+  "paired_stress_scores_sha256": "7f9533dc49c44e162f182dbba9957d8a5dc1c3d6a82c07f91f8e947505aef068",
+  "source_sha256": {
+    "scripts/validate_conjugate_scenario.py": "8e8445e3339fea68727a946e051d67e58d090fc3507e9a5ca99fd73ca2861bf6",
+    "bayes_cohort/model.py": "f0db53e8ebe3f6f662d6b52b28a6b83a5fbaf5bc397ef0d71a47916ad2b1a8c2",
+    "bayes_cohort/config.py": "60c2dc730ecf2c4229a18eb23c4904cd80f48887160fe56325c69fcd12f50c03"
+  },
+  "notes": [
+    "Seed and configuration are declared before examining results; no worlds are selected, discarded, or reweighted",
+    "Ranks and randomized PIT are assessed separately by origin; pooling origins does not create more independent worlds",
+    "No full-world failure is repaired, tuned, excluded or relabeled by this controlled check"
+  ]
+}

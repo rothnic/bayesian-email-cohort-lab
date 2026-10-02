@@ -1,0 +1,11 @@
+{
+  "scenario": "late_reactivation",
+  "seed": 30101,
+  "draws": 250,
+  "cohorts_per_source": 6,
+  "leads_per_cohort": 100,
+  "forecasts": 15,
+  "generator_seconds": 0.717859269992914,
+  "total_seconds": 2.4189661179989344,
+  "peak_rss_mib": 189.00390625
+}

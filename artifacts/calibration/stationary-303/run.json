@@ -1,0 +1,11 @@
+{
+  "scenario": "stationary",
+  "seed": 303,
+  "draws": 250,
+  "cohorts_per_source": 6,
+  "leads_per_cohort": 100,
+  "forecasts": 15,
+  "generator_seconds": 0.5099165790015832,
+  "total_seconds": 1.9505729550000979,
+  "peak_rss_mib": 149.75390625
+}

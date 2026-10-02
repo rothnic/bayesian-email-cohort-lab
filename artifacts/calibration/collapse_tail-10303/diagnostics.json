@@ -1,0 +1,2552 @@
+[
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "low",
+    "cohort_id": "low-w05",
+    "origin_age": 3,
+    "cutoff": 38,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 2.756159045954006,
+      "source_observed_click_count": 418,
+      "target_observed_click_count": 32,
+      "source_observed_exposure_cells": 129,
+      "mature_mark_count": 56,
+      "mature_positive_mark_count": 45,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 14,
+      "ledger_only_positive_bases_for_revision_imputation": 1,
+      "unobserved_acquisition_invoice_arms": 2,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 0.08,
+        "later_than_180": 0.124,
+        "never_under_policy": 0.796
+      },
+      "cohort_amplitude_quantiles": [
+        0.12577707656105547,
+        0.15932293729703836,
+        0.20259082096877729
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.12,
+          0.12,
+          0.12
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          60.0,
+          180.0,
+          400.0
+        ],
+        "cohort_amplitude": [
+          0.12577707656105547,
+          0.15932293729703836,
+          0.20259082096877729
+        ],
+        "exit_hazard": [
+          0.000764434022706464,
+          0.0010958074328372355,
+          0.001682923788451946
+        ],
+        "acceptance_probability": [
+          0.9648404534070414,
+          0.9674305781812498,
+          0.9698399054446566
+        ],
+        "positive_probability": [
+          0.6950494269877748,
+          0.7841702150530279,
+          0.86020168218179
+        ],
+        "log_mark_mean": [
+          -3.084397539644866,
+          -2.9432106939989375,
+          -2.8251042111449913
+        ],
+        "log_mark_sigma": [
+          0.5180378274050479,
+          0.6039692368648393,
+          0.7063283685481879
+        ],
+        "revision_probability": [
+          0.02154826122159491,
+          0.055211161015701345,
+          0.11545872387188931
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 1.9973912722345976e-78,
+          "upper": 2.3214542251367574e-28
+        },
+        "fast_weight": {
+          "lower": 8.152137830170212e-21,
+          "upper": 1.073718740159962e-18
+        },
+        "fast_timescale": {
+          "lower": 9.61439110763969e-05,
+          "upper": 4.286292484334783e-05
+        },
+        "tail_timescale": {
+          "lower": 2.7174680279084315e-09,
+          "upper": 0.19020590123586936
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 2.7174680279084315e-09,
+        "60.0": 0.406661959874899,
+        "180.0": 0.40313213617178906,
+        "400.0": 0.19020590123586936
+      },
+      "horizons": {
+        "30": {
+          "mean": -14.361131583236967,
+          "q05": -15.725346970083075,
+          "q50": -14.434500807473675,
+          "q95": -12.800659230204689,
+          "probability_profitable": 0.0
+        },
+        "90": {
+          "mean": -10.73056557509148,
+          "q05": -14.460188472660919,
+          "q50": -11.043823098095956,
+          "q95": -5.932315249369103,
+          "probability_profitable": 0.0
+        },
+        "180": {
+          "mean": -8.523393194274737,
+          "q05": -15.18373574423278,
+          "q50": -9.31054865129912,
+          "q95": 0.6857706510788689,
+          "probability_profitable": 0.076
+        },
+        "425": {
+          "mean": -8.13971514207956,
+          "q05": -18.289435267185553,
+          "q50": -9.41939028537351,
+          "q95": 9.161590795498702,
+          "probability_profitable": 0.204
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "middle",
+    "cohort_id": "middle-w05",
+    "origin_age": 3,
+    "cutoff": 38,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 3.420747923882033,
+      "source_observed_click_count": 534,
+      "target_observed_click_count": 65,
+      "source_observed_exposure_cells": 128,
+      "mature_mark_count": 73,
+      "mature_positive_mark_count": 61,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 27,
+      "ledger_only_positive_bases_for_revision_imputation": 1,
+      "unobserved_acquisition_invoice_arms": 2,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 1.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 0.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.2907988998502197,
+        0.36726017557873525,
+        0.45873579503994877
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.3,
+          0.3,
+          0.3
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          0.4,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          60.0,
+          180.0,
+          400.0
+        ],
+        "cohort_amplitude": [
+          0.2907988998502197,
+          0.36726017557873525,
+          0.45873579503994877
+        ],
+        "exit_hazard": [
+          0.0009177831346064335,
+          0.0014652997189635376,
+          0.0020803031931412993
+        ],
+        "acceptance_probability": [
+          0.9666277251918539,
+          0.9694789987513459,
+          0.9718755406893167
+        ],
+        "positive_probability": [
+          0.7423028786485885,
+          0.8143447022170083,
+          0.8850232289222453
+        ],
+        "log_mark_mean": [
+          -2.421356607590365,
+          -2.2884380461868785,
+          -2.1574855392554997
+        ],
+        "log_mark_sigma": [
+          0.5883153945801307,
+          0.6757030632391126,
+          0.7895390867608655
+        ],
+        "revision_probability": [
+          0.016618385740028392,
+          0.04428273126076851,
+          0.09705909692594407
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 7.900833948145463e-101,
+          "upper": 4.1747469759338515e-22
+        },
+        "fast_weight": {
+          "lower": 8.972951954902218e-20,
+          "upper": 1.2087338474525083e-35
+        },
+        "fast_timescale": {
+          "lower": 0.17794869487174397,
+          "upper": 7.058468436405486e-07
+        },
+        "tail_timescale": {
+          "lower": 3.050511911440901e-12,
+          "upper": 0.44881380250183595
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 3.050511911440901e-12,
+        "60.0": 0.06263234490916947,
+        "180.0": 0.4885538525860278,
+        "400.0": 0.44881380250183595
+      },
+      "horizons": {
+        "30": {
+          "mean": 3.6409744266793393,
+          "q05": -1.8417706017644848,
+          "q50": 3.087272534134366,
+          "q95": 10.084421459041106,
+          "probability_profitable": 0.824
+        },
+        "90": {
+          "mean": 33.242093291421305,
+          "q05": 16.98095547973614,
+          "q50": 32.349425631003456,
+          "q95": 51.41401842666681,
+          "probability_profitable": 1.0
+        },
+        "180": {
+          "mean": 61.56527820054577,
+          "q05": 26.309845122026392,
+          "q50": 61.95742207230573,
+          "q95": 98.34043294121062,
+          "probability_profitable": 1.0
+        },
+        "425": {
+          "mean": 90.04076983056389,
+          "q05": 24.819602282344373,
+          "q50": 86.44952130539872,
+          "q95": 150.50473419324805,
+          "probability_profitable": 1.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "high",
+    "cohort_id": "high-w05",
+    "origin_age": 3,
+    "cutoff": 38,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 2.1015223069199047,
+      "source_observed_click_count": 1252,
+      "target_observed_click_count": 57,
+      "source_observed_exposure_cells": 129,
+      "mature_mark_count": 194,
+      "mature_positive_mark_count": 138,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 22,
+      "ledger_only_positive_bases_for_revision_imputation": 1,
+      "unobserved_acquisition_invoice_arms": 2,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 1.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 0.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.25185930737758844,
+        0.31320383166694554,
+        0.3723027541988236
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.3,
+          0.3,
+          0.7
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          180.0,
+          180.0,
+          400.0
+        ],
+        "cohort_amplitude": [
+          0.25185930737758844,
+          0.31320383166694554,
+          0.3723027541988236
+        ],
+        "exit_hazard": [
+          0.0010248566041007648,
+          0.0015231792525596546,
+          0.002124776667724982
+        ],
+        "acceptance_probability": [
+          0.9698677427474116,
+          0.9721026782299695,
+          0.9744817314658232
+        ],
+        "positive_probability": [
+          0.6604919698752876,
+          0.7141914124116449,
+          0.7659378269772845
+        ],
+        "log_mark_mean": [
+          -1.8643287230189234,
+          -1.758298557613216,
+          -1.6663244968672173
+        ],
+        "log_mark_sigma": [
+          0.6574988400850829,
+          0.7218495562205747,
+          0.7998183242810178
+        ],
+        "revision_probability": [
+          0.034659161809358505,
+          0.06368265192243783,
+          0.09438292703747747
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 1.1907678454101886e-268,
+          "upper": 4.670926110273734e-11
+        },
+        "fast_weight": {
+          "lower": 8.388726748546111e-52,
+          "upper": 1.3439141782568975e-78
+        },
+        "fast_timescale": {
+          "lower": 0.007268614360736087,
+          "upper": 1.660388117351068e-21
+        },
+        "tail_timescale": {
+          "lower": 3.3214734947094825e-28,
+          "upper": 0.4146362690668566
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 3.3214734947094825e-28,
+        "60.0": 0.0077401947453773715,
+        "180.0": 0.5776235361877946,
+        "400.0": 0.4146362690668566
+      },
+      "horizons": {
+        "30": {
+          "mean": 7.393569458333288,
+          "q05": 0.8250545492020194,
+          "q50": 6.8296589634313705,
+          "q95": 16.42683213978309,
+          "probability_profitable": 0.968
+        },
+        "90": {
+          "mean": 46.37673906146482,
+          "q05": 30.26293537949746,
+          "q50": 45.705907177666184,
+          "q95": 68.21955006812293,
+          "probability_profitable": 1.0
+        },
+        "180": {
+          "mean": 84.16148699902719,
+          "q05": 53.28943491018033,
+          "q50": 82.98313090081021,
+          "q95": 123.59105198041942,
+          "probability_profitable": 1.0
+        },
+        "425": {
+          "mean": 121.3884236592155,
+          "q05": 68.26291177659415,
+          "q50": 114.94406121281877,
+          "q95": 188.1865569316837,
+          "probability_profitable": 1.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "low",
+    "cohort_id": "low-w05",
+    "origin_age": 7,
+    "cutoff": 42,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 2.3213308381187066,
+      "source_observed_click_count": 469,
+      "target_observed_click_count": 41,
+      "source_observed_exposure_cells": 153,
+      "mature_mark_count": 97,
+      "mature_positive_mark_count": 78,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 11,
+      "ledger_only_positive_bases_for_revision_imputation": 0,
+      "unobserved_acquisition_invoice_arms": 2,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 0.04,
+        "later_than_180": 0.072,
+        "never_under_policy": 0.888
+      },
+      "cohort_amplitude_quantiles": [
+        0.11402193891379715,
+        0.147989089434343,
+        0.18266695403630565
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.12,
+          0.12,
+          0.12
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          60.0,
+          60.0,
+          400.0
+        ],
+        "cohort_amplitude": [
+          0.11402193891379715,
+          0.147989089434343,
+          0.18266695403630565
+        ],
+        "exit_hazard": [
+          0.0007756431414449791,
+          0.0011529186253676498,
+          0.0016379827349051906
+        ],
+        "acceptance_probability": [
+          0.9655930239187398,
+          0.9679207905638352,
+          0.9700178191716948
+        ],
+        "positive_probability": [
+          0.7169708365451245,
+          0.7930368912660168,
+          0.8523837912057829
+        ],
+        "log_mark_mean": [
+          -2.994316800696356,
+          -2.8648474827116077,
+          -2.750674707124288
+        ],
+        "log_mark_sigma": [
+          0.5373993387854737,
+          0.6104106146618834,
+          0.7095266508058117
+        ],
+        "revision_probability": [
+          0.03412356844295012,
+          0.06930347763083011,
+          0.1170176042001648
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 3.28802182566785e-78,
+          "upper": 1.3522902467757451e-28
+        },
+        "fast_weight": {
+          "lower": 6.876220651310272e-23,
+          "upper": 1.2256318805290268e-21
+        },
+        "fast_timescale": {
+          "lower": 0.00017426294141510384,
+          "upper": 3.186517535392787e-06
+        },
+        "tail_timescale": {
+          "lower": 6.78270196015146e-11,
+          "upper": 0.10675759657005612
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 6.78270196015146e-11,
+        "60.0": 0.5516895025693613,
+        "180.0": 0.34155290079277156,
+        "400.0": 0.10675759657005612
+      },
+      "horizons": {
+        "30": {
+          "mean": -14.654562377011906,
+          "q05": -16.173486466121133,
+          "q50": -14.667816783843119,
+          "q95": -13.145941422896689,
+          "probability_profitable": 0.0
+        },
+        "90": {
+          "mean": -11.400865644171287,
+          "q05": -14.622437834882883,
+          "q50": -11.860726012742957,
+          "q95": -6.3356082122222555,
+          "probability_profitable": 0.0
+        },
+        "180": {
+          "mean": -9.959540351293551,
+          "q05": -15.211867933318112,
+          "q50": -11.874937722768912,
+          "q95": -0.8233453804397624,
+          "probability_profitable": 0.04
+        },
+        "425": {
+          "mean": -10.604024547284865,
+          "q05": -18.719484298130208,
+          "q50": -14.5799521220282,
+          "q95": 4.461383178912056,
+          "probability_profitable": 0.112
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "middle",
+    "cohort_id": "middle-w05",
+    "origin_age": 7,
+    "cutoff": 42,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 3.2043879054984568,
+      "source_observed_click_count": 610,
+      "target_observed_click_count": 84,
+      "source_observed_exposure_cells": 152,
+      "mature_mark_count": 120,
+      "mature_positive_mark_count": 92,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 11,
+      "ledger_only_positive_bases_for_revision_imputation": 0,
+      "unobserved_acquisition_invoice_arms": 2,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 1.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 0.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.2630349577841348,
+        0.3227053099479138,
+        0.3917276820318473
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.12,
+          0.3,
+          0.3
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          180.0,
+          180.0,
+          400.0
+        ],
+        "cohort_amplitude": [
+          0.2630349577841348,
+          0.3227053099479138,
+          0.3917276820318473
+        ],
+        "exit_hazard": [
+          0.0008895863538256402,
+          0.0013381749410469718,
+          0.001882585762941873
+        ],
+        "acceptance_probability": [
+          0.9665048915850704,
+          0.968932981914869,
+          0.9713744232085447
+        ],
+        "positive_probability": [
+          0.6819519780672143,
+          0.7643296675970583,
+          0.815862768603583
+        ],
+        "log_mark_mean": [
+          -2.387443438362328,
+          -2.275493367525092,
+          -2.165883483833957
+        ],
+        "log_mark_sigma": [
+          0.6036442958503786,
+          0.6672337578446855,
+          0.7563551624734146
+        ],
+        "revision_probability": [
+          0.01778325608404445,
+          0.03867646774687447,
+          0.07917707773136272
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 1.980870722055407e-100,
+          "upper": 3.5678630547148567e-23
+        },
+        "fast_weight": {
+          "lower": 1.2516603159192093e-25,
+          "upper": 2.319230755001334e-40
+        },
+        "fast_timescale": {
+          "lower": 0.05555463019968103,
+          "upper": 7.158854030257123e-08
+        },
+        "tail_timescale": {
+          "lower": 2.1680072946137194e-18,
+          "upper": 0.5125994537395525
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 2.1680072946137194e-18,
+        "60.0": 0.015068436696065652,
+        "180.0": 0.47233210956443816,
+        "400.0": 0.5125994537395525
+      },
+      "horizons": {
+        "30": {
+          "mean": -0.5365401632891426,
+          "q05": -4.229655209142144,
+          "q50": -0.5767755851052019,
+          "q95": 3.9459257718330423,
+          "probability_profitable": 0.412
+        },
+        "90": {
+          "mean": 23.82126279710009,
+          "q05": 14.110164403382592,
+          "q50": 23.50128672843808,
+          "q95": 35.332906830085435,
+          "probability_profitable": 1.0
+        },
+        "180": {
+          "mean": 48.34480786547797,
+          "q05": 29.934886265418346,
+          "q50": 47.119966335911386,
+          "q95": 71.60854341648508,
+          "probability_profitable": 1.0
+        },
+        "425": {
+          "mean": 73.38503639278953,
+          "q05": 41.19774231891055,
+          "q50": 68.85812712010895,
+          "q95": 114.5443637372763,
+          "probability_profitable": 1.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "high",
+    "cohort_id": "high-w05",
+    "origin_age": 7,
+    "cutoff": 42,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 1.4839691625853006,
+      "source_observed_click_count": 1378,
+      "target_observed_click_count": 76,
+      "source_observed_exposure_cells": 153,
+      "mature_mark_count": 290,
+      "mature_positive_mark_count": 217,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 22,
+      "ledger_only_positive_bases_for_revision_imputation": 1,
+      "unobserved_acquisition_invoice_arms": 2,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 1.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 0.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.24639279989565796,
+        0.3039488496642074,
+        0.36528794606902665
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.3,
+          0.3,
+          0.7
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          0.4,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          60.0,
+          180.0,
+          400.0
+        ],
+        "cohort_amplitude": [
+          0.24639279989565796,
+          0.3039488496642074,
+          0.36528794606902665
+        ],
+        "exit_hazard": [
+          0.000914621075791821,
+          0.0012926627046323984,
+          0.0018745052908469735
+        ],
+        "acceptance_probability": [
+          0.9687192678550787,
+          0.9710180273338442,
+          0.9730186010518079
+        ],
+        "positive_probability": [
+          0.701711735627586,
+          0.7485850795170905,
+          0.7842889614327152
+        ],
+        "log_mark_mean": [
+          -1.7956503318966763,
+          -1.719951170295401,
+          -1.6563192903877635
+        ],
+        "log_mark_sigma": [
+          0.6644963091666998,
+          0.7184777233995452,
+          0.779520483490817
+        ],
+        "revision_probability": [
+          0.03036516912698909,
+          0.05089779107466162,
+          0.07105193460572592
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 4.744921634999513e-267,
+          "upper": 1.4264325966479734e-10
+        },
+        "fast_weight": {
+          "lower": 9.679671227416375e-56,
+          "upper": 3.622234574548678e-81
+        },
+        "fast_timescale": {
+          "lower": 0.045173947352041735,
+          "upper": 5.415249626128579e-21
+        },
+        "tail_timescale": {
+          "lower": 1.0776864343566482e-30,
+          "upper": 0.09696048790840749
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 1.0776864343566482e-30,
+        "60.0": 0.0804933233144498,
+        "180.0": 0.8225461887772576,
+        "400.0": 0.09696048790840749
+      },
+      "horizons": {
+        "30": {
+          "mean": 8.574984441286608,
+          "q05": 2.5171882801945,
+          "q50": 8.666758923210782,
+          "q95": 15.050433599224645,
+          "probability_profitable": 0.992
+        },
+        "90": {
+          "mean": 46.30514763842943,
+          "q05": 27.895531715762782,
+          "q50": 46.63351459507743,
+          "q95": 63.111593176295315,
+          "probability_profitable": 1.0
+        },
+        "180": {
+          "mean": 79.04857606838972,
+          "q05": 40.92087127059228,
+          "q50": 79.32464560658099,
+          "q95": 108.15096017693662,
+          "probability_profitable": 1.0
+        },
+        "425": {
+          "mean": 105.62368169737901,
+          "q05": 40.40898233171468,
+          "q50": 106.45858789886051,
+          "q95": 153.82375523001906,
+          "probability_profitable": 1.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "low",
+    "cohort_id": "low-w05",
+    "origin_age": 14,
+    "cutoff": 49,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 1.0542070072311842,
+      "source_observed_click_count": 537,
+      "target_observed_click_count": 57,
+      "source_observed_exposure_cells": 195,
+      "mature_mark_count": 156,
+      "mature_positive_mark_count": 123,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 6,
+      "ledger_only_positive_bases_for_revision_imputation": 1,
+      "unobserved_acquisition_invoice_arms": 2,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 0.004,
+        "later_than_180": 0.0,
+        "never_under_policy": 0.996
+      },
+      "cohort_amplitude_quantiles": [
+        0.12021985793870019,
+        0.14575836990612523,
+        0.17921667536296387
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.12,
+          0.12,
+          0.12
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          60.0,
+          60.0,
+          60.0
+        ],
+        "cohort_amplitude": [
+          0.12021985793870019,
+          0.14575836990612523,
+          0.17921667536296387
+        ],
+        "exit_hazard": [
+          0.0008703726327494445,
+          0.0011988168204168173,
+          0.0016785537583613398
+        ],
+        "acceptance_probability": [
+          0.9664441269024222,
+          0.9683105769479761,
+          0.9703558350349346
+        ],
+        "positive_probability": [
+          0.7295084901191295,
+          0.7842728136185473,
+          0.8328585061893171
+        ],
+        "log_mark_mean": [
+          -2.936886707984256,
+          -2.8308689775133553,
+          -2.742084322667708
+        ],
+        "log_mark_sigma": [
+          0.5787910176342415,
+          0.6430245132266212,
+          0.7201690377492794
+        ],
+        "revision_probability": [
+          0.039026040631960766,
+          0.06907947027183205,
+          0.10668495265578042
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 2.640309743958115e-79,
+          "upper": 3.331390651880661e-29
+        },
+        "fast_weight": {
+          "lower": 1.1750491799515803e-25,
+          "upper": 1.719251986624121e-21
+        },
+        "fast_timescale": {
+          "lower": 6.764364720211847e-05,
+          "upper": 5.0429981766605705e-06
+        },
+        "tail_timescale": {
+          "lower": 1.828584711610132e-13,
+          "upper": 0.0016209251282256925
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 1.828584711610132e-13,
+        "60.0": 0.9745119075596339,
+        "180.0": 0.023867167312137724,
+        "400.0": 0.0016209251282256925
+      },
+      "horizons": {
+        "30": {
+          "mean": -15.097449635966207,
+          "q05": -16.031903921357436,
+          "q50": -15.13289465447236,
+          "q95": -13.984938665751274,
+          "probability_profitable": 0.0
+        },
+        "90": {
+          "mean": -12.960892572653501,
+          "q05": -14.758189711460588,
+          "q50": -13.108631079563857,
+          "q95": -10.760283637645237,
+          "probability_profitable": 0.0
+        },
+        "180": {
+          "mean": -13.230062519119109,
+          "q05": -15.571396236565938,
+          "q50": -13.60241899585797,
+          "q95": -10.648741163709408,
+          "probability_profitable": 0.004
+        },
+        "425": {
+          "mean": -15.978807736448129,
+          "q05": -18.66799912687762,
+          "q50": -16.477828085677224,
+          "q95": -12.99621432241797,
+          "probability_profitable": 0.004
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "middle",
+    "cohort_id": "middle-w05",
+    "origin_age": 14,
+    "cutoff": 49,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 4.486177109423875,
+      "source_observed_click_count": 701,
+      "target_observed_click_count": 108,
+      "source_observed_exposure_cells": 194,
+      "mature_mark_count": 196,
+      "mature_positive_mark_count": 148,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 13,
+      "ledger_only_positive_bases_for_revision_imputation": 0,
+      "unobserved_acquisition_invoice_arms": 2,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 1.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 0.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.22715860414502317,
+        0.281316852942622,
+        0.34196136311235226
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.12,
+          0.3,
+          0.3
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          0.4,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          60.0,
+          180.0,
+          400.0
+        ],
+        "cohort_amplitude": [
+          0.22715860414502317,
+          0.281316852942622,
+          0.34196136311235226
+        ],
+        "exit_hazard": [
+          0.0012548700384914305,
+          0.0016785700400567083,
+          0.0021420004223552534
+        ],
+        "acceptance_probability": [
+          0.9681661098433667,
+          0.9702890324147425,
+          0.9723278480964525
+        ],
+        "positive_probability": [
+          0.7010071515256137,
+          0.7513101468431729,
+          0.8011150658477892
+        ],
+        "log_mark_mean": [
+          -2.282780680915243,
+          -2.2001911665529335,
+          -2.1096404811590674
+        ],
+        "log_mark_sigma": [
+          0.6472244809602586,
+          0.7062207113216027,
+          0.7785464973382639
+        ],
+        "revision_probability": [
+          0.03735134318069768,
+          0.05737257678344071,
+          0.09318013306717247
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 9.712707859985144e-100,
+          "upper": 3.67609163208276e-23
+        },
+        "fast_weight": {
+          "lower": 6.450167451569664e-29,
+          "upper": 6.866918885470158e-39
+        },
+        "fast_timescale": {
+          "lower": 0.09722972165770927,
+          "upper": 2.7374734403366577e-06
+        },
+        "tail_timescale": {
+          "lower": 7.395199947472667e-20,
+          "upper": 0.16036453729489192
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 7.395199947472667e-20,
+        "60.0": 0.3486323484610149,
+        "180.0": 0.49100311424400644,
+        "400.0": 0.16036453729489192
+      },
+      "horizons": {
+        "30": {
+          "mean": -3.3937128232621756,
+          "q05": -6.018646943403786,
+          "q50": -3.5317527528296244,
+          "q95": -0.5345827202704754,
+          "probability_profitable": 0.032
+        },
+        "90": {
+          "mean": 14.158379122896957,
+          "q05": 4.612869199737461,
+          "q50": 14.160663784757176,
+          "q95": 23.944892017847412,
+          "probability_profitable": 1.0
+        },
+        "180": {
+          "mean": 27.64534192375838,
+          "q05": 7.1362042183720265,
+          "q50": 29.15826947283182,
+          "q95": 49.26041473040839,
+          "probability_profitable": 1.0
+        },
+        "425": {
+          "mean": 37.58164935439052,
+          "q05": 5.4487056134974345,
+          "q50": 42.06134152607386,
+          "q95": 78.14023699903846,
+          "probability_profitable": 1.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "high",
+    "cohort_id": "high-w05",
+    "origin_age": 14,
+    "cutoff": 49,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 3.86568188016654,
+      "source_observed_click_count": 1605,
+      "target_observed_click_count": 112,
+      "source_observed_exposure_cells": 195,
+      "mature_mark_count": 471,
+      "mature_positive_mark_count": 359,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 12,
+      "ledger_only_positive_bases_for_revision_imputation": 1,
+      "unobserved_acquisition_invoice_arms": 2,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 1.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 0.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.2612506102531971,
+        0.31446252044880113,
+        0.38198794124095
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.3,
+          0.3,
+          0.7
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          0.4,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          60.0,
+          60.0,
+          180.0
+        ],
+        "cohort_amplitude": [
+          0.2612506102531971,
+          0.31446252044880113,
+          0.38198794124095
+        ],
+        "exit_hazard": [
+          0.0009688751585633835,
+          0.0013907331313415554,
+          0.001831716935019893
+        ],
+        "acceptance_probability": [
+          0.9692879505541238,
+          0.9710304792330662,
+          0.9730747526243113
+        ],
+        "positive_probability": [
+          0.7291966596575796,
+          0.7601561850633866,
+          0.787746513789844
+        ],
+        "log_mark_mean": [
+          -1.7694003423271605,
+          -1.7115444682147927,
+          -1.6599561824812428
+        ],
+        "log_mark_sigma": [
+          0.6794256335092889,
+          0.7249914728484547,
+          0.7694527173903083
+        ],
+        "revision_probability": [
+          0.040885774329876244,
+          0.05957591074464491,
+          0.08374639670704738
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 1.0175707910719727e-267,
+          "upper": 7.305502313346093e-10
+        },
+        "fast_weight": {
+          "lower": 1.4392105376100122e-63,
+          "upper": 1.6618155754818358e-84
+        },
+        "fast_timescale": {
+          "lower": 0.2803328954519332,
+          "upper": 8.949149517258986e-21
+        },
+        "tail_timescale": {
+          "lower": 1.4278054946782306e-39,
+          "upper": 0.002625507057878003
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 1.4278054946782306e-39,
+        "60.0": 0.6478065865879944,
+        "180.0": 0.3495679063538356,
+        "400.0": 0.002625507057878003
+      },
+      "horizons": {
+        "30": {
+          "mean": 8.38059637797551,
+          "q05": 4.358450848085223,
+          "q50": 8.216815260071236,
+          "q95": 13.526125542100118,
+          "probability_profitable": 1.0
+        },
+        "90": {
+          "mean": 38.8125453621427,
+          "q05": 23.86221831683292,
+          "q50": 37.12071427961567,
+          "q95": 58.83288663228483,
+          "probability_profitable": 1.0
+        },
+        "180": {
+          "mean": 58.46439977984459,
+          "q05": 30.55847055891402,
+          "q50": 48.12255065268417,
+          "q95": 98.36170937557917,
+          "probability_profitable": 1.0
+        },
+        "425": {
+          "mean": 70.03699202355486,
+          "q05": 29.406417200776456,
+          "q50": 47.97993426832214,
+          "q95": 130.7494777724936,
+          "probability_profitable": 1.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "low",
+    "cohort_id": "low-w05",
+    "origin_age": 30,
+    "cutoff": 65,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 1.04350734119096,
+      "source_observed_click_count": 694,
+      "target_observed_click_count": 89,
+      "source_observed_exposure_cells": 289,
+      "mature_mark_count": 364,
+      "mature_positive_mark_count": 281,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 5,
+      "ledger_only_positive_bases_for_revision_imputation": 0,
+      "unobserved_acquisition_invoice_arms": 0,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 0.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 1.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.12441143668265438,
+        0.149721897582514,
+        0.17661869482418646
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.12,
+          0.12,
+          0.12
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          60.0,
+          60.0,
+          60.0
+        ],
+        "cohort_amplitude": [
+          0.12441143668265438,
+          0.149721897582514,
+          0.17661869482418646
+        ],
+        "exit_hazard": [
+          0.001011419450636646,
+          0.0013740160428586483,
+          0.0017343909940536581
+        ],
+        "acceptance_probability": [
+          0.9678686279428205,
+          0.9697388569831372,
+          0.9713727829205151
+        ],
+        "positive_probability": [
+          0.7365260468293747,
+          0.7659727507643688,
+          0.8032124751053488
+        ],
+        "log_mark_mean": [
+          -2.9214799289195272,
+          -2.8498721787196324,
+          -2.7782560580871425
+        ],
+        "log_mark_sigma": [
+          0.6660039552255288,
+          0.7153805064051224,
+          0.7653451424369146
+        ],
+        "revision_probability": [
+          0.033644240030245395,
+          0.053903311135588314,
+          0.07855661038029142
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 3.070568158105552e-79,
+          "upper": 6.324670692563412e-29
+        },
+        "fast_weight": {
+          "lower": 5.810442345941435e-32,
+          "upper": 1.1425887995682833e-22
+        },
+        "fast_timescale": {
+          "lower": 0.0001325204677982714,
+          "upper": 2.6672122927541035e-05
+        },
+        "tail_timescale": {
+          "lower": 6.447327180427058e-32,
+          "upper": 0.00012972853044321451
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 6.447327180427058e-32,
+        "60.0": 0.9802709476792948,
+        "180.0": 0.01959932379037963,
+        "400.0": 0.00012972853044321451
+      },
+      "horizons": {
+        "30": {
+          "mean": -15.472897526082853,
+          "q05": -15.521067448977705,
+          "q50": -15.490075524173916,
+          "q95": -15.38440893054816,
+          "probability_profitable": 0.0
+        },
+        "90": {
+          "mean": -13.188993784656395,
+          "q05": -14.363745556219591,
+          "q50": -13.240769880467973,
+          "q95": -11.726192851445136,
+          "probability_profitable": 0.0
+        },
+        "180": {
+          "mean": -13.56437567794461,
+          "q05": -15.343915674187981,
+          "q50": -13.702166116982927,
+          "q95": -11.706046915925976,
+          "probability_profitable": 0.0
+        },
+        "425": {
+          "mean": -16.38175189049779,
+          "q05": -18.003012441550684,
+          "q50": -16.590370074110496,
+          "q95": -14.518449381212182,
+          "probability_profitable": 0.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "middle",
+    "cohort_id": "middle-w05",
+    "origin_age": 30,
+    "cutoff": 65,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 2.2111608493768604,
+      "source_observed_click_count": 952,
+      "target_observed_click_count": 176,
+      "source_observed_exposure_cells": 290,
+      "mature_mark_count": 440,
+      "mature_positive_mark_count": 336,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 16,
+      "ledger_only_positive_bases_for_revision_imputation": 1,
+      "unobserved_acquisition_invoice_arms": 0,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 1.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 0.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.23446160833765925,
+        0.2645488393961706,
+        0.2993305406949481
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.12,
+          0.12,
+          0.3
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          180.0,
+          180.0,
+          400.0
+        ],
+        "cohort_amplitude": [
+          0.23446160833765925,
+          0.2645488393961706,
+          0.2993305406949481
+        ],
+        "exit_hazard": [
+          0.0012518838241138898,
+          0.0015516882753953366,
+          0.0019775844606767785
+        ],
+        "acceptance_probability": [
+          0.9683845996141737,
+          0.9700394008104081,
+          0.971628351753301
+        ],
+        "positive_probability": [
+          0.7233851336167151,
+          0.7587037011216404,
+          0.7934146815738762
+        ],
+        "log_mark_mean": [
+          -2.336966130373194,
+          -2.2749157914913374,
+          -2.210661652912037
+        ],
+        "log_mark_sigma": [
+          0.6499734335439351,
+          0.6912663189272816,
+          0.7361551148221744
+        ],
+        "revision_probability": [
+          0.03573207163111879,
+          0.05104013046789299,
+          0.07189735689697403
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 1.642530611456301e-99,
+          "upper": 2.488473429358833e-24
+        },
+        "fast_weight": {
+          "lower": 1.1596160371323472e-29,
+          "upper": 1.1535528456883424e-45
+        },
+        "fast_timescale": {
+          "lower": 0.003709038385195812,
+          "upper": 4.148446707699497e-07
+        },
+        "tail_timescale": {
+          "lower": 3.2766640094395205e-54,
+          "upper": 0.14690454325575802
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 3.2766640094395205e-54,
+        "60.0": 0.004291998841649079,
+        "180.0": 0.8488034579027555,
+        "400.0": 0.14690454325575802
+      },
+      "horizons": {
+        "30": {
+          "mean": -5.492407885435737,
+          "q05": -5.733385150708457,
+          "q50": -5.535913274063769,
+          "q95": -5.13206336369842,
+          "probability_profitable": 0.0
+        },
+        "90": {
+          "mean": 13.527380463964318,
+          "q05": 9.034410962717216,
+          "q50": 13.370588217097893,
+          "q95": 17.70304365630601,
+          "probability_profitable": 1.0
+        },
+        "180": {
+          "mean": 30.28144197946104,
+          "q05": 22.938490688412,
+          "q50": 29.684647908763907,
+          "q95": 40.122081333918615,
+          "probability_profitable": 1.0
+        },
+        "425": {
+          "mean": 43.879577191033796,
+          "q05": 31.444482281392737,
+          "q50": 41.61235332857621,
+          "q95": 67.9182864379254,
+          "probability_profitable": 1.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "high",
+    "cohort_id": "high-w05",
+    "origin_age": 30,
+    "cutoff": 65,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 1.1970918728180278,
+      "source_observed_click_count": 2099,
+      "target_observed_click_count": 192,
+      "source_observed_exposure_cells": 290,
+      "mature_mark_count": 1122,
+      "mature_positive_mark_count": 867,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 11,
+      "ledger_only_positive_bases_for_revision_imputation": 3,
+      "unobserved_acquisition_invoice_arms": 0,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 1.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 0.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.3022227071028765,
+        0.3610810979678927,
+        0.410832985767371
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.3,
+          0.7,
+          0.7
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          0.4,
+          0.4,
+          1.0
+        ],
+        "tail_timescale": [
+          60.0,
+          60.0,
+          180.0
+        ],
+        "cohort_amplitude": [
+          0.3022227071028765,
+          0.3610810979678927,
+          0.410832985767371
+        ],
+        "exit_hazard": [
+          0.0012098898734060489,
+          0.0016183120462893827,
+          0.002064711776282826
+        ],
+        "acceptance_probability": [
+          0.9690420539442385,
+          0.9708920032007592,
+          0.9725371681254469
+        ],
+        "positive_probability": [
+          0.7523686339405511,
+          0.772431305204123,
+          0.7932258373382457
+        ],
+        "log_mark_mean": [
+          -1.801753030884903,
+          -1.7595731177099645,
+          -1.723203919288395
+        ],
+        "log_mark_sigma": [
+          0.6884398142398731,
+          0.7145497028049351,
+          0.7427735329632454
+        ],
+        "revision_probability": [
+          0.05206932179469272,
+          0.0636557215420592,
+          0.07617194133224015
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 2.309069725475629e-270,
+          "upper": 3.4295780092033805e-09
+        },
+        "fast_weight": {
+          "lower": 2.504732639487642e-65,
+          "upper": 4.9429454955954174e-89
+        },
+        "fast_timescale": {
+          "lower": 0.9333702035454298,
+          "upper": 1.16984363210853e-22
+        },
+        "tail_timescale": {
+          "lower": 5.744398239160675e-96,
+          "upper": 6.82596686477583e-07
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 5.744398239160675e-96,
+        "60.0": 0.94972393975023,
+        "180.0": 0.050275377652776725,
+        "400.0": 6.82596686477583e-07
+      },
+      "horizons": {
+        "30": {
+          "mean": 7.117839059693795,
+          "q05": 6.6883010675283,
+          "q50": 7.034800993596553,
+          "q95": 7.880749094527768,
+          "probability_profitable": 1.0
+        },
+        "90": {
+          "mean": 31.831052931721814,
+          "q05": 25.39969362620339,
+          "q50": 31.418453729819582,
+          "q95": 40.079303350916454,
+          "probability_profitable": 1.0
+        },
+        "180": {
+          "mean": 41.68394571953524,
+          "q05": 31.88228426400249,
+          "q50": 39.8601100614523,
+          "q95": 70.40636030425134,
+          "probability_profitable": 1.0
+        },
+        "425": {
+          "mean": 42.67810943119524,
+          "q05": 31.158679412604474,
+          "q50": 39.30958889425581,
+          "q95": 93.31325744844197,
+          "probability_profitable": 1.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "low",
+    "cohort_id": "low-w05",
+    "origin_age": 60,
+    "cutoff": 95,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 1.0026328336290458,
+      "source_observed_click_count": 872,
+      "target_observed_click_count": 138,
+      "source_observed_exposure_cells": 467,
+      "mature_mark_count": 694,
+      "mature_positive_mark_count": 531,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 1,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 8,
+      "ledger_only_positive_bases_for_revision_imputation": 1,
+      "unobserved_acquisition_invoice_arms": 0,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 0.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 1.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.14004588911914906,
+        0.15994846731518864,
+        0.1835071284635724
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.12,
+          0.12,
+          0.12
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "tail_timescale": [
+          60.0,
+          60.0,
+          60.0
+        ],
+        "cohort_amplitude": [
+          0.14004588911914906,
+          0.15994846731518864,
+          0.1835071284635724
+        ],
+        "exit_hazard": [
+          0.0009965566615675965,
+          0.0012521204375499002,
+          0.0015550876162684372
+        ],
+        "acceptance_probability": [
+          0.9681052171488953,
+          0.9699184811696953,
+          0.9711955344430673
+        ],
+        "positive_probability": [
+          0.7343881455208504,
+          0.7628302296581317,
+          0.7879235618589581
+        ],
+        "log_mark_mean": [
+          -2.9347596315031588,
+          -2.884269601982797,
+          -2.834147461356064
+        ],
+        "log_mark_sigma": [
+          0.6852322554799715,
+          0.7160457834431075,
+          0.750357861792312
+        ],
+        "revision_probability": [
+          0.03594548063549479,
+          0.0506780552349341,
+          0.06539165485728857
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 1.0442207160694289e-82,
+          "upper": 4.062153234426861e-29
+        },
+        "fast_weight": {
+          "lower": 4.6045727145741715e-33,
+          "upper": 1.7994195705903338e-25
+        },
+        "fast_timescale": {
+          "lower": 0.00012109305427987548,
+          "upper": 6.710840616386269e-10
+        },
+        "tail_timescale": {
+          "lower": 3.938170335703198e-73,
+          "upper": 1.5168717345460846e-14
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 3.938170335703198e-73,
+        "60.0": 0.999999999270626,
+        "180.0": 7.294143989542814e-10,
+        "400.0": 1.5168717345460846e-14
+      },
+      "horizons": {
+        "30": {
+          "mean": -15.490075524173914,
+          "q05": -15.490075524173916,
+          "q50": -15.490075524173916,
+          "q95": -15.490075524173916,
+          "probability_profitable": 0.0
+        },
+        "90": {
+          "mean": -11.55214251233862,
+          "q05": -12.16293138246209,
+          "q50": -11.61495251815171,
+          "q95": -10.672535715545743,
+          "probability_profitable": 0.0
+        },
+        "180": {
+          "mean": -11.904837953280015,
+          "q05": -12.894020680918294,
+          "q50": -11.961132447636498,
+          "q95": -10.818213107226887,
+          "probability_profitable": 0.0
+        },
+        "425": {
+          "mean": -14.903732568071554,
+          "q05": -16.012554552845355,
+          "q50": -14.924734991859143,
+          "q95": -13.77742399024045,
+          "probability_profitable": 0.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "middle",
+    "cohort_id": "middle-w05",
+    "origin_age": 60,
+    "cutoff": 95,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 1.6975697481872067,
+      "source_observed_click_count": 1213,
+      "target_observed_click_count": 254,
+      "source_observed_exposure_cells": 470,
+      "mature_mark_count": 956,
+      "mature_positive_mark_count": 748,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 8,
+      "ledger_only_positive_bases_for_revision_imputation": 0,
+      "unobserved_acquisition_invoice_arms": 0,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 1.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 0.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.2876420745181121,
+        0.3153844406106642,
+        0.3483854018157579
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.3,
+          0.3,
+          0.3
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          0.4,
+          0.4,
+          1.0
+        ],
+        "tail_timescale": [
+          60.0,
+          60.0,
+          60.0
+        ],
+        "cohort_amplitude": [
+          0.2876420745181121,
+          0.3153844406106642,
+          0.3483854018157579
+        ],
+        "exit_hazard": [
+          0.0013071913350847216,
+          0.001610268095375316,
+          0.0019495096980131198
+        ],
+        "acceptance_probability": [
+          0.9688738863400955,
+          0.9702100213465465,
+          0.9713823201317875
+        ],
+        "positive_probability": [
+          0.759269567767016,
+          0.7824018283036314,
+          0.8018219732355798
+        ],
+        "log_mark_mean": [
+          -2.3093134119226693,
+          -2.27344545725432,
+          -2.228359283198174
+        ],
+        "log_mark_sigma": [
+          0.6944342925329098,
+          0.7213797160007813,
+          0.7552640696014101
+        ],
+        "revision_probability": [
+          0.03891316557032054,
+          0.05207546111429942,
+          0.06557583532956908
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 2.2525857836549068e-102,
+          "upper": 2.7408137293078773e-22
+        },
+        "fast_weight": {
+          "lower": 2.315113277591529e-28,
+          "upper": 3.0093890487895366e-45
+        },
+        "fast_timescale": {
+          "lower": 0.7111885628391167,
+          "upper": 8.200669238265965e-09
+        },
+        "tail_timescale": {
+          "lower": 2.217224240595027e-117,
+          "upper": 1.4912148191905262e-11
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 2.217224240595027e-117,
+        "60.0": 0.9999923076876905,
+        "180.0": 7.69229775897585e-06,
+        "400.0": 1.4912148191905262e-11
+      },
+      "horizons": {
+        "30": {
+          "mean": -5.31653098756639,
+          "q05": -5.31653098756639,
+          "q50": -5.31653098756639,
+          "q95": -5.31653098756639,
+          "probability_profitable": 0.0
+        },
+        "90": {
+          "mean": 12.030935817174926,
+          "q05": 10.16168935585064,
+          "q50": 12.04801748372158,
+          "q95": 14.007630002422228,
+          "probability_profitable": 1.0
+        },
+        "180": {
+          "mean": 15.70803452467811,
+          "q05": 13.114040158457234,
+          "q50": 15.569577861112567,
+          "q95": 18.50267963431094,
+          "probability_profitable": 1.0
+        },
+        "425": {
+          "mean": 14.003582318703712,
+          "q05": 11.268939969370134,
+          "q50": 13.862223746273283,
+          "q95": 17.075211102305843,
+          "probability_profitable": 1.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  },
+  {
+    "scenario": "collapse_tail",
+    "seed": 10303,
+    "world_id": "collapse_tail-10303",
+    "source_id": "high",
+    "cohort_id": "high-w05",
+    "origin_age": 60,
+    "cutoff": 95,
+    "n_leads": 100,
+    "policy_id": "daily_to_365_response30_settlement30",
+    "draw_count": 250,
+    "diagnostics": {
+      "inference": "exact finite-grid posterior, conditional conjugate draws, posterior predictive outcome simulation",
+      "grid_points": 336,
+      "source_posterior_effective_grid_points": 1.0529354579797854,
+      "source_observed_click_count": 2682,
+      "target_observed_click_count": 267,
+      "source_observed_exposure_cells": 470,
+      "mature_mark_count": 2111,
+      "mature_positive_mark_count": 1620,
+      "missing_mature_base_rows": 0,
+      "mark_prior_only": false,
+      "missing_target_past_exposure_cells": 0,
+      "unmatched_complete_window_clicks": 0,
+      "pending_observed_clicks_with_unreported_base": 7,
+      "ledger_only_positive_bases_for_revision_imputation": 3,
+      "unobserved_acquisition_invoice_arms": 0,
+      "invoice_reporting_support_passed_without_record": false,
+      "payback_state_probabilities": {
+        "by_180": 1.0,
+        "later_than_180": 0.0,
+        "never_under_policy": 0.0
+      },
+      "cohort_amplitude_quantiles": [
+        0.30967204600935777,
+        0.3393437865147717,
+        0.3710520093932427
+      ],
+      "parameter_quantiles": {
+        "source_mean": [
+          0.7,
+          0.7,
+          0.7
+        ],
+        "fast_weight": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "fast_timescale": [
+          0.4,
+          0.4,
+          0.4
+        ],
+        "tail_timescale": [
+          60.0,
+          60.0,
+          60.0
+        ],
+        "cohort_amplitude": [
+          0.30967204600935777,
+          0.3393437865147717,
+          0.3710520093932427
+        ],
+        "exit_hazard": [
+          0.001323598032144685,
+          0.001638725016128089,
+          0.002010945679132037
+        ],
+        "acceptance_probability": [
+          0.9690705899287483,
+          0.9704866936011818,
+          0.971721594415855
+        ],
+        "positive_probability": [
+          0.7531332733449256,
+          0.7676621509896802,
+          0.7812311840027012
+        ],
+        "log_mark_mean": [
+          -1.7740287534797674,
+          -1.749500793599112,
+          -1.720742946462614
+        ],
+        "log_mark_sigma": [
+          0.6959344879244116,
+          0.7148399967691608,
+          0.7370141642581856
+        ],
+        "revision_probability": [
+          0.05424514007841331,
+          0.06169174812681612,
+          0.07122831709348704
+        ]
+      },
+      "max_log_mark_variance": 4.0,
+      "untruncated_log_variance_posterior_mass_below_bound": 1.0,
+      "grid_boundary_mass": {
+        "source_mean": {
+          "lower": 3.701631289259953e-276,
+          "upper": 3.6587005873203916e-09
+        },
+        "fast_weight": {
+          "lower": 2.736706416122733e-66,
+          "upper": 3.78589411897181e-94
+        },
+        "fast_timescale": {
+          "lower": 0.9935834315482734,
+          "upper": 3.496949426850083e-27
+        },
+        "tail_timescale": {
+          "lower": 3.917166949644832e-264,
+          "upper": 8.331904309119856e-34
+        }
+      },
+      "tail_timescale_probabilities": {
+        "20.0": 3.917166949644832e-264,
+        "60.0": 1.0000000000008404,
+        "180.0": 1.7706036964254402e-15,
+        "400.0": 8.331904309119856e-34
+      },
+      "horizons": {
+        "30": {
+          "mean": 7.128788392565381,
+          "q05": 7.12878839256538,
+          "q50": 7.12878839256538,
+          "q95": 7.12878839256538,
+          "probability_profitable": 1.0
+        },
+        "90": {
+          "mean": 26.09750365171997,
+          "q05": 23.296185885494882,
+          "q50": 26.012445776465274,
+          "q95": 29.402271543487295,
+          "probability_profitable": 1.0
+        },
+        "180": {
+          "mean": 33.79537304901424,
+          "q05": 29.546345829656534,
+          "q50": 33.3568577066231,
+          "q95": 39.35897895125775,
+          "probability_profitable": 1.0
+        },
+        "425": {
+          "mean": 33.199256779467994,
+          "q05": 28.17342080251929,
+          "q50": 32.760180189635264,
+          "q95": 39.215717518738415,
+          "probability_profitable": 1.0
+        }
+      },
+      "assumptions": [
+        "Synthetic demonstration, not validated production decision probabilities; posterior predictive intervals require held-out coverage checks",
+        "Only the supplied as-of Snapshot and frozen model configuration are used; no generator truth or generator parameter file is read",
+        "Exact posterior over a declared finite grid of source means and early-plus-tail curves, with conditional Gamma cohort amplitudes and genuine within-source partial pooling",
+        "Aggregate qualified-response counts per accepted exposure are Poisson; they are not unique-person retention or latent survival",
+        "Response and reporting/settlement clocks are declared known synthetic instrument assumptions, not estimated from right-truncated visible delays",
+        "Operational exits and acceptance use source-pooled Beta-binomial posterior uncertainty and future binomial outcomes; inactivity never defines an exit",
+        "Zero-plus-lognormal monetary marks and revision frequency use source-specific mature-only conjugate posteriors; the inverse-Gamma log-variance prior is bounded above to ensure finite expected positive value",
+        "Thin mature mark histories use declared priors rather than incomplete current receipts; the frozen log-variance bound must be tested in prior sensitivity analysis",
+        "Observed signed ledger entries are immutable components; latent unreported receipts, revisions and invoices can nowcast economic dates before the cutoff",
+        "One ordinary negative revision per positive event is modeled, with declared synthetic delay and fraction distribution; systematic calendar attribution revisions are not modeled",
+        "Future calendar/content shocks, persistent lead heterogeneity, correlated repeat clicks, permanently unavailable click telemetry, and temporary human/bot misclassification are omitted model risks",
+        "Unreported events with already-visible base receipts are not added twice; their outstanding revisions are predicted from the observed base instead",
+        "Missing exposure cells are excluded from likelihood denominators and imputed stochastically for prediction; missing mature revenue receipts are unavailable, not observed zeros",
+        "Unmatched ledger-only event occurrences use a disclosed approximate settlement-clock back-imputation for revision prediction",
+        "An absent invoice after its declared reporting support is flagged as incomplete data; it is not evidence of economic settlement"
+      ]
+    }
+  }
+]

@@ -1,0 +1,86 @@
+{
+  "schema_version": "cohort-lab/0.1.0",
+  "parameter_version": "fictional-grid/1.0.0",
+  "sources": [
+    {
+      "source_id": "low",
+      "response_multiplier": 0.55,
+      "positive_value_median": 0.06,
+      "acquisition_cost": 0.19
+    },
+    {
+      "source_id": "middle",
+      "response_multiplier": 1.0,
+      "positive_value_median": 0.115,
+      "acquisition_cost": 0.2
+    },
+    {
+      "source_id": "high",
+      "response_multiplier": 1.7,
+      "positive_value_median": 0.18,
+      "acquisition_cost": 0.22
+    }
+  ],
+  "cohorts_per_source": 12,
+  "leads_per_cohort": 500,
+  "cohort_spacing_days": 7,
+  "last_send_age": 365,
+  "max_response_delay": 30,
+  "max_accounting_delay": 30,
+  "terminal_age": 425,
+  "send_cost": 0.00025,
+  "operational_exit_hazard": 0.0015,
+  "acceptance_probability": 0.97,
+  "positive_value_probability": 0.78,
+  "log_value_sigma": 0.7,
+  "repeat_click_mean": 0.25,
+  "reference_response_curve": {
+    "fast_amplitude": 0.2,
+    "fast_timescale": 0.7,
+    "tail_amplitude": 0.04,
+    "tail_timescale": 75.0
+  },
+  "fixed_baseline_tail_timescale": 75.0,
+  "observable_baseline_tail_timescale": 75.0,
+  "response_delay_probabilities": {
+    "0": 0.8,
+    "1": 0.13,
+    "3": 0.04,
+    "10": 0.02,
+    "30": 0.01
+  },
+  "posting_delay_probabilities": {
+    "0": 0.5,
+    "2": 0.3,
+    "7": 0.15,
+    "14": 0.05
+  },
+  "scenarios": [
+    "stationary",
+    "collapse_tail",
+    "calendar_attribution_shock",
+    "late_reactivation"
+  ],
+  "smoke_seeds": [
+    11
+  ],
+  "heldout_seeds": [
+    101,
+    202,
+    303
+  ],
+  "rolling_origin_ages": [
+    3,
+    7,
+    14,
+    30,
+    60
+  ],
+  "horizons": [
+    30,
+    90,
+    180,
+    425
+  ],
+  "notes": "All prices, parameters, records, sources, assignments and outcomes are fictional modeling choices. None were estimated from company data. Versions are recorded at execution."
+}
