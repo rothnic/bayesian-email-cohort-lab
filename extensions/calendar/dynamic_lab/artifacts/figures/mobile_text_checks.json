@@ -1,0 +1,50 @@
+[
+  {
+    "file": "01-calendar-economics-mobile.svg",
+    "viewbox_width": 338.731062,
+    "min_text_svg_units": 12.4,
+    "viewport_css_px": 390,
+    "min_effective_text_css_px": 14.276812913012389,
+    "pass": true
+  },
+  {
+    "file": "02-human-bot-evidence-mobile.svg",
+    "viewbox_width": 338.682625,
+    "min_text_svg_units": 12.4,
+    "viewport_css_px": 390,
+    "min_effective_text_css_px": 14.278854724242203,
+    "pass": true
+  },
+  {
+    "file": "03-shared-calendar-states-mobile.svg",
+    "viewbox_width": 338.551312,
+    "min_text_svg_units": 12.4,
+    "viewport_css_px": 390,
+    "min_effective_text_css_px": 14.284393025775662,
+    "pass": true
+  },
+  {
+    "file": "04-cohort-contribution-payback-mobile.svg",
+    "viewbox_width": 344.447687,
+    "min_text_svg_units": 12.4,
+    "viewport_css_px": 390,
+    "min_effective_text_css_px": 14.03986783049584,
+    "pass": true
+  },
+  {
+    "file": "05-new-source-transfer-mobile.svg",
+    "viewbox_width": 348.897812,
+    "min_text_svg_units": 12.4,
+    "viewport_css_px": 390,
+    "min_effective_text_css_px": 13.860791996024327,
+    "pass": true
+  },
+  {
+    "file": "06-heldout-comparison-mobile.svg",
+    "viewbox_width": 341.7115,
+    "min_text_svg_units": 12.4,
+    "viewport_css_px": 390,
+    "min_effective_text_css_px": 14.152289284966997,
+    "pass": true
+  }
+]

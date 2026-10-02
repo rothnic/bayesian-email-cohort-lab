@@ -1,0 +1,2882 @@
+[
+  {
+    "world": "demo-fixed_price-884000",
+    "scenario": "fixed_price",
+    "origin_day": 35,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 35,
+      "input_hash": "454bf1270a92a01410de779cbb54fde6f6acc540483bc311060611c569716831",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 14,
+        "grid_components": 18,
+        "grid_probability_ess": 7.104519816591641,
+        "maximum_grid_probability": 0.2656825681647026,
+        "hyperposterior_means": {
+          "source_sd": 0.45255220146353276,
+          "cohort_sd": 0.14147806219925652,
+          "calendar_sd": 0.0,
+          "dispersion": 29.45409427160049
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.6067979607728926,
+        "posterior_feature_mean": 0.25667206343511756
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 14,
+        "grid_components": 9,
+        "grid_probability_ess": 3.923773192453239,
+        "maximum_grid_probability": 0.40392582789809256,
+        "hyperposterior_means": {
+          "source_sd": 0.4053939187905194,
+          "cohort_sd": 0.14562279062451275,
+          "calendar_sd": 0.0,
+          "dispersion": 40.00000000000001
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4325269724413041,
+        "posterior_feature_mean": 0.038692968651173706
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.73323846715536,
+      "top_one_percent_revenue_share": 0.011355845828514647
+    }
+  },
+  {
+    "world": "demo-fixed_price-884000",
+    "scenario": "fixed_price",
+    "origin_day": 35,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 35,
+      "input_hash": "454bf1270a92a01410de779cbb54fde6f6acc540483bc311060611c569716831",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 19,
+        "grid_components": 54,
+        "grid_probability_ess": 18.45347919608707,
+        "maximum_grid_probability": 0.12169372764064548,
+        "hyperposterior_means": {
+          "source_sd": 0.45269936406695416,
+          "cohort_sd": 0.14143481673219513,
+          "calendar_sd": 0.013718363416621337,
+          "dispersion": 29.32979720736104
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.6056773965710094,
+        "posterior_feature_mean": 0.2568754302491654
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 19,
+        "grid_components": 27,
+        "grid_probability_ess": 10.472213980262532,
+        "maximum_grid_probability": 0.1843471699322136,
+        "hyperposterior_means": {
+          "source_sd": 0.405439439188113,
+          "cohort_sd": 0.14602753402641647,
+          "calendar_sd": 0.014400967977544723,
+          "dispersion": 40.000000000000014
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.43312076086383,
+        "posterior_feature_mean": 0.038724642105598006
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 58.339284799270295,
+      "top_one_percent_revenue_share": 0.015398125579290163
+    }
+  },
+  {
+    "world": "demo-fixed_price-884000",
+    "scenario": "fixed_price",
+    "origin_day": 63,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 63,
+      "input_hash": "ff6b5497683e3e26573991d4bd6cb9ec10d8e0bd9ff0268459843112e2bf2055",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 22,
+        "grid_components": 18,
+        "grid_probability_ess": 3.786855997707713,
+        "maximum_grid_probability": 0.408719911836672,
+        "hyperposterior_means": {
+          "source_sd": 0.45514216857249457,
+          "cohort_sd": 0.10328228949071752,
+          "calendar_sd": 0.0,
+          "dispersion": 34.917943445308794
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.589143555101678,
+        "posterior_feature_mean": 0.27358165657503825
+      },
+      "payout": {
+        "measurement_bins": 71,
+        "parameters": 22,
+        "grid_components": 9,
+        "grid_probability_ess": 2.5956072721769337,
+        "maximum_grid_probability": 0.5150788662510312,
+        "hyperposterior_means": {
+          "source_sd": 0.40539922473217316,
+          "cohort_sd": 0.10096851570312466,
+          "calendar_sd": 0.0,
+          "dispersion": 39.99999999999999
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.461471359761635,
+        "posterior_feature_mean": 0.04231862927491909
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 54.06738829020046,
+      "top_one_percent_revenue_share": 0.009814979417758298
+    }
+  },
+  {
+    "world": "demo-fixed_price-884000",
+    "scenario": "fixed_price",
+    "origin_day": 63,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 63,
+      "input_hash": "ff6b5497683e3e26573991d4bd6cb9ec10d8e0bd9ff0268459843112e2bf2055",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 31,
+        "grid_components": 54,
+        "grid_probability_ess": 8.91579123013741,
+        "maximum_grid_probability": 0.1982083421063703,
+        "hyperposterior_means": {
+          "source_sd": 0.45556106685812886,
+          "cohort_sd": 0.10360726904752718,
+          "calendar_sd": 0.011287529407186907,
+          "dispersion": 34.738820532555344
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5831827292913316,
+        "posterior_feature_mean": 0.273423342862582
+      },
+      "payout": {
+        "measurement_bins": 71,
+        "parameters": 31,
+        "grid_components": 27,
+        "grid_probability_ess": 6.2940572347908255,
+        "maximum_grid_probability": 0.23801825273401034,
+        "hyperposterior_means": {
+          "source_sd": 0.405256456476424,
+          "cohort_sd": 0.10095997373682905,
+          "calendar_sd": 0.012321409504121155,
+          "dispersion": 39.99999999999996
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4547546673940268,
+        "posterior_feature_mean": 0.04262414010138486
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 53.480382507555305,
+      "top_one_percent_revenue_share": 0.013145428366348787
+    }
+  },
+  {
+    "world": "demo-fixed_price-884000",
+    "scenario": "fixed_price",
+    "origin_day": 91,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 91,
+      "input_hash": "11e0bf65d8e7a748cc05ecb6bc0e3dd51580ea105311d86784b44d159633400c",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 182,
+        "parameters": 30,
+        "grid_components": 18,
+        "grid_probability_ess": 3.4684382487413647,
+        "maximum_grid_probability": 0.43078486591990306,
+        "hyperposterior_means": {
+          "source_sd": 0.45440801004090453,
+          "cohort_sd": 0.10199643903600433,
+          "calendar_sd": 0.0,
+          "dispersion": 36.18912915397917
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5663557301185387,
+        "posterior_feature_mean": 0.2563168519620074
+      },
+      "payout": {
+        "measurement_bins": 151,
+        "parameters": 30,
+        "grid_components": 9,
+        "grid_probability_ess": 2.569748486071655,
+        "maximum_grid_probability": 0.5176798610321065,
+        "hyperposterior_means": {
+          "source_sd": 0.4049055443816014,
+          "cohort_sd": 0.1000215979927257,
+          "calendar_sd": 0.0,
+          "dispersion": 39.999999999999886
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4497941122962954,
+        "posterior_feature_mean": 0.03980000365059536
+      },
+      "daily_rows": 1248,
+      "cohorts": 26,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.37354087577228,
+      "top_one_percent_revenue_share": 0.00915855949590806
+    }
+  },
+  {
+    "world": "demo-fixed_price-884000",
+    "scenario": "fixed_price",
+    "origin_day": 91,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 91,
+      "input_hash": "11e0bf65d8e7a748cc05ecb6bc0e3dd51580ea105311d86784b44d159633400c",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 182,
+        "parameters": 43,
+        "grid_components": 54,
+        "grid_probability_ess": 6.862605208488046,
+        "maximum_grid_probability": 0.2667258171151171,
+        "hyperposterior_means": {
+          "source_sd": 0.4541292316642753,
+          "cohort_sd": 0.10212170360075237,
+          "calendar_sd": 0.008720695293687467,
+          "dispersion": 36.01361582141453
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.571528641847531,
+        "posterior_feature_mean": 0.2564445085498984
+      },
+      "payout": {
+        "measurement_bins": 151,
+        "parameters": 43,
+        "grid_components": 27,
+        "grid_probability_ess": 5.333605592939393,
+        "maximum_grid_probability": 0.2975010805052819,
+        "hyperposterior_means": {
+          "source_sd": 0.4049275695714277,
+          "cohort_sd": 0.10002251881957144,
+          "calendar_sd": 0.009435680090626127,
+          "dispersion": 39.999999999999915
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.449412219566623,
+        "posterior_feature_mean": 0.03985282163432813
+      },
+      "daily_rows": 1248,
+      "cohorts": 26,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 56.633253487995866,
+      "top_one_percent_revenue_share": 0.011351347739033726
+    }
+  },
+  {
+    "world": "demo-fixed_price-884000",
+    "scenario": "fixed_price",
+    "origin_day": 119,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 119,
+      "input_hash": "df663265fc4ae514a8b9ac365a1e6d35bbda38ea4e8cc21548d50210debb83db",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 306,
+        "parameters": 38,
+        "grid_components": 18,
+        "grid_probability_ess": 3.4531189795848083,
+        "maximum_grid_probability": 0.43341955838871926,
+        "hyperposterior_means": {
+          "source_sd": 0.4549206045697053,
+          "cohort_sd": 0.11418741940761669,
+          "calendar_sd": 0.0,
+          "dispersion": 38.31815271207208
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5633333494466566,
+        "posterior_feature_mean": 0.25915770190477166
+      },
+      "payout": {
+        "measurement_bins": 265,
+        "parameters": 38,
+        "grid_components": 9,
+        "grid_probability_ess": 2.5688461478237183,
+        "maximum_grid_probability": 0.5177682834405031,
+        "hyperposterior_means": {
+          "source_sd": 0.4047712293803546,
+          "cohort_sd": 0.10000041325867302,
+          "calendar_sd": 0.0,
+          "dispersion": 39.999999999999744
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4474814708109829,
+        "posterior_feature_mean": 0.03884909499936988
+      },
+      "daily_rows": 2108,
+      "cohorts": 34,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.019517762607116,
+      "top_one_percent_revenue_share": 0.009262094894612397
+    }
+  },
+  {
+    "world": "demo-fixed_price-884000",
+    "scenario": "fixed_price",
+    "origin_day": 119,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 119,
+      "input_hash": "df663265fc4ae514a8b9ac365a1e6d35bbda38ea4e8cc21548d50210debb83db",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 306,
+        "parameters": 55,
+        "grid_components": 54,
+        "grid_probability_ess": 6.6461065032918585,
+        "maximum_grid_probability": 0.2801293109092426,
+        "hyperposterior_means": {
+          "source_sd": 0.45405548436875354,
+          "cohort_sd": 0.11687705179737579,
+          "calendar_sd": 0.008250948210891817,
+          "dispersion": 38.25935202370458
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5777078684471113,
+        "posterior_feature_mean": 0.25931576605771756
+      },
+      "payout": {
+        "measurement_bins": 265,
+        "parameters": 55,
+        "grid_components": 27,
+        "grid_probability_ess": 4.424990897549132,
+        "maximum_grid_probability": 0.3668402652380079,
+        "hyperposterior_means": {
+          "source_sd": 0.4047928267241765,
+          "cohort_sd": 0.10000043447534349,
+          "calendar_sd": 0.007435247570164601,
+          "dispersion": 40.00000000000002
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4473314088565374,
+        "posterior_feature_mean": 0.038866582486226466
+      },
+      "daily_rows": 2108,
+      "cohorts": 34,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.8068451320781,
+      "top_one_percent_revenue_share": 0.010832617223627048
+    }
+  },
+  {
+    "world": "demo-cpc_squeeze-884000",
+    "scenario": "cpc_squeeze",
+    "origin_day": 35,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 35,
+      "input_hash": "454bf1270a92a01410de779cbb54fde6f6acc540483bc311060611c569716831",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 14,
+        "grid_components": 18,
+        "grid_probability_ess": 7.104519816591641,
+        "maximum_grid_probability": 0.2656825681647026,
+        "hyperposterior_means": {
+          "source_sd": 0.45255220146353276,
+          "cohort_sd": 0.14147806219925652,
+          "calendar_sd": 0.0,
+          "dispersion": 29.45409427160049
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.6067979607728926,
+        "posterior_feature_mean": 0.25667206343511756
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 14,
+        "grid_components": 9,
+        "grid_probability_ess": 3.923773192453239,
+        "maximum_grid_probability": 0.40392582789809256,
+        "hyperposterior_means": {
+          "source_sd": 0.4053939187905194,
+          "cohort_sd": 0.14562279062451275,
+          "calendar_sd": 0.0,
+          "dispersion": 40.00000000000001
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4325269724413041,
+        "posterior_feature_mean": 0.038692968651173706
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.73323846715536,
+      "top_one_percent_revenue_share": 0.011355845828514647
+    }
+  },
+  {
+    "world": "demo-cpc_squeeze-884000",
+    "scenario": "cpc_squeeze",
+    "origin_day": 35,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 35,
+      "input_hash": "454bf1270a92a01410de779cbb54fde6f6acc540483bc311060611c569716831",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 19,
+        "grid_components": 54,
+        "grid_probability_ess": 18.45347919608707,
+        "maximum_grid_probability": 0.12169372764064548,
+        "hyperposterior_means": {
+          "source_sd": 0.45269936406695416,
+          "cohort_sd": 0.14143481673219513,
+          "calendar_sd": 0.013718363416621337,
+          "dispersion": 29.32979720736104
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.6056773965710094,
+        "posterior_feature_mean": 0.2568754302491654
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 19,
+        "grid_components": 27,
+        "grid_probability_ess": 10.472213980262532,
+        "maximum_grid_probability": 0.1843471699322136,
+        "hyperposterior_means": {
+          "source_sd": 0.405439439188113,
+          "cohort_sd": 0.14602753402641647,
+          "calendar_sd": 0.014400967977544723,
+          "dispersion": 40.000000000000014
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.43312076086383,
+        "posterior_feature_mean": 0.038724642105598006
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 58.339284799270295,
+      "top_one_percent_revenue_share": 0.015398125579290163
+    }
+  },
+  {
+    "world": "demo-cpc_squeeze-884000",
+    "scenario": "cpc_squeeze",
+    "origin_day": 63,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 63,
+      "input_hash": "98e388b9a2dbfceebfd352a5604ba13fa05426c6b3b50b4b79312ed26f75213a",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 22,
+        "grid_components": 18,
+        "grid_probability_ess": 3.786855997707713,
+        "maximum_grid_probability": 0.408719911836672,
+        "hyperposterior_means": {
+          "source_sd": 0.45514216857249457,
+          "cohort_sd": 0.10328228949071752,
+          "calendar_sd": 0.0,
+          "dispersion": 34.917943445308794
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.589143555101678,
+        "posterior_feature_mean": 0.27358165657503825
+      },
+      "payout": {
+        "measurement_bins": 71,
+        "parameters": 22,
+        "grid_components": 9,
+        "grid_probability_ess": 2.598130833210749,
+        "maximum_grid_probability": 0.5148099381070496,
+        "hyperposterior_means": {
+          "source_sd": 0.4055875002456491,
+          "cohort_sd": 0.10104207779094423,
+          "calendar_sd": 0.0,
+          "dispersion": 39.999999999999986
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.468404991856411,
+        "posterior_feature_mean": 0.04199063413373264
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 53.71430308483207,
+      "top_one_percent_revenue_share": 0.009812732408995127
+    }
+  },
+  {
+    "world": "demo-cpc_squeeze-884000",
+    "scenario": "cpc_squeeze",
+    "origin_day": 63,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 63,
+      "input_hash": "98e388b9a2dbfceebfd352a5604ba13fa05426c6b3b50b4b79312ed26f75213a",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 31,
+        "grid_components": 54,
+        "grid_probability_ess": 8.91579123013741,
+        "maximum_grid_probability": 0.1982083421063703,
+        "hyperposterior_means": {
+          "source_sd": 0.45556106685812886,
+          "cohort_sd": 0.10360726904752718,
+          "calendar_sd": 0.011287529407186907,
+          "dispersion": 34.738820532555344
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5831827292913316,
+        "posterior_feature_mean": 0.273423342862582
+      },
+      "payout": {
+        "measurement_bins": 71,
+        "parameters": 31,
+        "grid_components": 27,
+        "grid_probability_ess": 6.413429877232793,
+        "maximum_grid_probability": 0.24149270808509785,
+        "hyperposterior_means": {
+          "source_sd": 0.40536976426286425,
+          "cohort_sd": 0.10100781024090663,
+          "calendar_sd": 0.01279249785146188,
+          "dispersion": 39.99999999999997
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4588979778186006,
+        "posterior_feature_mean": 0.04238735467601564
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 53.25720429713986,
+      "top_one_percent_revenue_share": 0.01353638629646026
+    }
+  },
+  {
+    "world": "demo-cpc_squeeze-884000",
+    "scenario": "cpc_squeeze",
+    "origin_day": 91,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 91,
+      "input_hash": "b4b0c8ac5ec126d52c06fe581e6ee9b3f52b7d330dd81e873722e2e849c01865",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 182,
+        "parameters": 30,
+        "grid_components": 18,
+        "grid_probability_ess": 3.4684382487413647,
+        "maximum_grid_probability": 0.43078486591990306,
+        "hyperposterior_means": {
+          "source_sd": 0.45440801004090453,
+          "cohort_sd": 0.10199643903600433,
+          "calendar_sd": 0.0,
+          "dispersion": 36.18912915397917
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5663557301185387,
+        "posterior_feature_mean": 0.2563168519620074
+      },
+      "payout": {
+        "measurement_bins": 151,
+        "parameters": 30,
+        "grid_components": 9,
+        "grid_probability_ess": 2.5780087632098256,
+        "maximum_grid_probability": 0.5166255599574395,
+        "hyperposterior_means": {
+          "source_sd": 0.4072831863872437,
+          "cohort_sd": 0.10004761245661131,
+          "calendar_sd": 0.0,
+          "dispersion": 39.999999999999964
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.5327382885330347,
+        "posterior_feature_mean": 0.04011828816994067
+      },
+      "daily_rows": 1248,
+      "cohorts": 26,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 51.33328981053762,
+      "top_one_percent_revenue_share": 0.00913634168147687
+    }
+  },
+  {
+    "world": "demo-cpc_squeeze-884000",
+    "scenario": "cpc_squeeze",
+    "origin_day": 91,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 91,
+      "input_hash": "b4b0c8ac5ec126d52c06fe581e6ee9b3f52b7d330dd81e873722e2e849c01865",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 182,
+        "parameters": 43,
+        "grid_components": 54,
+        "grid_probability_ess": 6.862605208488046,
+        "maximum_grid_probability": 0.2667258171151171,
+        "hyperposterior_means": {
+          "source_sd": 0.4541292316642753,
+          "cohort_sd": 0.10212170360075237,
+          "calendar_sd": 0.008720695293687467,
+          "dispersion": 36.01361582141453
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.571528641847531,
+        "posterior_feature_mean": 0.2564445085498984
+      },
+      "payout": {
+        "measurement_bins": 151,
+        "parameters": 43,
+        "grid_components": 27,
+        "grid_probability_ess": 5.3844560230031036,
+        "maximum_grid_probability": 0.33297696465248194,
+        "hyperposterior_means": {
+          "source_sd": 0.40569583442072543,
+          "cohort_sd": 0.1000280403909082,
+          "calendar_sd": 0.01666575014219968,
+          "dispersion": 40.0
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4753686052135844,
+        "posterior_feature_mean": 0.040381687574853456
+      },
+      "daily_rows": 1248,
+      "cohorts": 26,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 49.50217303009057,
+      "top_one_percent_revenue_share": 0.012514113883136306
+    }
+  },
+  {
+    "world": "demo-cpc_squeeze-884000",
+    "scenario": "cpc_squeeze",
+    "origin_day": 119,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 119,
+      "input_hash": "cbca51fa34bf313cc6680bf9df9f375149e2bb57163b1037d18e22bd087577e2",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 306,
+        "parameters": 38,
+        "grid_components": 18,
+        "grid_probability_ess": 3.4531189795848083,
+        "maximum_grid_probability": 0.43341955838871926,
+        "hyperposterior_means": {
+          "source_sd": 0.4549206045697053,
+          "cohort_sd": 0.11418741940761669,
+          "calendar_sd": 0.0,
+          "dispersion": 38.31815271207208
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5633333494466566,
+        "posterior_feature_mean": 0.25915770190477166
+      },
+      "payout": {
+        "measurement_bins": 265,
+        "parameters": 38,
+        "grid_components": 9,
+        "grid_probability_ess": 2.5879595968972864,
+        "maximum_grid_probability": 0.5152127078678912,
+        "hyperposterior_means": {
+          "source_sd": 0.4105867468346703,
+          "cohort_sd": 0.1000269307318346,
+          "calendar_sd": 0.0,
+          "dispersion": 40.00000000000002
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.640273064535499,
+        "posterior_feature_mean": 0.036739200533801475
+      },
+      "daily_rows": 2108,
+      "cohorts": 34,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 46.34944203856467,
+      "top_one_percent_revenue_share": 0.009476277556236692
+    }
+  },
+  {
+    "world": "demo-cpc_squeeze-884000",
+    "scenario": "cpc_squeeze",
+    "origin_day": 119,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 119,
+      "input_hash": "cbca51fa34bf313cc6680bf9df9f375149e2bb57163b1037d18e22bd087577e2",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 306,
+        "parameters": 55,
+        "grid_components": 54,
+        "grid_probability_ess": 6.6461065032918585,
+        "maximum_grid_probability": 0.2801293109092426,
+        "hyperposterior_means": {
+          "source_sd": 0.45405548436875354,
+          "cohort_sd": 0.11687705179737579,
+          "calendar_sd": 0.008250948210891817,
+          "dispersion": 38.25935202370458
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5777078684471113,
+        "posterior_feature_mean": 0.25931576605771756
+      },
+      "payout": {
+        "measurement_bins": 265,
+        "parameters": 55,
+        "grid_components": 27,
+        "grid_probability_ess": 4.071983486082321,
+        "maximum_grid_probability": 0.3913600303148123,
+        "hyperposterior_means": {
+          "source_sd": 0.40516137030280214,
+          "cohort_sd": 0.1000004703789648,
+          "calendar_sd": 0.03012110068994793,
+          "dispersion": 40.00000000000007
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4568308528338845,
+        "posterior_feature_mean": 0.038678516139947765
+      },
+      "daily_rows": 2108,
+      "cohorts": 34,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 40.46831217292904,
+      "top_one_percent_revenue_share": 0.01162624305040817
+    }
+  },
+  {
+    "world": "demo-rising_cpl-884000",
+    "scenario": "rising_cpl",
+    "origin_day": 35,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 35,
+      "input_hash": "454bf1270a92a01410de779cbb54fde6f6acc540483bc311060611c569716831",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 14,
+        "grid_components": 18,
+        "grid_probability_ess": 7.104519816591641,
+        "maximum_grid_probability": 0.2656825681647026,
+        "hyperposterior_means": {
+          "source_sd": 0.45255220146353276,
+          "cohort_sd": 0.14147806219925652,
+          "calendar_sd": 0.0,
+          "dispersion": 29.45409427160049
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.6067979607728926,
+        "posterior_feature_mean": 0.25667206343511756
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 14,
+        "grid_components": 9,
+        "grid_probability_ess": 3.923773192453239,
+        "maximum_grid_probability": 0.40392582789809256,
+        "hyperposterior_means": {
+          "source_sd": 0.4053939187905194,
+          "cohort_sd": 0.14562279062451275,
+          "calendar_sd": 0.0,
+          "dispersion": 40.00000000000001
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4325269724413041,
+        "posterior_feature_mean": 0.038692968651173706
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.73323846715536,
+      "top_one_percent_revenue_share": 0.011355845828514647
+    }
+  },
+  {
+    "world": "demo-rising_cpl-884000",
+    "scenario": "rising_cpl",
+    "origin_day": 35,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 35,
+      "input_hash": "454bf1270a92a01410de779cbb54fde6f6acc540483bc311060611c569716831",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 19,
+        "grid_components": 54,
+        "grid_probability_ess": 18.45347919608707,
+        "maximum_grid_probability": 0.12169372764064548,
+        "hyperposterior_means": {
+          "source_sd": 0.45269936406695416,
+          "cohort_sd": 0.14143481673219513,
+          "calendar_sd": 0.013718363416621337,
+          "dispersion": 29.32979720736104
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.6056773965710094,
+        "posterior_feature_mean": 0.2568754302491654
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 19,
+        "grid_components": 27,
+        "grid_probability_ess": 10.472213980262532,
+        "maximum_grid_probability": 0.1843471699322136,
+        "hyperposterior_means": {
+          "source_sd": 0.405439439188113,
+          "cohort_sd": 0.14602753402641647,
+          "calendar_sd": 0.014400967977544723,
+          "dispersion": 40.000000000000014
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.43312076086383,
+        "posterior_feature_mean": 0.038724642105598006
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 58.339284799270295,
+      "top_one_percent_revenue_share": 0.015398125579290163
+    }
+  },
+  {
+    "world": "demo-rising_cpl-884000",
+    "scenario": "rising_cpl",
+    "origin_day": 63,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 63,
+      "input_hash": "98e388b9a2dbfceebfd352a5604ba13fa05426c6b3b50b4b79312ed26f75213a",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 22,
+        "grid_components": 18,
+        "grid_probability_ess": 3.786855997707713,
+        "maximum_grid_probability": 0.408719911836672,
+        "hyperposterior_means": {
+          "source_sd": 0.45514216857249457,
+          "cohort_sd": 0.10328228949071752,
+          "calendar_sd": 0.0,
+          "dispersion": 34.917943445308794
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.589143555101678,
+        "posterior_feature_mean": 0.27358165657503825
+      },
+      "payout": {
+        "measurement_bins": 71,
+        "parameters": 22,
+        "grid_components": 9,
+        "grid_probability_ess": 2.598130833210749,
+        "maximum_grid_probability": 0.5148099381070496,
+        "hyperposterior_means": {
+          "source_sd": 0.4055875002456491,
+          "cohort_sd": 0.10104207779094423,
+          "calendar_sd": 0.0,
+          "dispersion": 39.999999999999986
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.468404991856411,
+        "posterior_feature_mean": 0.04199063413373264
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 53.71430308483207,
+      "top_one_percent_revenue_share": 0.009812732408995127
+    }
+  },
+  {
+    "world": "demo-rising_cpl-884000",
+    "scenario": "rising_cpl",
+    "origin_day": 63,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 63,
+      "input_hash": "98e388b9a2dbfceebfd352a5604ba13fa05426c6b3b50b4b79312ed26f75213a",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 31,
+        "grid_components": 54,
+        "grid_probability_ess": 8.91579123013741,
+        "maximum_grid_probability": 0.1982083421063703,
+        "hyperposterior_means": {
+          "source_sd": 0.45556106685812886,
+          "cohort_sd": 0.10360726904752718,
+          "calendar_sd": 0.011287529407186907,
+          "dispersion": 34.738820532555344
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5831827292913316,
+        "posterior_feature_mean": 0.273423342862582
+      },
+      "payout": {
+        "measurement_bins": 71,
+        "parameters": 31,
+        "grid_components": 27,
+        "grid_probability_ess": 6.413429877232793,
+        "maximum_grid_probability": 0.24149270808509785,
+        "hyperposterior_means": {
+          "source_sd": 0.40536976426286425,
+          "cohort_sd": 0.10100781024090663,
+          "calendar_sd": 0.01279249785146188,
+          "dispersion": 39.99999999999997
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4588979778186006,
+        "posterior_feature_mean": 0.04238735467601564
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 53.25720429713986,
+      "top_one_percent_revenue_share": 0.01353638629646026
+    }
+  },
+  {
+    "world": "demo-rising_cpl-884000",
+    "scenario": "rising_cpl",
+    "origin_day": 91,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 91,
+      "input_hash": "b4b0c8ac5ec126d52c06fe581e6ee9b3f52b7d330dd81e873722e2e849c01865",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 182,
+        "parameters": 30,
+        "grid_components": 18,
+        "grid_probability_ess": 3.4684382487413647,
+        "maximum_grid_probability": 0.43078486591990306,
+        "hyperposterior_means": {
+          "source_sd": 0.45440801004090453,
+          "cohort_sd": 0.10199643903600433,
+          "calendar_sd": 0.0,
+          "dispersion": 36.18912915397917
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5663557301185387,
+        "posterior_feature_mean": 0.2563168519620074
+      },
+      "payout": {
+        "measurement_bins": 151,
+        "parameters": 30,
+        "grid_components": 9,
+        "grid_probability_ess": 2.5780087632098256,
+        "maximum_grid_probability": 0.5166255599574395,
+        "hyperposterior_means": {
+          "source_sd": 0.4072831863872437,
+          "cohort_sd": 0.10004761245661131,
+          "calendar_sd": 0.0,
+          "dispersion": 39.999999999999964
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.5327382885330347,
+        "posterior_feature_mean": 0.04011828816994067
+      },
+      "daily_rows": 1248,
+      "cohorts": 26,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 51.33328981053762,
+      "top_one_percent_revenue_share": 0.00913634168147687
+    }
+  },
+  {
+    "world": "demo-rising_cpl-884000",
+    "scenario": "rising_cpl",
+    "origin_day": 91,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 91,
+      "input_hash": "b4b0c8ac5ec126d52c06fe581e6ee9b3f52b7d330dd81e873722e2e849c01865",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 182,
+        "parameters": 43,
+        "grid_components": 54,
+        "grid_probability_ess": 6.862605208488046,
+        "maximum_grid_probability": 0.2667258171151171,
+        "hyperposterior_means": {
+          "source_sd": 0.4541292316642753,
+          "cohort_sd": 0.10212170360075237,
+          "calendar_sd": 0.008720695293687467,
+          "dispersion": 36.01361582141453
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.571528641847531,
+        "posterior_feature_mean": 0.2564445085498984
+      },
+      "payout": {
+        "measurement_bins": 151,
+        "parameters": 43,
+        "grid_components": 27,
+        "grid_probability_ess": 5.3844560230031036,
+        "maximum_grid_probability": 0.33297696465248194,
+        "hyperposterior_means": {
+          "source_sd": 0.40569583442072543,
+          "cohort_sd": 0.1000280403909082,
+          "calendar_sd": 0.01666575014219968,
+          "dispersion": 40.0
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4753686052135844,
+        "posterior_feature_mean": 0.040381687574853456
+      },
+      "daily_rows": 1248,
+      "cohorts": 26,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 49.50217303009057,
+      "top_one_percent_revenue_share": 0.012514113883136306
+    }
+  },
+  {
+    "world": "demo-rising_cpl-884000",
+    "scenario": "rising_cpl",
+    "origin_day": 119,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 119,
+      "input_hash": "cbca51fa34bf313cc6680bf9df9f375149e2bb57163b1037d18e22bd087577e2",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 306,
+        "parameters": 38,
+        "grid_components": 18,
+        "grid_probability_ess": 3.4531189795848083,
+        "maximum_grid_probability": 0.43341955838871926,
+        "hyperposterior_means": {
+          "source_sd": 0.4549206045697053,
+          "cohort_sd": 0.11418741940761669,
+          "calendar_sd": 0.0,
+          "dispersion": 38.31815271207208
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5633333494466566,
+        "posterior_feature_mean": 0.25915770190477166
+      },
+      "payout": {
+        "measurement_bins": 265,
+        "parameters": 38,
+        "grid_components": 9,
+        "grid_probability_ess": 2.5879595968972864,
+        "maximum_grid_probability": 0.5152127078678912,
+        "hyperposterior_means": {
+          "source_sd": 0.4105867468346703,
+          "cohort_sd": 0.1000269307318346,
+          "calendar_sd": 0.0,
+          "dispersion": 40.00000000000002
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.640273064535499,
+        "posterior_feature_mean": 0.036739200533801475
+      },
+      "daily_rows": 2108,
+      "cohorts": 34,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 46.34944203856467,
+      "top_one_percent_revenue_share": 0.009476277556236692
+    }
+  },
+  {
+    "world": "demo-rising_cpl-884000",
+    "scenario": "rising_cpl",
+    "origin_day": 119,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 119,
+      "input_hash": "cbca51fa34bf313cc6680bf9df9f375149e2bb57163b1037d18e22bd087577e2",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 306,
+        "parameters": 55,
+        "grid_components": 54,
+        "grid_probability_ess": 6.6461065032918585,
+        "maximum_grid_probability": 0.2801293109092426,
+        "hyperposterior_means": {
+          "source_sd": 0.45405548436875354,
+          "cohort_sd": 0.11687705179737579,
+          "calendar_sd": 0.008250948210891817,
+          "dispersion": 38.25935202370458
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5777078684471113,
+        "posterior_feature_mean": 0.25931576605771756
+      },
+      "payout": {
+        "measurement_bins": 265,
+        "parameters": 55,
+        "grid_components": 27,
+        "grid_probability_ess": 4.071983486082321,
+        "maximum_grid_probability": 0.3913600303148123,
+        "hyperposterior_means": {
+          "source_sd": 0.40516137030280214,
+          "cohort_sd": 0.1000004703789648,
+          "calendar_sd": 0.03012110068994793,
+          "dispersion": 40.00000000000007
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4568308528338845,
+        "posterior_feature_mean": 0.038678516139947765
+      },
+      "daily_rows": 2108,
+      "cohorts": 34,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 40.46831217292904,
+      "top_one_percent_revenue_share": 0.01162624305040817
+    }
+  },
+  {
+    "world": "demo-human_decline_bot_rise-884000",
+    "scenario": "human_decline_bot_rise",
+    "origin_day": 35,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 35,
+      "input_hash": "ee43d2d9c0b19ba4e644a858e044d70ba17247b42f1de88fb2d6787025dbf506",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 14,
+        "grid_components": 18,
+        "grid_probability_ess": 9.010019288083726,
+        "maximum_grid_probability": 0.1776597709155199,
+        "hyperposterior_means": {
+          "source_sd": 0.453883309909718,
+          "cohort_sd": 0.2532937010773549,
+          "calendar_sd": 0.0,
+          "dispersion": 22.168751825335764
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5386564456635146,
+        "posterior_feature_mean": 0.22183330045307015
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 14,
+        "grid_components": 9,
+        "grid_probability_ess": 3.7448173209580857,
+        "maximum_grid_probability": 0.41749135346290445,
+        "hyperposterior_means": {
+          "source_sd": 0.4049739241100965,
+          "cohort_sd": 0.1402104735259597,
+          "calendar_sd": 0.0,
+          "dispersion": 40.0
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4287080960544276,
+        "posterior_feature_mean": -0.005616785348589255
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 60.05937348825206,
+      "top_one_percent_revenue_share": 0.015043216510226248
+    }
+  },
+  {
+    "world": "demo-human_decline_bot_rise-884000",
+    "scenario": "human_decline_bot_rise",
+    "origin_day": 35,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 35,
+      "input_hash": "ee43d2d9c0b19ba4e644a858e044d70ba17247b42f1de88fb2d6787025dbf506",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 19,
+        "grid_components": 54,
+        "grid_probability_ess": 24.62585385406171,
+        "maximum_grid_probability": 0.08181388924791903,
+        "hyperposterior_means": {
+          "source_sd": 0.45270186054508355,
+          "cohort_sd": 0.2537673649225994,
+          "calendar_sd": 0.015097050762578836,
+          "dispersion": 22.62237826136405
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.55803315080254,
+        "posterior_feature_mean": 0.22184270454178473
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 19,
+        "grid_components": 27,
+        "grid_probability_ess": 10.029179928396609,
+        "maximum_grid_probability": 0.1903324927360884,
+        "hyperposterior_means": {
+          "source_sd": 0.40492536282670216,
+          "cohort_sd": 0.14053477981691556,
+          "calendar_sd": 0.014501529350524666,
+          "dispersion": 40.00000000000001
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4257156063415288,
+        "posterior_feature_mean": -0.0054888380374900105
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 62.10417946045313,
+      "top_one_percent_revenue_share": 0.013190375776432799
+    }
+  },
+  {
+    "world": "demo-human_decline_bot_rise-884000",
+    "scenario": "human_decline_bot_rise",
+    "origin_day": 63,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 63,
+      "input_hash": "4461cf94a91bc78de8d24638a057c3cacad9a1b1965db441eed6dc67b3b33ca0",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 22,
+        "grid_components": 18,
+        "grid_probability_ess": 8.43633045738761,
+        "maximum_grid_probability": 0.20535761610661604,
+        "hyperposterior_means": {
+          "source_sd": 0.45503824089672623,
+          "cohort_sd": 0.15251790832872325,
+          "calendar_sd": 0.0,
+          "dispersion": 27.499026447130277
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5138240954069326,
+        "posterior_feature_mean": 0.22784534694941413
+      },
+      "payout": {
+        "measurement_bins": 70,
+        "parameters": 22,
+        "grid_components": 9,
+        "grid_probability_ess": 2.5867163545502003,
+        "maximum_grid_probability": 0.5159162237326576,
+        "hyperposterior_means": {
+          "source_sd": 0.4052180598300694,
+          "cohort_sd": 0.10063379615884858,
+          "calendar_sd": 0.0,
+          "dispersion": 39.999999999999964
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.465720922280756,
+        "posterior_feature_mean": 0.008390339223782897
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.075647902221355,
+      "top_one_percent_revenue_share": 0.010158620260250988
+    }
+  },
+  {
+    "world": "demo-human_decline_bot_rise-884000",
+    "scenario": "human_decline_bot_rise",
+    "origin_day": 63,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 63,
+      "input_hash": "4461cf94a91bc78de8d24638a057c3cacad9a1b1965db441eed6dc67b3b33ca0",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 31,
+        "grid_components": 54,
+        "grid_probability_ess": 20.5629633567365,
+        "maximum_grid_probability": 0.09156707809821646,
+        "hyperposterior_means": {
+          "source_sd": 0.4539747808876493,
+          "cohort_sd": 0.15444274147310996,
+          "calendar_sd": 0.012120795893652805,
+          "dispersion": 27.619702152819023
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5311298211420845,
+        "posterior_feature_mean": 0.22794307989939167
+      },
+      "payout": {
+        "measurement_bins": 70,
+        "parameters": 31,
+        "grid_components": 27,
+        "grid_probability_ess": 6.158849502699523,
+        "maximum_grid_probability": 0.23592999150247018,
+        "hyperposterior_means": {
+          "source_sd": 0.4049265552572479,
+          "cohort_sd": 0.10065627159778123,
+          "calendar_sd": 0.011914862026468423,
+          "dispersion": 39.99999999999993
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.453683857911263,
+        "posterior_feature_mean": 0.008770875413503847
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.46380375987311,
+      "top_one_percent_revenue_share": 0.012571694382384709
+    }
+  },
+  {
+    "world": "demo-human_decline_bot_rise-884000",
+    "scenario": "human_decline_bot_rise",
+    "origin_day": 91,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 91,
+      "input_hash": "311bf4bd1fbc27eba6eedad61676deb3e19af6b9c595cdbdc81e7364df04e081",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 182,
+        "parameters": 30,
+        "grid_components": 18,
+        "grid_probability_ess": 4.525069012437036,
+        "maximum_grid_probability": 0.36312785550088394,
+        "hyperposterior_means": {
+          "source_sd": 0.4541192778651988,
+          "cohort_sd": 0.10755438560216579,
+          "calendar_sd": 0.0,
+          "dispersion": 15.802720722077032
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.4950034603930282,
+        "posterior_feature_mean": 0.20867914552553768
+      },
+      "payout": {
+        "measurement_bins": 152,
+        "parameters": 30,
+        "grid_components": 9,
+        "grid_probability_ess": 2.575954983358154,
+        "maximum_grid_probability": 0.5168262266081856,
+        "hyperposterior_means": {
+          "source_sd": 0.4067591658793614,
+          "cohort_sd": 0.10002004042125665,
+          "calendar_sd": 0.0,
+          "dispersion": 40.00000000000007
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.5240275315530438,
+        "posterior_feature_mean": 0.007813349885559122
+      },
+      "daily_rows": 1248,
+      "cohorts": 26,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 52.665613049128886,
+      "top_one_percent_revenue_share": 0.009380512013824553
+    }
+  },
+  {
+    "world": "demo-human_decline_bot_rise-884000",
+    "scenario": "human_decline_bot_rise",
+    "origin_day": 91,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 91,
+      "input_hash": "311bf4bd1fbc27eba6eedad61676deb3e19af6b9c595cdbdc81e7364df04e081",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 182,
+        "parameters": 43,
+        "grid_components": 54,
+        "grid_probability_ess": 14.642306325584762,
+        "maximum_grid_probability": 0.13848595078119544,
+        "hyperposterior_means": {
+          "source_sd": 0.44906368133108837,
+          "cohort_sd": 0.13636624629776034,
+          "calendar_sd": 0.027385528221409133,
+          "dispersion": 22.40838824304624
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5791244228149903,
+        "posterior_feature_mean": 0.21002199437627592
+      },
+      "payout": {
+        "measurement_bins": 152,
+        "parameters": 43,
+        "grid_components": 27,
+        "grid_probability_ess": 5.567640649676782,
+        "maximum_grid_probability": 0.31940811920422196,
+        "hyperposterior_means": {
+          "source_sd": 0.4048785823663855,
+          "cohort_sd": 0.10001618553777349,
+          "calendar_sd": 0.018612910530435824,
+          "dispersion": 40.00000000000007
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4548910065315492,
+        "posterior_feature_mean": 0.008379724783681873
+      },
+      "daily_rows": 1248,
+      "cohorts": 26,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 60.23095689609315,
+      "top_one_percent_revenue_share": 0.020226603815244354
+    }
+  },
+  {
+    "world": "demo-human_decline_bot_rise-884000",
+    "scenario": "human_decline_bot_rise",
+    "origin_day": 119,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 119,
+      "input_hash": "cf78fca64d71d6758d138ea9f3d3e69fc47cf61f30b2ed99b1bd12e9c63bf465",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 306,
+        "parameters": 38,
+        "grid_components": 18,
+        "grid_probability_ess": 3.522815911864801,
+        "maximum_grid_probability": 0.4265830742017735,
+        "hyperposterior_means": {
+          "source_sd": 0.4505453018183863,
+          "cohort_sd": 0.10010280136491406,
+          "calendar_sd": 0.0,
+          "dispersion": 35.58819648478858
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5208926824829248,
+        "posterior_feature_mean": 0.18871433411255234
+      },
+      "payout": {
+        "measurement_bins": 261,
+        "parameters": 38,
+        "grid_components": 9,
+        "grid_probability_ess": 2.5866082254838845,
+        "maximum_grid_probability": 0.5153638031495059,
+        "hyperposterior_means": {
+          "source_sd": 0.41008100917376755,
+          "cohort_sd": 0.10002484749219911,
+          "calendar_sd": 0.0,
+          "dispersion": 40.000000000000036
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.631947185914137,
+        "posterior_feature_mean": 0.0004660899450537442
+      },
+      "daily_rows": 2108,
+      "cohorts": 34,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 46.5392539498794,
+      "top_one_percent_revenue_share": 0.009038525789259271
+    }
+  },
+  {
+    "world": "demo-human_decline_bot_rise-884000",
+    "scenario": "human_decline_bot_rise",
+    "origin_day": 119,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 119,
+      "input_hash": "cf78fca64d71d6758d138ea9f3d3e69fc47cf61f30b2ed99b1bd12e9c63bf465",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 306,
+        "parameters": 55,
+        "grid_components": 54,
+        "grid_probability_ess": 9.856765759901238,
+        "maximum_grid_probability": 0.17099671502261582,
+        "hyperposterior_means": {
+          "source_sd": 0.4495129137350461,
+          "cohort_sd": 0.10014396862811539,
+          "calendar_sd": 0.018385183030506885,
+          "dispersion": 36.41800728270519
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5397488130335506,
+        "posterior_feature_mean": 0.18951679668426877
+      },
+      "payout": {
+        "measurement_bins": 261,
+        "parameters": 55,
+        "grid_components": 27,
+        "grid_probability_ess": 3.3291621647183316,
+        "maximum_grid_probability": 0.44965361379083435,
+        "hyperposterior_means": {
+          "source_sd": 0.40414983907920793,
+          "cohort_sd": 0.10000033523451816,
+          "calendar_sd": 0.03236245205361867,
+          "dispersion": 39.999999999999915
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.42770498459712,
+        "posterior_feature_mean": 0.003119013033817346
+      },
+      "daily_rows": 2108,
+      "cohorts": 34,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 42.33782866711985,
+      "top_one_percent_revenue_share": 0.014629839760710743
+    }
+  },
+  {
+    "world": "demo-cheap_good-884000",
+    "scenario": "cheap_good",
+    "origin_day": 35,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 35,
+      "input_hash": "ee43d2d9c0b19ba4e644a858e044d70ba17247b42f1de88fb2d6787025dbf506",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 14,
+        "grid_components": 18,
+        "grid_probability_ess": 9.010019288083726,
+        "maximum_grid_probability": 0.1776597709155199,
+        "hyperposterior_means": {
+          "source_sd": 0.453883309909718,
+          "cohort_sd": 0.2532937010773549,
+          "calendar_sd": 0.0,
+          "dispersion": 22.168751825335764
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5386564456635146,
+        "posterior_feature_mean": 0.22183330045307015
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 14,
+        "grid_components": 9,
+        "grid_probability_ess": 3.7448173209580857,
+        "maximum_grid_probability": 0.41749135346290445,
+        "hyperposterior_means": {
+          "source_sd": 0.4049739241100965,
+          "cohort_sd": 0.1402104735259597,
+          "calendar_sd": 0.0,
+          "dispersion": 40.0
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4287080960544276,
+        "posterior_feature_mean": -0.005616785348589255
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 60.05937348825206,
+      "top_one_percent_revenue_share": 0.015043216510226248
+    }
+  },
+  {
+    "world": "demo-cheap_good-884000",
+    "scenario": "cheap_good",
+    "origin_day": 35,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 35,
+      "input_hash": "ee43d2d9c0b19ba4e644a858e044d70ba17247b42f1de88fb2d6787025dbf506",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 19,
+        "grid_components": 54,
+        "grid_probability_ess": 24.62585385406171,
+        "maximum_grid_probability": 0.08181388924791903,
+        "hyperposterior_means": {
+          "source_sd": 0.45270186054508355,
+          "cohort_sd": 0.2537673649225994,
+          "calendar_sd": 0.015097050762578836,
+          "dispersion": 22.62237826136405
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.55803315080254,
+        "posterior_feature_mean": 0.22184270454178473
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 19,
+        "grid_components": 27,
+        "grid_probability_ess": 10.029179928396609,
+        "maximum_grid_probability": 0.1903324927360884,
+        "hyperposterior_means": {
+          "source_sd": 0.40492536282670216,
+          "cohort_sd": 0.14053477981691556,
+          "calendar_sd": 0.014501529350524666,
+          "dispersion": 40.00000000000001
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4257156063415288,
+        "posterior_feature_mean": -0.0054888380374900105
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 62.10417946045313,
+      "top_one_percent_revenue_share": 0.013190375776432799
+    }
+  },
+  {
+    "world": "demo-cheap_good-884000",
+    "scenario": "cheap_good",
+    "origin_day": 63,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 63,
+      "input_hash": "4461cf94a91bc78de8d24638a057c3cacad9a1b1965db441eed6dc67b3b33ca0",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 22,
+        "grid_components": 18,
+        "grid_probability_ess": 8.43633045738761,
+        "maximum_grid_probability": 0.20535761610661604,
+        "hyperposterior_means": {
+          "source_sd": 0.45503824089672623,
+          "cohort_sd": 0.15251790832872325,
+          "calendar_sd": 0.0,
+          "dispersion": 27.499026447130277
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5138240954069326,
+        "posterior_feature_mean": 0.22784534694941413
+      },
+      "payout": {
+        "measurement_bins": 70,
+        "parameters": 22,
+        "grid_components": 9,
+        "grid_probability_ess": 2.5867163545502003,
+        "maximum_grid_probability": 0.5159162237326576,
+        "hyperposterior_means": {
+          "source_sd": 0.4052180598300694,
+          "cohort_sd": 0.10063379615884858,
+          "calendar_sd": 0.0,
+          "dispersion": 39.999999999999964
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.465720922280756,
+        "posterior_feature_mean": 0.008390339223782897
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.075647902221355,
+      "top_one_percent_revenue_share": 0.010158620260250988
+    }
+  },
+  {
+    "world": "demo-cheap_good-884000",
+    "scenario": "cheap_good",
+    "origin_day": 63,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 63,
+      "input_hash": "4461cf94a91bc78de8d24638a057c3cacad9a1b1965db441eed6dc67b3b33ca0",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 31,
+        "grid_components": 54,
+        "grid_probability_ess": 20.5629633567365,
+        "maximum_grid_probability": 0.09156707809821646,
+        "hyperposterior_means": {
+          "source_sd": 0.4539747808876493,
+          "cohort_sd": 0.15444274147310996,
+          "calendar_sd": 0.012120795893652805,
+          "dispersion": 27.619702152819023
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5311298211420845,
+        "posterior_feature_mean": 0.22794307989939167
+      },
+      "payout": {
+        "measurement_bins": 70,
+        "parameters": 31,
+        "grid_components": 27,
+        "grid_probability_ess": 6.158849502699523,
+        "maximum_grid_probability": 0.23592999150247018,
+        "hyperposterior_means": {
+          "source_sd": 0.4049265552572479,
+          "cohort_sd": 0.10065627159778123,
+          "calendar_sd": 0.011914862026468423,
+          "dispersion": 39.99999999999993
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.453683857911263,
+        "posterior_feature_mean": 0.008770875413503847
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.46380375987311,
+      "top_one_percent_revenue_share": 0.012571694382384709
+    }
+  },
+  {
+    "world": "demo-cheap_good-884000",
+    "scenario": "cheap_good",
+    "origin_day": 91,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 91,
+      "input_hash": "28fe23d4ac14394a322e4ec136785471b76f4b39e25d830bbb642d4d21a51964",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 188,
+        "parameters": 34,
+        "grid_components": 18,
+        "grid_probability_ess": 3.721762712072771,
+        "maximum_grid_probability": 0.3734763965366152,
+        "hyperposterior_means": {
+          "source_sd": 0.3133632880210081,
+          "cohort_sd": 0.10441192211244718,
+          "calendar_sd": 0.0,
+          "dispersion": 14.603591271237653
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.333521344530726,
+        "posterior_feature_mean": 0.2399350174534357
+      },
+      "payout": {
+        "measurement_bins": 155,
+        "parameters": 34,
+        "grid_components": 9,
+        "grid_probability_ess": 2.129201972517439,
+        "maximum_grid_probability": 0.6340244760768181,
+        "hyperposterior_means": {
+          "source_sd": 0.41704501610189915,
+          "cohort_sd": 0.10002052762196324,
+          "calendar_sd": 0.0,
+          "dispersion": 40.000000000000014
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.670665324475692,
+        "posterior_feature_mean": 0.008712117123723459
+      },
+      "daily_rows": 1287,
+      "cohorts": 29,
+      "sources": 3,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 47.9865740221442,
+      "top_one_percent_revenue_share": 0.009523886566289363
+    }
+  },
+  {
+    "world": "demo-cheap_good-884000",
+    "scenario": "cheap_good",
+    "origin_day": 91,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 91,
+      "input_hash": "28fe23d4ac14394a322e4ec136785471b76f4b39e25d830bbb642d4d21a51964",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 188,
+        "parameters": 47,
+        "grid_components": 54,
+        "grid_probability_ess": 12.211886779505697,
+        "maximum_grid_probability": 0.1459449584287618,
+        "hyperposterior_means": {
+          "source_sd": 0.30906526684566793,
+          "cohort_sd": 0.1227208445041806,
+          "calendar_sd": 0.024884532062979768,
+          "dispersion": 18.890363854124278
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.4305941767578987,
+        "posterior_feature_mean": 0.24124283605888902
+      },
+      "payout": {
+        "measurement_bins": 155,
+        "parameters": 47,
+        "grid_components": 27,
+        "grid_probability_ess": 5.001011161949935,
+        "maximum_grid_probability": 0.3496183080666121,
+        "hyperposterior_means": {
+          "source_sd": 0.3759514483267125,
+          "cohort_sd": 0.10001490691320063,
+          "calendar_sd": 0.019751293582120667,
+          "dispersion": 39.999999999999844
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.5742467920053183,
+        "posterior_feature_mean": 0.009643185548434543
+      },
+      "daily_rows": 1287,
+      "cohorts": 29,
+      "sources": 3,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 53.9269992110854,
+      "top_one_percent_revenue_share": 0.024080570796352202
+    }
+  },
+  {
+    "world": "demo-cheap_good-884000",
+    "scenario": "cheap_good",
+    "origin_day": 119,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 119,
+      "input_hash": "0abcecb864cbe40e68038efcea65a5dc17939de39f3c40d892e7a69b175eeefd",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 334,
+        "parameters": 46,
+        "grid_components": 18,
+        "grid_probability_ess": 3.2222662990246262,
+        "maximum_grid_probability": 0.4402856418472301,
+        "hyperposterior_means": {
+          "source_sd": 0.3578011018903336,
+          "cohort_sd": 0.10003797205327901,
+          "calendar_sd": 0.0,
+          "dispersion": 35.65038562931283
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.3378896727137737,
+        "posterior_feature_mean": 0.2068756287293063
+      },
+      "payout": {
+        "measurement_bins": 281,
+        "parameters": 46,
+        "grid_components": 9,
+        "grid_probability_ess": 1.631128045371674,
+        "maximum_grid_probability": 0.7545369155429531,
+        "hyperposterior_means": {
+          "source_sd": 0.481116512939046,
+          "cohort_sd": 0.10000365245652339,
+          "calendar_sd": 0.0,
+          "dispersion": 39.99999999999982
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.7968344805855654,
+        "posterior_feature_mean": 0.0009748900189684353
+      },
+      "daily_rows": 2297,
+      "cohorts": 41,
+      "sources": 3,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 41.9575847448493,
+      "top_one_percent_revenue_share": 0.00895128059617323
+    }
+  },
+  {
+    "world": "demo-cheap_good-884000",
+    "scenario": "cheap_good",
+    "origin_day": 119,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 119,
+      "input_hash": "0abcecb864cbe40e68038efcea65a5dc17939de39f3c40d892e7a69b175eeefd",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 334,
+        "parameters": 63,
+        "grid_components": 54,
+        "grid_probability_ess": 6.218839088231405,
+        "maximum_grid_probability": 0.2783034932901187,
+        "hyperposterior_means": {
+          "source_sd": 0.35382099522313637,
+          "cohort_sd": 0.10004673418840447,
+          "calendar_sd": 0.025772575522930313,
+          "dispersion": 37.435687823221826
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.37596550574223,
+        "posterior_feature_mean": 0.2088934314544235
+      },
+      "payout": {
+        "measurement_bins": 281,
+        "parameters": 63,
+        "grid_components": 27,
+        "grid_probability_ess": 2.904576022588671,
+        "maximum_grid_probability": 0.5068647012200993,
+        "hyperposterior_means": {
+          "source_sd": 0.37283808934242085,
+          "cohort_sd": 0.10000003529875864,
+          "calendar_sd": 0.03244390922353995,
+          "dispersion": 39.99999999999994
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.5476777682009981,
+        "posterior_feature_mean": 0.004166885779941843
+      },
+      "daily_rows": 2297,
+      "cohorts": 41,
+      "sources": 3,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 44.486892714972726,
+      "top_one_percent_revenue_share": 0.015294787359075501
+    }
+  },
+  {
+    "world": "demo-cheap_bad-884000",
+    "scenario": "cheap_bad",
+    "origin_day": 35,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 35,
+      "input_hash": "ee43d2d9c0b19ba4e644a858e044d70ba17247b42f1de88fb2d6787025dbf506",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 14,
+        "grid_components": 18,
+        "grid_probability_ess": 9.010019288083726,
+        "maximum_grid_probability": 0.1776597709155199,
+        "hyperposterior_means": {
+          "source_sd": 0.453883309909718,
+          "cohort_sd": 0.2532937010773549,
+          "calendar_sd": 0.0,
+          "dispersion": 22.168751825335764
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5386564456635146,
+        "posterior_feature_mean": 0.22183330045307015
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 14,
+        "grid_components": 9,
+        "grid_probability_ess": 3.7448173209580857,
+        "maximum_grid_probability": 0.41749135346290445,
+        "hyperposterior_means": {
+          "source_sd": 0.4049739241100965,
+          "cohort_sd": 0.1402104735259597,
+          "calendar_sd": 0.0,
+          "dispersion": 40.0
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4287080960544276,
+        "posterior_feature_mean": -0.005616785348589255
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 60.05937348825206,
+      "top_one_percent_revenue_share": 0.015043216510226248
+    }
+  },
+  {
+    "world": "demo-cheap_bad-884000",
+    "scenario": "cheap_bad",
+    "origin_day": 35,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 35,
+      "input_hash": "ee43d2d9c0b19ba4e644a858e044d70ba17247b42f1de88fb2d6787025dbf506",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 30,
+        "parameters": 19,
+        "grid_components": 54,
+        "grid_probability_ess": 24.62585385406171,
+        "maximum_grid_probability": 0.08181388924791903,
+        "hyperposterior_means": {
+          "source_sd": 0.45270186054508355,
+          "cohort_sd": 0.2537673649225994,
+          "calendar_sd": 0.015097050762578836,
+          "dispersion": 22.62237826136405
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.55803315080254,
+        "posterior_feature_mean": 0.22184270454178473
+      },
+      "payout": {
+        "measurement_bins": 19,
+        "parameters": 19,
+        "grid_components": 27,
+        "grid_probability_ess": 10.029179928396609,
+        "maximum_grid_probability": 0.1903324927360884,
+        "hyperposterior_means": {
+          "source_sd": 0.40492536282670216,
+          "cohort_sd": 0.14053477981691556,
+          "calendar_sd": 0.014501529350524666,
+          "dispersion": 40.00000000000001
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.4257156063415288,
+        "posterior_feature_mean": -0.0054888380374900105
+      },
+      "daily_rows": 200,
+      "cohorts": 10,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 62.10417946045313,
+      "top_one_percent_revenue_share": 0.013190375776432799
+    }
+  },
+  {
+    "world": "demo-cheap_bad-884000",
+    "scenario": "cheap_bad",
+    "origin_day": 63,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 63,
+      "input_hash": "4461cf94a91bc78de8d24638a057c3cacad9a1b1965db441eed6dc67b3b33ca0",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 22,
+        "grid_components": 18,
+        "grid_probability_ess": 8.43633045738761,
+        "maximum_grid_probability": 0.20535761610661604,
+        "hyperposterior_means": {
+          "source_sd": 0.45503824089672623,
+          "cohort_sd": 0.15251790832872325,
+          "calendar_sd": 0.0,
+          "dispersion": 27.499026447130277
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5138240954069326,
+        "posterior_feature_mean": 0.22784534694941413
+      },
+      "payout": {
+        "measurement_bins": 70,
+        "parameters": 22,
+        "grid_components": 9,
+        "grid_probability_ess": 2.5867163545502003,
+        "maximum_grid_probability": 0.5159162237326576,
+        "hyperposterior_means": {
+          "source_sd": 0.4052180598300694,
+          "cohort_sd": 0.10063379615884858,
+          "calendar_sd": 0.0,
+          "dispersion": 39.999999999999964
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.465720922280756,
+        "posterior_feature_mean": 0.008390339223782897
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.075647902221355,
+      "top_one_percent_revenue_share": 0.010158620260250988
+    }
+  },
+  {
+    "world": "demo-cheap_bad-884000",
+    "scenario": "cheap_bad",
+    "origin_day": 63,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 63,
+      "input_hash": "4461cf94a91bc78de8d24638a057c3cacad9a1b1965db441eed6dc67b3b33ca0",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 90,
+        "parameters": 31,
+        "grid_components": 54,
+        "grid_probability_ess": 20.5629633567365,
+        "maximum_grid_probability": 0.09156707809821646,
+        "hyperposterior_means": {
+          "source_sd": 0.4539747808876493,
+          "cohort_sd": 0.15444274147310996,
+          "calendar_sd": 0.012120795893652805,
+          "dispersion": 27.619702152819023
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.5311298211420845,
+        "posterior_feature_mean": 0.22794307989939167
+      },
+      "payout": {
+        "measurement_bins": 70,
+        "parameters": 31,
+        "grid_components": 27,
+        "grid_probability_ess": 6.158849502699523,
+        "maximum_grid_probability": 0.23592999150247018,
+        "hyperposterior_means": {
+          "source_sd": 0.4049265552572479,
+          "cohort_sd": 0.10065627159778123,
+          "calendar_sd": 0.011914862026468423,
+          "dispersion": 39.99999999999993
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.453683857911263,
+        "posterior_feature_mean": 0.008770875413503847
+      },
+      "daily_rows": 612,
+      "cohorts": 18,
+      "sources": 2,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 55.46380375987311,
+      "top_one_percent_revenue_share": 0.012571694382384709
+    }
+  },
+  {
+    "world": "demo-cheap_bad-884000",
+    "scenario": "cheap_bad",
+    "origin_day": 91,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 91,
+      "input_hash": "f608c8406dcba9ffb2c10611ced93338a1e878314e31d80979335931172eaf2a",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 188,
+        "parameters": 34,
+        "grid_components": 18,
+        "grid_probability_ess": 2.8689626689275882,
+        "maximum_grid_probability": 0.5199876572047603,
+        "hyperposterior_means": {
+          "source_sd": 0.7184909100228655,
+          "cohort_sd": 0.10667968788822174,
+          "calendar_sd": 0.0,
+          "dispersion": 15.946323599205787
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.9426076668962096,
+        "posterior_feature_mean": 0.14948264051077592
+      },
+      "payout": {
+        "measurement_bins": 155,
+        "parameters": 34,
+        "grid_components": 9,
+        "grid_probability_ess": 2.4464855043773843,
+        "maximum_grid_probability": 0.5311877446501005,
+        "hyperposterior_means": {
+          "source_sd": 0.37304621122439474,
+          "cohort_sd": 0.1000196374468387,
+          "calendar_sd": 0.0,
+          "dispersion": 39.99999999999993
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.6331906661342652,
+        "posterior_feature_mean": 0.008619980026713558
+      },
+      "daily_rows": 1287,
+      "cohorts": 29,
+      "sources": 3,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 39.15570655350817,
+      "top_one_percent_revenue_share": 0.009415621663824682
+    }
+  },
+  {
+    "world": "demo-cheap_bad-884000",
+    "scenario": "cheap_bad",
+    "origin_day": 91,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 91,
+      "input_hash": "f608c8406dcba9ffb2c10611ced93338a1e878314e31d80979335931172eaf2a",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 188,
+        "parameters": 47,
+        "grid_components": 54,
+        "grid_probability_ess": 7.918334444562846,
+        "maximum_grid_probability": 0.2257083312815749,
+        "hyperposterior_means": {
+          "source_sd": 0.740485377509187,
+          "cohort_sd": 0.13196476360916498,
+          "calendar_sd": 0.02793199487259127,
+          "dispersion": 22.711665285608994
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -3.0583901261302207,
+        "posterior_feature_mean": 0.1447344185985886
+      },
+      "payout": {
+        "measurement_bins": 155,
+        "parameters": 47,
+        "grid_components": 27,
+        "grid_probability_ess": 5.280382968566518,
+        "maximum_grid_probability": 0.31960768110241117,
+        "hyperposterior_means": {
+          "source_sd": 0.36176556170991364,
+          "cohort_sd": 0.1000153006619628,
+          "calendar_sd": 0.019203576663434092,
+          "dispersion": 39.99999999999984
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.5470146883705629,
+        "posterior_feature_mean": 0.009241327059098945
+      },
+      "daily_rows": 1287,
+      "cohorts": 29,
+      "sources": 3,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 46.30674837627394,
+      "top_one_percent_revenue_share": 0.022066643315336882
+    }
+  },
+  {
+    "world": "demo-cheap_bad-884000",
+    "scenario": "cheap_bad",
+    "origin_day": 119,
+    "model": "static_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "static_hierarchy",
+      "cutoff": 119,
+      "input_hash": "ce09603989dfb9fe44a4355f694bf4e2a2dd052eb59228b91b5642f993d722f8",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 334,
+        "parameters": 46,
+        "grid_components": 18,
+        "grid_probability_ess": 3.4670540428764443,
+        "maximum_grid_probability": 0.38489109994656145,
+        "hyperposterior_means": {
+          "source_sd": 0.5984555500009816,
+          "cohort_sd": 0.1003364218441387,
+          "calendar_sd": 0.0,
+          "dispersion": 30.03154222214446
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.7961918358841884,
+        "posterior_feature_mean": 0.1587175834772855
+      },
+      "payout": {
+        "measurement_bins": 279,
+        "parameters": 46,
+        "grid_components": 9,
+        "grid_probability_ess": 2.149466130232497,
+        "maximum_grid_probability": 0.6288276812520519,
+        "hyperposterior_means": {
+          "source_sd": 0.41561649476421764,
+          "cohort_sd": 0.10001548571585862,
+          "calendar_sd": 0.0,
+          "dispersion": 39.999999999999716
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.7799778488653084,
+        "posterior_feature_mean": 0.00114212020718557
+      },
+      "daily_rows": 2297,
+      "cohorts": 41,
+      "sources": 3,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 35.14141713824295,
+      "top_one_percent_revenue_share": 0.00967056082738402
+    }
+  },
+  {
+    "world": "demo-cheap_bad-884000",
+    "scenario": "cheap_bad",
+    "origin_day": 119,
+    "model": "dynamic_hierarchy",
+    "diagnostics": {
+      "method": "conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
+      "mode": "dynamic_hierarchy",
+      "cutoff": 119,
+      "input_hash": "ce09603989dfb9fe44a4355f694bf4e2a2dd052eb59228b91b5642f993d722f8",
+      "config_hash": "8160895975726a066046b24d9d808dac50c6a7c723d9721a2b6ab7e125e73146",
+      "response": {
+        "measurement_bins": 334,
+        "parameters": 63,
+        "grid_components": 54,
+        "grid_probability_ess": 3.7649721662021847,
+        "maximum_grid_probability": 0.37741407104115215,
+        "hyperposterior_means": {
+          "source_sd": 0.6093420109925225,
+          "cohort_sd": 0.10057330619226125,
+          "calendar_sd": 0.031468393216761,
+          "dispersion": 34.55274059236453
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -2.852811282869062,
+        "posterior_feature_mean": 0.15795603441153874
+      },
+      "payout": {
+        "measurement_bins": 279,
+        "parameters": 63,
+        "grid_components": 27,
+        "grid_probability_ess": 3.059650939970101,
+        "maximum_grid_probability": 0.439402879554039,
+        "hyperposterior_means": {
+          "source_sd": 0.33798142473862414,
+          "cohort_sd": 0.10000018653683809,
+          "calendar_sd": 0.032490135190236406,
+          "dispersion": 40.00000000000007
+        },
+        "grid_weight_scope": "joint hyperposterior",
+        "posterior_global_log_mean": -1.529676006230709,
+        "posterior_feature_mean": 0.003976701325096777
+      },
+      "daily_rows": 2297,
+      "cohorts": 41,
+      "sources": 3,
+      "response_value_correlation": "not learned; independent processes",
+      "past_pending_marks": "approximate conditional audit/count imputation",
+      "scenario": "hold_current",
+      "draws": 256,
+      "horizon": 425,
+      "calendar_anchor": 0,
+      "fixed_age_curve": ".75 exp(-age/3)+.25 exp(-age/90)",
+      "portfolio_shared_calendar": true,
+      "scenario_is_conditional": true,
+      "acquisition_cost_semantics": "total fixed historical or new-target acquisition cost",
+      "monetary_predictive_mean": 37.79500029216396,
+      "top_one_percent_revenue_share": 0.015859687552562576
+    }
+  }
+]

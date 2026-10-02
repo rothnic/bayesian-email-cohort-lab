@@ -1,0 +1,14 @@
+{
+  "dynamic_and_simulation_tests": 24,
+  "prototype_and_v1_replay_tests": 16,
+  "total_extension_tests": 40,
+  "passed": true,
+  "original_v1_files_unchanged": true,
+  "independent_statistical_review": "dynamic_lab/VALIDATION.md",
+  "all_scientific_source_and_csv_hashes_verified": true,
+  "figures": 6,
+  "desktop_mobile_png_svg_files": 24,
+  "minimum_mobile_text_css_px_at390": 13.86,
+  "full_html_browser_render_verified": false,
+  "browser_screenshots_produced": false
+}

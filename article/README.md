@@ -1,31 +1,17 @@
-# Article draft and local preview
+# Article draft: changing cohort economics
 
-Working title: **When does an email subscriber pay for itself?**
+The main draft is `article.md`; `article.mdx` uses plain-text math fences for portable MDX import. `index.html` is the responsive local preview. `standalone.html` embeds every figure, table and source download needed to open the review copy as one file. External repository links are citations only; there are no external runtime fonts, scripts or analytics.
 
-This is a draft for nickroth.com, not a deployed website. The package includes:
+Six figures each have desktop/mobile SVG and PNG versions, descriptive text, captions and numeric tables. `tables/offered-cost.csv` gives the complete future-batch price sensitivity. `claims.json` binds substantive numerical claims to exact saved output rows and hashes. `chart_provenance.json` binds figure values to their extension sources.
 
-- `article.md` and `article.mdx`: the same editorial draft; MDX uses a plain-text math fence for broad compatibility
-- `index.html`: a standalone responsive preview with no remote scripts, fonts or analytics
-- `assets/`: five main figures plus an optional reactivation diagnostic, each as desktop/mobile SVG and PNG
-- `essential_values.csv` and `.json`: readable numeric values behind the article tables
-- `engagement_values.csv`: the descriptive reported-engagement series
-- `chart_provenance.json` and `ARTICLE_SOURCES.md`: exact input hashes, selectors and factual source bindings
-- `render_charts.py` and `build_preview.py`: rebuild article figures and HTML from existing research outputs without fitting models
-- `ASSET_MANIFEST.json`: exact files, sizes and SHA-256 hashes for this article bundle
+The draft covers the implemented extension with changing net human CPC, rising acquisition quotes, audited bot activity, global/source/cohort learning and late cheap sources. It preserves the original v1 failures separately. The approximate likelihood, favorable known measurement assumptions, poor nominal coverage, conditional future-price scenarios and finite-draw limitations are stated in the article.
 
-## Preview
+To rebuild within the public research repository:
 
-Open `index.html` locally, or serve this folder with `python -m http.server 8771`. On a phone-width viewport the charts use dedicated narrower SVG variants. Each figure also has a readable numeric table and a full-size SVG link. SVG files have title, description and ARIA metadata.
+```
+python article/build_article.py --extension extensions/calendar
+```
 
-For integration into the research repository, put this folder at `article/`. The rebuild scripts locate the adjacent repository artifacts. They also support the sibling-directory layout used for the standalone draft. Scientific Python dependencies are the research repository's existing requirements.
+Install the research repository's existing requirements first. The script reads saved scientific output; it does not fit or select a model. `article.template.md` holds the editorial text and explicit numerical placeholders. `style.css` is self-contained. The six chart families are regenerated separately from `extensions/calendar` with `make figures`.
 
-## Review status and publication gates
-
-- Numeric claims were independently checked against the frozen CSV artifacts and the 60-test implementation
-- Main figure values, alt text, local links, mobile chart variants and numeric tables were inspected
-- The source repository commit is `8e3443fe287d8e3ee29156d628df931b35fad9d5`
-- Browser-level desktop and phone screenshots still require the publisher's supported environment: this authoring environment blocked loopback browser access and local Chromium sockets; no browser security protections were weakened
-- Before publishing to nickroth.com, inspect the static preview at desktop and 390px widths, confirm all five value-table disclosures and full-size links work, and approve the editorial draft
-- No live website deployment is included or authorized by this package
-
-Every modeled data point is fictional. The opening recollection about a prior DealNews project is explicitly presented as unverified motivation, not a historical result.
+All article values, selected table rows, PNG decoding, SVG accessibility metadata, local links and standalone dependencies were checked. Dedicated mobile chart assets were visually inspected and their text measures at least 13.86 CSS pixels at a 390-pixel viewport. Actual browser rendering of the full HTML remains unverified because the available rendering routes were blocked. No browser screenshots are claimed or included. This is a draft, with no live nickroth.com deployment.

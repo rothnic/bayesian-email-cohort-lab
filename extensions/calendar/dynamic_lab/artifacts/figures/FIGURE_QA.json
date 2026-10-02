@@ -1,0 +1,21 @@
+{
+  "synthetic_only": true,
+  "figures": 6,
+  "variant_files": 24,
+  "visually_inspected_png_variants": 12,
+  "minimum_effective_mobile_text_css_px_at_390": 13.860791996024327,
+  "all_source_figure_table_hashes_match": true,
+  "run_manifest_sha256": "2b215d7b5152f45bc49806e8e32eecf58cc438a9bcbf1187d9146f21df8ec309",
+  "scientific_model_sha256": "ad89ab0f55bb9ef6d76ede414777168f2b6592541e35306a13122c438444cb94",
+  "payback_check": "CDF is monotone, uses actual draw denominators, and CDF425 plus noncrossing probability equals one",
+  "quote_query_check": "Prospective births follow the origin; mean/median/interval endpoints shift only by quoted purchase cost; first-payback probability cannot rise with cost",
+  "pixel_checks": "Desktop and mobile layouts reviewed; no observed clipping or text overlaps; posterior source comparisons retain a common explicitly expanded axis",
+  "limitations": "Synthetic approximate inference; state attribution is assumption-dependent; held-out undercoverage and absence of demonstrated decision advantage remain visible",
+  "chart_provenance_sha256": "118f64b9811bce92caa0df6e262cf5ee9bc98daf5d4935b01dd6159d09bc4cab",
+  "caption_repairs_verified": [
+    "Figure2 actual source and daily information scope",
+    "Figure4 no deterministic drift in fitted log states",
+    "Figure6 three independent worlds per scenario and eighteen overall",
+    "Figure2 accessible description matches the displayed series; no fitted-human series claimed"
+  ]
+}

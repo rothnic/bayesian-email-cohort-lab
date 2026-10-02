@@ -1,0 +1,74 @@
+[
+  {
+    "world": "heldout-fixed_price-4101",
+    "seconds": 3.3673378670064267
+  },
+  {
+    "world": "heldout-fixed_price-4102",
+    "seconds": 3.4861576880066423
+  },
+  {
+    "world": "heldout-fixed_price-4103",
+    "seconds": 3.5626142429973697
+  },
+  {
+    "world": "heldout-cpc_squeeze-14101",
+    "seconds": 3.6625848060066346
+  },
+  {
+    "world": "heldout-cpc_squeeze-14102",
+    "seconds": 3.59737867100921
+  },
+  {
+    "world": "heldout-cpc_squeeze-14103",
+    "seconds": 3.482960459004971
+  },
+  {
+    "world": "heldout-rising_cpl-24101",
+    "seconds": 3.3478181730024517
+  },
+  {
+    "world": "heldout-rising_cpl-24102",
+    "seconds": 3.2860340899933362
+  },
+  {
+    "world": "heldout-rising_cpl-24103",
+    "seconds": 3.8004360449995147
+  },
+  {
+    "world": "heldout-human_decline_bot_rise-34101",
+    "seconds": 3.6945534020051127
+  },
+  {
+    "world": "heldout-human_decline_bot_rise-34102",
+    "seconds": 3.6312045570084592
+  },
+  {
+    "world": "heldout-human_decline_bot_rise-34103",
+    "seconds": 3.510907646996202
+  },
+  {
+    "world": "heldout-cheap_good-44101",
+    "seconds": 6.4972041539876955
+  },
+  {
+    "world": "heldout-cheap_good-44102",
+    "seconds": 6.286040013001184
+  },
+  {
+    "world": "heldout-cheap_good-44103",
+    "seconds": 6.779406462010229
+  },
+  {
+    "world": "heldout-cheap_bad-54101",
+    "seconds": 6.81530988200393
+  },
+  {
+    "world": "heldout-cheap_bad-54102",
+    "seconds": 6.152377414997318
+  },
+  {
+    "world": "heldout-cheap_bad-54103",
+    "seconds": 6.795608490006998
+  }
+]

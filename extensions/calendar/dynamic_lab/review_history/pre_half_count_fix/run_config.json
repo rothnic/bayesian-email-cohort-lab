@@ -1,0 +1,43 @@
+{
+  "version": "dynamic-approximation/0.1",
+  "demo_seed": 884000,
+  "heldout_base_seeds": [
+    4101,
+    4102,
+    4103
+  ],
+  "scenario_seed_stride": 10000,
+  "scenarios": [
+    "fixed_price",
+    "cpc_squeeze",
+    "rising_cpl",
+    "human_decline_bot_rise",
+    "cheap_good",
+    "cheap_bad"
+  ],
+  "demo_cutoffs": [
+    35,
+    63,
+    91,
+    119
+  ],
+  "evaluation_cutoffs": [
+    63,
+    119
+  ],
+  "demo_draws": 256,
+  "evaluation_draws": 128,
+  "leads_per_cohort": 100,
+  "last_birth": 126,
+  "target_horizon": 180,
+  "terminal_age": 425,
+  "models": [
+    "target_only",
+    "global_pooling",
+    "source_pooling",
+    "static_hierarchy",
+    "dynamic_hierarchy"
+  ],
+  "future_scenario": "hold_current",
+  "notes": "Frozen before comparative outcomes. Development seed differs from held-out worlds. Scenarios have distinct seed streams. Calendar response and CPC can stabilize, so continued trend is a separate conditional future policy, not hidden future truth. Repeated targets/cutoffs within a world are correlated. Evaluation tests an approximate model against this declared richer synthetic generator; implementation checks do not imply calibration."
+}

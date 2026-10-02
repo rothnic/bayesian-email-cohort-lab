@@ -1,0 +1,32 @@
+{
+  "stage": "unchanged_v1_information_ablation",
+  "development_only": true,
+  "world_seed": 884901,
+  "scenario": "collapse_tail",
+  "cohorts_per_source": 13,
+  "leads_per_cohort": 50,
+  "calendar_cutoffs": [
+    10,
+    17,
+    31,
+    59,
+    87
+  ],
+  "source": "middle",
+  "draws": 64,
+  "forecasts": 20,
+  "original_source_sha256": {
+    "bayes_cohort/model.py": "f0db53e8ebe3f6f662d6b52b28a6b83a5fbaf5bc397ef0d71a47916ad2b1a8c2",
+    "bayes_cohort/config.py": "60c2dc730ecf2c4229a18eb23c4904cd80f48887160fe56325c69fcd12f50c03",
+    "cohort_lab/generator.py": "7cf04e7eb2de2a0c409e9ce9b63c87efa14999ad2ac8d61a47b2290f8c47aa33",
+    "cohort_lab/accounting.py": "c2df53387f2ecd35756887304879a1a70731469bd392e5ca433362d4cfee37f4",
+    "parameters.json": "fd43a322cdeec47d309014b44bfcc49d6401f49291564d5102aefc875dcd60d3"
+  },
+  "prior_sha256": "18c48a7a52618018105a70afe2fd591b344e0ba27a23cdc42fece35567aec337",
+  "prediction_sha256": "317bb4b6d63842903fb5250d48ccf9b7c54fae3421d8d5a8fec760ae1ab3c5ec",
+  "terminal_age": 425,
+  "raw_row_exports_written": false,
+  "new_hierarchical_model_fitted": false,
+  "claimed_pooling_benefit": false,
+  "total_seconds": 2.1449704880069476
+}
