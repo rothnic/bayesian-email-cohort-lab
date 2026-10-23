@@ -2,7 +2,7 @@
   "scientific_source_sha256": {
     "model.py": "5d11167f6c98f50d8d5f0924885cac7641f14d0df2ea76f64dbaba8e9157d730",
     "simulation.py": "53717ff276976c5703d6eb2b2fed8ae14cea283d2f89b4100918105ce6540fca",
-    "evaluate.py": "f3be845570baca03afecf51d21e4fd288ff90bdd61354034b509fb882d12ebcd",
+    "evaluate.py": "8254be03d6c68e5eaa574e0cf8f741a8cde836bcf70a8adcfe9eef689e5833b3",
     "run_config.json": "b0cbcbd227a615a80beab1a9f31bb06dd8a702f3c9d53b1830df8148b05a7fc7"
   },
   "output_csv_sha256": {
@@ -13,9 +13,10 @@
     "cohort_retention_rollups.csv": "58b22f1316485c607f2d6398a5eb5d34f42bcf676f37d3e42f8dc609edf5c597",
     "cpc_shock_sensitivity.csv": "e7cdf561c29082866263a581e3f2672c22575b9c418fae0d2430a8847db0367b",
     "demo_confidence.csv": "03e0aa69fc105f3bc576dea026bb15dbb2f8c1e3857359f283b4b85ad57e1d8f",
+    "demo_payback_updates.csv": "c79bae8a0bf8ad22f49269d5870b21783c40675136528ee9864f82fed62fa4f4",
     "forecasts_unscored.csv": "e2413dfd8e8bb50be864cefc8152409f652666dca721473893f55ffdfe481ba9",
-    "heldout_scores.csv": "3468de400a51c5a052ed548356e0c0512de08d57f2a4558eeb888bdd461579c8",
-    "heldout_unscored.csv": "fa093083625e2f47cbedae91a1364eb436d9c99b38c1a27b1ed0b0f4bfb072a7",
+    "heldout_scores.csv": "1c4a9f5b63692d8a2b8c11d283c5b4e23b23ce2281cd22177f4ad3f9a1988c04",
+    "heldout_unscored.csv": "c4050643a5e0a351bbff049baf02816ddc2d928cdddedc5ad72ba5dad9e15097",
     "measurement.csv": "b730d5ae415ff9e1eedaf9cb1917833152be443ef7f640b6ffc55273d8133a06",
     "metrics.csv": "26cb1e9a6e8f70d2bba9bbca0a2e374746589e4df03196e0ed0a1d69d4f91b44",
     "payback_cdf.csv": "c3c22d0839f394a80daac71ca8cdf472f73e1c3aad2cc8f07affac10e85effa9",

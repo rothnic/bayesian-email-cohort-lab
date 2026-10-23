@@ -1,74 +1,74 @@
 [
   {
     "world": "heldout-fixed_price-4101",
-    "seconds": 19.691710865008645
+    "seconds": 17.977270346018486
   },
   {
     "world": "heldout-fixed_price-4102",
-    "seconds": 18.469881763041485
+    "seconds": 17.616734893003013
   },
   {
     "world": "heldout-fixed_price-4103",
-    "seconds": 20.44496239500586
+    "seconds": 17.588431519048754
   },
   {
     "world": "heldout-cpc_squeeze-14101",
-    "seconds": 20.295362894947175
+    "seconds": 17.006788950995542
   },
   {
     "world": "heldout-cpc_squeeze-14102",
-    "seconds": 17.98593833600171
+    "seconds": 17.256897575978655
   },
   {
     "world": "heldout-cpc_squeeze-14103",
-    "seconds": 19.7191143600503
+    "seconds": 17.298104136018082
   },
   {
     "world": "heldout-rising_cpl-24101",
-    "seconds": 20.072529374971054
+    "seconds": 17.19040759699419
   },
   {
     "world": "heldout-rising_cpl-24102",
-    "seconds": 17.792855434992816
+    "seconds": 17.341725960024633
   },
   {
     "world": "heldout-rising_cpl-24103",
-    "seconds": 18.86017775896471
+    "seconds": 17.306056216999423
   },
   {
     "world": "heldout-human_decline_bot_rise-34101",
-    "seconds": 20.984512126015034
+    "seconds": 17.48155016399687
   },
   {
     "world": "heldout-human_decline_bot_rise-34102",
-    "seconds": 18.23953598999651
+    "seconds": 17.07099850702798
   },
   {
     "world": "heldout-human_decline_bot_rise-34103",
-    "seconds": 17.752197714988142
+    "seconds": 16.935349596955348
   },
   {
     "world": "heldout-cheap_good-44101",
-    "seconds": 18.83294092596043
+    "seconds": 17.689047706022393
   },
   {
     "world": "heldout-cheap_good-44102",
-    "seconds": 20.55828829301754
+    "seconds": 17.57973273296375
   },
   {
     "world": "heldout-cheap_good-44103",
-    "seconds": 19.820161513984203
+    "seconds": 17.588268942025024
   },
   {
     "world": "heldout-cheap_bad-54101",
-    "seconds": 18.739899637002964
+    "seconds": 17.940481887955684
   },
   {
     "world": "heldout-cheap_bad-54102",
-    "seconds": 18.643117585976142
+    "seconds": 17.70866472402122
   },
   {
     "world": "heldout-cheap_bad-54103",
-    "seconds": 20.464732991997153
+    "seconds": 18.26525934098754
   }
 ]

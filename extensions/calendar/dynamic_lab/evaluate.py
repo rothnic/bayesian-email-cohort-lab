@@ -106,7 +106,7 @@ def fit_predict(frame,cutoff,mode,targets,draws,seed,future):
 
 
 def demo(config,out):
-    forecasts=[];pending=[];trajectories=[];cdfs=[];calendar=[];measurement=[];states=[];transfer=[];diagnostics=[];portfolio=[];portfolio_draws=[];quote_sensitivity=[];retention_truth=[];retention_forecast=[];retention_rollups=[];retention_rollup_detail=[];demo_confidence=[];cpc_shocks=[]
+    forecasts=[];pending=[];trajectories=[];cdfs=[];calendar=[];measurement=[];states=[];transfer=[];diagnostics=[];portfolio=[];portfolio_draws=[];quote_sensitivity=[];retention_truth=[];retention_forecast=[];retention_rollups=[];retention_rollup_detail=[];demo_confidence=[];demo_payback_updates=[];cpc_shocks=[]
     for scenario in config['scenarios']:
         world,truth=generate(config['demo_seed'],scenario,config['leads_per_cohort'],config['last_birth'])
         wid=f'demo-{scenario}-{config["demo_seed"]}'
@@ -229,11 +229,15 @@ def demo(config,out):
             target=world.cohort_registry.loc[world.cohort_registry.cohort_id=='new_cheap-b070'].iloc[0].to_dict()
             target['target_role']='same_fixed_cohort';target['acquisition_cost']=world.quote_at('new_cheap',69)*target['leads']
             actual=float(actual_path(world,truth,target)[180])
+            actual_paths=actual_path(world,truth,target)
+            actual_crossings=np.flatnonzero(actual_paths>=0)
+            true_first_break_even=int(actual_crossings[0]) if len(actual_crossings) else np.nan
             for cutoff in [69,77,84,91,98,105,112,119]:
                 frozen=world.as_of(cutoff)
                 _,pred=fit_predict(frozen.frame(),cutoff,'dynamic_hierarchy',[target],config['demo_draws'],
                     config['demo_seed']+cutoff+1701,'hold_current')
-                x=np.asarray(pred['margin_paths'])[:,0,180]
+                paths=np.asarray(pred['margin_paths'])[:,0,:]
+                x=paths[:,180]
                 probability=float(np.mean(x>PROFIT_BUFFER_PER_LEAD*target['leads']))
                 demo_confidence.append(dict(world=wid,scenario=scenario,model='dynamic_hierarchy',
                     cohort_id=target['cohort_id'],source_id=target['source_id'],birth_day=target['birth_day'],
@@ -242,6 +246,23 @@ def demo(config,out):
                     state='above_target' if probability>=BUY_THRESHOLD else
                     'below_target' if probability<=NO_BUY_THRESHOLD else 'undecided',true_margin180=actual,
                     true_above_buffer=actual>PROFIT_BUFFER_PER_LEAD*target['leads'],draws=len(x)))
+                crossing_ages=[]
+                for path in paths:
+                    crossing=np.flatnonzero(path>=0)
+                    if len(crossing):crossing_ages.append(int(crossing[0]))
+                crossing_ages=np.asarray(crossing_ages,dtype=float)
+                qs=np.quantile(crossing_ages,[.10,.25,.50,.75,.90]) if len(crossing_ages) else [np.nan]*5
+                demo_payback_updates.append(dict(world=wid,scenario=scenario,model='dynamic_hierarchy',
+                    cohort_id=target['cohort_id'],source_id=target['source_id'],birth_day=target['birth_day'],
+                    origin_day=cutoff,origin_age=cutoff-target['birth_day'],target_horizon=425,
+                    p_no_break_even_by_horizon=1-len(crossing_ages)/len(paths),
+                    p_break_even_by_horizon=len(crossing_ages)/len(paths),
+                    conditional_q10_age=qs[0],conditional_q25_age=qs[1],conditional_median_age=qs[2],
+                    conditional_q75_age=qs[3],conditional_q90_age=qs[4],
+                    crossing_draws=len(crossing_ages),draws=len(paths),
+                    true_first_break_even_age=true_first_break_even,
+                    interval_scope='conditional on crossing by age 425; noncrossing mass reported separately',
+                    future_scenario='hold_current',information_sha256=frozen.digest))
         if scenario=='cpc_squeeze':
             retention_truth.extend(truth.cohort_truth.loc[truth.cohort_truth.age<=180].to_dict('records'))
             raw_rollups=truth.cohort_rollups
@@ -332,7 +353,8 @@ def demo(config,out):
                       ('retention_truth',retention_truth),('retention_forecast',retention_forecast),
                       ('cohort_retention_rollups',retention_rollups),
                       ('cohort_retention_rollup_detail',retention_rollup_detail),
-                      ('demo_confidence',demo_confidence),('cpc_shock_sensitivity',cpc_shocks)]:
+                      ('demo_confidence',demo_confidence),('demo_payback_updates',demo_payback_updates),
+                      ('cpc_shock_sensitivity',cpc_shocks)]:
         pd.DataFrame(rows).to_csv(out/f'{name}.csv',index=False)
     json_write(out/'diagnostics.json',diagnostics)
 

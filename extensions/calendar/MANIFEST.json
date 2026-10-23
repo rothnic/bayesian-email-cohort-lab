@@ -3,8 +3,8 @@
   "all_data_fictional": true,
   "tests_passed": 42,
   "legacy_v1_test_module_skipped": true,
-  "figures": 10,
-  "figure_variants": 40,
+  "figures": 11,
+  "figure_variants": 44,
   "heldout_worlds": 18,
   "heldout_forecasts_all_models": 1530,
   "files": [
@@ -15,8 +15,8 @@
     },
     {
       "path": "FINAL_CHECKS.json",
-      "bytes": 639,
-      "sha256": "783a56415b9de1a635e74f71dcbbd1d8779f2ee9c045bd7a0d48047db4842c7d"
+      "bytes": 835,
+      "sha256": "44e4d20af2c9366dc184dd68398ef77eaf03df5ebcafd386f2401d69f32d5f90"
     },
     {
       "path": "INDEPENDENT_REVIEW.md",
@@ -30,8 +30,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2605,
-      "sha256": "97089761313341e0e664f704e50707a0909c54ead670af4c90a0af5a0b6a885c"
+      "bytes": 2678,
+      "sha256": "e7e0da4311b91b1d3bd5dc1209996d321528b07a80f595de8ef73c448c3fd101"
     },
     {
       "path": "REPLAY_CHECKPOINT.md",
@@ -104,9 +104,14 @@
       "sha256": "03e0aa69fc105f3bc576dea026bb15dbb2f8c1e3857359f283b4b85ad57e1d8f"
     },
     {
+      "path": "dynamic_lab/artifacts/demo_payback_updates.csv",
+      "bytes": 5144,
+      "sha256": "c79bae8a0bf8ad22f49269d5870b21783c40675136528ee9864f82fed62fa4f4"
+    },
+    {
       "path": "dynamic_lab/artifacts/diagnostics.json",
-      "bytes": 174333,
-      "sha256": "3c5624a010f3bb7bd1390b87ad868c8d5e65cc1473f8be740a1431a7717eced7"
+      "bytes": 174339,
+      "sha256": "a9f5dd8b4ffdb325180f247a724ed520c62c0a630ca7f1282023b71b1815bc95"
     },
     {
       "path": "dynamic_lab/artifacts/figures/01-calendar-economics-mobile.png",
@@ -116,7 +121,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/01-calendar-economics-mobile.svg",
       "bytes": 43748,
-      "sha256": "0a4e185b92299f3ccfb8be3dc3f252f28ae3cd7f6325e9098b34bd1c5e44ab6b"
+      "sha256": "f98aca24279d6c37151c2ed86a40311e6fd59bf64190071134cab0b93c92856c"
     },
     {
       "path": "dynamic_lab/artifacts/figures/01-calendar-economics.png",
@@ -126,7 +131,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/01-calendar-economics.svg",
       "bytes": 42404,
-      "sha256": "899ae41057c89eb90e686e5919f24bbb404c98facc84c3f7f66414ba3088a875"
+      "sha256": "4a180748b0a8b2eb6b82b6ba542d0a481a8c8960fad313fafe7672e2621ab6b5"
     },
     {
       "path": "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.png",
@@ -136,7 +141,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.svg",
       "bytes": 37847,
-      "sha256": "114e54c579376279e89167c2283bad66bc22664aa91e64668e61746565d3949d"
+      "sha256": "0be093ba5994ce923dca2b52e2827384490fb35e0fec11c2ff4ae3d0e60673a4"
     },
     {
       "path": "dynamic_lab/artifacts/figures/02-human-bot-evidence.png",
@@ -146,7 +151,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/02-human-bot-evidence.svg",
       "bytes": 37192,
-      "sha256": "f310b1e0548d0e4aecb7448a9c3399745082a1175be5809632df6881d2083a7d"
+      "sha256": "1b67ee36acbd6730da2a418c71ff3427306c07eb042fb8a153b28643e5e2e86d"
     },
     {
       "path": "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.png",
@@ -156,7 +161,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.svg",
       "bytes": 98159,
-      "sha256": "39a5d7a2fded9399c7acfe04d671c29bb5f431671607eff49381033135175149"
+      "sha256": "531de6459f85343422841f4e74012dfc78ac8cffcad2b71d726354eb65f6a27d"
     },
     {
       "path": "dynamic_lab/artifacts/figures/03-shared-calendar-states.png",
@@ -166,7 +171,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/03-shared-calendar-states.svg",
       "bytes": 98116,
-      "sha256": "e63bb531ffaad72f8d92e96eae010732b2d3a112bbff3e4ba6d6de35a23ab43d"
+      "sha256": "3341616515640aa863972e4440f0d4300fe1b1a178653ae960fffc45bde9dbe0"
     },
     {
       "path": "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.png",
@@ -176,7 +181,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.svg",
       "bytes": 77120,
-      "sha256": "9b2649685bdeef1209247057d0fcb100cbb4e0ac7558aad12590ecdd3be898ec"
+      "sha256": "8533e9d515f68e5120cb6797b05b77721cb40f5dc37e726c029ddc19c5dcee3f"
     },
     {
       "path": "dynamic_lab/artifacts/figures/04-cohort-contribution-payback.png",
@@ -186,7 +191,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/04-cohort-contribution-payback.svg",
       "bytes": 75683,
-      "sha256": "57ccdc5a1e8cf72dd69391c2d27d64ba54f46c828bb41507be50b19d29195795"
+      "sha256": "db62290041aa128eb8c40fcb9765e198ccd424dc62607bd0b7dc4bbbd91251c6"
     },
     {
       "path": "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.png",
@@ -196,7 +201,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.svg",
       "bytes": 26108,
-      "sha256": "949ccc9b944f8c9dadf3800a653f6c92b4970be3f86124e67c45d2ce673e628b"
+      "sha256": "646cceaf4dd6e546a7c1d2f9da306d8afef64f2c767e73b380a3f96b75291050"
     },
     {
       "path": "dynamic_lab/artifacts/figures/05-new-source-transfer.png",
@@ -206,7 +211,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/05-new-source-transfer.svg",
       "bytes": 29238,
-      "sha256": "56e38a62ad9ff3d628699c7efa989ec6f79117d062df7cf60ca2c60333aee0e2"
+      "sha256": "f18c872ab4853ff3a4b274b63e983617ae8a15a141db22caa2785bd306b655d8"
     },
     {
       "path": "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.png",
@@ -216,7 +221,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.svg",
       "bytes": 55655,
-      "sha256": "b93ccc12d551170948ce7b3bfff94901815c4c07e57442efcff41b89874721cd"
+      "sha256": "e0978be59fdc748261ae33f7c6dafb11b365b8d01570bcef9d23c74d4e97b444"
     },
     {
       "path": "dynamic_lab/artifacts/figures/06-heldout-comparison.png",
@@ -226,7 +231,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/06-heldout-comparison.svg",
       "bytes": 56413,
-      "sha256": "14bff740ae2aa06776364d127040be7b5d4071f8ed0d9aa7601b31e8ed7e597a"
+      "sha256": "23606e16f5521ce38f1f622fe1d687174c5dcb090cb86860966f1f9c49b7c639"
     },
     {
       "path": "dynamic_lab/artifacts/figures/07-cohort-variability-mobile.png",
@@ -236,7 +241,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/07-cohort-variability-mobile.svg",
       "bytes": 136703,
-      "sha256": "358ce4505ebae1e44979c6b95f48e9dc188809dda848ed480a644b6f44dece61"
+      "sha256": "f4880cd712416c812e589387d2f1d91bb81900060683aafab527ba47e2ca7925"
     },
     {
       "path": "dynamic_lab/artifacts/figures/07-cohort-variability.png",
@@ -246,7 +251,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/07-cohort-variability.svg",
       "bytes": 137754,
-      "sha256": "1e58ea365c863d9007863f2fc820e3dc341a8553ac0b64ca37fa1e107c609490"
+      "sha256": "3df853db60ab41448a90ecd199e547f194862b720feb204aba8052d0eef2f9b3"
     },
     {
       "path": "dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.png",
@@ -256,7 +261,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.svg",
       "bytes": 20622,
-      "sha256": "6b0c74bd997570d463f55fac1621cf9a514cd7fad25bf8f91ff0e8b30d0eb411"
+      "sha256": "cc998287d0fc4448c609cc5b2dc268ef8e2595ce7932a5b6e1c94fee11e17b5e"
     },
     {
       "path": "dynamic_lab/artifacts/figures/08-confidence-over-time.png",
@@ -266,7 +271,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/08-confidence-over-time.svg",
       "bytes": 20416,
-      "sha256": "721c572833ea153df4cf0d78160a290eb84862246e99ef171e7eaed2f97d44eb"
+      "sha256": "afeabcc85f1c592c0d45675085b2c0a801b78030cb0b5af66a8381dec5be3f22"
     },
     {
       "path": "dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.png",
@@ -276,7 +281,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.svg",
       "bytes": 18929,
-      "sha256": "561cd7eb53e83a0e753dd3a803fdfddaa0b1d28dc2cdf15596f442a5cf8a30b0"
+      "sha256": "76228dca72c824943c5d85c65785fd0e2c40b31a94c4d280b68ff2e36a8e99ba"
     },
     {
       "path": "dynamic_lab/artifacts/figures/09-cpc-what-if.png",
@@ -286,7 +291,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/09-cpc-what-if.svg",
       "bytes": 18718,
-      "sha256": "c715e3ff4f22a9f44c92ee720a6812709767f08546636bbce926499eed579946"
+      "sha256": "acf0f177cbf154bf860726d394042a738c20749f1fd10c12bdd0f0c4741a6864"
     },
     {
       "path": "dynamic_lab/artifacts/figures/10-decision-reliability-mobile.png",
@@ -296,7 +301,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/10-decision-reliability-mobile.svg",
       "bytes": 31958,
-      "sha256": "886edcd921aa43fe12a5421cd1e6c5c0a2c0c71e0cc83b06a02e545b765bc33e"
+      "sha256": "2a5a4068023c3c3caeaf9fa7af4a7f446ba42435dd3dda9c6a5ce4b7e916254a"
     },
     {
       "path": "dynamic_lab/artifacts/figures/10-decision-reliability.png",
@@ -306,27 +311,47 @@
     {
       "path": "dynamic_lab/artifacts/figures/10-decision-reliability.svg",
       "bytes": 31478,
-      "sha256": "6846eac9245e5dfdd2de5aed46b7aaa8cde1a35ea3181a594a47f05e42b2fa51"
+      "sha256": "f2bdc308b3548ae151d8945d99e4b62e0d17e13f657af651293ca8e9b9dda4cf"
+    },
+    {
+      "path": "dynamic_lab/artifacts/figures/11-break-even-learning-mobile.png",
+      "bytes": 188210,
+      "sha256": "6857220fb09bedfc00e83150a273b66905af86c3da63f064871370ee938cec18"
+    },
+    {
+      "path": "dynamic_lab/artifacts/figures/11-break-even-learning-mobile.svg",
+      "bytes": 27993,
+      "sha256": "765b08191720073b24bd0061f9496bab67ebbefccdef464fd3c9de93e6ebbdec"
+    },
+    {
+      "path": "dynamic_lab/artifacts/figures/11-break-even-learning.png",
+      "bytes": 210642,
+      "sha256": "12e24b43967065c82ca565160318d68cb54bbd4a1c013e7853343b9310f3cd55"
+    },
+    {
+      "path": "dynamic_lab/artifacts/figures/11-break-even-learning.svg",
+      "bytes": 27943,
+      "sha256": "9c60950d0d8b30f9e47f04665a2dd769ee62946cfd102f8ad262f28c01b87fd3"
     },
     {
       "path": "dynamic_lab/artifacts/figures/CAPTIONS.md",
-      "bytes": 13894,
-      "sha256": "fdeefa5eea88845877b9ec2e25d65b200a0b365fb4a40c2367296828dd5b3ccf"
+      "bytes": 15445,
+      "sha256": "16be96d8f0dda90fc512b0510350cc0554597168e5345f0e781029185687eb37"
     },
     {
       "path": "dynamic_lab/artifacts/figures/FIGURE_QA.json",
-      "bytes": 1519,
-      "sha256": "93893acb446bb8845f415ef440702646ddbb49c55b2692712533b0fa61deb241"
+      "bytes": 1696,
+      "sha256": "7085bbf347cff2d2d8a7f62de2849373f6e3ab2f62c6f5f46ac43d8052725099"
     },
     {
       "path": "dynamic_lab/artifacts/figures/chart_provenance.json",
-      "bytes": 31129,
-      "sha256": "bf3d88b9bbe9245d511d55dc525cabf893b840cc38d7a85727a920f3c1ea1fb3"
+      "bytes": 34213,
+      "sha256": "f823ba18394d04ef7547574f407c9f806c4cd55059e9d1484cc17b1a15a749b3"
     },
     {
       "path": "dynamic_lab/artifacts/figures/mobile_text_checks.json",
-      "bytes": 2213,
-      "sha256": "f81b82620fd97073594bd7cf03cb999ecadd1e15cff6421e3f7a2a82a64a66f6"
+      "bytes": 2434,
+      "sha256": "c387336be1abc007d719bedae3664a78a353d2130e868e7f62208d062cf789e7"
     },
     {
       "path": "dynamic_lab/artifacts/figures/sources/original_v1_metrics_by_origin.csv",
@@ -389,6 +414,11 @@
       "sha256": "7b52de8d0be38d2fd247955e9435d7e901c20228c7f4ff482c24b44c0dae0f84"
     },
     {
+      "path": "dynamic_lab/artifacts/figures/tables/11-break-even-learning.csv",
+      "bytes": 5144,
+      "sha256": "4ae9d6765ab003cc261507af395ad3fcfe55260fe313a6a892985b224bac3d0f"
+    },
+    {
       "path": "dynamic_lab/artifacts/forecast_seal.json",
       "bytes": 98,
       "sha256": "8e29fb0c82de3e51975a22dc0fbb72b356284882cc9e24c37f8f565240ebccb1"
@@ -400,23 +430,23 @@
     },
     {
       "path": "dynamic_lab/artifacts/heldout_runtime.json",
-      "bytes": 1543,
-      "sha256": "63ccc559c72a6dca5da9b50afac293ada2941897c4fcdf19d14addb81cc7369a"
+      "bytes": 1545,
+      "sha256": "d82f92a5aa832bbaac91d42fa0e888ee07907ac6d57741de7fa38bd5f9ed460a"
     },
     {
       "path": "dynamic_lab/artifacts/heldout_scores.csv",
       "bytes": 704472,
-      "sha256": "3468de400a51c5a052ed548356e0c0512de08d57f2a4558eeb888bdd461579c8"
+      "sha256": "1c4a9f5b63692d8a2b8c11d283c5b4e23b23ce2281cd22177f4ad3f9a1988c04"
     },
     {
       "path": "dynamic_lab/artifacts/heldout_seal.json",
       "bytes": 99,
-      "sha256": "21fd742467ac75bc8cf8bec4d9582f04e5a2a371e114c794ad06c0d27dfdf927"
+      "sha256": "beafa57a78138f6953d0a7260777dd0415c8263f3033eb5394d06efe5c255a42"
     },
     {
       "path": "dynamic_lab/artifacts/heldout_unscored.csv",
       "bytes": 575952,
-      "sha256": "fa093083625e2f47cbedae91a1364eb436d9c99b38c1a27b1ed0b0f4bfb072a7"
+      "sha256": "c4050643a5e0a351bbff049baf02816ddc2d928cdddedc5ad72ba5dad9e15097"
     },
     {
       "path": "dynamic_lab/artifacts/measurement.csv",
@@ -470,8 +500,8 @@
     },
     {
       "path": "dynamic_lab/artifacts/run_manifest.json",
-      "bytes": 3030,
-      "sha256": "0f33dc371dd7267ba1f4bfabb1b6c3de4708fe2b2ec2d0ff8ccb4196d94c71c3"
+      "bytes": 3130,
+      "sha256": "5a1d6a9c252dcf893e5bd0b7b8c857ea24a140492c0e4d8513f25cd9685675f3"
     },
     {
       "path": "dynamic_lab/artifacts/sequential_confidence.csv",
@@ -500,13 +530,13 @@
     },
     {
       "path": "dynamic_lab/evaluate.py",
-      "bytes": 37345,
-      "sha256": "f3be845570baca03afecf51d21e4fd288ff90bdd61354034b509fb882d12ebcd"
+      "bytes": 39035,
+      "sha256": "8254be03d6c68e5eaa574e0cf8f741a8cde836bcf70a8adcfe9eef689e5833b3"
     },
     {
       "path": "dynamic_lab/figures.py",
-      "bytes": 70549,
-      "sha256": "cdb418c6446fe7e8bd7dfa37be25cdf2f728638cd8e00912991168ae5f0b17b1"
+      "bytes": 75289,
+      "sha256": "979090fc93c5a3b61a1412d83bae357dfcdd78c110547e75152367e7067b44a3"
     },
     {
       "path": "dynamic_lab/model.py",
@@ -648,5 +678,6 @@
       "bytes": 7771,
       "sha256": "317bb4b6d63842903fb5250d48ccf9b7c54fae3421d8d5a8fec760ae1ab3c5ec"
     }
-  ]
+  ],
+  "tests_status_note": "42 passing tests are from the preceding revision; not rerun for the break-even chart update."
 }

@@ -884,6 +884,59 @@ def confidence_over_time(renderer):
         'Probability that day-180 cumulative contribution exceeds $0.02 times acquired leads; fixed acquired cohort and fixed horizon.')
 
 
+def break_even_learning(renderer):
+    data,src=renderer.read('demo_payback_updates.csv',[
+        'scenario','cohort_id','origin_day','origin_age','target_horizon',
+        'p_no_break_even_by_horizon','conditional_q10_age','conditional_q25_age',
+        'conditional_median_age','conditional_q75_age','conditional_q90_age',
+        'crossing_draws','draws','true_first_break_even_age'])
+    data=data[data.scenario.isin(['cheap_good','cheap_bad'])].sort_values('origin_day')
+    if data.empty:raise ValueError('Missing same-cohort break-even learning demonstration')
+    title='How the estimated break-even age changes as a cohort matures'
+    def plot(mobile):
+        fig,axes=frame(title,2,mobile)
+        ax=axes[0];panel_title(ax,'First age cumulative contribution reaches $0',mobile_title='')
+        colors={'cheap_good':BLUE,'cheap_bad':AMBER}
+        labels={'cheap_good':'Good hidden performance','cheap_bad':'Lower hidden performance'}
+        for scenario in ['cheap_good','cheap_bad']:
+            part=data[data.scenario==scenario].sort_values('origin_day')
+            color=colors[scenario]
+            x=part.origin_day.to_numpy()
+            ax.fill_between(x,part.conditional_q10_age,part.conditional_q90_age,
+                color=color,alpha=.10,linewidth=0)
+            ax.fill_between(x,part.conditional_q25_age,part.conditional_q75_age,
+                color=color,alpha=.20,linewidth=0)
+            ax.plot(x,part.conditional_median_age,color=color,lw=2.2,marker='o',ms=4,
+                label=f'{("Good" if scenario=="cheap_good" else "Lower perf.")}: forecast')
+            truth_values=part.true_first_break_even_age.dropna()
+            if not truth_values.empty:
+                ax.axhline(float(truth_values.iloc[0]),color=color,ls='--',lw=1.2,alpha=.85,
+                    label=f'{("Good" if scenario=="cheap_good" else "Lower perf.")}: hidden truth')
+        ax.set_ylabel('Cohort age at first break-even (days)')
+        ax.set_xlabel('Information available through calendar day')
+        ax.set_xticks(sorted(data.origin_day.unique()))
+        ax.set_ylim(bottom=0)
+        ax.legend(frameon=False,fontsize=12.4 if mobile else 8.2,loc='lower left',bbox_to_anchor=(0,1.02),ncol=1)
+        ax=axes[1];panel_title(ax,'Posterior chance of no break-even by age 425',mobile_title='')
+        for scenario in ['cheap_good','cheap_bad']:
+            part=data[data.scenario==scenario].sort_values('origin_day')
+            ax.plot(part.origin_day,part.p_no_break_even_by_horizon,color=colors[scenario],lw=2.2,
+                marker='o',ms=4,label=('Good' if scenario=='cheap_good' else 'Lower perf.') if mobile
+                else labels[scenario])
+        ax.set_ylim(0,1);ax.yaxis.set_major_formatter(PercentFormatter(1))
+        ax.set_ylabel('Probability of no break-even by age 425')
+        ax.set_xlabel('Information available through calendar day')
+        ax.set_xticks(sorted(data.origin_day.unique()))
+        ax.legend(frameon=False,fontsize=12.4 if mobile else 9,loc='lower left',bbox_to_anchor=(0,1.02))
+        return fig
+    renderer.emit('11-break-even-learning',title,
+        'Two equally priced fictional source worlds start with the same prelaunch prior and follow the same fixed day-70 cohort. At each cutoff the model is refit using only then-visible observations, and predicts that cohort under hold-current future conditions. The top panel shows first-break-even age quantiles only among predictive paths that cross zero by age 425: darker fill is the middle 50%, pale fill the middle 80%, and solid line the median. Dashed lines show evaluator-only hidden outcomes for context. The lower panel reports predictive paths with no break-even by age 425. These are posterior predictive intervals, not a promise that uncertainty shrinks monotonically: new evidence can shift or widen the estimate, and future process variation remains. Both sources have the same $0.05 per-lead price; the difference is hidden subscriber performance.',
+        'For the same cohort, conditional break-even-age bands and the separate probability of no break-even update as observations arrive; hidden simulated outcomes provide a reference.',
+        [src],'paired cheap_good/cheap_bad worlds; cohort=new_cheap-b070; information cutoffs=69,77,84,91,98,105,112,119; age horizon=425; future=hold_current',data,plot,
+        '50% and 80% posterior predictive quantile bands for first break-even age, conditional on crossing by age 425; noncrossing probability is displayed separately.',
+        'Each cutoff is one refit using records available through that calendar day. Age is measured from cohort birth day 70. Percent denominator is all posterior predictive paths.')
+
+
 def cpc_shock(renderer):
     data,src=renderer.read('cpc_shock_sensitivity.csv',['cpc_drop_fraction','p_margin_above_buffer180','margin_q05','margin_median','margin_q95','paired_margin_delta_median','expected_shortfall_below_buffer_per_lead'])
     data=data.sort_values('cpc_drop_fraction')
@@ -958,6 +1011,7 @@ def render_all(artifacts: Path | Renderer, output: Path | None = None):
     heldout_comparison(renderer)
     cohort_variability(renderer)
     confidence_over_time(renderer)
+    break_even_learning(renderer)
     cpc_shock(renderer)
     decision_reliability(renderer)
     if managed: renderer.finish()

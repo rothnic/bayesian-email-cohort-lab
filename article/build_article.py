@@ -143,6 +143,7 @@ def main():
                 '06-heldout-comparison':['panel','scenario','model','metric','mean','lower95','upper95','units','n_worlds','n_forecasts'],
                 '07-cohort-variability':['panel','source_id','cohort_id','age','contactable_share_of_acquired','unique_response_rate_of_eligible','cohort_count','window_days','window_start_age','window_end_age','acquired_leads','eligible_people_at_start','distinct_human_responders'],
                 '08-confidence-over-time':['scenario','cohort_id','origin_day','origin_age','posterior_probability','state','true_above_buffer','draws'],
+                '11-break-even-learning':['scenario','cohort_id','origin_day','origin_age','conditional_median_age','conditional_q25_age','conditional_q75_age','conditional_q10_age','conditional_q90_age','p_no_break_even_by_horizon','true_first_break_even_age','crossing_draws','draws'],
                 '09-cpc-what-if':['cpc_drop_fraction','effective_day','ramp_days','p_margin_above_buffer180','expected_shortfall_below_buffer_per_lead','paired_margin_delta_median','paired_margin_delta_q05','paired_margin_delta_q95','margin_median','draws'],
                 '10-decision-reliability':['panel','model','metric','mean','lower95','upper95','n_worlds','n_forecasts','probability_bin','predicted_probability','observed_rate','state']}
             cols=[c for c in column_sets.get(key,list(data.columns)) if c in data]

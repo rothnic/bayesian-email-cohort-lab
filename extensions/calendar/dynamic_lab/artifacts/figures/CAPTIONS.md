@@ -100,6 +100,18 @@ Denominator: Probability that day-180 cumulative contribution exceeds $0.02 time
 
 Numeric table: [08-confidence-over-time.csv](tables/08-confidence-over-time.csv)
 
+## How the estimated break-even age changes as a cohort matures
+
+Two equally priced fictional source worlds start with the same prelaunch prior and follow the same fixed day-70 cohort. At each cutoff the model is refit using only then-visible observations, and predicts that cohort under hold-current future conditions. The top panel shows first-break-even age quantiles only among predictive paths that cross zero by age 425: darker fill is the middle 50%, pale fill the middle 80%, and solid line the median. Dashed lines show evaluator-only hidden outcomes for context. The lower panel reports predictive paths with no break-even by age 425. These are posterior predictive intervals, not a promise that uncertainty shrinks monotonically: new evidence can shift or widen the estimate, and future process variation remains. Both sources have the same $0.05 per-lead price; the difference is hidden subscriber performance.
+
+Alt text: For the same cohort, conditional break-even-age bands and the separate probability of no break-even update as observations arrive; hidden simulated outcomes provide a reference.
+
+Intervals: 50% and 80% posterior predictive quantile bands for first break-even age, conditional on crossing by age 425; noncrossing probability is displayed separately.
+
+Denominator: Each cutoff is one refit using records available through that calendar day. Age is measured from cohort birth day 70. Percent denominator is all posterior predictive paths.
+
+Numeric table: [11-break-even-learning.csv](tables/11-break-even-learning.csv)
+
 ## A future CPC squeeze changes value without changing subscriber behavior
 
 Conditional what-if for a planned existing-source cohort, fitted on day 119 and acquired day 126. The model applies an additional 0–45% net-CPC drop beginning day 140 and ramping for 28 days. Each point reuses the same posterior draw and random revenue-mark path: contactability, humans, engagement, click counts, purchase cost, send costs and shared uncertainty are held fixed. Only post-shock revenue per human event changes. The blue band is a 90% draw interval for margin; amber shows the paired median margin difference. The probability axis starts at zero and is scaled to the plotted range; exact probabilities are in the table. Scenario probabilities are not a forecast that a given squeeze will occur.

@@ -5,8 +5,8 @@
   "total_tests_passed": 42,
   "passed": true,
   "all_scientific_source_and_csv_hashes_verified": true,
-  "figures": 10,
-  "desktop_mobile_png_svg_files": 40,
+  "figures": 11,
+  "desktop_mobile_png_svg_files": 44,
   "minimum_mobile_text_css_px_at390": 12.58312276637862,
   "mobile_text_checks_passed": true,
   "full_html_browser_render_verified": false,
@@ -14,5 +14,7 @@
   "heldout_worlds": 18,
   "heldout_forecasts_all_models": 1530,
   "dynamic_forecasts": 306,
-  "original_v1_failure_kept_separate": true
+  "original_v1_failure_kept_separate": true,
+  "tests_run_for_this_update": false,
+  "test_status_note": "The 42 passing tests are from the preceding implementation revision; they were not rerun for this chart and evaluator-output update."
 }

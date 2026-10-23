@@ -1,0 +1,1032 @@
+{
+  "base_repository_commit": "2b724e1e1045395289eb09e38166a4901a866945",
+  "apply_prefixes": [
+    "extensions/calendar/",
+    "article/"
+  ],
+  "original_v1_untouched": true,
+  "omitted_original_exports": "The six previously excluded row-level files remain excluded; none is present or repackaged",
+  "files": [
+    {
+      "path": "article/ARTICLE_SOURCES.md",
+      "bytes": 2332,
+      "sha256": "86b6cfb8c9f5f3985df5aeaa03154deeab8778103e3049c091082232aa9b2a24"
+    },
+    {
+      "path": "article/ASSET_MANIFEST.json",
+      "bytes": 11801,
+      "sha256": "77c00579cd7d678dfa994f18911f204b0bacf53118070ab6a85ed929bf59f6b4"
+    },
+    {
+      "path": "article/README.md",
+      "bytes": 1839,
+      "sha256": "8584c6e851e25304795f0f0ed33b78c739d7aea029d87faea9760aacc861475a"
+    },
+    {
+      "path": "article/STANDALONE_VALIDATION.json",
+      "bytes": 5276,
+      "sha256": "a89bd308eb5c327c3dda2b903989c07872bf8957c3d68e070a09bb89dfce88b5"
+    },
+    {
+      "path": "article/article.md",
+      "bytes": 27787,
+      "sha256": "a3e4be162f1be9e6e560dca78059c59a26c4d4ea3cbd00f565f355173c046023"
+    },
+    {
+      "path": "article/article.mdx",
+      "bytes": 27787,
+      "sha256": "c5f7c9f5fa8c5a3c1a1066ac9cb84563ab6e2cd127d5ebcca42d7e9159c98458"
+    },
+    {
+      "path": "article/article.template.md",
+      "bytes": 19130,
+      "sha256": "fbf251a474c59d98c5ab2922840029a626401ebfca0d6c899b4e99bda79cdbdd"
+    },
+    {
+      "path": "article/assets/01-calendar-economics-mobile.png",
+      "bytes": 229529,
+      "sha256": "b76507ed08d588f5ada7c3e3b916f39cb2081f544201dbe29683eb9d1d762b2c"
+    },
+    {
+      "path": "article/assets/01-calendar-economics-mobile.svg",
+      "bytes": 43748,
+      "sha256": "f98aca24279d6c37151c2ed86a40311e6fd59bf64190071134cab0b93c92856c"
+    },
+    {
+      "path": "article/assets/01-calendar-economics.png",
+      "bytes": 213200,
+      "sha256": "a7c0cf9624f5bd161903a42ae7749c7c99234e76ab586f18261d7d73d8f754ee"
+    },
+    {
+      "path": "article/assets/01-calendar-economics.svg",
+      "bytes": 42404,
+      "sha256": "4a180748b0a8b2eb6b82b6ba542d0a481a8c8960fad313fafe7672e2621ab6b5"
+    },
+    {
+      "path": "article/assets/02-human-bot-evidence-mobile.png",
+      "bytes": 242806,
+      "sha256": "2fef0c03235dbdf2c5a25f73dea27909b4396ffc915107417089592508a05337"
+    },
+    {
+      "path": "article/assets/02-human-bot-evidence-mobile.svg",
+      "bytes": 37847,
+      "sha256": "0be093ba5994ce923dca2b52e2827384490fb35e0fec11c2ff4ae3d0e60673a4"
+    },
+    {
+      "path": "article/assets/02-human-bot-evidence.png",
+      "bytes": 256670,
+      "sha256": "1a6c3d86a929cf2f1a24529204bad57bfffb50d6772bdcbe467ebd54ecb7d397"
+    },
+    {
+      "path": "article/assets/02-human-bot-evidence.svg",
+      "bytes": 37192,
+      "sha256": "1b67ee36acbd6730da2a418c71ff3427306c07eb042fb8a153b28643e5e2e86d"
+    },
+    {
+      "path": "article/assets/03-shared-calendar-states-mobile.png",
+      "bytes": 216715,
+      "sha256": "08712f2c7a12d4fbc7ae3f71c3ad718ef4a438fe8bd8fa768752ace8bd4b1733"
+    },
+    {
+      "path": "article/assets/03-shared-calendar-states-mobile.svg",
+      "bytes": 98159,
+      "sha256": "531de6459f85343422841f4e74012dfc78ac8cffcad2b71d726354eb65f6a27d"
+    },
+    {
+      "path": "article/assets/03-shared-calendar-states.png",
+      "bytes": 227979,
+      "sha256": "094d21b19b2dcff9b905d782ab781845f30861cf51a22da1ffedec70ca7a6478"
+    },
+    {
+      "path": "article/assets/03-shared-calendar-states.svg",
+      "bytes": 98116,
+      "sha256": "3341616515640aa863972e4440f0d4300fe1b1a178653ae960fffc45bde9dbe0"
+    },
+    {
+      "path": "article/assets/04-cohort-contribution-payback-mobile.png",
+      "bytes": 278588,
+      "sha256": "1ecc4b59fd3e38566197867b0e6033cfbf02871e3691a3c36eaeb0169d8a56cb"
+    },
+    {
+      "path": "article/assets/04-cohort-contribution-payback-mobile.svg",
+      "bytes": 77120,
+      "sha256": "8533e9d515f68e5120cb6797b05b77721cb40f5dc37e726c029ddc19c5dcee3f"
+    },
+    {
+      "path": "article/assets/04-cohort-contribution-payback.png",
+      "bytes": 269726,
+      "sha256": "0e8ba4ac0580ef0fbbc97dc6e6d8e06d9aa0b410939a926f3918d2116d00bf17"
+    },
+    {
+      "path": "article/assets/04-cohort-contribution-payback.svg",
+      "bytes": 75683,
+      "sha256": "db62290041aa128eb8c40fcb9765e198ccd424dc62607bd0b7dc4bbbd91251c6"
+    },
+    {
+      "path": "article/assets/05-new-source-transfer-mobile.png",
+      "bytes": 230230,
+      "sha256": "92299473a642ae232467ec5c93741371d260aac0dbbe3b4d533d7cb5c227fc4c"
+    },
+    {
+      "path": "article/assets/05-new-source-transfer-mobile.svg",
+      "bytes": 26108,
+      "sha256": "646cceaf4dd6e546a7c1d2f9da306d8afef64f2c767e73b380a3f96b75291050"
+    },
+    {
+      "path": "article/assets/05-new-source-transfer.png",
+      "bytes": 205361,
+      "sha256": "4211aeaab84403e81ac83ece332c4b5f2a953214c09a38fc9880eae896c1d9d5"
+    },
+    {
+      "path": "article/assets/05-new-source-transfer.svg",
+      "bytes": 29238,
+      "sha256": "f18c872ab4853ff3a4b274b63e983617ae8a15a141db22caa2785bd306b655d8"
+    },
+    {
+      "path": "article/assets/06-heldout-comparison-mobile.png",
+      "bytes": 289774,
+      "sha256": "7c24bb64897135648a7392342da6080c449c574fb722609ded9278be066ddd3e"
+    },
+    {
+      "path": "article/assets/06-heldout-comparison-mobile.svg",
+      "bytes": 55655,
+      "sha256": "e0978be59fdc748261ae33f7c6dafb11b365b8d01570bcef9d23c74d4e97b444"
+    },
+    {
+      "path": "article/assets/06-heldout-comparison.png",
+      "bytes": 256446,
+      "sha256": "6bec17b4cfd6f4082601e4fd07c73d80faf5029d27cc9bc7bab18d1850567d44"
+    },
+    {
+      "path": "article/assets/06-heldout-comparison.svg",
+      "bytes": 56413,
+      "sha256": "23606e16f5521ce38f1f622fe1d687174c5dcb090cb86860966f1f9c49b7c639"
+    },
+    {
+      "path": "article/assets/07-cohort-variability-mobile.png",
+      "bytes": 472891,
+      "sha256": "bd6e3f3b45d59c24e7bc9b6764e74c968e555d5d0f2988aeedac027b1bf3b5ec"
+    },
+    {
+      "path": "article/assets/07-cohort-variability-mobile.svg",
+      "bytes": 136703,
+      "sha256": "f4880cd712416c812e589387d2f1d91bb81900060683aafab527ba47e2ca7925"
+    },
+    {
+      "path": "article/assets/07-cohort-variability.png",
+      "bytes": 550682,
+      "sha256": "53ad700885f6faa3f5170584833f5561ae2d8a1b0cb1c86a7b0dc8fc957bd71c"
+    },
+    {
+      "path": "article/assets/07-cohort-variability.svg",
+      "bytes": 137754,
+      "sha256": "3df853db60ab41448a90ecd199e547f194862b720feb204aba8052d0eef2f9b3"
+    },
+    {
+      "path": "article/assets/08-confidence-over-time-mobile.png",
+      "bytes": 123998,
+      "sha256": "0c481028ccf9242f5b83be9924136a704eab03522df66e9830b7f6df7b2f17b0"
+    },
+    {
+      "path": "article/assets/08-confidence-over-time-mobile.svg",
+      "bytes": 20622,
+      "sha256": "cc998287d0fc4448c609cc5b2dc268ef8e2595ce7932a5b6e1c94fee11e17b5e"
+    },
+    {
+      "path": "article/assets/08-confidence-over-time.png",
+      "bytes": 127445,
+      "sha256": "a12591f6c4193ccaad24edf1e32fa6fc0a149bddb5568ae1f83c381de0cbcd4f"
+    },
+    {
+      "path": "article/assets/08-confidence-over-time.svg",
+      "bytes": 20416,
+      "sha256": "afeabcc85f1c592c0d45675085b2c0a801b78030cb0b5af66a8381dec5be3f22"
+    },
+    {
+      "path": "article/assets/09-cpc-what-if-mobile.png",
+      "bytes": 165311,
+      "sha256": "ddba5db27dba2f065cefde770540ad09e4c2c0b8cb0004d2e54e6b040c8597d6"
+    },
+    {
+      "path": "article/assets/09-cpc-what-if-mobile.svg",
+      "bytes": 18929,
+      "sha256": "76228dca72c824943c5d85c65785fd0e2c40b31a94c4d280b68ff2e36a8e99ba"
+    },
+    {
+      "path": "article/assets/09-cpc-what-if.png",
+      "bytes": 179795,
+      "sha256": "09f37175e315fab0ebe9fd936178d1c06b7269b7e8e33f5bc6509f6eee131038"
+    },
+    {
+      "path": "article/assets/09-cpc-what-if.svg",
+      "bytes": 18718,
+      "sha256": "acf0f177cbf154bf860726d394042a738c20749f1fd10c12bdd0f0c4741a6864"
+    },
+    {
+      "path": "article/assets/10-decision-reliability-mobile.png",
+      "bytes": 172508,
+      "sha256": "62dcb1ceb1b4d4dc4dbc4037710f418dfbd7a620d021cf13f90997a6b3c0566d"
+    },
+    {
+      "path": "article/assets/10-decision-reliability-mobile.svg",
+      "bytes": 31958,
+      "sha256": "2a5a4068023c3c3caeaf9fa7af4a7f446ba42435dd3dda9c6a5ce4b7e916254a"
+    },
+    {
+      "path": "article/assets/10-decision-reliability.png",
+      "bytes": 159706,
+      "sha256": "1e13cc675cb404d203a1d80fa96cbca25090adeb0ab7c7ef70d7b82f050ab42c"
+    },
+    {
+      "path": "article/assets/10-decision-reliability.svg",
+      "bytes": 31478,
+      "sha256": "f2bdc308b3548ae151d8945d99e4b62e0d17e13f657af651293ca8e9b9dda4cf"
+    },
+    {
+      "path": "article/assets/11-break-even-learning-mobile.png",
+      "bytes": 188210,
+      "sha256": "6857220fb09bedfc00e83150a273b66905af86c3da63f064871370ee938cec18"
+    },
+    {
+      "path": "article/assets/11-break-even-learning-mobile.svg",
+      "bytes": 27993,
+      "sha256": "765b08191720073b24bd0061f9496bab67ebbefccdef464fd3c9de93e6ebbdec"
+    },
+    {
+      "path": "article/assets/11-break-even-learning.png",
+      "bytes": 210642,
+      "sha256": "12e24b43967065c82ca565160318d68cb54bbd4a1c013e7853343b9310f3cd55"
+    },
+    {
+      "path": "article/assets/11-break-even-learning.svg",
+      "bytes": 27943,
+      "sha256": "9c60950d0d8b30f9e47f04665a2dd769ee62946cfd102f8ad262f28c01b87fd3"
+    },
+    {
+      "path": "article/build_article.py",
+      "bytes": 22585,
+      "sha256": "b235da8e9c509c4b81fa63fd9a83f1c0197c5a9cb0b0cddba5d4e8b8f9549dd9"
+    },
+    {
+      "path": "article/chart_provenance.json",
+      "bytes": 34213,
+      "sha256": "f823ba18394d04ef7547574f407c9f806c4cd55059e9d1484cc17b1a15a749b3"
+    },
+    {
+      "path": "article/claims.json",
+      "bytes": 171237,
+      "sha256": "4a7340887529097b7e71b0cafe7534415740c86c0fec429d7d600ac90cab554f"
+    },
+    {
+      "path": "article/index.html",
+      "bytes": 59113,
+      "sha256": "292a22a0b92dc440c5fa39113eae92bb1a6bb500005d9c2f1a0f8ee4b7e2ebe0"
+    },
+    {
+      "path": "article/standalone.html",
+      "bytes": 13628605,
+      "sha256": "c01807912b67a75c82aec3423dba5a8a4a8c9881d40595de41dce2438b1322ce"
+    },
+    {
+      "path": "article/style.css",
+      "bytes": 4506,
+      "sha256": "76cf3472a45202fd13a15445e0eababb077be2b76b246a8ef94d4142d72dc335"
+    },
+    {
+      "path": "article/tables/01-calendar-economics.csv",
+      "bytes": 63556,
+      "sha256": "8b9f945d45358d4d67581a55c4666e4bbafbc3b5f5ea903713f825f4c582e941"
+    },
+    {
+      "path": "article/tables/02-human-bot-evidence.csv",
+      "bytes": 30304,
+      "sha256": "221af08bf40b0b571c723bd3b5768dee5304e7e23ea73a31d302bc499cd6409a"
+    },
+    {
+      "path": "article/tables/03-shared-calendar-states.csv",
+      "bytes": 190873,
+      "sha256": "17a93dea6a7f7936fc89ae1dba5b604679ae5853bb6b5077754f8aac374d9850"
+    },
+    {
+      "path": "article/tables/04-cohort-contribution-payback.csv",
+      "bytes": 962857,
+      "sha256": "476abb95bf4762336493de0045a00057419d64abcd2550764a7a1ad7718978a8"
+    },
+    {
+      "path": "article/tables/05-new-source-transfer.csv",
+      "bytes": 3304,
+      "sha256": "d2e2471c48ef9f617fc9d3da4e0199b56a78a81d0f1c6f9e3656b925df062007"
+    },
+    {
+      "path": "article/tables/06-heldout-comparison.csv",
+      "bytes": 23467,
+      "sha256": "141bdbf689454acc77fec4a95db874d2d857c8f6f165eefc99c99a2c60f0f03f"
+    },
+    {
+      "path": "article/tables/07-cohort-variability.csv",
+      "bytes": 1782650,
+      "sha256": "5beb29e2ce1c7e33a56aadbee4c30968ec00bca7a53a0ec21abfc11b514cdcf9"
+    },
+    {
+      "path": "article/tables/08-confidence-over-time.csv",
+      "bytes": 2441,
+      "sha256": "bac9957b666efab65c06c50f69d28944be2d5de1a85968f397864a8d2b41e557"
+    },
+    {
+      "path": "article/tables/09-cpc-what-if.csv",
+      "bytes": 1508,
+      "sha256": "e7cdf561c29082866263a581e3f2672c22575b9c418fae0d2430a8847db0367b"
+    },
+    {
+      "path": "article/tables/10-decision-reliability.csv",
+      "bytes": 6126,
+      "sha256": "7b52de8d0be38d2fd247955e9435d7e901c20228c7f4ff482c24b44c0dae0f84"
+    },
+    {
+      "path": "article/tables/11-break-even-learning.csv",
+      "bytes": 5144,
+      "sha256": "4ae9d6765ab003cc261507af395ad3fcfe55260fe313a6a892985b224bac3d0f"
+    },
+    {
+      "path": "article/tables/offered-cost.csv",
+      "bytes": 4440,
+      "sha256": "79c9f052c4233bfc5c4d86a8dd6aea1b183248b4447252670d5347cf4fecd778"
+    },
+    {
+      "path": "extensions/calendar/DESIGN.md",
+      "bytes": 19763,
+      "sha256": "f289fb27a5091b49dfafdd25dfc8ce4072124947dee567f8d1a059058a420567"
+    },
+    {
+      "path": "extensions/calendar/FINAL_CHECKS.json",
+      "bytes": 835,
+      "sha256": "44e4d20af2c9366dc184dd68398ef77eaf03df5ebcafd386f2401d69f32d5f90"
+    },
+    {
+      "path": "extensions/calendar/INDEPENDENT_REVIEW.md",
+      "bytes": 13802,
+      "sha256": "1e519f3bee6586aa3e8e0948cfd00156de4103a4c7ec4265f6f05d399c88f617"
+    },
+    {
+      "path": "extensions/calendar/MANIFEST.json",
+      "bytes": 25065,
+      "sha256": "46817fff069e215429cb135391d8842daad3fbf0a3bb0cf6b39fa40fd8abd92b"
+    },
+    {
+      "path": "extensions/calendar/Makefile",
+      "bytes": 444,
+      "sha256": "c532097e7da6e33ec8b8707d39cac54b6b62832eeb35ead5057d6bf1c6887ea7"
+    },
+    {
+      "path": "extensions/calendar/README.md",
+      "bytes": 2678,
+      "sha256": "e7e0da4311b91b1d3bd5dc1209996d321528b07a80f595de8ef73c448c3fd101"
+    },
+    {
+      "path": "extensions/calendar/REPLAY_CHECKPOINT.md",
+      "bytes": 3040,
+      "sha256": "e72c5a1886a8daf988d27f9f873e379fd531ea1865ff3f31135100d0cc0efe9f"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/EXPERIMENT.md",
+      "bytes": 7154,
+      "sha256": "9549408b30e8a0c2c82855e2f5690d328c21aa7acd15b499b275193e0cbf2b25"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/MODEL.md",
+      "bytes": 13829,
+      "sha256": "b05e49fcf90d7a5857b4852f5e0a8faee00ff91628998c43943c8abcd16020b4"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/MODEL_CORRECTIONS.patch",
+      "bytes": 6092,
+      "sha256": "4fe85441f445aafee344bd280ff4f6caf94118ea2e14b32eba5f98e3dd49d7d8"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/VALIDATION.md",
+      "bytes": 3863,
+      "sha256": "310320cbc5710c62a0307e67de25a8b286ea7f878bfd7ecbb0d493633d6550e6"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/ZERO_COUNT_DERIVATION.md",
+      "bytes": 2133,
+      "sha256": "fceb58360f6c8aeee19161b659074d27b9c45150b1b0cc84d3a6981c3065a917"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/__init__.py",
+      "bytes": 74,
+      "sha256": "7948de767a9fe11d360e7c17594881d5d9efd0838ba7a3a49aec3f9bd3b0603f"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/calendar_economics.csv",
+      "bytes": 106431,
+      "sha256": "32183bac4e660f7930fd07e4f4867a000373fd27d776a93b5b3be4121dc0264d"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/calendar_states.csv",
+      "bytes": 4291973,
+      "sha256": "4672af843e47d37b3c7d609f082cb507372b242b68deb960fc64afbfb3bd1acd"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/cohort_predictions.csv",
+      "bytes": 187096,
+      "sha256": "4f8a070324be848c798e602445b367eda45437023760328cda93fb1fe6e9c9ae"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/cohort_retention_rollup_detail.csv",
+      "bytes": 151620,
+      "sha256": "8c67e66bcf3f698f80aaa45f3610bf2ae9125c2979bd08aae635703928d677ee"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/cohort_retention_rollups.csv",
+      "bytes": 11353,
+      "sha256": "58b22f1316485c607f2d6398a5eb5d34f42bcf676f37d3e42f8dc609edf5c597"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/cpc_shock_sensitivity.csv",
+      "bytes": 1508,
+      "sha256": "e7cdf561c29082866263a581e3f2672c22575b9c418fae0d2430a8847db0367b"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/demo_confidence.csv",
+      "bytes": 3521,
+      "sha256": "03e0aa69fc105f3bc576dea026bb15dbb2f8c1e3857359f283b4b85ad57e1d8f"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/demo_payback_updates.csv",
+      "bytes": 5144,
+      "sha256": "c79bae8a0bf8ad22f49269d5870b21783c40675136528ee9864f82fed62fa4f4"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/diagnostics.json",
+      "bytes": 174339,
+      "sha256": "a9f5dd8b4ffdb325180f247a724ed520c62c0a630ca7f1282023b71b1815bc95"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/01-calendar-economics-mobile.png",
+      "bytes": 229529,
+      "sha256": "b76507ed08d588f5ada7c3e3b916f39cb2081f544201dbe29683eb9d1d762b2c"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/01-calendar-economics-mobile.svg",
+      "bytes": 43748,
+      "sha256": "f98aca24279d6c37151c2ed86a40311e6fd59bf64190071134cab0b93c92856c"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/01-calendar-economics.png",
+      "bytes": 213200,
+      "sha256": "a7c0cf9624f5bd161903a42ae7749c7c99234e76ab586f18261d7d73d8f754ee"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/01-calendar-economics.svg",
+      "bytes": 42404,
+      "sha256": "4a180748b0a8b2eb6b82b6ba542d0a481a8c8960fad313fafe7672e2621ab6b5"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.png",
+      "bytes": 242806,
+      "sha256": "2fef0c03235dbdf2c5a25f73dea27909b4396ffc915107417089592508a05337"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.svg",
+      "bytes": 37847,
+      "sha256": "0be093ba5994ce923dca2b52e2827384490fb35e0fec11c2ff4ae3d0e60673a4"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/02-human-bot-evidence.png",
+      "bytes": 256670,
+      "sha256": "1a6c3d86a929cf2f1a24529204bad57bfffb50d6772bdcbe467ebd54ecb7d397"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/02-human-bot-evidence.svg",
+      "bytes": 37192,
+      "sha256": "1b67ee36acbd6730da2a418c71ff3427306c07eb042fb8a153b28643e5e2e86d"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.png",
+      "bytes": 216715,
+      "sha256": "08712f2c7a12d4fbc7ae3f71c3ad718ef4a438fe8bd8fa768752ace8bd4b1733"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.svg",
+      "bytes": 98159,
+      "sha256": "531de6459f85343422841f4e74012dfc78ac8cffcad2b71d726354eb65f6a27d"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/03-shared-calendar-states.png",
+      "bytes": 227979,
+      "sha256": "094d21b19b2dcff9b905d782ab781845f30861cf51a22da1ffedec70ca7a6478"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/03-shared-calendar-states.svg",
+      "bytes": 98116,
+      "sha256": "3341616515640aa863972e4440f0d4300fe1b1a178653ae960fffc45bde9dbe0"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.png",
+      "bytes": 278588,
+      "sha256": "1ecc4b59fd3e38566197867b0e6033cfbf02871e3691a3c36eaeb0169d8a56cb"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.svg",
+      "bytes": 77120,
+      "sha256": "8533e9d515f68e5120cb6797b05b77721cb40f5dc37e726c029ddc19c5dcee3f"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/04-cohort-contribution-payback.png",
+      "bytes": 269726,
+      "sha256": "0e8ba4ac0580ef0fbbc97dc6e6d8e06d9aa0b410939a926f3918d2116d00bf17"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/04-cohort-contribution-payback.svg",
+      "bytes": 75683,
+      "sha256": "db62290041aa128eb8c40fcb9765e198ccd424dc62607bd0b7dc4bbbd91251c6"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.png",
+      "bytes": 230230,
+      "sha256": "92299473a642ae232467ec5c93741371d260aac0dbbe3b4d533d7cb5c227fc4c"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.svg",
+      "bytes": 26108,
+      "sha256": "646cceaf4dd6e546a7c1d2f9da306d8afef64f2c767e73b380a3f96b75291050"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/05-new-source-transfer.png",
+      "bytes": 205361,
+      "sha256": "4211aeaab84403e81ac83ece332c4b5f2a953214c09a38fc9880eae896c1d9d5"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/05-new-source-transfer.svg",
+      "bytes": 29238,
+      "sha256": "f18c872ab4853ff3a4b274b63e983617ae8a15a141db22caa2785bd306b655d8"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.png",
+      "bytes": 289774,
+      "sha256": "7c24bb64897135648a7392342da6080c449c574fb722609ded9278be066ddd3e"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.svg",
+      "bytes": 55655,
+      "sha256": "e0978be59fdc748261ae33f7c6dafb11b365b8d01570bcef9d23c74d4e97b444"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/06-heldout-comparison.png",
+      "bytes": 256446,
+      "sha256": "6bec17b4cfd6f4082601e4fd07c73d80faf5029d27cc9bc7bab18d1850567d44"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/06-heldout-comparison.svg",
+      "bytes": 56413,
+      "sha256": "23606e16f5521ce38f1f622fe1d687174c5dcb090cb86860966f1f9c49b7c639"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/07-cohort-variability-mobile.png",
+      "bytes": 472891,
+      "sha256": "bd6e3f3b45d59c24e7bc9b6764e74c968e555d5d0f2988aeedac027b1bf3b5ec"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/07-cohort-variability-mobile.svg",
+      "bytes": 136703,
+      "sha256": "f4880cd712416c812e589387d2f1d91bb81900060683aafab527ba47e2ca7925"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/07-cohort-variability.png",
+      "bytes": 550682,
+      "sha256": "53ad700885f6faa3f5170584833f5561ae2d8a1b0cb1c86a7b0dc8fc957bd71c"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/07-cohort-variability.svg",
+      "bytes": 137754,
+      "sha256": "3df853db60ab41448a90ecd199e547f194862b720feb204aba8052d0eef2f9b3"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.png",
+      "bytes": 123998,
+      "sha256": "0c481028ccf9242f5b83be9924136a704eab03522df66e9830b7f6df7b2f17b0"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.svg",
+      "bytes": 20622,
+      "sha256": "cc998287d0fc4448c609cc5b2dc268ef8e2595ce7932a5b6e1c94fee11e17b5e"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/08-confidence-over-time.png",
+      "bytes": 127445,
+      "sha256": "a12591f6c4193ccaad24edf1e32fa6fc0a149bddb5568ae1f83c381de0cbcd4f"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/08-confidence-over-time.svg",
+      "bytes": 20416,
+      "sha256": "afeabcc85f1c592c0d45675085b2c0a801b78030cb0b5af66a8381dec5be3f22"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.png",
+      "bytes": 165311,
+      "sha256": "ddba5db27dba2f065cefde770540ad09e4c2c0b8cb0004d2e54e6b040c8597d6"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.svg",
+      "bytes": 18929,
+      "sha256": "76228dca72c824943c5d85c65785fd0e2c40b31a94c4d280b68ff2e36a8e99ba"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/09-cpc-what-if.png",
+      "bytes": 179795,
+      "sha256": "09f37175e315fab0ebe9fd936178d1c06b7269b7e8e33f5bc6509f6eee131038"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/09-cpc-what-if.svg",
+      "bytes": 18718,
+      "sha256": "acf0f177cbf154bf860726d394042a738c20749f1fd10c12bdd0f0c4741a6864"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/10-decision-reliability-mobile.png",
+      "bytes": 172508,
+      "sha256": "62dcb1ceb1b4d4dc4dbc4037710f418dfbd7a620d021cf13f90997a6b3c0566d"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/10-decision-reliability-mobile.svg",
+      "bytes": 31958,
+      "sha256": "2a5a4068023c3c3caeaf9fa7af4a7f446ba42435dd3dda9c6a5ce4b7e916254a"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/10-decision-reliability.png",
+      "bytes": 159706,
+      "sha256": "1e13cc675cb404d203a1d80fa96cbca25090adeb0ab7c7ef70d7b82f050ab42c"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/10-decision-reliability.svg",
+      "bytes": 31478,
+      "sha256": "f2bdc308b3548ae151d8945d99e4b62e0d17e13f657af651293ca8e9b9dda4cf"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/11-break-even-learning-mobile.png",
+      "bytes": 188210,
+      "sha256": "6857220fb09bedfc00e83150a273b66905af86c3da63f064871370ee938cec18"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/11-break-even-learning-mobile.svg",
+      "bytes": 27993,
+      "sha256": "765b08191720073b24bd0061f9496bab67ebbefccdef464fd3c9de93e6ebbdec"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/11-break-even-learning.png",
+      "bytes": 210642,
+      "sha256": "12e24b43967065c82ca565160318d68cb54bbd4a1c013e7853343b9310f3cd55"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/11-break-even-learning.svg",
+      "bytes": 27943,
+      "sha256": "9c60950d0d8b30f9e47f04665a2dd769ee62946cfd102f8ad262f28c01b87fd3"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/CAPTIONS.md",
+      "bytes": 15445,
+      "sha256": "16be96d8f0dda90fc512b0510350cc0554597168e5345f0e781029185687eb37"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/FIGURE_QA.json",
+      "bytes": 1696,
+      "sha256": "7085bbf347cff2d2d8a7f62de2849373f6e3ab2f62c6f5f46ac43d8052725099"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/chart_provenance.json",
+      "bytes": 34213,
+      "sha256": "f823ba18394d04ef7547574f407c9f806c4cd55059e9d1484cc17b1a15a749b3"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/mobile_text_checks.json",
+      "bytes": 2434,
+      "sha256": "c387336be1abc007d719bedae3664a78a353d2130e868e7f62208d062cf789e7"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/sources/original_v1_metrics_by_origin.csv",
+      "bytes": 3175,
+      "sha256": "3bdeae13f127340b664d7ca9086d4007a611ccb1a24567bcc9baa0de4f6ca59f"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/01-calendar-economics.csv",
+      "bytes": 63556,
+      "sha256": "8b9f945d45358d4d67581a55c4666e4bbafbc3b5f5ea903713f825f4c582e941"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/02-human-bot-evidence.csv",
+      "bytes": 30304,
+      "sha256": "221af08bf40b0b571c723bd3b5768dee5304e7e23ea73a31d302bc499cd6409a"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/03-shared-calendar-states.csv",
+      "bytes": 190873,
+      "sha256": "17a93dea6a7f7936fc89ae1dba5b604679ae5853bb6b5077754f8aac374d9850"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/04-cohort-contribution-payback.csv",
+      "bytes": 962857,
+      "sha256": "476abb95bf4762336493de0045a00057419d64abcd2550764a7a1ad7718978a8"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/05-new-source-transfer.csv",
+      "bytes": 3304,
+      "sha256": "d2e2471c48ef9f617fc9d3da4e0199b56a78a81d0f1c6f9e3656b925df062007"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/05-offered-price-sensitivity.csv",
+      "bytes": 5359,
+      "sha256": "9cad8ec0633fe94958bcd93f4a534dfd2a58cde0bac7490bfb43480e03c1a4b3"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/06-heldout-comparison.csv",
+      "bytes": 23467,
+      "sha256": "141bdbf689454acc77fec4a95db874d2d857c8f6f165eefc99c99a2c60f0f03f"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/07-cohort-variability.csv",
+      "bytes": 1782650,
+      "sha256": "5beb29e2ce1c7e33a56aadbee4c30968ec00bca7a53a0ec21abfc11b514cdcf9"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/08-confidence-over-time.csv",
+      "bytes": 2441,
+      "sha256": "bac9957b666efab65c06c50f69d28944be2d5de1a85968f397864a8d2b41e557"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/09-cpc-what-if.csv",
+      "bytes": 1508,
+      "sha256": "e7cdf561c29082866263a581e3f2672c22575b9c418fae0d2430a8847db0367b"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/10-decision-reliability.csv",
+      "bytes": 6126,
+      "sha256": "7b52de8d0be38d2fd247955e9435d7e901c20228c7f4ff482c24b44c0dae0f84"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/figures/tables/11-break-even-learning.csv",
+      "bytes": 5144,
+      "sha256": "4ae9d6765ab003cc261507af395ad3fcfe55260fe313a6a892985b224bac3d0f"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/forecast_seal.json",
+      "bytes": 98,
+      "sha256": "8e29fb0c82de3e51975a22dc0fbb72b356284882cc9e24c37f8f565240ebccb1"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/forecasts_unscored.csv",
+      "bytes": 152697,
+      "sha256": "e2413dfd8e8bb50be864cefc8152409f652666dca721473893f55ffdfe481ba9"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/heldout_runtime.json",
+      "bytes": 1545,
+      "sha256": "d82f92a5aa832bbaac91d42fa0e888ee07907ac6d57741de7fa38bd5f9ed460a"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/heldout_scores.csv",
+      "bytes": 704472,
+      "sha256": "1c4a9f5b63692d8a2b8c11d283c5b4e23b23ce2281cd22177f4ad3f9a1988c04"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/heldout_seal.json",
+      "bytes": 99,
+      "sha256": "beafa57a78138f6953d0a7260777dd0415c8263f3033eb5394d06efe5c255a42"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/heldout_unscored.csv",
+      "bytes": 575952,
+      "sha256": "c4050643a5e0a351bbff049baf02816ddc2d928cdddedc5ad72ba5dad9e15097"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/measurement.csv",
+      "bytes": 151771,
+      "sha256": "b730d5ae415ff9e1eedaf9cb1917833152be443ef7f640b6ffc55273d8133a06"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/metrics.csv",
+      "bytes": 24452,
+      "sha256": "26cb1e9a6e8f70d2bba9bbca0a2e374746589e4df03196e0ed0a1d69d4f91b44"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/payback_cdf.csv",
+      "bytes": 1564475,
+      "sha256": "c3c22d0839f394a80daac71ca8cdf472f73e1c3aad2cc8f07affac10e85effa9"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/portfolio_draws.csv",
+      "bytes": 62623,
+      "sha256": "338aef99e48d28e9cb4cd9dc0f002e02daf40ee95a113a120ea0d62cef1a5474"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/portfolio_summary.csv",
+      "bytes": 1556,
+      "sha256": "3b3d400b5648c5c7eb875d45c09c9be905bdb9d1274f97717393db7c6c29c946"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/probability_reliability.csv",
+      "bytes": 2268,
+      "sha256": "1a6a25252112b59347429c103225f826fe36750bde689ea7bbb03b13b1cfbc06"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/quote_sensitivity.csv",
+      "bytes": 4440,
+      "sha256": "79c9f052c4233bfc5c4d86a8dd6aea1b183248b4447252670d5347cf4fecd778"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/retention_forecast.csv",
+      "bytes": 40237,
+      "sha256": "7198934a5bd355172d7f2d59026f93ee9eaba86a65886dad7075a84e517b8495"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/retention_truth.csv",
+      "bytes": 1084820,
+      "sha256": "5ed2a1e8a3144179f5c5ddb7669a7512f558d5bb7cce65883f5319d87e36567f"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/run_config.json",
+      "bytes": 1894,
+      "sha256": "4c29f8d1f4b2ac010930033b8cb3f152d983b6748f43f40f4fdade5f2d7548c6"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/run_manifest.json",
+      "bytes": 3130,
+      "sha256": "5a1d6a9c252dcf893e5bd0b7b8c857ea24a140492c0e4d8513f25cd9685675f3"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/sequential_confidence.csv",
+      "bytes": 26140,
+      "sha256": "ce4babe5484c3c2277c35034ccd35108ca0ab7d1529674812e6e012555757428"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/sequential_decisions.csv",
+      "bytes": 1943,
+      "sha256": "fedfc9be6b36a028f0939d36b1c3a794f961961a0d3e67bb25bb39f235bedb8a"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/sequential_metrics.csv",
+      "bytes": 2892,
+      "sha256": "ed9b44aee4a125a3a16fbf93e95e537a2d93c82863d385d44e7dfac075786f35"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/trajectories.csv",
+      "bytes": 2315297,
+      "sha256": "4c8b86abe4b68c502dc7ad043746479116115a99080cd8d308389c3966037bb1"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/artifacts/transfer.csv",
+      "bytes": 2745,
+      "sha256": "228fdd130f0dc0e23c5366eefc3de6cae650cf56bfb8f98ebd2c7f98a6ce3ad4"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/evaluate.py",
+      "bytes": 39035,
+      "sha256": "8254be03d6c68e5eaa574e0cf8f741a8cde836bcf70a8adcfe9eef689e5833b3"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/figures.py",
+      "bytes": 75289,
+      "sha256": "979090fc93c5a3b61a1412d83bae357dfcdd78c110547e75152367e7067b44a3"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/model.py",
+      "bytes": 41122,
+      "sha256": "5d11167f6c98f50d8d5f0924885cac7641f14d0df2ea76f64dbaba8e9157d730"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/prior_tail_summary.json",
+      "bytes": 9557,
+      "sha256": "2ff1d9919720919f91f69d4612be232869fcea6257a61f3e71c9e79c3ea377bc"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/review_history/pre_fixed_calendar_grid/README.md",
+      "bytes": 1066,
+      "sha256": "e3db9b4207ed28573ac3fe33a62eb3d22e6fe5d19d1ded88947fe3ca28000ebd"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/review_history/pre_fixed_calendar_grid/cohort_predictions.csv",
+      "bytes": 175703,
+      "sha256": "45f7557e3d9c396a5828a2b0a33ad83a6f311de51b43cad6ed9eeb2d678e2e59"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/review_history/pre_fixed_calendar_grid/heldout_scores.csv",
+      "bytes": 668200,
+      "sha256": "b388629a1cab72484abd305f8ee39164498f9d761ddd6005d8a30da703044ee0"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/review_history/pre_fixed_calendar_grid/metrics.csv",
+      "bytes": 24614,
+      "sha256": "48d80760d73e16a1023e722890f27e835fd6e532d7d2137c6c576329a63f5d90"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/review_history/pre_fixed_calendar_grid/run_config.json",
+      "bytes": 1230,
+      "sha256": "4c8d2cb4ce4ac8ec91a71c502115e4a44722c9ddf015de6fc8345f213618c1af"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/review_history/pre_half_count_fix/README.md",
+      "bytes": 1145,
+      "sha256": "b9f9bdd248b4177076726a746e741903896293c85334480935d7a21c098cf4bf"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/review_history/pre_half_count_fix/cohort_predictions.csv",
+      "bytes": 160194,
+      "sha256": "4e55fc1e756774ae6e3916dd315efd0df59a704cb65d5ec9c72b0bb93e2102ca"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/review_history/pre_half_count_fix/heldout_scores.csv",
+      "bytes": 475947,
+      "sha256": "4e5a55da7cbdd568b8fd79f34cce6904f9ea1704944580f27153a8e117142ecb"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/review_history/pre_half_count_fix/metrics.csv",
+      "bytes": 24252,
+      "sha256": "e58304e73296000ff413a377943dd683ccaf639f181f0c110e881a93d0a05f6e"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/review_history/pre_half_count_fix/model_before.txt",
+      "bytes": 31324,
+      "sha256": "7421bc1a74963f5767affc66d4c089623f116059213e30268ca6ce1479279da7"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/review_history/pre_half_count_fix/run_config.json",
+      "bytes": 1171,
+      "sha256": "74b198f50dc1a017b4b3e98ea4c283b3661b6eaa02788c5ebf5389ede6a2f391"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/run_config.json",
+      "bytes": 1734,
+      "sha256": "b0cbcbd227a615a80beab1a9f31bb06dd8a702f3c9d53b1830df8148b05a7fc7"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/simulation.py",
+      "bytes": 13987,
+      "sha256": "53717ff276976c5703d6eb2b2fed8ae14cea283d2f89b4100918105ce6540fca"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/test_model.py",
+      "bytes": 15071,
+      "sha256": "dd2c3495227b5e9ae2d833c5b7cc939fb60438503b0f3c3d786c171da12b4eda"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/test_model_contract.py",
+      "bytes": 5735,
+      "sha256": "e02e77cb0ae6d74253c0b20ca31698a2651c100d6bca6b399a0f7df46310ba85"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/test_simulation.py",
+      "bytes": 4809,
+      "sha256": "33f9b505a10d7e41474550721cfa7923733a4acc4e33a50443155417fa32acca"
+    },
+    {
+      "path": "extensions/calendar/dynamic_lab/zero_count_reference.csv",
+      "bytes": 618,
+      "sha256": "4ab188c3f6ba744b03dcb9629ad0f3a02b8c3253f255d213c3df6054f4d497f4"
+    },
+    {
+      "path": "extensions/calendar/prototype/README.md",
+      "bytes": 2365,
+      "sha256": "07e615d4aba31b308f40b5759b442cc9c79202f1cddb5e9e702eb98a832b0308"
+    },
+    {
+      "path": "extensions/calendar/prototype/calendar_replay.py",
+      "bytes": 10989,
+      "sha256": "b3e96f465850773b0df6122fd5b512ee54050ab54c610ce63c2b30d3631465eb"
+    },
+    {
+      "path": "extensions/calendar/prototype/replay_input_manifest.json",
+      "bytes": 10986,
+      "sha256": "5e5461c625f43e296915d5fe985f0542a573f4de622a3e6499e804d45c1ad73c"
+    },
+    {
+      "path": "extensions/calendar/prototype/replay_v1_ablation.py",
+      "bytes": 7228,
+      "sha256": "8923b8168ff453c08a692ff898a4786471543c771e7d700044a320d588e70267"
+    },
+    {
+      "path": "extensions/calendar/prototype/test_calendar_replay.py",
+      "bytes": 5523,
+      "sha256": "a0c73c4928b1d649b0713e2b6f09e07fd9553a7628a45731debd49b1087af458"
+    },
+    {
+      "path": "extensions/calendar/prototype/test_v1_replay.py",
+      "bytes": 2477,
+      "sha256": "1fdf86157ffa17f428ac4b43b23be453e3a85757136ccfd17c3e61cd02aa356f"
+    },
+    {
+      "path": "extensions/calendar/prototype/v1_replay/evaluator_comparison.csv",
+      "bytes": 2927,
+      "sha256": "b6adcee424680c2fd7b436655a5fd8df7102300b36e44caec372ec35d24b779f"
+    },
+    {
+      "path": "extensions/calendar/prototype/v1_replay/manifest.json",
+      "bytes": 1184,
+      "sha256": "cad5a7071389eda50f55f139fcb1b8ff040738aa49d57dc900422b8a4a3cf7f5"
+    },
+    {
+      "path": "extensions/calendar/prototype/v1_replay/predictions.csv",
+      "bytes": 7771,
+      "sha256": "317bb4b6d63842903fb5250d48ccf9b7c54fae3421d8d5a8fec760ae1ab3c5ec"
+    }
+  ],
+  "source_date": "2026-10-23"
+}

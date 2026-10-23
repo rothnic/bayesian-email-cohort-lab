@@ -17,9 +17,9 @@
       ],
       "file_sha256": {
         "dynamic_lab/artifacts/figures/01-calendar-economics.png": "a7c0cf9624f5bd161903a42ae7749c7c99234e76ab586f18261d7d73d8f754ee",
-        "dynamic_lab/artifacts/figures/01-calendar-economics.svg": "899ae41057c89eb90e686e5919f24bbb404c98facc84c3f7f66414ba3088a875",
+        "dynamic_lab/artifacts/figures/01-calendar-economics.svg": "4a180748b0a8b2eb6b82b6ba542d0a481a8c8960fad313fafe7672e2621ab6b5",
         "dynamic_lab/artifacts/figures/01-calendar-economics-mobile.png": "b76507ed08d588f5ada7c3e3b916f39cb2081f544201dbe29683eb9d1d762b2c",
-        "dynamic_lab/artifacts/figures/01-calendar-economics-mobile.svg": "0a4e185b92299f3ccfb8be3dc3f252f28ae3cd7f6325e9098b34bd1c5e44ab6b"
+        "dynamic_lab/artifacts/figures/01-calendar-economics-mobile.svg": "f98aca24279d6c37151c2ed86a40311e6fd59bf64190071134cab0b93c92856c"
       },
       "table": "dynamic_lab/artifacts/figures/tables/01-calendar-economics.csv",
       "table_sha256": "8b9f945d45358d4d67581a55c4666e4bbafbc3b5f5ea903713f825f4c582e941",
@@ -48,9 +48,9 @@
       ],
       "file_sha256": {
         "dynamic_lab/artifacts/figures/02-human-bot-evidence.png": "1a6c3d86a929cf2f1a24529204bad57bfffb50d6772bdcbe467ebd54ecb7d397",
-        "dynamic_lab/artifacts/figures/02-human-bot-evidence.svg": "f310b1e0548d0e4aecb7448a9c3399745082a1175be5809632df6881d2083a7d",
+        "dynamic_lab/artifacts/figures/02-human-bot-evidence.svg": "1b67ee36acbd6730da2a418c71ff3427306c07eb042fb8a153b28643e5e2e86d",
         "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.png": "2fef0c03235dbdf2c5a25f73dea27909b4396ffc915107417089592508a05337",
-        "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.svg": "114e54c579376279e89167c2283bad66bc22664aa91e64668e61746565d3949d"
+        "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.svg": "0be093ba5994ce923dca2b52e2827384490fb35e0fec11c2ff4ae3d0e60673a4"
       },
       "table": "dynamic_lab/artifacts/figures/tables/02-human-bot-evidence.csv",
       "table_sha256": "221af08bf40b0b571c723bd3b5768dee5304e7e23ea73a31d302bc499cd6409a",
@@ -79,9 +79,9 @@
       ],
       "file_sha256": {
         "dynamic_lab/artifacts/figures/03-shared-calendar-states.png": "094d21b19b2dcff9b905d782ab781845f30861cf51a22da1ffedec70ca7a6478",
-        "dynamic_lab/artifacts/figures/03-shared-calendar-states.svg": "e63bb531ffaad72f8d92e96eae010732b2d3a112bbff3e4ba6d6de35a23ab43d",
+        "dynamic_lab/artifacts/figures/03-shared-calendar-states.svg": "3341616515640aa863972e4440f0d4300fe1b1a178653ae960fffc45bde9dbe0",
         "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.png": "08712f2c7a12d4fbc7ae3f71c3ad718ef4a438fe8bd8fa768752ace8bd4b1733",
-        "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.svg": "39a5d7a2fded9399c7acfe04d671c29bb5f431671607eff49381033135175149"
+        "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.svg": "531de6459f85343422841f4e74012dfc78ac8cffcad2b71d726354eb65f6a27d"
       },
       "table": "dynamic_lab/artifacts/figures/tables/03-shared-calendar-states.csv",
       "table_sha256": "17a93dea6a7f7936fc89ae1dba5b604679ae5853bb6b5077754f8aac374d9850",
@@ -110,9 +110,9 @@
       ],
       "file_sha256": {
         "dynamic_lab/artifacts/figures/04-cohort-contribution-payback.png": "0e8ba4ac0580ef0fbbc97dc6e6d8e06d9aa0b410939a926f3918d2116d00bf17",
-        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback.svg": "57ccdc5a1e8cf72dd69391c2d27d64ba54f46c828bb41507be50b19d29195795",
+        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback.svg": "db62290041aa128eb8c40fcb9765e198ccd424dc62607bd0b7dc4bbbd91251c6",
         "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.png": "1ecc4b59fd3e38566197867b0e6033cfbf02871e3691a3c36eaeb0169d8a56cb",
-        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.svg": "9b2649685bdeef1209247057d0fcb100cbb4e0ac7558aad12590ecdd3be898ec"
+        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.svg": "8533e9d515f68e5120cb6797b05b77721cb40f5dc37e726c029ddc19c5dcee3f"
       },
       "table": "dynamic_lab/artifacts/figures/tables/04-cohort-contribution-payback.csv",
       "table_sha256": "476abb95bf4762336493de0045a00057419d64abcd2550764a7a1ad7718978a8",
@@ -151,9 +151,9 @@
       ],
       "file_sha256": {
         "dynamic_lab/artifacts/figures/05-new-source-transfer.png": "4211aeaab84403e81ac83ece332c4b5f2a953214c09a38fc9880eae896c1d9d5",
-        "dynamic_lab/artifacts/figures/05-new-source-transfer.svg": "56e38a62ad9ff3d628699c7efa989ec6f79117d062df7cf60ca2c60333aee0e2",
+        "dynamic_lab/artifacts/figures/05-new-source-transfer.svg": "f18c872ab4853ff3a4b274b63e983617ae8a15a141db22caa2785bd306b655d8",
         "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.png": "92299473a642ae232467ec5c93741371d260aac0dbbe3b4d533d7cb5c227fc4c",
-        "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.svg": "949ccc9b944f8c9dadf3800a653f6c92b4970be3f86124e67c45d2ce673e628b"
+        "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.svg": "646cceaf4dd6e546a7c1d2f9da306d8afef64f2c767e73b380a3f96b75291050"
       },
       "table": "dynamic_lab/artifacts/figures/tables/05-new-source-transfer.csv",
       "table_sha256": "d2e2471c48ef9f617fc9d3da4e0199b56a78a81d0f1c6f9e3656b925df062007",
@@ -195,9 +195,9 @@
       ],
       "file_sha256": {
         "dynamic_lab/artifacts/figures/06-heldout-comparison.png": "6bec17b4cfd6f4082601e4fd07c73d80faf5029d27cc9bc7bab18d1850567d44",
-        "dynamic_lab/artifacts/figures/06-heldout-comparison.svg": "14bff740ae2aa06776364d127040be7b5d4071f8ed0d9aa7601b31e8ed7e597a",
+        "dynamic_lab/artifacts/figures/06-heldout-comparison.svg": "23606e16f5521ce38f1f622fe1d687174c5dcb090cb86860966f1f9c49b7c639",
         "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.png": "7c24bb64897135648a7392342da6080c449c574fb722609ded9278be066ddd3e",
-        "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.svg": "b93ccc12d551170948ce7b3bfff94901815c4c07e57442efcff41b89874721cd"
+        "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.svg": "e0978be59fdc748261ae33f7c6dafb11b365b8d01570bcef9d23c74d4e97b444"
       },
       "table": "dynamic_lab/artifacts/figures/tables/06-heldout-comparison.csv",
       "table_sha256": "141bdbf689454acc77fec4a95db874d2d857c8f6f165eefc99c99a2c60f0f03f",
@@ -232,9 +232,9 @@
       ],
       "file_sha256": {
         "dynamic_lab/artifacts/figures/07-cohort-variability.png": "53ad700885f6faa3f5170584833f5561ae2d8a1b0cb1c86a7b0dc8fc957bd71c",
-        "dynamic_lab/artifacts/figures/07-cohort-variability.svg": "1e58ea365c863d9007863f2fc820e3dc341a8553ac0b64ca37fa1e107c609490",
+        "dynamic_lab/artifacts/figures/07-cohort-variability.svg": "3df853db60ab41448a90ecd199e547f194862b720feb204aba8052d0eef2f9b3",
         "dynamic_lab/artifacts/figures/07-cohort-variability-mobile.png": "bd6e3f3b45d59c24e7bc9b6764e74c968e555d5d0f2988aeedac027b1bf3b5ec",
-        "dynamic_lab/artifacts/figures/07-cohort-variability-mobile.svg": "358ce4505ebae1e44979c6b95f48e9dc188809dda848ed480a644b6f44dece61"
+        "dynamic_lab/artifacts/figures/07-cohort-variability-mobile.svg": "f4880cd712416c812e589387d2f1d91bb81900060683aafab527ba47e2ca7925"
       },
       "table": "dynamic_lab/artifacts/figures/tables/07-cohort-variability.csv",
       "table_sha256": "5beb29e2ce1c7e33a56aadbee4c30968ec00bca7a53a0ec21abfc11b514cdcf9",
@@ -273,9 +273,9 @@
       ],
       "file_sha256": {
         "dynamic_lab/artifacts/figures/08-confidence-over-time.png": "a12591f6c4193ccaad24edf1e32fa6fc0a149bddb5568ae1f83c381de0cbcd4f",
-        "dynamic_lab/artifacts/figures/08-confidence-over-time.svg": "721c572833ea153df4cf0d78160a290eb84862246e99ef171e7eaed2f97d44eb",
+        "dynamic_lab/artifacts/figures/08-confidence-over-time.svg": "afeabcc85f1c592c0d45675085b2c0a801b78030cb0b5af66a8381dec5be3f22",
         "dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.png": "0c481028ccf9242f5b83be9924136a704eab03522df66e9830b7f6df7b2f17b0",
-        "dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.svg": "6b0c74bd997570d463f55fac1621cf9a514cd7fad25bf8f91ff0e8b30d0eb411"
+        "dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.svg": "cc998287d0fc4448c609cc5b2dc268ef8e2595ce7932a5b6e1c94fee11e17b5e"
       },
       "table": "dynamic_lab/artifacts/figures/tables/08-confidence-over-time.csv",
       "table_sha256": "bac9957b666efab65c06c50f69d28944be2d5de1a85968f397864a8d2b41e557",
@@ -291,6 +291,37 @@
       "denominator": "Probability that day-180 cumulative contribution exceeds $0.02 times acquired leads; fixed acquired cohort and fixed horizon."
     },
     {
+      "id": "11-break-even-learning",
+      "title": "How the estimated break-even age changes as a cohort matures",
+      "caption": "Two equally priced fictional source worlds start with the same prelaunch prior and follow the same fixed day-70 cohort. At each cutoff the model is refit using only then-visible observations, and predicts that cohort under hold-current future conditions. The top panel shows first-break-even age quantiles only among predictive paths that cross zero by age 425: darker fill is the middle 50%, pale fill the middle 80%, and solid line the median. Dashed lines show evaluator-only hidden outcomes for context. The lower panel reports predictive paths with no break-even by age 425. These are posterior predictive intervals, not a promise that uncertainty shrinks monotonically: new evidence can shift or widen the estimate, and future process variation remains. Both sources have the same $0.05 per-lead price; the difference is hidden subscriber performance.",
+      "alt": "For the same cohort, conditional break-even-age bands and the separate probability of no break-even update as observations arrive; hidden simulated outcomes provide a reference.",
+      "synthetic_only": true,
+      "files": [
+        "dynamic_lab/artifacts/figures/11-break-even-learning.png",
+        "dynamic_lab/artifacts/figures/11-break-even-learning.svg",
+        "dynamic_lab/artifacts/figures/11-break-even-learning-mobile.png",
+        "dynamic_lab/artifacts/figures/11-break-even-learning-mobile.svg"
+      ],
+      "file_sha256": {
+        "dynamic_lab/artifacts/figures/11-break-even-learning.png": "12e24b43967065c82ca565160318d68cb54bbd4a1c013e7853343b9310f3cd55",
+        "dynamic_lab/artifacts/figures/11-break-even-learning.svg": "9c60950d0d8b30f9e47f04665a2dd769ee62946cfd102f8ad262f28c01b87fd3",
+        "dynamic_lab/artifacts/figures/11-break-even-learning-mobile.png": "6857220fb09bedfc00e83150a273b66905af86c3da63f064871370ee938cec18",
+        "dynamic_lab/artifacts/figures/11-break-even-learning-mobile.svg": "765b08191720073b24bd0061f9496bab67ebbefccdef464fd3c9de93e6ebbdec"
+      },
+      "table": "dynamic_lab/artifacts/figures/tables/11-break-even-learning.csv",
+      "table_sha256": "4ae9d6765ab003cc261507af395ad3fcfe55260fe313a6a892985b224bac3d0f",
+      "source_files": [
+        {
+          "path": "dynamic_lab/artifacts/demo_payback_updates.csv",
+          "sha256": "c79bae8a0bf8ad22f49269d5870b21783c40675136528ee9864f82fed62fa4f4",
+          "rows": 16
+        }
+      ],
+      "selection": "paired cheap_good/cheap_bad worlds; cohort=new_cheap-b070; information cutoffs=69,77,84,91,98,105,112,119; age horizon=425; future=hold_current",
+      "interval_meaning": "50% and 80% posterior predictive quantile bands for first break-even age, conditional on crossing by age 425; noncrossing probability is displayed separately.",
+      "denominator": "Each cutoff is one refit using records available through that calendar day. Age is measured from cohort birth day 70. Percent denominator is all posterior predictive paths."
+    },
+    {
       "id": "09-cpc-what-if",
       "title": "A future CPC squeeze changes value without changing subscriber behavior",
       "caption": "Conditional what-if for a planned existing-source cohort, fitted on day 119 and acquired day 126. The model applies an additional 0\u201345% net-CPC drop beginning day 140 and ramping for 28 days. Each point reuses the same posterior draw and random revenue-mark path: contactability, humans, engagement, click counts, purchase cost, send costs and shared uncertainty are held fixed. Only post-shock revenue per human event changes. The blue band is a 90% draw interval for margin; amber shows the paired median margin difference. The probability axis starts at zero and is scaled to the plotted range; exact probabilities are in the table. Scenario probabilities are not a forecast that a given squeeze will occur.",
@@ -304,9 +335,9 @@
       ],
       "file_sha256": {
         "dynamic_lab/artifacts/figures/09-cpc-what-if.png": "09f37175e315fab0ebe9fd936178d1c06b7269b7e8e33f5bc6509f6eee131038",
-        "dynamic_lab/artifacts/figures/09-cpc-what-if.svg": "c715e3ff4f22a9f44c92ee720a6812709767f08546636bbce926499eed579946",
+        "dynamic_lab/artifacts/figures/09-cpc-what-if.svg": "acf0f177cbf154bf860726d394042a738c20749f1fd10c12bdd0f0c4741a6864",
         "dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.png": "ddba5db27dba2f065cefde770540ad09e4c2c0b8cb0004d2e54e6b040c8597d6",
-        "dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.svg": "561cd7eb53e83a0e753dd3a803fdfddaa0b1d28dc2cdf15596f442a5cf8a30b0"
+        "dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.svg": "76228dca72c824943c5d85c65785fd0e2c40b31a94c4d280b68ff2e36a8e99ba"
       },
       "table": "dynamic_lab/artifacts/figures/tables/09-cpc-what-if.csv",
       "table_sha256": "e7cdf561c29082866263a581e3f2672c22575b9c418fae0d2430a8847db0367b",
@@ -335,9 +366,9 @@
       ],
       "file_sha256": {
         "dynamic_lab/artifacts/figures/10-decision-reliability.png": "1e13cc675cb404d203a1d80fa96cbca25090adeb0ab7c7ef70d7b82f050ab42c",
-        "dynamic_lab/artifacts/figures/10-decision-reliability.svg": "6846eac9245e5dfdd2de5aed46b7aaa8cde1a35ea3181a594a47f05e42b2fa51",
+        "dynamic_lab/artifacts/figures/10-decision-reliability.svg": "f2bdc308b3548ae151d8945d99e4b62e0d17e13f657af651293ca8e9b9dda4cf",
         "dynamic_lab/artifacts/figures/10-decision-reliability-mobile.png": "62dcb1ceb1b4d4dc4dbc4037710f418dfbd7a620d021cf13f90997a6b3c0566d",
-        "dynamic_lab/artifacts/figures/10-decision-reliability-mobile.svg": "886edcd921aa43fe12a5421cd1e6c5c0a2c0c71e0cc83b06a02e545b765bc33e"
+        "dynamic_lab/artifacts/figures/10-decision-reliability-mobile.svg": "2a5a4068023c3c3caeaf9fa7af4a7f446ba42435dd3dda9c6a5ce4b7e916254a"
       },
       "table": "dynamic_lab/artifacts/figures/tables/10-decision-reliability.csv",
       "table_sha256": "7b52de8d0be38d2fd247955e9435d7e901c20228c7f4ff482c24b44c0dae0f84",
@@ -359,5 +390,5 @@
     }
   ],
   "run_manifest_path": "dynamic_lab/artifacts/run_manifest.json",
-  "run_manifest_sha256": "0f33dc371dd7267ba1f4bfabb1b6c3de4708fe2b2ec2d0ff8ccb4196d94c71c3"
+  "run_manifest_sha256": "5a1d6a9c252dcf893e5bd0b7b8c857ea24a140492c0e4d8513f25cd9685675f3"
 }

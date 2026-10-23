@@ -98,6 +98,12 @@ Here H is the fixed target age, N_c is the original cohort size and delta is the
 
 {{CAPTION_08}}
 
+A fixed-day profit probability answers whether the cohort clears a chosen target by that age. It does not say when the cohort first recovers its acquisition and sending costs. For timing, each predictive contribution path has its own first age at which cumulative margin reaches zero. The chart below refits the same cohort as its observed history grows, plots the distribution of those first-crossing ages, and reports separately the share of paths that never cross by age 425. The date bands can move or widen when new observations arrive; future event variation also remains after the model learns the cohort.
+
+![As a fixed cohort accumulates observations, its predicted first break-even age and uncertainty update; a separate panel shows the probability of no break-even by age 425.](assets/11-break-even-learning.png)
+
+{{CAPTION_11}}
+
 {{CONFIDENCE_COMPARISON}}
 
 For an already acquired cohort, the labels describe whether it is likely to finish above or below the declared target. Below target does not necessarily mean a cash loss: a small positive margin can still miss the required buffer. A prospective purchase can use the same probability threshold as an illustrative buy, skip or wait rule.

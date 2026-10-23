@@ -1,8 +1,8 @@
 # Article draft: when does a subscriber pay for itself?
 
-`article.md` is the review draft; `article.mdx` uses portable plain-text math fences. `index.html` is a responsive local article preview. All ten figures have desktop/mobile SVG and PNG versions, plain-language captions, alt text and numerical tables. `claims.json` binds narrative quantities to saved synthetic outputs and hashes; `chart_provenance.json` binds chart tables to their source data.
+`article.md` is the review draft; `article.mdx` uses portable plain-text math fences. `index.html` is a responsive local article preview. All eleven figures have desktop/mobile SVG and PNG versions, plain-language captions, alt text and numerical tables. `claims.json` binds narrative quantities to saved synthetic outputs and hashes; `chart_provenance.json` binds chart tables to their source data.
 
-The article follows people and cohorts, shows how aggregate retention and distinct-responder summaries are calculated, and fixes a single cohort and day-180 margin target while evidence accumulates. It also separates CPC deterioration, acquisition-price inflation, human/bot quality change and new-source transfer. A paired future-CPC what-if changes price while holding the same subscriber/activity draws fixed. Held-out probability reliability and a sequential threshold replay show why posterior cutoffs still need empirical checks.
+The article follows people and cohorts, shows how aggregate retention and distinct-responder summaries are calculated, and fixes a single cohort and day-180 margin target while evidence accumulates. A separate chart updates the posterior predictive first break-even age as the same cohort matures, and shows the probability of no break-even by day 425. It also separates CPC deterioration, acquisition-price inflation, human/bot quality change and new-source transfer. A paired future-CPC what-if changes price while holding the same subscriber/activity draws fixed. Held-out probability reliability and a sequential threshold replay show why posterior cutoffs still need empirical checks.
 
 Rebuild the article after reproducing the extension outputs:
 

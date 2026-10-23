@@ -1,7 +1,7 @@
 {
   "draft": true,
   "version": "dynamic-cohort-decision-review",
-  "scientific_model_sha256": "54f4609252e1caa9c6bc8ededaf343a9b097dc3cfea0b21a13d1312f3e66935d",
+  "scientific_model_sha256": "5d11167f6c98f50d8d5f0924885cac7641f14d0df2ea76f64dbaba8e9157d730",
   "browser_render_verified": false,
   "files": [
     {
@@ -11,28 +11,28 @@
     },
     {
       "path": "README.md",
-      "bytes": 1682,
-      "sha256": "502eb3297cbb611d25dfe60e46c89e81ca6498177cb0afa250810a183eedcfd9"
+      "bytes": 1839,
+      "sha256": "8584c6e851e25304795f0f0ed33b78c739d7aea029d87faea9760aacc861475a"
     },
     {
       "path": "STANDALONE_VALIDATION.json",
-      "bytes": 4833,
-      "sha256": "54feec66ac9cdb649c25f701b82ee2f207394bf83b027c671ef236ea53f20a00"
+      "bytes": 5276,
+      "sha256": "a89bd308eb5c327c3dda2b903989c07872bf8957c3d68e070a09bb89dfce88b5"
     },
     {
       "path": "article.md",
-      "bytes": 26091,
-      "sha256": "e49afb803c21a90ac39c1a33ca562b5f264ab13adb7ed7c79a02bba219a7dc40"
+      "bytes": 27787,
+      "sha256": "a3e4be162f1be9e6e560dca78059c59a26c4d4ea3cbd00f565f355173c046023"
     },
     {
       "path": "article.mdx",
-      "bytes": 26091,
-      "sha256": "d2267232cb133ecd9ad18f8c55c9c1501cd8cbc9a92622c14b6a09ee68692887"
+      "bytes": 27787,
+      "sha256": "c5f7c9f5fa8c5a3c1a1066ac9cb84563ab6e2cd127d5ebcca42d7e9159c98458"
     },
     {
       "path": "article.template.md",
-      "bytes": 18290,
-      "sha256": "b02ea7d7c3d54f5ff6998d8c12aecfa59ec9e3be1fc5f30b69dcd37e17eb5aea"
+      "bytes": 19130,
+      "sha256": "fbf251a474c59d98c5ab2922840029a626401ebfca0d6c899b4e99bda79cdbdd"
     },
     {
       "path": "assets/01-calendar-economics-mobile.png",
@@ -42,7 +42,7 @@
     {
       "path": "assets/01-calendar-economics-mobile.svg",
       "bytes": 43748,
-      "sha256": "0a4e185b92299f3ccfb8be3dc3f252f28ae3cd7f6325e9098b34bd1c5e44ab6b"
+      "sha256": "f98aca24279d6c37151c2ed86a40311e6fd59bf64190071134cab0b93c92856c"
     },
     {
       "path": "assets/01-calendar-economics.png",
@@ -52,7 +52,7 @@
     {
       "path": "assets/01-calendar-economics.svg",
       "bytes": 42404,
-      "sha256": "899ae41057c89eb90e686e5919f24bbb404c98facc84c3f7f66414ba3088a875"
+      "sha256": "4a180748b0a8b2eb6b82b6ba542d0a481a8c8960fad313fafe7672e2621ab6b5"
     },
     {
       "path": "assets/02-human-bot-evidence-mobile.png",
@@ -62,7 +62,7 @@
     {
       "path": "assets/02-human-bot-evidence-mobile.svg",
       "bytes": 37847,
-      "sha256": "114e54c579376279e89167c2283bad66bc22664aa91e64668e61746565d3949d"
+      "sha256": "0be093ba5994ce923dca2b52e2827384490fb35e0fec11c2ff4ae3d0e60673a4"
     },
     {
       "path": "assets/02-human-bot-evidence.png",
@@ -72,7 +72,7 @@
     {
       "path": "assets/02-human-bot-evidence.svg",
       "bytes": 37192,
-      "sha256": "f310b1e0548d0e4aecb7448a9c3399745082a1175be5809632df6881d2083a7d"
+      "sha256": "1b67ee36acbd6730da2a418c71ff3427306c07eb042fb8a153b28643e5e2e86d"
     },
     {
       "path": "assets/03-shared-calendar-states-mobile.png",
@@ -82,7 +82,7 @@
     {
       "path": "assets/03-shared-calendar-states-mobile.svg",
       "bytes": 98159,
-      "sha256": "39a5d7a2fded9399c7acfe04d671c29bb5f431671607eff49381033135175149"
+      "sha256": "531de6459f85343422841f4e74012dfc78ac8cffcad2b71d726354eb65f6a27d"
     },
     {
       "path": "assets/03-shared-calendar-states.png",
@@ -92,7 +92,7 @@
     {
       "path": "assets/03-shared-calendar-states.svg",
       "bytes": 98116,
-      "sha256": "e63bb531ffaad72f8d92e96eae010732b2d3a112bbff3e4ba6d6de35a23ab43d"
+      "sha256": "3341616515640aa863972e4440f0d4300fe1b1a178653ae960fffc45bde9dbe0"
     },
     {
       "path": "assets/04-cohort-contribution-payback-mobile.png",
@@ -102,7 +102,7 @@
     {
       "path": "assets/04-cohort-contribution-payback-mobile.svg",
       "bytes": 77120,
-      "sha256": "9b2649685bdeef1209247057d0fcb100cbb4e0ac7558aad12590ecdd3be898ec"
+      "sha256": "8533e9d515f68e5120cb6797b05b77721cb40f5dc37e726c029ddc19c5dcee3f"
     },
     {
       "path": "assets/04-cohort-contribution-payback.png",
@@ -112,7 +112,7 @@
     {
       "path": "assets/04-cohort-contribution-payback.svg",
       "bytes": 75683,
-      "sha256": "57ccdc5a1e8cf72dd69391c2d27d64ba54f46c828bb41507be50b19d29195795"
+      "sha256": "db62290041aa128eb8c40fcb9765e198ccd424dc62607bd0b7dc4bbbd91251c6"
     },
     {
       "path": "assets/05-new-source-transfer-mobile.png",
@@ -122,7 +122,7 @@
     {
       "path": "assets/05-new-source-transfer-mobile.svg",
       "bytes": 26108,
-      "sha256": "949ccc9b944f8c9dadf3800a653f6c92b4970be3f86124e67c45d2ce673e628b"
+      "sha256": "646cceaf4dd6e546a7c1d2f9da306d8afef64f2c767e73b380a3f96b75291050"
     },
     {
       "path": "assets/05-new-source-transfer.png",
@@ -132,7 +132,7 @@
     {
       "path": "assets/05-new-source-transfer.svg",
       "bytes": 29238,
-      "sha256": "56e38a62ad9ff3d628699c7efa989ec6f79117d062df7cf60ca2c60333aee0e2"
+      "sha256": "f18c872ab4853ff3a4b274b63e983617ae8a15a141db22caa2785bd306b655d8"
     },
     {
       "path": "assets/06-heldout-comparison-mobile.png",
@@ -142,7 +142,7 @@
     {
       "path": "assets/06-heldout-comparison-mobile.svg",
       "bytes": 55655,
-      "sha256": "b93ccc12d551170948ce7b3bfff94901815c4c07e57442efcff41b89874721cd"
+      "sha256": "e0978be59fdc748261ae33f7c6dafb11b365b8d01570bcef9d23c74d4e97b444"
     },
     {
       "path": "assets/06-heldout-comparison.png",
@@ -152,7 +152,7 @@
     {
       "path": "assets/06-heldout-comparison.svg",
       "bytes": 56413,
-      "sha256": "14bff740ae2aa06776364d127040be7b5d4071f8ed0d9aa7601b31e8ed7e597a"
+      "sha256": "23606e16f5521ce38f1f622fe1d687174c5dcb090cb86860966f1f9c49b7c639"
     },
     {
       "path": "assets/07-cohort-variability-mobile.png",
@@ -162,7 +162,7 @@
     {
       "path": "assets/07-cohort-variability-mobile.svg",
       "bytes": 136703,
-      "sha256": "358ce4505ebae1e44979c6b95f48e9dc188809dda848ed480a644b6f44dece61"
+      "sha256": "f4880cd712416c812e589387d2f1d91bb81900060683aafab527ba47e2ca7925"
     },
     {
       "path": "assets/07-cohort-variability.png",
@@ -172,7 +172,7 @@
     {
       "path": "assets/07-cohort-variability.svg",
       "bytes": 137754,
-      "sha256": "1e58ea365c863d9007863f2fc820e3dc341a8553ac0b64ca37fa1e107c609490"
+      "sha256": "3df853db60ab41448a90ecd199e547f194862b720feb204aba8052d0eef2f9b3"
     },
     {
       "path": "assets/08-confidence-over-time-mobile.png",
@@ -182,7 +182,7 @@
     {
       "path": "assets/08-confidence-over-time-mobile.svg",
       "bytes": 20622,
-      "sha256": "6b0c74bd997570d463f55fac1621cf9a514cd7fad25bf8f91ff0e8b30d0eb411"
+      "sha256": "cc998287d0fc4448c609cc5b2dc268ef8e2595ce7932a5b6e1c94fee11e17b5e"
     },
     {
       "path": "assets/08-confidence-over-time.png",
@@ -192,7 +192,7 @@
     {
       "path": "assets/08-confidence-over-time.svg",
       "bytes": 20416,
-      "sha256": "721c572833ea153df4cf0d78160a290eb84862246e99ef171e7eaed2f97d44eb"
+      "sha256": "afeabcc85f1c592c0d45675085b2c0a801b78030cb0b5af66a8381dec5be3f22"
     },
     {
       "path": "assets/09-cpc-what-if-mobile.png",
@@ -202,7 +202,7 @@
     {
       "path": "assets/09-cpc-what-if-mobile.svg",
       "bytes": 18929,
-      "sha256": "561cd7eb53e83a0e753dd3a803fdfddaa0b1d28dc2cdf15596f442a5cf8a30b0"
+      "sha256": "76228dca72c824943c5d85c65785fd0e2c40b31a94c4d280b68ff2e36a8e99ba"
     },
     {
       "path": "assets/09-cpc-what-if.png",
@@ -212,7 +212,7 @@
     {
       "path": "assets/09-cpc-what-if.svg",
       "bytes": 18718,
-      "sha256": "c715e3ff4f22a9f44c92ee720a6812709767f08546636bbce926499eed579946"
+      "sha256": "acf0f177cbf154bf860726d394042a738c20749f1fd10c12bdd0f0c4741a6864"
     },
     {
       "path": "assets/10-decision-reliability-mobile.png",
@@ -222,7 +222,7 @@
     {
       "path": "assets/10-decision-reliability-mobile.svg",
       "bytes": 31958,
-      "sha256": "886edcd921aa43fe12a5421cd1e6c5c0a2c0c71e0cc83b06a02e545b765bc33e"
+      "sha256": "2a5a4068023c3c3caeaf9fa7af4a7f446ba42435dd3dda9c6a5ce4b7e916254a"
     },
     {
       "path": "assets/10-decision-reliability.png",
@@ -232,32 +232,52 @@
     {
       "path": "assets/10-decision-reliability.svg",
       "bytes": 31478,
-      "sha256": "6846eac9245e5dfdd2de5aed46b7aaa8cde1a35ea3181a594a47f05e42b2fa51"
+      "sha256": "f2bdc308b3548ae151d8945d99e4b62e0d17e13f657af651293ca8e9b9dda4cf"
+    },
+    {
+      "path": "assets/11-break-even-learning-mobile.png",
+      "bytes": 188210,
+      "sha256": "6857220fb09bedfc00e83150a273b66905af86c3da63f064871370ee938cec18"
+    },
+    {
+      "path": "assets/11-break-even-learning-mobile.svg",
+      "bytes": 27993,
+      "sha256": "765b08191720073b24bd0061f9496bab67ebbefccdef464fd3c9de93e6ebbdec"
+    },
+    {
+      "path": "assets/11-break-even-learning.png",
+      "bytes": 210642,
+      "sha256": "12e24b43967065c82ca565160318d68cb54bbd4a1c013e7853343b9310f3cd55"
+    },
+    {
+      "path": "assets/11-break-even-learning.svg",
+      "bytes": 27943,
+      "sha256": "9c60950d0d8b30f9e47f04665a2dd769ee62946cfd102f8ad262f28c01b87fd3"
     },
     {
       "path": "build_article.py",
-      "bytes": 22297,
-      "sha256": "0cdc175870463e9206251443326a853b1eac7cf38e741104af3b6b477efe2a73"
+      "bytes": 22585,
+      "sha256": "b235da8e9c509c4b81fa63fd9a83f1c0197c5a9cb0b0cddba5d4e8b8f9549dd9"
     },
     {
       "path": "chart_provenance.json",
-      "bytes": 31129,
-      "sha256": "bf3d88b9bbe9245d511d55dc525cabf893b840cc38d7a85727a920f3c1ea1fb3"
+      "bytes": 34213,
+      "sha256": "f823ba18394d04ef7547574f407c9f806c4cd55059e9d1484cc17b1a15a749b3"
     },
     {
       "path": "claims.json",
-      "bytes": 171137,
-      "sha256": "73e81bd0c0babe826884cb8675b37f63ece0755531bf193bf5f7889353ee07a6"
+      "bytes": 171237,
+      "sha256": "4a7340887529097b7e71b0cafe7534415740c86c0fec429d7d600ac90cab554f"
     },
     {
       "path": "index.html",
-      "bytes": 54460,
-      "sha256": "3c9de0eb1506bed763e959b6beab6b306fc5b4534e2a015bd9b2e2c3f4001454"
+      "bytes": 59113,
+      "sha256": "292a22a0b92dc440c5fa39113eae92bb1a6bb500005d9c2f1a0f8ee4b7e2ebe0"
     },
     {
       "path": "standalone.html",
-      "bytes": 12939070,
-      "sha256": "3a403f181f3f3747ac6f7066a6a1d1505dc23592f87c5d72369f383404b49917"
+      "bytes": 13628605,
+      "sha256": "c01807912b67a75c82aec3423dba5a8a4a8c9881d40595de41dce2438b1322ce"
     },
     {
       "path": "style.css",
@@ -313,6 +333,11 @@
       "path": "tables/10-decision-reliability.csv",
       "bytes": 6126,
       "sha256": "7b52de8d0be38d2fd247955e9435d7e901c20228c7f4ff482c24b44c0dae0f84"
+    },
+    {
+      "path": "tables/11-break-even-learning.csv",
+      "bytes": 5144,
+      "sha256": "4ae9d6765ab003cc261507af395ad3fcfe55260fe313a6a892985b224bac3d0f"
     },
     {
       "path": "tables/offered-cost.csv",

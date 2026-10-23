@@ -1,21 +1,22 @@
 {
   "synthetic_only": true,
-  "figures": 10,
-  "variant_files": 40,
-  "visually_inspected_png_variants": 8,
+  "figures": 11,
+  "variant_files": 44,
+  "visually_inspected_png_variants": 10,
   "minimum_effective_mobile_text_css_px_at_390": 12.58312276637862,
   "all_source_figure_table_hashes_match": true,
-  "run_manifest_sha256": "0f33dc371dd7267ba1f4bfabb1b6c3de4708fe2b2ec2d0ff8ccb4196d94c71c3",
+  "run_manifest_sha256": "5a1d6a9c252dcf893e5bd0b7b8c857ea24a140492c0e4d8513f25cd9685675f3",
   "scientific_model_sha256": "5d11167f6c98f50d8d5f0924885cac7641f14d0df2ea76f64dbaba8e9157d730",
   "payback_check": "CDF is monotone, uses actual draw denominators, and CDF425 plus noncrossing probability equals one",
   "quote_query_check": "Prospective births follow the origin; mean/median/interval endpoints shift only by quoted purchase cost; first-payback probability cannot rise with cost",
-  "pixel_checks": "Final desktop and mobile PNG variants inspected for figures 7\u201310; mobile SVG text checks pass at 390px. Posterior comparisons retain a common explicitly expanded axis.",
+  "pixel_checks": "Desktop and mobile PNGs for figures 7\u201311 visually inspected; mobile SVG text checks pass at 390px. New break-even figure separates date intervals from no-crossing probability.",
   "limitations": "Synthetic approximate inference; state attribution is assumption-dependent; held-out interval undercoverage and absence of demonstrated decision advantage remain visible.",
-  "chart_provenance_sha256": "bf3d88b9bbe9245d511d55dc525cabf893b840cc38d7a85727a920f3c1ea1fb3",
+  "chart_provenance_sha256": "f823ba18394d04ef7547574f407c9f806c4cd55059e9d1484cc17b1a15a749b3",
   "caption_repairs_verified": [
     "Figure 2 source and daily information scope",
     "Figure 4 no deterministic drift in fitted log states",
     "Figure 6 three independent worlds per scenario and eighteen overall",
     "Figure 2 accessible description matches the displayed series; no fitted-human series claimed"
-  ]
+  ],
+  "payback_learning_check": "For each cutoff, first-break-even quantiles are conditional on crossing by age 425; crossing and noncrossing predictive mass sum to one."
 }
