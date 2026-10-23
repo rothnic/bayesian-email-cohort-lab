@@ -98,9 +98,9 @@ Here H is the fixed target age, N_c is the original cohort size and delta is the
 
 {{CAPTION_08}}
 
-A fixed-day profit probability answers whether the cohort clears a chosen target by that age. It does not say when the cohort first recovers its acquisition and sending costs. For timing, each predictive contribution path has its own first age at which cumulative margin reaches zero. The chart below refits the same cohort as its observed history grows, plots the distribution of those first-crossing ages, and reports separately the share of paths that never cross by age 425. The date bands can move or widen when new observations arrive; future event variation also remains after the model learns the cohort.
+A fixed-day profit probability answers whether the cohort clears a chosen target by that age. It does not say when the cohort first recovers its acquisition and sending costs. For timing, each predictive contribution path has its own first age at which cumulative margin reaches zero. In this chart, the vertical axis is **days from the information cutoff until break-even**: zero means break-even on that cutoff date, a positive value means it is still expected in the future, and a negative value means estimated break-even has already passed. This puts the estimate and the current date on the same clock. For example, on calendar day 119 this cohort is 49 days old; a median break-even age of 34 days is therefore shown as −15 days (34 − 49), not as a future wait of 34 days. The chart refits the same cohort as its observed history grows, shows the distribution of first-crossing dates, and reports separately the share of paths that never cross by age 425. The date bands can move or widen when new observations arrive; future event variation also remains after the model learns the cohort.
 
-![As a fixed cohort accumulates observations, its predicted first break-even age and uncertainty update; a separate panel shows the probability of no break-even by age 425.](assets/11-break-even-learning.png)
+![As the same cohort accumulates observations, the forecast shows days from each cutoff to break-even: positive is ahead, zero is today, and negative means already crossed. A second panel shows the probability of no break-even by age 425.](assets/11-break-even-learning.png)
 
 {{CAPTION_11}}
 

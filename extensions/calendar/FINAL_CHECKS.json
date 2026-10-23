@@ -16,5 +16,6 @@
   "dynamic_forecasts": 306,
   "original_v1_failure_kept_separate": true,
   "tests_run_for_this_update": false,
-  "test_status_note": "The 42 passing tests are from the preceding implementation revision; they were not rerun for this chart and evaluator-output update."
+  "test_status_note": "The 42 passing tests are from the preceding implementation revision; they were not rerun for this chart update.",
+  "figure_11_visual_review": "Desktop and mobile PNG inspected; y-axis is days from cutoff to estimated break-even, with zero at the cutoff and negative values for past crossings."
 }

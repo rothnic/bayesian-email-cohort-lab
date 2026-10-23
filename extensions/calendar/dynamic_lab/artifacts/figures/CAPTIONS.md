@@ -100,13 +100,13 @@ Denominator: Probability that day-180 cumulative contribution exceeds $0.02 time
 
 Numeric table: [08-confidence-over-time.csv](tables/08-confidence-over-time.csv)
 
-## How the estimated break-even age changes as a cohort matures
+## Estimated time to break-even updates as evidence arrives
 
-Two equally priced fictional source worlds start with the same prelaunch prior and follow the same fixed day-70 cohort. At each cutoff the model is refit using only then-visible observations, and predicts that cohort under hold-current future conditions. The top panel shows first-break-even age quantiles only among predictive paths that cross zero by age 425: darker fill is the middle 50%, pale fill the middle 80%, and solid line the median. Dashed lines show evaluator-only hidden outcomes for context. The lower panel reports predictive paths with no break-even by age 425. These are posterior predictive intervals, not a promise that uncertainty shrinks monotonically: new evidence can shift or widen the estimate, and future process variation remains. Both sources have the same $0.05 per-lead price; the difference is hidden subscriber performance.
+Two equally priced fictional source worlds follow the same fixed cohort acquired on calendar day 70. At each cutoff the model is refit using only then-visible observations and predicts that cohort under hold-current future conditions. In the top panel, zero means break-even on the information cutoff day; positive values mean the forecast is still ahead, and negative values mean the model estimates break-even has already happened. For example, at cutoff day 119 the cohort is 49 days old; a forecast of 34 days after acquisition appears as −15 days from cutoff. The solid line is the median among predictive paths that cross zero by cohort age 425. Darker fill is the middle 50%, pale fill the middle 80%, and dashed lines show evaluator-only hidden outcomes. The lower panel reports predictive paths with no break-even by cohort age 425. These posterior predictive intervals need not shrink monotonically: new evidence can shift or widen the estimate, and future process variation remains. Both sources have the same $0.05 per-lead price; their hidden subscriber performance differs.
 
-Alt text: For the same cohort, conditional break-even-age bands and the separate probability of no break-even update as observations arrive; hidden simulated outcomes provide a reference.
+Alt text: For the same cohort, the forecast shows how many days remain until break-even; negative values mean the estimated break-even date is already past. A second panel shows the separate probability of no break-even by age 425.
 
-Intervals: 50% and 80% posterior predictive quantile bands for first break-even age, conditional on crossing by age 425; noncrossing probability is displayed separately.
+Intervals: 50% and 80% posterior predictive quantile bands for days from cutoff to first break-even, conditional on crossing by age 425; negative values mean the predicted date has passed. Noncrossing probability is displayed separately.
 
 Denominator: Each cutoff is one refit using records available through that calendar day. Age is measured from cohort birth day 70. Percent denominator is all posterior predictive paths.
 

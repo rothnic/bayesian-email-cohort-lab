@@ -15,8 +15,8 @@
     },
     {
       "path": "FINAL_CHECKS.json",
-      "bytes": 835,
-      "sha256": "44e4d20af2c9366dc184dd68398ef77eaf03df5ebcafd386f2401d69f32d5f90"
+      "bytes": 996,
+      "sha256": "aed827fd73186cf953c8cb6a853716de6a453e900b9360cbddd5738aa8e08524"
     },
     {
       "path": "INDEPENDENT_REVIEW.md",
@@ -30,8 +30,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2678,
-      "sha256": "e7e0da4311b91b1d3bd5dc1209996d321528b07a80f595de8ef73c448c3fd101"
+      "bytes": 2739,
+      "sha256": "5cf87fde72e5ea94bde1fba6b151d4f93bd81c409c915389504b4ddbd0b5d821"
     },
     {
       "path": "REPLAY_CHECKPOINT.md",
@@ -121,7 +121,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/01-calendar-economics-mobile.svg",
       "bytes": 43748,
-      "sha256": "f98aca24279d6c37151c2ed86a40311e6fd59bf64190071134cab0b93c92856c"
+      "sha256": "0f2fbf17431fa7103b9ebeb1e3a131ab7d51f7f5ebd10db5b728d19dfbc7f2e7"
     },
     {
       "path": "dynamic_lab/artifacts/figures/01-calendar-economics.png",
@@ -131,7 +131,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/01-calendar-economics.svg",
       "bytes": 42404,
-      "sha256": "4a180748b0a8b2eb6b82b6ba542d0a481a8c8960fad313fafe7672e2621ab6b5"
+      "sha256": "a79ae6981ff639aa843e161435b5100767bdf5a1ff5f9e80c87d63e46e608f39"
     },
     {
       "path": "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.png",
@@ -141,7 +141,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.svg",
       "bytes": 37847,
-      "sha256": "0be093ba5994ce923dca2b52e2827384490fb35e0fec11c2ff4ae3d0e60673a4"
+      "sha256": "38cc130265907a0e02f72a229dfc7630168993ef08b219578b77f6bd5aa7a7a0"
     },
     {
       "path": "dynamic_lab/artifacts/figures/02-human-bot-evidence.png",
@@ -151,7 +151,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/02-human-bot-evidence.svg",
       "bytes": 37192,
-      "sha256": "1b67ee36acbd6730da2a418c71ff3427306c07eb042fb8a153b28643e5e2e86d"
+      "sha256": "bb6eb74af46629e93b3eaa4ceba55f40597b71a4f151971e484ad75fa4b0f2a2"
     },
     {
       "path": "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.png",
@@ -161,7 +161,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.svg",
       "bytes": 98159,
-      "sha256": "531de6459f85343422841f4e74012dfc78ac8cffcad2b71d726354eb65f6a27d"
+      "sha256": "d6cce7ac4251c33e42118625b99a9c66f8dfbfe3083da60c91938eb3d8c965ed"
     },
     {
       "path": "dynamic_lab/artifacts/figures/03-shared-calendar-states.png",
@@ -171,7 +171,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/03-shared-calendar-states.svg",
       "bytes": 98116,
-      "sha256": "3341616515640aa863972e4440f0d4300fe1b1a178653ae960fffc45bde9dbe0"
+      "sha256": "1c803deafcd70a88b9d198fa540211099f5bd7e5ebf92f72adbc86cdf4228ee8"
     },
     {
       "path": "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.png",
@@ -181,7 +181,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.svg",
       "bytes": 77120,
-      "sha256": "8533e9d515f68e5120cb6797b05b77721cb40f5dc37e726c029ddc19c5dcee3f"
+      "sha256": "d50e7647795477bc79d961adff03e553a248c75e5cb8fe4d75b97dff4f9b2b48"
     },
     {
       "path": "dynamic_lab/artifacts/figures/04-cohort-contribution-payback.png",
@@ -191,7 +191,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/04-cohort-contribution-payback.svg",
       "bytes": 75683,
-      "sha256": "db62290041aa128eb8c40fcb9765e198ccd424dc62607bd0b7dc4bbbd91251c6"
+      "sha256": "86085fff18823411c7be24fa5963b2bbba5496eaf959d0524f921b8a42cc7f2e"
     },
     {
       "path": "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.png",
@@ -201,7 +201,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.svg",
       "bytes": 26108,
-      "sha256": "646cceaf4dd6e546a7c1d2f9da306d8afef64f2c767e73b380a3f96b75291050"
+      "sha256": "5cb4c4b71c345a2227c7073c351b20b2aa8282db309552a9f70d44b4fd6195cc"
     },
     {
       "path": "dynamic_lab/artifacts/figures/05-new-source-transfer.png",
@@ -211,7 +211,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/05-new-source-transfer.svg",
       "bytes": 29238,
-      "sha256": "f18c872ab4853ff3a4b274b63e983617ae8a15a141db22caa2785bd306b655d8"
+      "sha256": "6c992819502558b3428d52636d570d276a02ccb038be657a1bbb27d7593a03d3"
     },
     {
       "path": "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.png",
@@ -221,7 +221,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.svg",
       "bytes": 55655,
-      "sha256": "e0978be59fdc748261ae33f7c6dafb11b365b8d01570bcef9d23c74d4e97b444"
+      "sha256": "3cb13119ee726cd1ea9ea95207cf225d6d0a4ce03c2ca3eb14839bc6c6245105"
     },
     {
       "path": "dynamic_lab/artifacts/figures/06-heldout-comparison.png",
@@ -231,7 +231,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/06-heldout-comparison.svg",
       "bytes": 56413,
-      "sha256": "23606e16f5521ce38f1f622fe1d687174c5dcb090cb86860966f1f9c49b7c639"
+      "sha256": "3e6970dc66c8e269ef3c2c8d353afecc0f0174f1f8f0914e9bb08074b5fbb1e9"
     },
     {
       "path": "dynamic_lab/artifacts/figures/07-cohort-variability-mobile.png",
@@ -241,7 +241,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/07-cohort-variability-mobile.svg",
       "bytes": 136703,
-      "sha256": "f4880cd712416c812e589387d2f1d91bb81900060683aafab527ba47e2ca7925"
+      "sha256": "d9ce56d1b1182a6ba105467cad3fd4e0fffabe7ba69a9622dd3d36d767de2994"
     },
     {
       "path": "dynamic_lab/artifacts/figures/07-cohort-variability.png",
@@ -251,7 +251,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/07-cohort-variability.svg",
       "bytes": 137754,
-      "sha256": "3df853db60ab41448a90ecd199e547f194862b720feb204aba8052d0eef2f9b3"
+      "sha256": "6bf754f1f58ed17e88d4599b99becdd0cc685409d57b06ef461b2d53389d6443"
     },
     {
       "path": "dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.png",
@@ -261,7 +261,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.svg",
       "bytes": 20622,
-      "sha256": "cc998287d0fc4448c609cc5b2dc268ef8e2595ce7932a5b6e1c94fee11e17b5e"
+      "sha256": "4a9dd721cb92ae8c72536fe65abdd2cfd802b23b4c74b5261e67d5c8715e00de"
     },
     {
       "path": "dynamic_lab/artifacts/figures/08-confidence-over-time.png",
@@ -271,7 +271,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/08-confidence-over-time.svg",
       "bytes": 20416,
-      "sha256": "afeabcc85f1c592c0d45675085b2c0a801b78030cb0b5af66a8381dec5be3f22"
+      "sha256": "97450a30b4324a5412e77c9acf158969f866247a3379aba4c1dd796dcf13f656"
     },
     {
       "path": "dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.png",
@@ -281,7 +281,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.svg",
       "bytes": 18929,
-      "sha256": "76228dca72c824943c5d85c65785fd0e2c40b31a94c4d280b68ff2e36a8e99ba"
+      "sha256": "7f09178ec95d50c6dfbfeb08d3817365f08a11dc8ac09488d98ae6fc71b99e1c"
     },
     {
       "path": "dynamic_lab/artifacts/figures/09-cpc-what-if.png",
@@ -291,7 +291,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/09-cpc-what-if.svg",
       "bytes": 18718,
-      "sha256": "acf0f177cbf154bf860726d394042a738c20749f1fd10c12bdd0f0c4741a6864"
+      "sha256": "79813c9fd32aa878225592568ea02cbf829c429fd75176c48c36e6d698c687bd"
     },
     {
       "path": "dynamic_lab/artifacts/figures/10-decision-reliability-mobile.png",
@@ -301,7 +301,7 @@
     {
       "path": "dynamic_lab/artifacts/figures/10-decision-reliability-mobile.svg",
       "bytes": 31958,
-      "sha256": "2a5a4068023c3c3caeaf9fa7af4a7f446ba42435dd3dda9c6a5ce4b7e916254a"
+      "sha256": "fe3ca3374ee541ec1014a339a785197707a1c70413c2a4ccc388efcb9270d416"
     },
     {
       "path": "dynamic_lab/artifacts/figures/10-decision-reliability.png",
@@ -311,47 +311,47 @@
     {
       "path": "dynamic_lab/artifacts/figures/10-decision-reliability.svg",
       "bytes": 31478,
-      "sha256": "f2bdc308b3548ae151d8945d99e4b62e0d17e13f657af651293ca8e9b9dda4cf"
+      "sha256": "7f5d3aeebf2ae371ab15f7f5af4c7a6a30d34369d5604aba3013587bb7b14c37"
     },
     {
       "path": "dynamic_lab/artifacts/figures/11-break-even-learning-mobile.png",
-      "bytes": 188210,
-      "sha256": "6857220fb09bedfc00e83150a273b66905af86c3da63f064871370ee938cec18"
+      "bytes": 208450,
+      "sha256": "2c71c9ce31c18b294e889a727c71ca3d97512f5d0bc686449f3ed6c99a21e268"
     },
     {
       "path": "dynamic_lab/artifacts/figures/11-break-even-learning-mobile.svg",
-      "bytes": 27993,
-      "sha256": "765b08191720073b24bd0061f9496bab67ebbefccdef464fd3c9de93e6ebbdec"
+      "bytes": 28751,
+      "sha256": "df46bfe1f5cea1bec61e230a01edf680f3e7815d927da3e597e484b9bd331b83"
     },
     {
       "path": "dynamic_lab/artifacts/figures/11-break-even-learning.png",
-      "bytes": 210642,
-      "sha256": "12e24b43967065c82ca565160318d68cb54bbd4a1c013e7853343b9310f3cd55"
+      "bytes": 229096,
+      "sha256": "8cfcb0a1302b080271295ba6fa2feb840b2a4d901dfbb05305ac945c51fcef85"
     },
     {
       "path": "dynamic_lab/artifacts/figures/11-break-even-learning.svg",
-      "bytes": 27943,
-      "sha256": "9c60950d0d8b30f9e47f04665a2dd769ee62946cfd102f8ad262f28c01b87fd3"
+      "bytes": 28718,
+      "sha256": "aee4912ca24442b4fabe89f6b5caff65d8cd8d83bf2b7a3d8e55fe039377d661"
     },
     {
       "path": "dynamic_lab/artifacts/figures/CAPTIONS.md",
-      "bytes": 15445,
-      "sha256": "16be96d8f0dda90fc512b0510350cc0554597168e5345f0e781029185687eb37"
+      "bytes": 15785,
+      "sha256": "5fed395cf779ad486e74d6f2fc64487108bc79f99e1fc1cc73548101143f5941"
     },
     {
       "path": "dynamic_lab/artifacts/figures/FIGURE_QA.json",
-      "bytes": 1696,
-      "sha256": "7085bbf347cff2d2d8a7f62de2849373f6e3ab2f62c6f5f46ac43d8052725099"
+      "bytes": 1838,
+      "sha256": "e4693290e6468fdd4074da67eb4f57e9adbc062d6243557519e2226123d0d626"
     },
     {
       "path": "dynamic_lab/artifacts/figures/chart_provenance.json",
-      "bytes": 34213,
-      "sha256": "f823ba18394d04ef7547574f407c9f806c4cd55059e9d1484cc17b1a15a749b3"
+      "bytes": 34556,
+      "sha256": "5e273ce76b9dcc0f1f35d46d73483060471f3334f4cfadf026988eef24554570"
     },
     {
       "path": "dynamic_lab/artifacts/figures/mobile_text_checks.json",
       "bytes": 2434,
-      "sha256": "c387336be1abc007d719bedae3664a78a353d2130e868e7f62208d062cf789e7"
+      "sha256": "ffd4f3ff7378ce4b7773a49df7ed75ad0cd50ffe759aabda68e04e876d5326ad"
     },
     {
       "path": "dynamic_lab/artifacts/figures/sources/original_v1_metrics_by_origin.csv",
@@ -415,8 +415,8 @@
     },
     {
       "path": "dynamic_lab/artifacts/figures/tables/11-break-even-learning.csv",
-      "bytes": 5144,
-      "sha256": "4ae9d6765ab003cc261507af395ad3fcfe55260fe313a6a892985b224bac3d0f"
+      "bytes": 5999,
+      "sha256": "cf76a623709f1531c965a84dcd4595d42039886c877feda84a140c20c5c456b9"
     },
     {
       "path": "dynamic_lab/artifacts/forecast_seal.json",
@@ -535,8 +535,8 @@
     },
     {
       "path": "dynamic_lab/figures.py",
-      "bytes": 75289,
-      "sha256": "979090fc93c5a3b61a1412d83bae357dfcdd78c110547e75152367e7067b44a3"
+      "bytes": 76257,
+      "sha256": "9f5ea82a91bb9d2ed1d3ea5ec8ac5dc18b8e05c0662e2c5b38cc1bf58b4c17be"
     },
     {
       "path": "dynamic_lab/model.py",
