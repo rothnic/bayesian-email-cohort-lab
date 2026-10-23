@@ -1,0 +1,13 @@
+world,scenario,cohort_id,first_decision,first_decisive_day,final_state,any_reversal,true_above_buffer,true_margin180,birth_day,decision_age,false_positive,false_negative,undecided
+heldout-cpc_squeeze-14101,cpc_squeeze,established_a-b070,below_target,77.0,below_target,False,False,-16.988351468148167,70,7.0,False,False,False
+heldout-cpc_squeeze-14102,cpc_squeeze,established_a-b070,below_target,112.0,below_target,False,False,-8.071112146431222,70,42.0,False,False,False
+heldout-cpc_squeeze-14103,cpc_squeeze,established_a-b070,below_target,77.0,below_target,False,False,-13.833938458498583,70,7.0,False,False,False
+heldout-fixed_price-4101,fixed_price,established_a-b070,undecided,,undecided,False,True,13.611437885021106,70,,False,False,True
+heldout-fixed_price-4102,fixed_price,established_a-b070,undecided,,undecided,False,False,0.1001269167766144,70,,False,False,True
+heldout-fixed_price-4103,fixed_price,established_a-b070,below_target,77.0,below_target,False,False,-0.013625772590648708,70,7.0,False,False,False
+heldout-human_decline_bot_rise-34101,human_decline_bot_rise,established_a-b070,below_target,91.0,below_target,False,False,-10.323036700774274,70,21.0,False,False,False
+heldout-human_decline_bot_rise-34102,human_decline_bot_rise,established_a-b070,below_target,98.0,undecided,False,False,-8.4289826544099,70,28.0,False,False,False
+heldout-human_decline_bot_rise-34103,human_decline_bot_rise,established_a-b070,below_target,91.0,below_target,False,False,-15.49489793558847,70,21.0,False,False,False
+heldout-rising_cpl-24101,rising_cpl,established_a-b070,below_target,84.0,undecided,False,False,-11.615073563423012,70,14.0,False,False,False
+heldout-rising_cpl-24102,rising_cpl,established_a-b070,below_target,77.0,below_target,False,False,-16.749958962050854,70,7.0,False,False,False
+heldout-rising_cpl-24103,rising_cpl,established_a-b070,below_target,77.0,below_target,False,False,-17.999605310307842,70,7.0,False,False,False

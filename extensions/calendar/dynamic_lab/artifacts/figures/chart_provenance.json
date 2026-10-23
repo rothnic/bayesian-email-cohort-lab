@@ -5,9 +5,9 @@
   "charts": [
     {
       "id": "01-calendar-economics",
-      "title": "Calendar prices and arriving purchases",
-      "caption": "The synthetic rich illustration (demo-human_decline_bot_rise-884000, human_decline_bot_rise) and fixed-price reference use the same demo seed; established source established_a. The net-human CPC opportunity is evaluator-only truth, not an observed contract rate supplied to inference; the model learns it from mature settled monetary marks. Send cost and the current acquisition quote are observed inputs. Purchase markers divide the batch's recorded acquisition cost by its purchased leads; a later quote applies to new purchases and never rewrites old acquisition costs.",
-      "alt": "Three calendar panels compare fixed and changing evaluator-only human CPC, acquisition quotes with actual purchase prices, and weekly arriving cohorts.",
+      "title": "CPC and lead prices can deteriorate independently",
+      "caption": "Paired synthetic controls with the same demo seed; CPC panel uses cpc_squeeze, while CPL panel uses rising_cpl. established source established_a. The net-human CPC opportunity is evaluator-only truth, not an observed contract rate supplied to inference; the model learns it from mature settled monetary marks. Send cost and the current acquisition quote are observed inputs. Purchase markers divide the batch's recorded acquisition cost by its purchased leads; a later quote applies to new purchases and never rewrites old acquisition costs.",
+      "alt": "Three calendar panels separate a net-CPC shock, an independent CPL shock and new weekly purchases.",
       "synthetic_only": true,
       "files": [
         "dynamic_lab/artifacts/figures/01-calendar-economics.png",
@@ -16,28 +16,28 @@
         "dynamic_lab/artifacts/figures/01-calendar-economics-mobile.svg"
       ],
       "file_sha256": {
-        "dynamic_lab/artifacts/figures/01-calendar-economics.png": "0549da4e2fd4ea298d39255889286bda1a40d546e8a3fef5dea1f68d5b9b0b35",
-        "dynamic_lab/artifacts/figures/01-calendar-economics.svg": "df4766db91dd5dc0e94785325ee593dcbf12efef008decb63474eff4797591b5",
-        "dynamic_lab/artifacts/figures/01-calendar-economics-mobile.png": "21e4b6e4356ec642ab90861fa2df7bf86b7fdc72703e52433bddcc03e5409aeb",
-        "dynamic_lab/artifacts/figures/01-calendar-economics-mobile.svg": "dceaccfac2ecb329ad724dba3e0926110b83d9fa6fa5f94bdccbeaa5092cfd3b"
+        "dynamic_lab/artifacts/figures/01-calendar-economics.png": "a7c0cf9624f5bd161903a42ae7749c7c99234e76ab586f18261d7d73d8f754ee",
+        "dynamic_lab/artifacts/figures/01-calendar-economics.svg": "899ae41057c89eb90e686e5919f24bbb404c98facc84c3f7f66414ba3088a875",
+        "dynamic_lab/artifacts/figures/01-calendar-economics-mobile.png": "b76507ed08d588f5ada7c3e3b916f39cb2081f544201dbe29683eb9d1d762b2c",
+        "dynamic_lab/artifacts/figures/01-calendar-economics-mobile.svg": "0a4e185b92299f3ccfb8be3dc3f252f28ae3cd7f6325e9098b34bd1c5e44ab6b"
       },
       "table": "dynamic_lab/artifacts/figures/tables/01-calendar-economics.csv",
-      "table_sha256": "44d9d33c2818aadfceb87b4befdaf086119a68266238136b881af6725e2186c3",
+      "table_sha256": "8b9f945d45358d4d67581a55c4666e4bbafbc3b5f5ea903713f825f4c582e941",
       "source_files": [
         {
           "path": "dynamic_lab/artifacts/calendar_economics.csv",
-          "sha256": "bb0b292c7ff064a68607f54f01a1a8f764ced51e0f6f1a5421142c87aaae3a59",
+          "sha256": "32183bac4e660f7930fd07e4f4867a000373fd27d776a93b5b3be4121dc0264d",
           "rows": 762
         }
       ],
-      "selection": "world=demo-human_decline_bot_rise-884000; scenario=human_decline_bot_rise; source_id=established_a; plus fixed_price same demo seed; all calendar days and positive purchase rows",
+      "selection": "world=demo-cpc_squeeze-884000; CPC scenario=cpc_squeeze; source_id=established_a; separate rising_cpl and fixed_price same demo seed; all calendar days and positive purchase rows",
       "interval_meaning": "No uncertainty interval: net-CPC is evaluator-only truth; quotes, send prices and immutable purchases are simulated known inputs.",
       "denominator": "Revenue per qualified human event; send cost per eligible send; acquisition quote and cost per purchased lead."
     },
     {
       "id": "02-human-bot-evidence",
       "title": "Human response and audited bot evidence",
-      "caption": "One synthetic world (demo-human_decline_bot_rise-884000, human_decline_bot_rise), aggregating all active sources and cohorts; information available on each plotted calendar day. Raw reported activity includes bots and uses report-calendar day, with a two-day report lag. The dotted true-human series uses occurrence-calendar day and is evaluator-only, not a fitting input. Audit fractions use trailing14-day audit reports available on that day, Beta-smoothed and corrected for the known sensitivity/specificity; audit_n is their denominator. Rows with no available audit are omitted from the fraction plot and marked missing in audit_fraction_plotted. Audit instrument error and representative-selection assumptions remain part of the approximate model.",
+      "caption": "One synthetic world (None, human_decline_bot_rise), aggregating all active sources and cohorts; information available on each plotted calendar day. Raw reported activity includes bots and uses report-calendar day, with a two-day report lag. The dotted true-human series uses occurrence-calendar day and is evaluator-only, not a fitting input. Audit fractions use trailing14-day audit reports available on that day, Beta-smoothed and corrected for the known sensitivity/specificity; audit_n is their denominator. Rows with no available audit are omitted from the fraction plot and marked missing in audit_fraction_plotted. Audit instrument error and representative-selection assumptions remain part of the approximate model.",
       "alt": "Reported-event counts are compared with evaluator-only true human events, above the measured fraction of audited events labeled bot.",
       "synthetic_only": true,
       "files": [
@@ -47,28 +47,28 @@
         "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.svg"
       ],
       "file_sha256": {
-        "dynamic_lab/artifacts/figures/02-human-bot-evidence.png": "fced3246fed30b24e8dd8bde6c59d391de592db337e632215bc12d60f2d6206b",
-        "dynamic_lab/artifacts/figures/02-human-bot-evidence.svg": "8c1e6b9b0760203f22e0b5a5faa6691db791fe6e1b4e217be9999275ddb065ab",
-        "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.png": "ea5e1d173ae6b66f5f68b95fcb788246249e92a0857c93d64c6d4d62ca854a9d",
-        "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.svg": "bb78ad529ff0ec757470e6fa9b13bc1e568bcb1df02caf1037b42a2651569129"
+        "dynamic_lab/artifacts/figures/02-human-bot-evidence.png": "1a6c3d86a929cf2f1a24529204bad57bfffb50d6772bdcbe467ebd54ecb7d397",
+        "dynamic_lab/artifacts/figures/02-human-bot-evidence.svg": "f310b1e0548d0e4aecb7448a9c3399745082a1175be5809632df6881d2083a7d",
+        "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.png": "2fef0c03235dbdf2c5a25f73dea27909b4396ffc915107417089592508a05337",
+        "dynamic_lab/artifacts/figures/02-human-bot-evidence-mobile.svg": "114e54c579376279e89167c2283bad66bc22664aa91e64668e61746565d3949d"
       },
       "table": "dynamic_lab/artifacts/figures/tables/02-human-bot-evidence.csv",
-      "table_sha256": "cf9d132bb51681e46a3ebfa80b635458ffbc7de7e8e51b689855efe3de47aae4",
+      "table_sha256": "221af08bf40b0b571c723bd3b5768dee5304e7e23ea73a31d302bc499cd6409a",
       "source_files": [
         {
           "path": "dynamic_lab/artifacts/measurement.csv",
-          "sha256": "21be6757bebbab3e96b1103675534985b1a2a1d3b02440343e2029e556b178f4",
+          "sha256": "b730d5ae415ff9e1eedaf9cb1917833152be443ef7f640b6ffc55273d8133a06",
           "rows": 762
         }
       ],
-      "selection": "world=demo-human_decline_bot_rise-884000; scenario=human_decline_bot_rise; all active sources and cohorts; information available on each plotted calendar day; event-count lines unsmoothed; audit fractions use available trailing14-day reports",
+      "selection": "world=None; scenario=human_decline_bot_rise; all active sources and cohorts; information available on each plotted calendar day; event-count lines unsmoothed; audit fractions use available trailing14-day reports",
       "interval_meaning": "95% fitted human interval where provided; audit interval only if explicit audit bounds exist. No invented bounds or smoothed interval endpoints.",
       "denominator": "Daily response events, which may repeat per person; bot fraction uses audit_n reported events, not acquired leads."
     },
     {
       "id": "03-shared-calendar-states",
       "title": "One shared response and payout calendar",
-      "caption": "One synthetic world (demo-human_decline_bot_rise-884000, human_decline_bot_rise); refit at calendar day 119. This bounded fixture uses same-day send/response cells; it does not fit a response-delay process. Report, audit and mature monetary visibility clocks remain separate. Within each posterior draw, one response path and one value path are shared across all cohorts; the two processes are conditionally independent and their covariance is not learned. Fixed age curves, anchored states and exchangeable cohort effects constrain the age\u2013period\u2013cohort decomposition; these drivers are assumption-dependent. The dashed truth is evaluator-only.",
+      "caption": "One synthetic world (None, cpc_squeeze); refit at calendar day 119. This bounded fixture uses same-day send/response cells; it does not fit a response-delay process. Report, audit and mature monetary visibility clocks remain separate. Within each posterior draw, one response path and one value path are shared across all cohorts; the two processes are conditionally independent and their covariance is not learned. Fixed age curves, anchored states and exchangeable cohort effects constrain the age\u2013period\u2013cohort decomposition; these drivers are assumption-dependent. The dashed truth is evaluator-only.",
       "alt": "Two panels show fitted shared response and payment calendar states with 95% intervals and evaluator-only states, separated by the last fitting origin.",
       "synthetic_only": true,
       "files": [
@@ -78,28 +78,28 @@
         "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.svg"
       ],
       "file_sha256": {
-        "dynamic_lab/artifacts/figures/03-shared-calendar-states.png": "cd7b603effd01824ecd52ede17a598e1271a7f3c9030093a0f14f54d4b628812",
-        "dynamic_lab/artifacts/figures/03-shared-calendar-states.svg": "66c701660b4d8563d202019229f182730d98d0d0d024309ff6005d52223affeb",
-        "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.png": "42a05731a525d74fc67bbd224feff5f42a7e55cf528fb154bf9d3a82247996b7",
-        "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.svg": "8437ae6f84accd1d3fcfd287cf09c9acb90f85770a810b7339dcb4c9356212c3"
+        "dynamic_lab/artifacts/figures/03-shared-calendar-states.png": "094d21b19b2dcff9b905d782ab781845f30861cf51a22da1ffedec70ca7a6478",
+        "dynamic_lab/artifacts/figures/03-shared-calendar-states.svg": "e63bb531ffaad72f8d92e96eae010732b2d3a112bbff3e4ba6d6de35a23ab43d",
+        "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.png": "08712f2c7a12d4fbc7ae3f71c3ad718ef4a438fe8bd8fa768752ace8bd4b1733",
+        "dynamic_lab/artifacts/figures/03-shared-calendar-states-mobile.svg": "39a5d7a2fded9399c7acfe04d671c29bb5f431671607eff49381033135175149"
       },
       "table": "dynamic_lab/artifacts/figures/tables/03-shared-calendar-states.csv",
-      "table_sha256": "b02d2546f65b38b73718b131e20d4cfb1ddff94e38a56ccbbd8113a48ba897b4",
+      "table_sha256": "17a93dea6a7f7936fc89ae1dba5b604679ae5853bb6b5077754f8aac374d9850",
       "source_files": [
         {
           "path": "dynamic_lab/artifacts/calendar_states.csv",
-          "sha256": "bedd2e03a89edde0f2224b40bfd33cca7eff54b4d6f77dc42bbe03d679a910e3",
+          "sha256": "4672af843e47d37b3c7d609f082cb507372b242b68deb960fc64afbfb3bd1acd",
           "rows": 24480
         }
       ],
-      "selection": "world=demo-human_decline_bot_rise-884000; scenario=human_decline_bot_rise; origin_day=119; states=response,value",
+      "selection": "world=None; scenario=cpc_squeeze; origin_day=119; states=response,value",
       "interval_meaning": "95% approximate posterior state interval through the fitting cutoff and conditional future-state predictive band afterward; not a contribution interval or empirical calibration guarantee.",
       "denominator": "Log multiplicative state relative to the anchored reference date; one shared state per calendar day."
     },
     {
       "id": "04-cohort-contribution-payback",
       "title": "Later cohorts face the later calendar",
-      "caption": "One synthetic world (demo-human_decline_bot_rise-884000, human_decline_bot_rise), source established_a. Each top-panel forecast uses a new cohort at age 7 and the same target age180; its actual birth date determines future calendar exposure. The lower panels select cohort established_a-b112 at calendar origin 119 and compare conditional future states: no deterministic drift in the fitted response/value LOG states, with future innovations; extrapolate each posterior draw's recent slope in BOTH response and value, with future innovations; or fix the future CPC state to the learned day0 reference while retaining the response process. Sampled recent slopes may point up or down; these assumptions do not reveal future truth. The pale band belongs to hold_current only; the other lines are separate conditional predictive medians, not interval bounds. The first-payback CDF retains every predictive path, including paths without a crossing by age425. First crossing, positive contribution at age180 and continued positivity are separate events.",
+      "caption": "One synthetic world (None, human_decline_bot_rise), source established_a. Each top-panel forecast uses a new cohort at age 7 and the same target age180; its actual birth date determines future calendar exposure. The lower panels select cohort established_a-b112 at calendar origin 119 and compare conditional future states: no deterministic drift in the fitted response/value LOG states, with future innovations; extrapolate each posterior draw's recent slope in BOTH response and value, with future innovations; or fix the future CPC state to the learned day0 reference while retaining the response process. Sampled recent slopes may point up or down; these assumptions do not reveal future truth. The pale band belongs to hold_current only; the other lines are separate conditional predictive medians, not interval bounds. The first-payback CDF retains every predictive path, including paths without a crossing by age425. First crossing, positive contribution at age180 and continued positivity are separate events.",
       "alt": "At a common cohort age, day180 contribution forecasts are compared across calendar origins, followed by one selected contribution path and an unconditional first-payback curve ending at age425.",
       "synthetic_only": true,
       "files": [
@@ -109,31 +109,31 @@
         "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.svg"
       ],
       "file_sha256": {
-        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback.png": "25697a3e21a2f4771a065e5b3d63f7f1ee056ac20dcbc97d0c1bcced13df2804",
-        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback.svg": "489b8d20e40605101092d839f5afa48f6d07e0d57baa27a888f4addd1db67647",
-        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.png": "c3607013e2bb1c2f0d4627e4344aef1650126381342c6d5ae76bc074f59d5437",
-        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.svg": "c60036d0c8b99bad3e33e91f2514cfbe72a9bdb2e0dfc6686519280a74f5f4d1"
+        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback.png": "0e8ba4ac0580ef0fbbc97dc6e6d8e06d9aa0b410939a926f3918d2116d00bf17",
+        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback.svg": "57ccdc5a1e8cf72dd69391c2d27d64ba54f46c828bb41507be50b19d29195795",
+        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.png": "1ecc4b59fd3e38566197867b0e6033cfbf02871e3691a3c36eaeb0169d8a56cb",
+        "dynamic_lab/artifacts/figures/04-cohort-contribution-payback-mobile.svg": "9b2649685bdeef1209247057d0fcb100cbb4e0ac7558aad12590ecdd3be898ec"
       },
       "table": "dynamic_lab/artifacts/figures/tables/04-cohort-contribution-payback.csv",
-      "table_sha256": "786d6f9d77e56cc8400fdf7d00c175a65ff4e65236bfd08f7b235d7cd8ac1f07",
+      "table_sha256": "476abb95bf4762336493de0045a00057419d64abcd2550764a7a1ad7718978a8",
       "source_files": [
         {
           "path": "dynamic_lab/artifacts/cohort_predictions.csv",
-          "sha256": "35bbfbd6a1b25529b0e5b8a095f92ad65e25b4f16e50deec9af2198e2ec51c53",
+          "sha256": "4f8a070324be848c798e602445b367eda45437023760328cda93fb1fe6e9c9ae",
           "rows": 396
         },
         {
           "path": "dynamic_lab/artifacts/trajectories.csv",
-          "sha256": "95217f93369da89f1cd1311aff7341cecdd281c0be10407e0999d1ce52eb77ef",
+          "sha256": "4c8b86abe4b68c502dc7ad043746479116115a99080cd8d308389c3966037bb1",
           "rows": 7668
         },
         {
           "path": "dynamic_lab/artifacts/payback_cdf.csv",
-          "sha256": "ef576c31ec793faf0f348872b3de95c670183765abefd7123448dffd5963895f",
+          "sha256": "c3c22d0839f394a80daac71ca8cdf472f73e1c3aad2cc8f07affac10e85effa9",
           "rows": 7668
         }
       ],
-      "selection": "world=demo-human_decline_bot_rise-884000; scenario=human_decline_bot_rise; source=established_a; newest age=7; target180; top=hold_current at all cutoffs; selected cohort=established_a-b112, origin=119; lower=all future policies",
+      "selection": "world=None; scenario=human_decline_bot_rise; source=established_a; newest age=7; target180; top=hold_current at all cutoffs; selected cohort=established_a-b112, origin=119; lower=all future policies",
       "interval_meaning": "95% approximate posterior-predictive contribution intervals; first-payback probability over all draws through age425.",
       "denominator": "Contribution / original acquired leads (n_leads from each row); first-payback CDF / all 256 predictive paths, never only crossing paths. Draw denominator and cumulative crossing count are exported per CDF row."
     },
@@ -150,22 +150,22 @@
         "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.svg"
       ],
       "file_sha256": {
-        "dynamic_lab/artifacts/figures/05-new-source-transfer.png": "c6f46268d5d3efc16f6b71f68aabcaec9106ed71ca57f8522de9bee4c3de2c0c",
-        "dynamic_lab/artifacts/figures/05-new-source-transfer.svg": "b8c5bdcee12f82249409b5bb3f17d0d56e97a71cee1ab02abdb8b4041120dcd5",
-        "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.png": "4799d07c1f60bfa03c0c5bb48754c07f88d99d78d289c6142d7b139b14008fce",
-        "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.svg": "e6393f1740ffa11c1de92b8ca3bcb7f7c5909c30cb133486e45bd7007120c7a8"
+        "dynamic_lab/artifacts/figures/05-new-source-transfer.png": "4211aeaab84403e81ac83ece332c4b5f2a953214c09a38fc9880eae896c1d9d5",
+        "dynamic_lab/artifacts/figures/05-new-source-transfer.svg": "56e38a62ad9ff3d628699c7efa989ec6f79117d062df7cf60ca2c60333aee0e2",
+        "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.png": "92299473a642ae232467ec5c93741371d260aac0dbbe3b4d533d7cb5c227fc4c",
+        "dynamic_lab/artifacts/figures/05-new-source-transfer-mobile.svg": "949ccc9b944f8c9dadf3800a653f6c92b4970be3f86124e67c45d2ce673e628b"
       },
       "table": "dynamic_lab/artifacts/figures/tables/05-new-source-transfer.csv",
-      "table_sha256": "e10bea1c4ddbb4e3b6e7e34f5d03b9dc3d0b6f377a86f84cb0e440541caa3c9d",
+      "table_sha256": "d2e2471c48ef9f617fc9d3da4e0199b56a78a81d0f1c6f9e3656b925df062007",
       "source_files": [
         {
           "path": "dynamic_lab/artifacts/transfer.csv",
-          "sha256": "625014f96caf07a5a7297b9007a29b301a2725c3d65334f3f6a2b933527f445b",
+          "sha256": "228fdd130f0dc0e23c5366eefc3de6cae650cf56bfb8f98ebd2c7f98a6ce3ad4",
           "rows": 6
         },
         {
           "path": "dynamic_lab/artifacts/quote_sensitivity.csv",
-          "sha256": "02ddeb4507fe98067a212142461064fb6bfed63e369980598f8dfe2a85b3357b",
+          "sha256": "79c9f052c4233bfc5c4d86a8dd6aea1b183248b4447252670d5347cf4fecd778",
           "rows": 10
         }
       ],
@@ -175,7 +175,7 @@
       "companion_tables": [
         {
           "path": "dynamic_lab/artifacts/figures/tables/05-offered-price-sensitivity.csv",
-          "sha256": "7dddee9581e338315ee7ee8124f93ebbcf6b16d5f5918b3f95d9011a9a28b6f6",
+          "sha256": "9cad8ec0633fe94958bcd93f4a534dfd2a58cde0bac7490bfb43480e03c1a4b3",
           "rows": 10,
           "scope": "Prospective acquisition cost query with unchanged posterior outcome draws"
         }
@@ -194,31 +194,170 @@
         "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.svg"
       ],
       "file_sha256": {
-        "dynamic_lab/artifacts/figures/06-heldout-comparison.png": "3a426852fb4a388836b648cf789939a89cf607cf835ce45969e31b8f8ab6fab4",
-        "dynamic_lab/artifacts/figures/06-heldout-comparison.svg": "c3970100c31c72111901059d56ded2c4a98f789d70f86cc78ad1cd7f637a2970",
-        "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.png": "7f61643f24aebe259b193f1aa687f38d40d712b61411a10275bf038ca51ea8b8",
-        "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.svg": "e94b108b9c49445d38f7efccdfacf3962f6689bf27883ccb4f3522a2106d16ec"
+        "dynamic_lab/artifacts/figures/06-heldout-comparison.png": "6bec17b4cfd6f4082601e4fd07c73d80faf5029d27cc9bc7bab18d1850567d44",
+        "dynamic_lab/artifacts/figures/06-heldout-comparison.svg": "14bff740ae2aa06776364d127040be7b5d4071f8ed0d9aa7601b31e8ed7e597a",
+        "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.png": "7c24bb64897135648a7392342da6080c449c574fb722609ded9278be066ddd3e",
+        "dynamic_lab/artifacts/figures/06-heldout-comparison-mobile.svg": "b93ccc12d551170948ce7b3bfff94901815c4c07e57442efcff41b89874721cd"
       },
       "table": "dynamic_lab/artifacts/figures/tables/06-heldout-comparison.csv",
-      "table_sha256": "a776a60f2ba1dc3a90b7c56ea27a3cfb8195abb8b2fb9f05669e4d9dea95a6ae",
+      "table_sha256": "141bdbf689454acc77fec4a95db874d2d857c8f6f165eefc99c99a2c60f0f03f",
       "source_files": [
         {
           "path": "dynamic_lab/artifacts/metrics.csv",
-          "sha256": "e4d4576a288232f45932ab0c85e46eef340e7c426e7e75e5117f998b2f8ceed3",
+          "sha256": "26cb1e9a6e8f70d2bba9bbca0a2e374746589e4df03196e0ed0a1d69d4f91b44",
           "rows": 210
         },
         {
           "path": "dynamic_lab/artifacts/figures/sources/original_v1_metrics_by_origin.csv",
           "sha256": "3bdeae13f127340b664d7ca9086d4007a611ccb1a24567bcc9baa0de4f6ca59f",
           "rows": 40,
-          "origin_path": "bayesian-email-cohort-lab/artifacts/calibration/metrics_by_origin.csv"
+          "origin_path": "calendar/dynamic_lab/artifacts/figures/sources/original_v1_metrics_by_origin.csv"
         }
       ],
       "selection": "all independent-world metrics for coverage95,CRPS,decision_loss; original frozen stress coverage displayed separately",
       "interval_meaning": "95% evaluator uncertainty bounds clustered by independent world; original panel uses its frozen whole-world bootstrap bounds. Nominal predictive level is 95%.",
       "denominator": "Coverage / n_forecasts; n_worlds independent evaluation clusters; CRPS and decision loss / acquired leads, with source counts retained in table."
+    },
+    {
+      "id": "07-cohort-variability",
+      "title": "Cohort averages hide different survival and engagement paths",
+      "caption": "Synthetic evaluator truth only (demo-cpc_squeeze-884000, cpc_squeeze). Thin lines are individual weekly acquisition cohorts; the heavy survival curve pools numerator and original-acquired-lead denominator at each age. The lower panel deduplicates each person across a complete 7- or 30-day window; its denominator is the contactable population at window start. The heavier rates pool counts (sum distinct responders / sum eligible), not averages of cohort percentages. Windows are overlapping views of the same synthetic people, not independent evidence. All cohorts are fictional and full windows only.",
+      "alt": "Individual cohort lines show variable contactability and distinct-human response; heavier lines show denominator-weighted historical summaries.",
+      "synthetic_only": true,
+      "files": [
+        "dynamic_lab/artifacts/figures/07-cohort-variability.png",
+        "dynamic_lab/artifacts/figures/07-cohort-variability.svg",
+        "dynamic_lab/artifacts/figures/07-cohort-variability-mobile.png",
+        "dynamic_lab/artifacts/figures/07-cohort-variability-mobile.svg"
+      ],
+      "file_sha256": {
+        "dynamic_lab/artifacts/figures/07-cohort-variability.png": "53ad700885f6faa3f5170584833f5561ae2d8a1b0cb1c86a7b0dc8fc957bd71c",
+        "dynamic_lab/artifacts/figures/07-cohort-variability.svg": "1e58ea365c863d9007863f2fc820e3dc341a8553ac0b64ca37fa1e107c609490",
+        "dynamic_lab/artifacts/figures/07-cohort-variability-mobile.png": "bd6e3f3b45d59c24e7bc9b6764e74c968e555d5d0f2988aeedac027b1bf3b5ec",
+        "dynamic_lab/artifacts/figures/07-cohort-variability-mobile.svg": "358ce4505ebae1e44979c6b95f48e9dc188809dda848ed480a644b6f44dece61"
+      },
+      "table": "dynamic_lab/artifacts/figures/tables/07-cohort-variability.csv",
+      "table_sha256": "5beb29e2ce1c7e33a56aadbee4c30968ec00bca7a53a0ec21abfc11b514cdcf9",
+      "source_files": [
+        {
+          "path": "dynamic_lab/artifacts/retention_truth.csv",
+          "sha256": "5ed2a1e8a3144179f5c5ddb7669a7512f558d5bb7cce65883f5319d87e36567f",
+          "rows": 6878
+        },
+        {
+          "path": "dynamic_lab/artifacts/run_config.json",
+          "sha256": "4c29f8d1f4b2ac010930033b8cb3f152d983b6748f43f40f4fdade5f2d7548c6",
+          "rows": 1
+        },
+        {
+          "path": "dynamic_lab/artifacts/cohort_retention_rollup_detail.csv",
+          "sha256": "8c67e66bcf3f698f80aaa45f3610bf2ae9125c2979bd08aae635703928d677ee",
+          "rows": 1178
+        }
+      ],
+      "selection": "world=demo-cpc_squeeze-884000; scenario=cpc_squeeze; all cohorts through age 180; no incomplete unique-response windows",
+      "interval_meaning": "No inferential interval: thin lines are realized synthetic truth; pooled lines summarize those same people.",
+      "denominator": "Survival uses acquired leads. Window response uses distinct human responders divided by people contactable at window start; cohort count and raw denominators are in source table."
+    },
+    {
+      "id": "08-confidence-over-time",
+      "title": "Cohort confidence for a fixed day-180 profit target",
+      "caption": "Two equally priced fictional sources share the same prelaunch evidence and first receive the same prediction. As the same fixed day-70 cohort in each world accumulates observations, probabilities update toward different outcomes. Each point refits only records available at that cutoff and forecasts the same day-180 contribution under hold-current future conditions. The threshold is two cents of margin per originally acquired lead. A classification is above target at p\u226595%, below target at p\u22645%, inconclusive otherwise. This is a model probability, not validated 95% reliability; repeated cutoffs are dependent and later evidence can reverse the classification. It is separate from first-payback-by-day-425.",
+      "alt": "Good and bad same-price source probabilities update from identical prelaunch evidence as their own cohort data arrives.",
+      "synthetic_only": true,
+      "files": [
+        "dynamic_lab/artifacts/figures/08-confidence-over-time.png",
+        "dynamic_lab/artifacts/figures/08-confidence-over-time.svg",
+        "dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.png",
+        "dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.svg"
+      ],
+      "file_sha256": {
+        "dynamic_lab/artifacts/figures/08-confidence-over-time.png": "a12591f6c4193ccaad24edf1e32fa6fc0a149bddb5568ae1f83c381de0cbcd4f",
+        "dynamic_lab/artifacts/figures/08-confidence-over-time.svg": "721c572833ea153df4cf0d78160a290eb84862246e99ef171e7eaed2f97d44eb",
+        "dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.png": "0c481028ccf9242f5b83be9924136a704eab03522df66e9830b7f6df7b2f17b0",
+        "dynamic_lab/artifacts/figures/08-confidence-over-time-mobile.svg": "6b0c74bd997570d463f55fac1621cf9a514cd7fad25bf8f91ff0e8b30d0eb411"
+      },
+      "table": "dynamic_lab/artifacts/figures/tables/08-confidence-over-time.csv",
+      "table_sha256": "bac9957b666efab65c06c50f69d28944be2d5de1a85968f397864a8d2b41e557",
+      "source_files": [
+        {
+          "path": "dynamic_lab/artifacts/demo_confidence.csv",
+          "sha256": "03e0aa69fc105f3bc576dea026bb15dbb2f8c1e3857359f283b4b85ad57e1d8f",
+          "rows": 23
+        }
+      ],
+      "selection": "paired cheap_good/cheap_bad worlds; cohort=new_cheap-b070; horizon=180; buffer=$0.02 per lead; future=hold_current; cutoffs=69,77,84,91,98,105,112,119",
+      "interval_meaning": "Monte Carlo posterior probabilities from 256 draws; threshold is a decision convention, not a frequentist confidence interval or reliability guarantee.",
+      "denominator": "Probability that day-180 cumulative contribution exceeds $0.02 times acquired leads; fixed acquired cohort and fixed horizon."
+    },
+    {
+      "id": "09-cpc-what-if",
+      "title": "A future CPC squeeze changes value without changing subscriber behavior",
+      "caption": "Conditional what-if for a planned existing-source cohort, fitted on day 119 and acquired day 126. The model applies an additional 0\u201345% net-CPC drop beginning day 140 and ramping for 28 days. Each point reuses the same posterior draw and random revenue-mark path: contactability, humans, engagement, click counts, purchase cost, send costs and shared uncertainty are held fixed. Only post-shock revenue per human event changes. The blue band is a 90% draw interval for margin; amber shows the paired median margin difference. The probability axis starts at zero and is scaled to the plotted range; exact probabilities are in the table. Scenario probabilities are not a forecast that a given squeeze will occur.",
+      "alt": "A paired scenario curve shows probability of clearing a fixed profit buffer and the associated cohort-margin change under increasing future CPC reductions.",
+      "synthetic_only": true,
+      "files": [
+        "dynamic_lab/artifacts/figures/09-cpc-what-if.png",
+        "dynamic_lab/artifacts/figures/09-cpc-what-if.svg",
+        "dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.png",
+        "dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.svg"
+      ],
+      "file_sha256": {
+        "dynamic_lab/artifacts/figures/09-cpc-what-if.png": "09f37175e315fab0ebe9fd936178d1c06b7269b7e8e33f5bc6509f6eee131038",
+        "dynamic_lab/artifacts/figures/09-cpc-what-if.svg": "c715e3ff4f22a9f44c92ee720a6812709767f08546636bbce926499eed579946",
+        "dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.png": "ddba5db27dba2f065cefde770540ad09e4c2c0b8cb0004d2e54e6b040c8597d6",
+        "dynamic_lab/artifacts/figures/09-cpc-what-if-mobile.svg": "561cd7eb53e83a0e753dd3a803fdfddaa0b1d28dc2cdf15596f442a5cf8a30b0"
+      },
+      "table": "dynamic_lab/artifacts/figures/tables/09-cpc-what-if.csv",
+      "table_sha256": "e7cdf561c29082866263a581e3f2672c22575b9c418fae0d2430a8847db0367b",
+      "source_files": [
+        {
+          "path": "dynamic_lab/artifacts/cpc_shock_sensitivity.csv",
+          "sha256": "e7cdf561c29082866263a581e3f2672c22575b9c418fae0d2430a8847db0367b",
+          "rows": 4
+        }
+      ],
+      "selection": "source=established_b; next cohort birth=126; information cutoff=119; CPC shock begins 140, ramp 28 days; paired random seed",
+      "interval_meaning": "90% posterior predictive draw interval for day-180 margin under each stated shock; not a scenario probability interval.",
+      "denominator": "Per-cohort total contribution in USD; probability denominator is all paired posterior draws."
+    },
+    {
+      "id": "10-decision-reliability",
+      "title": "Posterior confidence needs held-out reliability checks",
+      "caption": "All points come from held-out synthetic worlds, separate from the illustrative world. The upper panel bins fixed day-180 probabilities for clearing a $0.02/lead margin buffer and compares average forecast probability with observed profitability. Error bars bootstrap independent worlds, not correlated rows; forecast and world counts are in the numeric table. The lower panel replays the first weekly 95%/5% declaration for the same purchased cohort in each world. \u201cFalse profitable/unprofitable\u201d compare that first declaration with the eventual day-180 outcome; \u201cno declaration\u201d is allowed; \u201clater reversal\u201d records changed classification after first declaration. Small world counts and approximate likelihoods limit the strength of calibration claims.",
+      "alt": "Held-out calibration points are compared with the diagonal, beside world-level rates of false, reversed or absent sequential declarations.",
+      "synthetic_only": true,
+      "files": [
+        "dynamic_lab/artifacts/figures/10-decision-reliability.png",
+        "dynamic_lab/artifacts/figures/10-decision-reliability.svg",
+        "dynamic_lab/artifacts/figures/10-decision-reliability-mobile.png",
+        "dynamic_lab/artifacts/figures/10-decision-reliability-mobile.svg"
+      ],
+      "file_sha256": {
+        "dynamic_lab/artifacts/figures/10-decision-reliability.png": "1e13cc675cb404d203a1d80fa96cbca25090adeb0ab7c7ef70d7b82f050ab42c",
+        "dynamic_lab/artifacts/figures/10-decision-reliability.svg": "6846eac9245e5dfdd2de5aed46b7aaa8cde1a35ea3181a594a47f05e42b2fa51",
+        "dynamic_lab/artifacts/figures/10-decision-reliability-mobile.png": "62dcb1ceb1b4d4dc4dbc4037710f418dfbd7a620d021cf13f90997a6b3c0566d",
+        "dynamic_lab/artifacts/figures/10-decision-reliability-mobile.svg": "886edcd921aa43fe12a5421cd1e6c5c0a2c0c71e0cc83b06a02e545b765bc33e"
+      },
+      "table": "dynamic_lab/artifacts/figures/tables/10-decision-reliability.csv",
+      "table_sha256": "7b52de8d0be38d2fd247955e9435d7e901c20228c7f4ff482c24b44c0dae0f84",
+      "source_files": [
+        {
+          "path": "dynamic_lab/artifacts/probability_reliability.csv",
+          "sha256": "1a6a25252112b59347429c103225f826fe36750bde689ea7bbb03b13b1cfbc06",
+          "rows": 10
+        },
+        {
+          "path": "dynamic_lab/artifacts/sequential_metrics.csv",
+          "sha256": "ed9b44aee4a125a3a16fbf93e95e537a2d93c82863d385d44e7dfac075786f35",
+          "rows": 25
+        }
+      ],
+      "selection": "All heldout forecast rows binned by probability; sequential replay uses fixed cohort b070 and prespecified weekly cutoffs.",
+      "interval_meaning": "95% whole-world bootstrap intervals for both forecast and observed rates; sparse bins are descriptive and may have wide uncertainty.",
+      "denominator": "Reliability uses forecast rows nested within independent worlds. Sequential rates use one candidate cohort per world; denominators and world counts are shown."
     }
   ],
   "run_manifest_path": "dynamic_lab/artifacts/run_manifest.json",
-  "run_manifest_sha256": "2b215d7b5152f45bc49806e8e32eecf58cc438a9bcbf1187d9146f21df8ec309"
+  "run_manifest_sha256": "0f33dc371dd7267ba1f4bfabb1b6c3de4708fe2b2ec2d0ff8ccb4196d94c71c3"
 }

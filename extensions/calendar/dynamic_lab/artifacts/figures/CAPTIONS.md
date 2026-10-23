@@ -2,11 +2,11 @@
 
 All marks come from the sealed fitted or evaluator outputs named below. These are synthetic demonstrations, not observed commercial outcomes.
 
-## Calendar prices and arriving purchases
+## CPC and lead prices can deteriorate independently
 
-The synthetic rich illustration (demo-human_decline_bot_rise-884000, human_decline_bot_rise) and fixed-price reference use the same demo seed; established source established_a. The net-human CPC opportunity is evaluator-only truth, not an observed contract rate supplied to inference; the model learns it from mature settled monetary marks. Send cost and the current acquisition quote are observed inputs. Purchase markers divide the batch's recorded acquisition cost by its purchased leads; a later quote applies to new purchases and never rewrites old acquisition costs.
+Paired synthetic controls with the same demo seed; CPC panel uses cpc_squeeze, while CPL panel uses rising_cpl. established source established_a. The net-human CPC opportunity is evaluator-only truth, not an observed contract rate supplied to inference; the model learns it from mature settled monetary marks. Send cost and the current acquisition quote are observed inputs. Purchase markers divide the batch's recorded acquisition cost by its purchased leads; a later quote applies to new purchases and never rewrites old acquisition costs.
 
-Alt text: Three calendar panels compare fixed and changing evaluator-only human CPC, acquisition quotes with actual purchase prices, and weekly arriving cohorts.
+Alt text: Three calendar panels separate a net-CPC shock, an independent CPL shock and new weekly purchases.
 
 Intervals: No uncertainty interval: net-CPC is evaluator-only truth; quotes, send prices and immutable purchases are simulated known inputs.
 
@@ -16,7 +16,7 @@ Numeric table: [01-calendar-economics.csv](tables/01-calendar-economics.csv)
 
 ## Human response and audited bot evidence
 
-One synthetic world (demo-human_decline_bot_rise-884000, human_decline_bot_rise), aggregating all active sources and cohorts; information available on each plotted calendar day. Raw reported activity includes bots and uses report-calendar day, with a two-day report lag. The dotted true-human series uses occurrence-calendar day and is evaluator-only, not a fitting input. Audit fractions use trailing14-day audit reports available on that day, Beta-smoothed and corrected for the known sensitivity/specificity; audit_n is their denominator. Rows with no available audit are omitted from the fraction plot and marked missing in audit_fraction_plotted. Audit instrument error and representative-selection assumptions remain part of the approximate model.
+One synthetic world (None, human_decline_bot_rise), aggregating all active sources and cohorts; information available on each plotted calendar day. Raw reported activity includes bots and uses report-calendar day, with a two-day report lag. The dotted true-human series uses occurrence-calendar day and is evaluator-only, not a fitting input. Audit fractions use trailing14-day audit reports available on that day, Beta-smoothed and corrected for the known sensitivity/specificity; audit_n is their denominator. Rows with no available audit are omitted from the fraction plot and marked missing in audit_fraction_plotted. Audit instrument error and representative-selection assumptions remain part of the approximate model.
 
 Alt text: Reported-event counts are compared with evaluator-only true human events, above the measured fraction of audited events labeled bot.
 
@@ -28,7 +28,7 @@ Numeric table: [02-human-bot-evidence.csv](tables/02-human-bot-evidence.csv)
 
 ## One shared response and payout calendar
 
-One synthetic world (demo-human_decline_bot_rise-884000, human_decline_bot_rise); refit at calendar day 119. This bounded fixture uses same-day send/response cells; it does not fit a response-delay process. Report, audit and mature monetary visibility clocks remain separate. Within each posterior draw, one response path and one value path are shared across all cohorts; the two processes are conditionally independent and their covariance is not learned. Fixed age curves, anchored states and exchangeable cohort effects constrain the age–period–cohort decomposition; these drivers are assumption-dependent. The dashed truth is evaluator-only.
+One synthetic world (None, cpc_squeeze); refit at calendar day 119. This bounded fixture uses same-day send/response cells; it does not fit a response-delay process. Report, audit and mature monetary visibility clocks remain separate. Within each posterior draw, one response path and one value path are shared across all cohorts; the two processes are conditionally independent and their covariance is not learned. Fixed age curves, anchored states and exchangeable cohort effects constrain the age–period–cohort decomposition; these drivers are assumption-dependent. The dashed truth is evaluator-only.
 
 Alt text: Two panels show fitted shared response and payment calendar states with 95% intervals and evaluator-only states, separated by the last fitting origin.
 
@@ -40,7 +40,7 @@ Numeric table: [03-shared-calendar-states.csv](tables/03-shared-calendar-states.
 
 ## Later cohorts face the later calendar
 
-One synthetic world (demo-human_decline_bot_rise-884000, human_decline_bot_rise), source established_a. Each top-panel forecast uses a new cohort at age 7 and the same target age180; its actual birth date determines future calendar exposure. The lower panels select cohort established_a-b112 at calendar origin 119 and compare conditional future states: no deterministic drift in the fitted response/value LOG states, with future innovations; extrapolate each posterior draw's recent slope in BOTH response and value, with future innovations; or fix the future CPC state to the learned day0 reference while retaining the response process. Sampled recent slopes may point up or down; these assumptions do not reveal future truth. The pale band belongs to hold_current only; the other lines are separate conditional predictive medians, not interval bounds. The first-payback CDF retains every predictive path, including paths without a crossing by age425. First crossing, positive contribution at age180 and continued positivity are separate events.
+One synthetic world (None, human_decline_bot_rise), source established_a. Each top-panel forecast uses a new cohort at age 7 and the same target age180; its actual birth date determines future calendar exposure. The lower panels select cohort established_a-b112 at calendar origin 119 and compare conditional future states: no deterministic drift in the fitted response/value LOG states, with future innovations; extrapolate each posterior draw's recent slope in BOTH response and value, with future innovations; or fix the future CPC state to the learned day0 reference while retaining the response process. Sampled recent slopes may point up or down; these assumptions do not reveal future truth. The pale band belongs to hold_current only; the other lines are separate conditional predictive medians, not interval bounds. The first-payback CDF retains every predictive path, including paths without a crossing by age425. First crossing, positive contribution at age180 and continued positivity are separate events.
 
 Alt text: At a common cohort age, day180 contribution forecasts are compared across calendar origins, followed by one selected contribution path and an unconditional first-payback curve ending at age425.
 
@@ -75,3 +75,51 @@ Intervals: 95% evaluator uncertainty bounds clustered by independent world; orig
 Denominator: Coverage / n_forecasts; n_worlds independent evaluation clusters; CRPS and decision loss / acquired leads, with source counts retained in table.
 
 Numeric table: [06-heldout-comparison.csv](tables/06-heldout-comparison.csv)
+
+## Cohort averages hide different survival and engagement paths
+
+Synthetic evaluator truth only (demo-cpc_squeeze-884000, cpc_squeeze). Thin lines are individual weekly acquisition cohorts; the heavy survival curve pools numerator and original-acquired-lead denominator at each age. The lower panel deduplicates each person across a complete 7- or 30-day window; its denominator is the contactable population at window start. The heavier rates pool counts (sum distinct responders / sum eligible), not averages of cohort percentages. Windows are overlapping views of the same synthetic people, not independent evidence. All cohorts are fictional and full windows only.
+
+Alt text: Individual cohort lines show variable contactability and distinct-human response; heavier lines show denominator-weighted historical summaries.
+
+Intervals: No inferential interval: thin lines are realized synthetic truth; pooled lines summarize those same people.
+
+Denominator: Survival uses acquired leads. Window response uses distinct human responders divided by people contactable at window start; cohort count and raw denominators are in source table.
+
+Numeric table: [07-cohort-variability.csv](tables/07-cohort-variability.csv)
+
+## Cohort confidence for a fixed day-180 profit target
+
+Two equally priced fictional sources share the same prelaunch evidence and first receive the same prediction. As the same fixed day-70 cohort in each world accumulates observations, probabilities update toward different outcomes. Each point refits only records available at that cutoff and forecasts the same day-180 contribution under hold-current future conditions. The threshold is two cents of margin per originally acquired lead. A classification is above target at p≥95%, below target at p≤5%, inconclusive otherwise. This is a model probability, not validated 95% reliability; repeated cutoffs are dependent and later evidence can reverse the classification. It is separate from first-payback-by-day-425.
+
+Alt text: Good and bad same-price source probabilities update from identical prelaunch evidence as their own cohort data arrives.
+
+Intervals: Monte Carlo posterior probabilities from 256 draws; threshold is a decision convention, not a frequentist confidence interval or reliability guarantee.
+
+Denominator: Probability that day-180 cumulative contribution exceeds $0.02 times acquired leads; fixed acquired cohort and fixed horizon.
+
+Numeric table: [08-confidence-over-time.csv](tables/08-confidence-over-time.csv)
+
+## A future CPC squeeze changes value without changing subscriber behavior
+
+Conditional what-if for a planned existing-source cohort, fitted on day 119 and acquired day 126. The model applies an additional 0–45% net-CPC drop beginning day 140 and ramping for 28 days. Each point reuses the same posterior draw and random revenue-mark path: contactability, humans, engagement, click counts, purchase cost, send costs and shared uncertainty are held fixed. Only post-shock revenue per human event changes. The blue band is a 90% draw interval for margin; amber shows the paired median margin difference. The probability axis starts at zero and is scaled to the plotted range; exact probabilities are in the table. Scenario probabilities are not a forecast that a given squeeze will occur.
+
+Alt text: A paired scenario curve shows probability of clearing a fixed profit buffer and the associated cohort-margin change under increasing future CPC reductions.
+
+Intervals: 90% posterior predictive draw interval for day-180 margin under each stated shock; not a scenario probability interval.
+
+Denominator: Per-cohort total contribution in USD; probability denominator is all paired posterior draws.
+
+Numeric table: [09-cpc-what-if.csv](tables/09-cpc-what-if.csv)
+
+## Posterior confidence needs held-out reliability checks
+
+All points come from held-out synthetic worlds, separate from the illustrative world. The upper panel bins fixed day-180 probabilities for clearing a $0.02/lead margin buffer and compares average forecast probability with observed profitability. Error bars bootstrap independent worlds, not correlated rows; forecast and world counts are in the numeric table. The lower panel replays the first weekly 95%/5% declaration for the same purchased cohort in each world. “False profitable/unprofitable” compare that first declaration with the eventual day-180 outcome; “no declaration” is allowed; “later reversal” records changed classification after first declaration. Small world counts and approximate likelihoods limit the strength of calibration claims.
+
+Alt text: Held-out calibration points are compared with the diagonal, beside world-level rates of false, reversed or absent sequential declarations.
+
+Intervals: 95% whole-world bootstrap intervals for both forecast and observed rates; sparse bins are descriptive and may have wide uncertainty.
+
+Denominator: Reliability uses forecast rows nested within independent worlds. Sequential rates use one candidate cohort per world; denominators and world counts are shown.
+
+Numeric table: [10-decision-reliability.csv](tables/10-decision-reliability.csv)

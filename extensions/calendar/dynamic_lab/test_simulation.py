@@ -1,5 +1,6 @@
 import unittest
 from dataclasses import replace
+import numpy as np
 import pandas as pd
 from .simulation import generate
 
@@ -37,8 +38,46 @@ class SimulationTests(unittest.TestCase):
         columns=set(self.world.as_of(84).frame().columns)
         self.assertNotIn('true_human_events',columns)
         self.assertNotIn('true_bot_events',columns)
+        self.assertNotIn('true_contactable',columns)
+        self.assertNotIn('true_expected_unique_response_per_lead',columns)
         self.assertNotIn('human_response_multiplier',columns)
         self.assertEqual(len(next(iter(self.truth.cohort_paths.values()))),426)
+
+    def test_cohort_retention_varies_and_is_monotone(self):
+        registry=self.world.cohort_registry
+        cohort_ids=registry.loc[registry.source_id=='established_a','cohort_id'].tolist()
+        paths=self.truth.cohort_truth
+        pair=paths[paths.cohort_id.isin(cohort_ids[:2])]
+        first=pair[pair.cohort_id==cohort_ids[0]].sort_values('age')
+        second=pair[pair.cohort_id==cohort_ids[1]].sort_values('age')
+        self.assertEqual(first.true_contactable_fraction.iloc[0],1.)
+        self.assertTrue(first.true_contactable_fraction.is_monotonic_decreasing)
+        self.assertTrue((first.true_contactable_fraction.to_numpy() !=
+                         second.true_contactable_fraction.to_numpy()).any())
+        self.assertNotEqual(self.truth.parameters.true_contactable_half_life.iloc[0],
+                            self.truth.parameters.true_contactable_half_life.iloc[1])
+
+    def test_cpc_squeeze_preserves_people_and_clicks(self):
+        fixed,fixed_truth=generate(710,'fixed_price',leads=100,last_birth=14)
+        squeezed,squeezed_truth=generate(710,'cpc_squeeze',leads=100,last_birth=14)
+        cohort='established_a-b000'
+        a=fixed.observations.query('cohort_id == @cohort').sort_values('age')
+        b=squeezed.observations.query('cohort_id == @cohort').sort_values('age')
+        for field in ('accepted_exposure','raw_events','raw_unique_responders','net_human_count'):
+            self.assertTrue((a[field].to_numpy()==b[field].to_numpy()).all(),field)
+        oracle=squeezed_truth.cohort_truth.query('cohort_id == @cohort').sort_values('age')
+        reference=fixed_truth.cohort_truth.query('cohort_id == @cohort').sort_values('age')
+        np.testing.assert_array_equal(oracle.true_net_cpc.to_numpy()[:42],
+                                      reference.true_net_cpc.to_numpy()[:42])
+        self.assertLess(oracle.true_net_cpc.iloc[-1],reference.true_net_cpc.iloc[-1])
+
+    def test_complete_week_and_month_rollups_are_person_deduplicated(self):
+        rollups=self.truth.cohort_rollups
+        self.assertEqual(set(rollups.window_days.unique()),{7,30})
+        self.assertTrue((rollups.window_end_age-rollups.window_start_age+1==rollups.window_days).all())
+        self.assertTrue((rollups.distinct_human_responders<=rollups.eligible_at_start).all())
+        self.assertTrue((rollups.contactable_at_end<=rollups.acquired_leads).all())
+        self.assertTrue((self.world.observations.raw_events>=self.world.observations.raw_unique_responders).all())
 
 
 if __name__=='__main__':unittest.main()

@@ -1,20 +1,20 @@
 # Changing-price Bayesian cohort experiment
 
-This extension actually fits global → source → cohort effects and shared calendar states, then predicts joint contribution and unconditional first payback. It adds six nested fictional scenarios: fixed economics, CPC squeeze, higher new-purchase prices, human decline/bot activity, and equally cheap good/bad sources arriving later. The likelihood is an explicitly disclosed Gaussian approximation with an integrated finite hyperprior.
+This extension models synthetic paid-email cohorts as people with persistent human or bot status, person-level engagement variation, cohort-specific contactability lifetimes, distinct responders and repeat clicks. A partially pooled global/source/cohort model learns alongside shared calendar response and CPC states. The Gaussian aggregate likelihood is an approximation, not a full subscriber-level posterior.
 
-Start with [the experiment](dynamic_lab/EXPERIMENT.md), [implemented math](dynamic_lab/MODEL.md), and [independent validation](dynamic_lab/VALIDATION.md). The six figure families and their mobile PNG/SVG variants are in [artifacts/figures](dynamic_lab/artifacts/figures). Each includes full numeric tables, captions, alt text and source hashes. The [offered-cost table](dynamic_lab/artifacts/quote_sensitivity.csv) prices the same future-cohort outcome paths at several offers; it never reprices an existing cohort.
+Start with [the experiment](dynamic_lab/EXPERIMENT.md), [implemented math](dynamic_lab/MODEL.md), and [current validation](dynamic_lab/VALIDATION.md). Ten source-bound figures and their mobile PNG/SVG versions are in [artifacts/figures](dynamic_lab/artifacts/figures), with captions, alt text, numerical tables, mobile-size checks and chart provenance.
 
-The final comparison has 18 independent worlds and 1,530 forecasts across five information-sharing models. The dynamic model's nominal 95% intervals cover only 56.5% by equal-world averaging (46.4% if every forecast row is equally weighted). Its CRPS is lower than the static hierarchy's in this suite, but the static hierarchy has slightly lower acquisition-loss point estimate. Neither yields validated uncertainty or a demonstrated production policy. These failures remain alongside the learned price and source differences.
+The six named synthetic worlds isolate fixed economics, a future CPC squeeze, later CPL inflation, human/bot deterioration, and two equally priced new sources with different hidden performance. The prospective CPC what-if reuses the same posterior draws and subscriber activity while changing only future CPC. A separate quote sensitivity changes only the purchase cost of a future batch. The fixed-cohort probability chart holds the cohort and day-180 outcome constant as evidence accumulates; the held-out reliability chart checks those probabilities and sequential thresholds against separate synthetic worlds.
 
-From the repository root, install the existing `requirements.txt`, then:
+To reproduce from the repository root, install the existing `requirements.txt`, then:
 
-```
+```sh
 cd extensions/calendar
 make reproduce
 ```
 
-Forty extension tests cover the new dynamic model and the earlier replay contract. The original v1's 60 tests and published results remain separate. No model API, hosted service, new account or paid computation is needed. `dynamic_lab/artifacts/run_manifest.json` binds final scientific source and CSV output hashes. `make reproduce` runs tests, evaluation and figure generation; `article/build_article.py` rebuilds the article from these outputs.
+The dynamic model tests, simulator boundary checks, independent input-contract checks and preserved prototype replay tests are included. `dynamic_lab/artifacts/run_manifest.json` binds the scientific source and every output CSV hash. The extension never uses private or real email data and requires no model API, hosted service, paid computation or GitHub Actions.
 
-The original development stages remain inspectable: `DESIGN.md` is the broader proposed design, `prototype/calendar_replay.py` is an unfitted input-contract fixture, and `prototype/replay_v1_ablation.py` replays unchanged v1 on one development world. `REPLAY_CHECKPOINT.md` and `INDEPENDENT_REVIEW.md` describe those earlier stages. Do not confuse them with the implemented dynamic approximation. `dynamic_lab/review_history` retains superseded scores and mathematical boundary corrections; it is not combined with final results.
+The original v1 accounting experiments and their failure evidence remain preserved separately. `DESIGN.md`, `prototype/`, `REPLAY_CHECKPOINT.md` and `INDEPENDENT_REVIEW.md` describe earlier stages; `dynamic_lab/review_history/` retains superseded numerical runs. Do not confuse those artifacts with the current subscriber-level approximation.
 
-All observations are synthetic. The original six excluded row-level exports stay excluded. This extension publishes aggregate forecasts/evaluation, calendar/measurement summaries, joint portfolio draws and figures; it does not copy the original individual/event ledgers. No live website deployment or Actions configuration is included.
+All observations are synthetic. The original six excluded row-level exports remain excluded; this extension publishes aggregate person/cohort summaries, forecasts, evaluation scores, shared portfolio draws and figures, not person/event ledgers. The visual article is a draft in `article/`; it has not been deployed to nickroth.com.

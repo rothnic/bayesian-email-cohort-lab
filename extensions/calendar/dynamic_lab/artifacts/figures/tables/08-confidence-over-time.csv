@@ -1,0 +1,17 @@
+world,scenario,model,cohort_id,source_id,birth_day,origin_day,origin_age,target_age,profit_buffer_per_lead,posterior_probability,state,true_margin180,true_above_buffer,draws
+demo-cheap_good-884000,cheap_good,dynamic_hierarchy,new_cheap-b070,new_cheap,70,69,-1,180,0.02,0.59375,undecided,32.55100467429756,True,256
+demo-cheap_bad-884000,cheap_bad,dynamic_hierarchy,new_cheap-b070,new_cheap,70,69,-1,180,0.02,0.59375,undecided,-3.334499445304168,False,256
+demo-cheap_bad-884000,cheap_bad,dynamic_hierarchy,new_cheap-b070,new_cheap,70,77,7,180,0.02,0.453125,undecided,-3.334499445304168,False,256
+demo-cheap_good-884000,cheap_good,dynamic_hierarchy,new_cheap-b070,new_cheap,70,77,7,180,0.02,0.66015625,undecided,32.55100467429756,True,256
+demo-cheap_good-884000,cheap_good,dynamic_hierarchy,new_cheap-b070,new_cheap,70,84,14,180,0.02,0.91015625,undecided,32.55100467429756,True,256
+demo-cheap_bad-884000,cheap_bad,dynamic_hierarchy,new_cheap-b070,new_cheap,70,84,14,180,0.02,0.4765625,undecided,-3.334499445304168,False,256
+demo-cheap_bad-884000,cheap_bad,dynamic_hierarchy,new_cheap-b070,new_cheap,70,91,21,180,0.02,0.4375,undecided,-3.334499445304168,False,256
+demo-cheap_good-884000,cheap_good,dynamic_hierarchy,new_cheap-b070,new_cheap,70,91,21,180,0.02,0.9765625,above_target,32.55100467429756,True,256
+demo-cheap_bad-884000,cheap_bad,dynamic_hierarchy,new_cheap-b070,new_cheap,70,98,28,180,0.02,0.3671875,undecided,-3.334499445304168,False,256
+demo-cheap_good-884000,cheap_good,dynamic_hierarchy,new_cheap-b070,new_cheap,70,98,28,180,0.02,0.9921875,above_target,32.55100467429756,True,256
+demo-cheap_good-884000,cheap_good,dynamic_hierarchy,new_cheap-b070,new_cheap,70,105,35,180,0.02,1.0,above_target,32.55100467429756,True,256
+demo-cheap_bad-884000,cheap_bad,dynamic_hierarchy,new_cheap-b070,new_cheap,70,105,35,180,0.02,0.22265625,undecided,-3.334499445304168,False,256
+demo-cheap_bad-884000,cheap_bad,dynamic_hierarchy,new_cheap-b070,new_cheap,70,112,42,180,0.02,0.14453125,undecided,-3.334499445304168,False,256
+demo-cheap_good-884000,cheap_good,dynamic_hierarchy,new_cheap-b070,new_cheap,70,112,42,180,0.02,1.0,above_target,32.55100467429756,True,256
+demo-cheap_good-884000,cheap_good,dynamic_hierarchy,new_cheap-b070,new_cheap,70,119,49,180,0.02,1.0,above_target,32.55100467429756,True,256
+demo-cheap_bad-884000,cheap_bad,dynamic_hierarchy,new_cheap-b070,new_cheap,70,119,49,180,0.02,0.15625,undecided,-3.334499445304168,False,256

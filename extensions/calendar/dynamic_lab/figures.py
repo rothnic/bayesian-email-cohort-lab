@@ -149,7 +149,7 @@ class Renderer:
                 current = ROOT / source["path"]
                 if not current.is_file() or hashlib.sha256(current.read_bytes()).hexdigest() != source["sha256"]:
                     raise ValueError(f"Source changed during rendering: {source['path']}; rerender after reseal")
-                if sealed_outputs is not None and current.parent == self.artifacts:
+                if sealed_outputs is not None and current.parent == self.artifacts and current.suffix == ".csv":
                     if sealed_outputs.get(current.name) != source["sha256"]:
                         raise ValueError(f"CSV differs from the final run manifest: {current.name}; await reseal")
         manifest = {"synthetic_only": True, "renderer_refits_model": False,
@@ -216,10 +216,14 @@ def frame(title, nrows=1, mobile=False, heights=None):
     return fig, list(axes[:, 0])
 
 
-def panel_title(ax, title):
+def panel_title(ax, title, mobile_title=None):
     mobile = getattr(ax, "_mobile", False)
+    if mobile_title is not None and mobile:
+        if not mobile_title:
+            return
+        title = mobile_title
     ax.set_title(textwrap.fill(title, 31 if mobile else 65), loc="left", pad=11,
-                 y=1.65 if mobile else 1.29,
+                 y=1.17 if mobile else 1.29,
                  fontsize=12.4 if mobile else 11.3)
 
 
@@ -329,6 +333,8 @@ def economics(renderer, world=None, scenario=None):
     data, src = renderer.read("calendar_economics.csv", ["world", "scenario", "calendar_day",
          "price_per_send", "human_cpc", "cpl_quote", "new_purchases", "acquisition_total"])
     complete = data
+    scenarios=set(data.scenario.unique())
+    if scenario is None:scenario='cpc_squeeze' if 'cpc_squeeze' in scenarios else next(iter(scenarios))
     data, world, scenario = demo_slice(data, world, scenario)
     source_id = known_source(data) if "source_id" in data else None
     if source_id is not None:
@@ -344,23 +350,31 @@ def economics(renderer, world=None, scenario=None):
         if source_id is not None: fixed = fixed[fixed.source_id == source_id].copy()
         fixed = fixed.sort_values("calendar_day")
         require_unique(fixed, ["calendar_day"], "fixed-price reference")
-    table = pd.concat([add_panel(data, "commercial_inputs"), add_panel(purchases, "actual_purchase_costs"),
-                       add_panel(fixed, "fixed_price_reference")], ignore_index=True)
-    title = "Calendar prices and arriving purchases"
+    cpl_changed=pd.DataFrame()
+    if 'rising_cpl' in complete.scenario.unique():
+        cpl_changed,_,_=demo_slice(complete,scenario='rising_cpl')
+        if source_id is not None:cpl_changed=cpl_changed[cpl_changed.source_id==source_id].copy()
+        cpl_changed=cpl_changed.sort_values('calendar_day')
+        require_unique(cpl_changed,['calendar_day'],'rising-CPL price-only scenario')
+    cpl_purchases=cpl_changed[cpl_changed.new_purchases>0].copy()
+    if not cpl_purchases.empty:cpl_purchases['paid_cpl']=cpl_purchases.acquisition_total/cpl_purchases.new_purchases
+    table = pd.concat([add_panel(data, "CPC_squeeze_only"), add_panel(cpl_purchases, "CPL_squeeze_actual_purchase_costs"),
+                       add_panel(fixed, "fixed_price_reference"),add_panel(cpl_changed,"CPL_squeeze_only")], ignore_index=True)
+    title = "CPC and lead prices can deteriorate independently"
     def plot(mobile):
         fig, (cpc, cpl, arrivals) = frame(title, 3, mobile)
-        panel_title(cpc, "Underlying human CPC: fixed versus changing")
-        cpc.plot(data.calendar_day, data.human_cpc, color=AMBER, ls="--", lw=2.2, label="Changing net-CPC opportunity (truth)")
+        panel_title(cpc, "Net revenue per human click: CPC-only shock")
+        cpc.plot(data.calendar_day, data.human_cpc, color=AMBER, ls="--", lw=2.2, label="CPC squeezed 40% after day 42 (truth)")
         if not fixed.empty:
             cpc.plot(fixed.calendar_day, fixed.human_cpc, color=INK, ls=":", lw=1.8, label="Fixed-price opportunity (truth)")
         cpc.set_ylabel("USD / qualified human event"); cpc.set_ylim(bottom=0); dollars(cpc)
         legend(cpc, mobile)
-        panel_title(cpl, "Current acquisition quote and paid batch price")
-        cpl.plot(data.calendar_day, data.cpl_quote, color=BLUE, lw=2.1, label="Quote for a new purchase")
+        panel_title(cpl, "Acquisition price: separate CPL-only shock")
+        if not cpl_changed.empty:
+            cpl.plot(cpl_changed.calendar_day, cpl_changed.cpl_quote, color=BLUE, lw=2.1, label="CPL rises 0.8%/day after day 42 (quote)")
+            cpl.plot(cpl_purchases.calendar_day,cpl_purchases.paid_cpl,color=AMBER,marker='o',ms=4,lw=0,label='Locked purchase cost / lead')
         if not fixed.empty:
-            cpl.plot(fixed.calendar_day, fixed.cpl_quote, color=INK, ls=":", lw=1.7, label="Fixed-scenario acquisition quote")
-        cpl.plot(purchases.calendar_day, purchases.paid_cpl, color=AMBER, marker="o", ms=5,
-                 lw=0, label="Immutable cost / acquired lead")
+            cpl.plot(fixed.calendar_day, fixed.cpl_quote, color=INK, ls=":", lw=1.7, label="No CPL change")
         cpl.set_ylabel("USD / acquired lead"); cpl.set_ylim(bottom=0); dollars(cpl); legend(cpl, mobile)
         panel_title(arrivals, "New cohorts continue to arrive")
         arrivals.bar(purchases.calendar_day, purchases.new_purchases, width=2.7, color=BLUE)
@@ -368,14 +382,14 @@ def economics(renderer, world=None, scenario=None):
         for ax in (cpc, cpl, arrivals): calendar_axis(ax, data.calendar_day)
         return fig
     renderer.emit("01-calendar-economics", title,
-        f"The synthetic rich illustration ({world}, {scenario}) and fixed-price reference use the same demo seed; " +
+        f"Paired synthetic controls with the same demo seed; CPC panel uses {scenario}, while CPL panel uses rising_cpl. " +
         (f"established source {source_id}. " if source_id is not None else "") +
         "The net-human CPC opportunity is evaluator-only truth, not an observed contract rate supplied to inference; "
         "the model learns it from mature settled monetary marks. Send cost and the current acquisition quote are observed inputs. "
         "Purchase markers divide the batch's recorded acquisition cost by its purchased leads; "
         "a later quote applies to new purchases and never rewrites old acquisition costs.",
-        "Three calendar panels compare fixed and changing evaluator-only human CPC, acquisition quotes with actual purchase prices, and weekly arriving cohorts.",
-        [src], f"world={world}; scenario={scenario}; source_id={source_id}; plus fixed_price same demo seed; all calendar days and positive purchase rows", table, plot,
+        "Three calendar panels separate a net-CPC shock, an independent CPL shock and new weekly purchases.",
+        [src], f"world={world}; CPC scenario={scenario}; source_id={source_id}; separate rising_cpl and fixed_price same demo seed; all calendar days and positive purchase rows", table, plot,
         "No uncertainty interval: net-CPC is evaluator-only truth; quotes, send prices and immutable purchases are simulated known inputs.",
         "Revenue per qualified human event; send cost per eligible send; acquisition quote and cost per purchased lead.")
     return world, scenario
@@ -703,6 +717,10 @@ def heldout_comparison(renderer):
             if "n_leads" not in data: raise ValueError("Monetary metrics require n_leads or explicit units=USD/lead")
             data.loc[batch_money, bound + "_display"] = data.loc[batch_money, bound] / data.loc[batch_money, "n_leads"]
     frozen = ROOT.parent / "bayesian-email-cohort-lab" / "artifacts" / "calibration" / "metrics_by_origin.csv"
+    # Portable source snapshots carry the previously reviewed, public aggregate
+    # alongside the prior chart bundle when the original checkout is absent.
+    if not frozen.exists():
+        frozen = LAB / "artifacts" / "figures" / "sources" / "original_v1_metrics_by_origin.csv"
     if not frozen.exists(): raise FileNotFoundError("Frozen original-v1 failed coverage output must remain visible")
     baseline = pd.read_csv(frozen); baseline = baseline[baseline.metric == "coverage95"].sort_values("origin_age").copy()
     baseline["display_metric"] = "original_v1_coverage95"
@@ -710,7 +728,8 @@ def heldout_comparison(renderer):
     # unchanged failure evidence is still inspectable after portable packaging.
     frozen_copy = renderer.output / "sources" / "original_v1_metrics_by_origin.csv"
     frozen_copy.parent.mkdir(exist_ok=True)
-    shutil.copyfile(frozen, frozen_copy)
+    if frozen.resolve() != frozen_copy.resolve():
+        shutil.copyfile(frozen, frozen_copy)
     base_src = Source(str(frozen_copy.relative_to(ROOT)), hashlib.sha256(frozen.read_bytes()).hexdigest(),
                       len(pd.read_csv(frozen)), str(frozen.relative_to(ROOT.parent)))
     all_metrics = data.copy()
@@ -778,16 +797,169 @@ def heldout_comparison(renderer):
         "Coverage / n_forecasts; n_worlds independent evaluation clusters; CRPS and decision loss / acquired leads, with source counts retained in table.")
 
 
+def cohort_variability(renderer, world=None, scenario="cpc_squeeze"):
+    truth, src = renderer.read("retention_truth.csv", ["cohort_id","source_id","age",
+        "acquired_leads","true_contactable_fraction","true_unique_response_per_lead"])
+    # This evaluator table is intentionally a single-world truth export; the
+    # current run config supplies its omitted identifiers without exposing any
+    # additional truth to the fitting process.
+    truth_sources=[src]
+    if "world" not in truth or "scenario" not in truth:
+        config_path=renderer.artifacts/"run_config.json"
+        config_bytes=config_path.read_bytes();run_config=json.loads(config_bytes)
+        scenario="cpc_squeeze"
+        world=f"demo-{scenario}-{run_config['demo_seed']}"
+        truth["world"]=world;truth["scenario"]=scenario
+        truth_sources.append(Source(str(config_path.relative_to(ROOT)),hashlib.sha256(config_bytes).hexdigest(),1))
+    truth, world, scenario=demo_slice(truth,world,scenario,select_policy=False)
+    truth=truth.sort_values('age')
+    detail, dsrc=renderer.read('cohort_retention_rollup_detail.csv',[
+        'world','source_id','cohort_id','window_days','window_start_age','eligible_at_start',
+        'distinct_human_responders','contactable_share_of_acquired','unique_response_rate_of_eligible'])
+    detail=detail[detail.world==world].copy()
+    title="Cohort averages hide different survival and engagement paths"
+    palette={s:c for s,c in zip(sorted(truth.source_id.unique()),[BLUE,AMBER])}
+    selected=pd.concat([truth.assign(panel='daily_survival'),
+        detail.assign(panel='within_window_unique_response')],ignore_index=True,sort=False)
+    def plot(mobile):
+        fig,axes=frame(title,2,mobile)
+        ax=axes[0];panel_title(ax,'Contactable people as a share of acquired leads')
+        for cohort,g in truth.groupby('cohort_id'):
+            color=palette.get(g.source_id.iloc[0],MUTED)
+            ax.plot(g.age,g.true_contactable_fraction,color=color,alpha=.17,lw=.75)
+        pooled=truth.groupby('age').apply(lambda g:np.average(g.true_contactable_fraction,weights=g.acquired_leads),include_groups=False)
+        ax.plot(pooled.index,pooled.values,color=INK,lw=2.7,label='All cohorts, acquired-lead weighted')
+        handles=[Line2D([],[],color=palette.get(s,MUTED),lw=2,label=str(s)) for s in sorted(truth.source_id.unique())]
+        handles.append(Line2D([],[],color=INK,lw=2.7,label='Weighted all-history curve'))
+        ax.set_ylim(0,1.03);ax.yaxis.set_major_formatter(PercentFormatter(1));ax.set_ylabel('Still contactable / acquired')
+        ax.set_xlabel('Cohort age (days)');ax.legend(handles=handles,frameon=False,ncol=1 if mobile else 3,
+            fontsize=12.4 if mobile else 8.6,loc='lower left',bbox_to_anchor=(0,1.02))
+        ax=axes[1];panel_title(ax,'Distinct human responders within a complete window')
+        for window,color,marker in [(7,BLUE,'o'),(30,AMBER,'s')]:
+            part=detail[detail.window_days==window]
+            for cohort,g in part.groupby('cohort_id'):
+                g=g.sort_values('window_start_age')
+                ax.plot(g.window_start_age+window/2,g.unique_response_rate_of_eligible,
+                    color=color,alpha=.12,lw=.75)
+            pooled=part.groupby('window_start_age').apply(
+                lambda g:g.distinct_human_responders.sum()/g.eligible_at_start.sum() if g.eligible_at_start.sum() else np.nan,
+                include_groups=False)
+            ax.plot(pooled.index+window/2,pooled.values,color=color,lw=2.4,marker=marker,ms=3.5,
+                label=f'{window}-day pooled rate')
+        ax.set_ylim(bottom=0);ax.yaxis.set_major_formatter(PercentFormatter(1));ax.set_ylabel('Unique people / eligible at window start')
+        ax.set_xlabel('Window midpoint (cohort age in days)');ax.legend(frameon=False,ncol=1 if mobile else 2,
+            fontsize=12.4 if mobile else 8.8,loc='lower left',bbox_to_anchor=(0,1.02))
+        return fig
+    renderer.emit('07-cohort-variability',title,
+        f"Synthetic evaluator truth only ({world}, {scenario}). Thin lines are individual weekly acquisition cohorts; the heavy survival curve pools numerator and original-acquired-lead denominator at each age. The lower panel deduplicates each person across a complete 7- or 30-day window; its denominator is the contactable population at window start. The heavier rates pool counts (sum distinct responders / sum eligible), not averages of cohort percentages. Windows are overlapping views of the same synthetic people, not independent evidence. All cohorts are fictional and full windows only.",
+        'Individual cohort lines show variable contactability and distinct-human response; heavier lines show denominator-weighted historical summaries.',
+        truth_sources+[dsrc],f'world={world}; scenario={scenario}; all cohorts through age 180; no incomplete unique-response windows',selected,plot,
+        'No inferential interval: thin lines are realized synthetic truth; pooled lines summarize those same people.',
+        'Survival uses acquired leads. Window response uses distinct human responders divided by people contactable at window start; cohort count and raw denominators are in source table.')
+
+
+def confidence_over_time(renderer):
+    data,src=renderer.read('demo_confidence.csv',['scenario','cohort_id','origin_day','origin_age','target_age','profit_buffer_per_lead','posterior_probability','state','true_above_buffer'])
+    data=data[data.scenario.isin(['cheap_good','cheap_bad'])].sort_values('origin_day')
+    if data.empty:raise ValueError('Missing same-cohort sequential demonstration')
+    title='Cohort confidence for a fixed day-180 profit target'
+    def plot(mobile):
+        fig,ax=frame(title,1,mobile)
+        ax=ax[0];panel_title(ax,'Day 180 · $0.02 per lead target', mobile_title='')
+        ax.axhspan(.05,.95,color=PALE_AMBER,alpha=.5,label='Wait: probability between 5% and 95%')
+        ax.axhline(.95,color=INK,ls='--',lw=1);ax.axhline(.05,color=INK,ls='--',lw=1)
+        for scenario,color,label in [('cheap_good',BLUE,'Same-price source, good hidden quality'),('cheap_bad',AMBER,'Same-price source, bad hidden quality')]:
+            part=data[data.scenario==scenario].sort_values('origin_day')
+            ax.plot(part.origin_day,part.posterior_probability,color=color,lw=2,marker='o',label=label)
+            ax.scatter(part.origin_day,part.posterior_probability,c=[color if s!='undecided' else MUTED for s in part.state],s=34,zorder=3)
+        ax.set_ylim(0,1);ax.yaxis.set_major_formatter(PercentFormatter(1));ax.set_ylabel('Posterior probability')
+        ax.set_xlabel('Information available through calendar day');ax.set_xticks(data.origin_day)
+        ax.legend(frameon=False,fontsize=12.4 if mobile else 9,loc='lower left',bbox_to_anchor=(0,1.02))
+        return fig
+    renderer.emit('08-confidence-over-time',title,
+        "Two equally priced fictional sources share the same prelaunch evidence and first receive the same prediction. As the same fixed day-70 cohort in each world accumulates observations, probabilities update toward different outcomes. Each point refits only records available at that cutoff and forecasts the same day-180 contribution under hold-current future conditions. The threshold is two cents of margin per originally acquired lead. A classification is above target at p≥95%, below target at p≤5%, inconclusive otherwise. This is a model probability, not validated 95% reliability; repeated cutoffs are dependent and later evidence can reverse the classification. It is separate from first-payback-by-day-425.",
+        'Good and bad same-price source probabilities update from identical prelaunch evidence as their own cohort data arrives.',
+        [src],f"paired cheap_good/cheap_bad worlds; cohort=new_cheap-b070; horizon=180; buffer=$0.02 per lead; future=hold_current; cutoffs=69,77,84,91,98,105,112,119",data,plot,
+        'Monte Carlo posterior probabilities from 256 draws; threshold is a decision convention, not a frequentist confidence interval or reliability guarantee.',
+        'Probability that day-180 cumulative contribution exceeds $0.02 times acquired leads; fixed acquired cohort and fixed horizon.')
+
+
+def cpc_shock(renderer):
+    data,src=renderer.read('cpc_shock_sensitivity.csv',['cpc_drop_fraction','p_margin_above_buffer180','margin_q05','margin_median','margin_q95','paired_margin_delta_median','expected_shortfall_below_buffer_per_lead'])
+    data=data.sort_values('cpc_drop_fraction')
+    title='A future CPC squeeze changes value without changing subscriber behavior'
+    table=data.copy()
+    def plot(mobile):
+        fig,axes=frame(title,2,mobile)
+        ax=axes[0];panel_title(ax,'Probability of clearing day-180 target', mobile_title='Day-180 profit probability')
+        ax.plot(data.cpc_drop_fraction,data.p_margin_above_buffer180,color=BLUE,lw=2.2,marker='o')
+        probability_max=float(data.p_margin_above_buffer180.max())
+        upper=min(1.0,max(.10,float(np.ceil(probability_max*10)/10)))
+        ax.set_ylim(0,upper);ax.yaxis.set_major_formatter(PercentFormatter(1));ax.set_xlabel('Additional net-CPC reduction after calendar day 140');ax.xaxis.set_major_formatter(PercentFormatter(1));ax.set_ylabel('Probability above $0.02 / lead')
+        ax=axes[1];panel_title(ax,'Day-180 margin: median and paired change', mobile_title='')
+        x=data.cpc_drop_fraction.to_numpy();ax.fill_between(x,data.margin_q05,data.margin_q95,color=PALE_BLUE)
+        ax.plot(x,data.margin_median,color=BLUE,lw=2.2,marker='o',label='Day-180 median margin')
+        ax.plot(x,data.paired_margin_delta_median,color=AMBER,lw=1.8,marker='s',label='Paired median change from 0%')
+        ax.axhline(0,color=INK,lw=.8);ax.set_xlabel('CPC reduction');ax.xaxis.set_major_formatter(PercentFormatter(1));ax.set_ylabel('USD / cohort');dollars(ax);ax.legend(frameon=False,fontsize=12.4 if mobile else 9,loc='lower left',bbox_to_anchor=(0,1.02))
+        return fig
+    renderer.emit('09-cpc-what-if',title,
+        'Conditional what-if for a planned existing-source cohort, fitted on day 119 and acquired day 126. The model applies an additional 0–45% net-CPC drop beginning day 140 and ramping for 28 days. Each point reuses the same posterior draw and random revenue-mark path: contactability, humans, engagement, click counts, purchase cost, send costs and shared uncertainty are held fixed. Only post-shock revenue per human event changes. The blue band is a 90% draw interval for margin; amber shows the paired median margin difference. The probability axis starts at zero and is scaled to the plotted range; exact probabilities are in the table. Scenario probabilities are not a forecast that a given squeeze will occur.',
+        'A paired scenario curve shows probability of clearing a fixed profit buffer and the associated cohort-margin change under increasing future CPC reductions.',
+        [src],'source=established_b; next cohort birth=126; information cutoff=119; CPC shock begins 140, ramp 28 days; paired random seed',table,plot,
+        '90% posterior predictive draw interval for day-180 margin under each stated shock; not a scenario probability interval.',
+        'Per-cohort total contribution in USD; probability denominator is all paired posterior draws.')
+
+
+def decision_reliability(renderer):
+    reliability,rsrc=renderer.read('probability_reliability.csv',['mean_predicted_probability','predicted_world_bootstrap_lower95','predicted_world_bootstrap_upper95','realized_profitable_share','realized_world_bootstrap_lower95','realized_world_bootstrap_upper95','independent_worlds','forecast_rows'])
+    metrics,msrc=renderer.read('sequential_metrics.csv',['scenario','metric','mean','lower95','upper95','n_worlds'])
+    data=pd.concat([reliability.assign(panel='reliability'),metrics.assign(panel='sequential_rule')],ignore_index=True,sort=False)
+    title='Posterior confidence needs held-out reliability checks'
+    def plot(mobile):
+        fig,axes=frame(title,2,mobile)
+        if mobile:fig.set_size_inches(4.0,fig.get_size_inches()[1])
+        ax=axes[0];panel_title(ax,'When the model says 70%, how often is the buffer cleared?')
+        ax.plot([0,1],[0,1],color=INK,ls='--',lw=1,label='Perfect calibration')
+        for r in reliability.itertuples():
+            ax.errorbar(r.mean_predicted_probability,r.realized_profitable_share,
+                xerr=[[r.mean_predicted_probability-r.predicted_world_bootstrap_lower95],[r.predicted_world_bootstrap_upper95-r.mean_predicted_probability]],
+                yerr=[[r.realized_profitable_share-r.realized_world_bootstrap_lower95],[r.realized_world_bootstrap_upper95-r.realized_profitable_share]],
+                fmt='o',color=BLUE,ms=6,capsize=2)
+        ax.set_xlim(0,1);ax.set_ylim(0,1);ax.xaxis.set_major_formatter(PercentFormatter(1));ax.yaxis.set_major_formatter(PercentFormatter(1));ax.set_xlabel('Mean posterior probability in bin');ax.set_ylabel('Observed profitable share');ax.legend(frameon=False,fontsize=12.4 if mobile else 9,loc='lower left',bbox_to_anchor=(0,1.02))
+        ax=axes[1];panel_title(ax,'Replay of first 95% / 5% declaration on held-out cohorts')
+        choose=metrics[metrics.metric.isin(['false_positive','false_negative','undecided','any_reversal'])]
+        order=['false_positive','false_negative','undecided','any_reversal'];labels=(['False above\ntarget','False below\ntarget','No declaration','Reversal'] if mobile else ['False above target','False below target','No declaration','Later reversal'])
+        y=np.arange(len(order))
+        for i,(metric,label) in enumerate(zip(order,labels)):
+            row=choose[choose.metric==metric]
+            if row.empty:continue
+            row=row[row.scenario=='all_scenarios']
+            if row.empty:continue
+            r=row.iloc[0];ax.errorbar(r['mean'],i,xerr=[[r['mean']-r.lower95],[r.upper95-r['mean']]],fmt='o',color=BLUE,capsize=3)
+        ax.set_yticks(y,labels,fontsize=12.4 if mobile else 9.5);ax.invert_yaxis();ax.set_xlim(0,1);ax.xaxis.set_major_formatter(PercentFormatter(1));ax.set_xlabel('Share of independent held-out worlds');ax.grid(False);ax.grid(axis='x',color=GRID,lw=.8)
+        return fig
+    renderer.emit('10-decision-reliability',title,
+        'All points come from held-out synthetic worlds, separate from the illustrative world. The upper panel bins fixed day-180 probabilities for clearing a $0.02/lead margin buffer and compares average forecast probability with observed profitability. Error bars bootstrap independent worlds, not correlated rows; forecast and world counts are in the numeric table. The lower panel replays the first weekly 95%/5% declaration for the same purchased cohort in each world. “False profitable/unprofitable” compare that first declaration with the eventual day-180 outcome; “no declaration” is allowed; “later reversal” records changed classification after first declaration. Small world counts and approximate likelihoods limit the strength of calibration claims.',
+        'Held-out calibration points are compared with the diagonal, beside world-level rates of false, reversed or absent sequential declarations.',
+        [rsrc,msrc],'All heldout forecast rows binned by probability; sequential replay uses fixed cohort b070 and prespecified weekly cutoffs.',data,plot,
+        '95% whole-world bootstrap intervals for both forecast and observed rates; sparse bins are descriptive and may have wide uncertainty.',
+        'Reliability uses forecast rows nested within independent worlds. Sequential rates use one candidate cohort per world; denominators and world counts are shown.')
+
+
 def render_all(artifacts: Path | Renderer, output: Path | None = None):
     """Render a CSV directory directly, or use an already configured Renderer."""
     managed = not isinstance(artifacts, Renderer)
     renderer = Renderer(Path(artifacts), output or Path(artifacts) / "figures") if managed else artifacts
-    world, scenario = economics(renderer)
-    measurement(renderer, world, scenario)
-    calendar_states(renderer, world, scenario)
-    cohort_forecasts(renderer, world, scenario)
-    source_transfer(renderer, world, scenario)
+    economics(renderer)
+    measurement(renderer, None, "human_decline_bot_rise")
+    calendar_states(renderer, None, "cpc_squeeze")
+    cohort_forecasts(renderer, None, "human_decline_bot_rise")
+    source_transfer(renderer, None, None)
     heldout_comparison(renderer)
+    cohort_variability(renderer)
+    confidence_over_time(renderer)
+    cpc_shock(renderer)
+    decision_reliability(renderer)
     if managed: renderer.finish()
     return renderer
 

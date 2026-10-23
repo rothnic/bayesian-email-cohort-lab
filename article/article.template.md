@@ -1,7 +1,7 @@
 ---
 title: "When does an email subscriber pay for itself?"
-description: "A Bayesian cohort simulation with changing click revenue, rising acquisition costs, delayed audits and new sources."
-date: "2026-10-02"
+description: "Follow synthetic subscriber cohorts from survival and engagement to a Bayesian profitability decision, then check whether the probabilities deserve trust."
+date: "2026-10-23"
 slug: "bayesian-email-cohort-payback"
 author: "Nick Roth"
 draft: true
@@ -10,150 +10,195 @@ tags: ["Bayesian statistics", "Experimentation", "Decision making"]
 
 # When does an email subscriber pay for itself?
 
-At DealNews, I started a project I didn't have time to finish. I wanted to use Bayesian statistics and decision theory to understand the economics of paid email leads. I remember an average acquisition cost of roughly twenty cents per lead. That's an unverified recollection motivating the question, not a historical number being validated here.
+At DealNews, I started a project I didn't have time to finish. I wanted to use Bayesian statistics and decision theory to understand the economics of paid email leads.
 
-Buying a lead creates a cost today and uncertain revenue later. Some people respond quickly, some keep responding for months, and some never respond. Early clicks offer evidence, but they don't tell you what those clicks will be worth next quarter.
+Buying a lead creates a cost today and uncertain revenue later. I wanted to follow what happened to the acquired cohort, then decide when the evidence supported calling it profitable. A smooth average or a positive expected return wouldn't answer that on its own.
 
-The question gets harder when the business changes while the cohort matures. Revenue per human response can fall. The next batch of leads can cost more. Automated clicks can rise while human response weakens. A new source might look attractive because it's cheap, even though nobody has seen its long-term behavior.
+I rebuilt the problem as a reproducible simulation. The starting point is people: whether an address stays contactable, whether a person responds, and how many clicks that response produces. Money comes next. Then I can ask how the answer changes when click revenue falls, acquisition costs rise or a new source arrives.
 
-I rebuilt the problem as a reproducible simulation and fitted a Bayesian approximation to it. The point is to follow the uncertainty as evidence arrives, then check whether that uncertainty deserves our trust.
+**Every modeled subscriber, price, event and outcome here is fictional. No DealNews records or historical campaign results enter this experiment. This is a draft demonstration, not a validated acquisition policy.**
 
-**Every modeled lead, price, event and outcome below is fictional. There are no DealNews records or historical campaign results in this experiment.**
+## Follow the people in each cohort
 
-## Start with a fixed-price cohort
+Each thin curve below represents a weekly acquisition cohort. Subscribers keep the same human or bot status and individual activity traits through their simulated lives. They can leave the contactable population, and cohorts have different contactability half-lives.
 
-For a cohort observed through age h, contribution is:
+Contactability and engagement answer different questions. The contactable fraction counts addresses still available to send to, divided by the original acquired leads. It includes both humans and bots. A distinct-human response rate counts people who responded during a stated window. A person can remain contactable without responding, or respond in one window and return in another.
 
-```math
-M(h) = attributed net revenue through h
-       − acquisition cost − sending cost through h
-```
+{{COHORT_VARIABILITY}}
 
-This excludes fixed overhead. Payback is the first age when contribution becomes nonnegative. First payback, positive contribution at day180, and staying positive afterward are different quantities.
+![Thin cohort curves show different contactability paths. Pooled curves summarize survival and distinct human response within complete windows.](assets/07-cohort-variability.png)
 
-The sending policy runs daily through age365, with a finite accounting endpoint at425. Every predictive path remains in the payback denominator, including paths that never recover their cost under that policy. “No payback by425” says nothing about an infinite lifetime beyond the modeled policy.
+{{CAPTION_07}}
 
-The [first version of the lab](https://github.com/rothnic/bayesian-email-cohort-lab/tree/8e3443fe287d8e3ee29156d628df931b35fad9d5) has a deliberately simple component check. With a known response-age curve, fixed prices and a Gamma–Poisson response model, its nominal95% intervals cover94.2%–95.5% of outcomes across2,000 independent simulated worlds. The richer original simulation covers only52.8%–63.9%. A working update formula doesn't validate every surrounding assumption.
+This first chart uses the simulator's complete evaluator history so the underlying cohort behavior is visible. It is a descriptive view of the fictional people, including their later outcomes. The fitted model does not receive those truth curves or unseen future observations.
 
-The original first-cohort example also borrows information as acquisition continues. It has no older cohort history at launch. Later forecasts also use the observations available from younger cohorts in the same source. That version pools within a source, with independent copies of fixed priors across sources; it has no learned global prior.
+The response windows deduplicate people across the entire window. Someone who clicks on several days still counts once within that window. A longer window gives someone more chances to respond, so a higher monthly rate than weekly rate does not by itself mean retention improved.
 
-The extension below actually adds global learning and calendar states. Its fixed-price comparison uses the new model's assumptions. It is not a renamed result from the original model.
+## Understand what the aggregate hides
 
-## Let prices change while cohorts overlap
+The heavy survival curve summarizes the same cohorts as the thin lines, weighting by original acquired leads. The pooled response rate adds distinct responders across cohorts and divides by the corresponding population contactable at each window's start. It is a ratio of pooled counts, rather than an unweighted average of cohort percentages.
 
-The new simulation starts with two established sources and a new100-lead cohort each week from each source. Each cohort follows the same declared early-drop and long-tail age shape. Then the scenarios add mechanisms one at a time: lower net revenue per valid human response, rising prices for new leads, declining human response with more bot events, and a late inexpensive source that can be either good or bad.
+The weekly and monthly response summaries are complete age windows within cohorts. The all-history survival curve pools cohorts at the same age. These are different summaries, with different denominators. The exported tables retain cohort counts, window boundaries and the raw denominators.
 
-The distinction between old and new purchases matters. In the rich scenario, the established source's quote rises from$0.18 to$0.30096 per lead between calendar days0 and126. Its first100-lead batch still costs$18. A new quote never rewrites an old acquisition cost.
+These are also overlapping views of the same people. They are not independent new evidence. A quieter aggregate curve can make the overall pattern easier to see while concealing differences between sources and acquisition cohorts.
 
-![Three calendar panels compare fixed and changing net human CPC opportunity, current acquisition quotes and actual purchase costs, and arriving weekly cohorts.](assets/01-calendar-economics.png)
+![Reported response events include bot activity; evaluator-only truth shows the hidden human events, and the lower panel shows the lagged audited bot fraction.](assets/02-human-bot-evidence.png)
 
-{{CAPTION_01}}
+*Figure 02. Synthetic illustration of reported-event counts, evaluator-only true-human events, and the fraction of audited events labeled bot. Audits arrive with a lag; audit counts are the denominator. True-human events are hidden evaluator truth, not an input to model fitting. The model assumes the declared audit sensitivity, specificity and representative-selection process.*
 
-The hidden revenue opportunity in this figure is available to the evaluator. The fitted model sees mature settlement summaries at their report dates. It has to learn the price change from those observations.
+Aggregation is separate from statistical pooling. The Bayesian model estimates distinct cohort behavior while sharing evidence through a source and a learned population. A new cohort borrows information from its source but keeps uncertainty about its own performance. A new source gets fresh source and cohort variation instead of inheriting an established source's posterior.
 
-## Treat bot activity as a measurement problem
+Every information cutoff refits the records available then from the same fixed hyperprior. Earlier records are not counted again by multiplying a previous posterior by the whole historical likelihood.
 
-Raw response events contain both human and bot activity. Repeated events are allowed; an event count isn't a count of distinct people. A random half of the events receives delayed human/bot labels from an imperfect audit instrument.
+## Translate activity into contribution
 
-The instrument's sensitivity and specificity are known assumptions here: 95% and 98%. Raw events arrive after two days, audit labels after seven, and mature settlement summaries after fourteen. Before its arrival, a missing label or payment is unavailable information.
-
-![Reported response events, evaluator-only human events, and delayed audit evidence show why raw activity alone cannot identify human quality.](assets/02-human-bot-evidence.png)
-
-{{CAPTION_02}}
-
-The estimated bot fraction is a fraction of **response events**, not a fraction of leads. Total human events can rise while per-exposure human response deteriorates because new cohorts keep arriving. The calendar-state comparison below asks about the underlying rate after accounting for the declared age shape.
-
-This is a favorable measurement setting. A real audit's error rates may be unknown, change over time, or depend on what was selected for review. Without evidence about that process, a human/bot decomposition can remain unidentified.
-
-## Share evidence at three levels
-
-The response model has a global level, a source effect and a cohort effect. Net human revenue per response has a parallel hierarchy. Both also have a shared calendar state. In shorthand:
+For cohort c at age h, contribution is:
 
 ```math
-log response rate = global + source feature + source effect
-                    + cohort effect + age shape + calendar state
-log net human CPC = global + source feature + source effect
-                    + cohort effect + calendar state
+M_c(h) = attributed net revenue through h
+         - acquisition cost
+         - sending cost through h
 ```
 
-A new cohort learns from its source while retaining its own variation. A source with no observations gets a predictive distribution from the learned population, including uncertainty in the global parameters, the new source and the new cohort. The code does not copy a successful source's posterior onto the newcomer.
+This excludes fixed overhead. Acquisition cost belongs to the purchased cohort. Sending cost depends on the contactable addresses under the declared sending policy. Repeat human clicks can produce revenue even though each responding person counts once in a unique-response window.
 
-At every cutoff, it refits all available observations from the same fixed hyperprior. Yesterday's posterior isn't reused as today's prior while yesterday's observations are counted again.
+{{POLICY_DESCRIPTION}}
 
-Age, calendar date and cohort birth date obey calendar=birth+age. Three unrestricted trends cannot be separated just because cohorts overlap. This experiment fixes the age curve, anchors calendar states at launch, and uses exchangeable cohort effects without a birth-date trend. The age curve matches the generator, making this another favorable assumption. Driver interpretations depend on these constraints.
+First payback is the first age when contribution crosses zero. Positive contribution at a fixed target age and staying positive afterward are separate outcomes. Every predictive path remains in the payback denominator, including paths that never cross under the finite policy.
 
-![Shared calendar response and net-CPC state posteriors are compared with evaluator-only hidden states, showing what was learned and what was missed.](assets/03-shared-calendar-states.png)
+Reported history is incomplete at an information cutoff. Contactability, response reports, audit labels and monetary observations have declared visibility rules. Missing labels and pending payments are unavailable information, not zero outcomes. Complete economic paths can impute pending past activity, so they need not pass through a partially visible reported balance.
 
-{{CAPTION_03}}
+{{OBSERVATION_CLOCKS}}
 
-In this illustration, the fitted value state follows the decline more clearly than the fitted human-response state. The response estimate stays closer to a flat calendar effect and misses much of the hidden deterioration. Separating the variables in a formula doesn't mean the observations identify them well.
+![Fitted shared response and payment calendar states are shown through the information cutoff, with conditional predictive paths afterward and evaluator-only truth.](assets/03-shared-calendar-states.png)
 
-The implementation uses Gaussian approximations to weekly log-rate and log-CPC measurements, then exact conditional Gaussian calculations and an integrated finite grid of scale priors. It isn't an exact latent-event, audit and payment posterior. Future event counts are drawn from a negative-binomial model, and net payment amounts use a Gamma approximation.
+*Figure 03. One synthetic world, refit through calendar day 119. The state bands show the approximate posterior before the cutoff and conditional future-state prediction afterward. These shared log-scale calendar states are not contribution intervals; their interpretation depends on the model's age, calendar and cohort assumptions.*
 
-One boundary check caught a useful mistake: a zero-event bin initially received almost no log-rate uncertainty. The corrected half-count approximation gives it variance2 before the overdispersion term, rather than the0.02 numerical floor. The earlier result and correction are retained. A log transform at sparse counts still needs scrutiny; a repaired boundary case isn't proof of calibration.
+The forecast includes uncertain cohort behavior and future event and payment variation. A band around a fitted expected retention curve describes something different from a band for the realized contribution of a finite cohort. The figures and tables identify which quantity they display.
 
-The full [mathematical specification](../extensions/calendar/dynamic_lab/MODEL.md) states the priors, approximations and missing mechanisms. This extension fixes daily exposure and omits operational attrition, an unpaid-payment atom, future signed reversals and learned response/value correlation. The original version retains its separate accounting experiments. This extension is more detailed about calendar change, not more detailed about every part of the business.
+![Contribution forecasts for cohorts at the same age vary by calendar origin; below, one cohort's conditional future paths and first-payback distribution extend through day 425.](assets/04-cohort-contribution-payback.png)
 
-## Separate a forecast from a future-price assumption
+*Figure 04. Posterior predictive contribution per acquired lead under several calendar assumptions. The payback curve keeps every simulated path in its denominator, including paths that never cross zero by day 425. First payback, positive contribution at day 180 and staying positive are different outcomes. Conditional future-state paths are scenarios, not probabilities that those futures will occur.*
 
-The model learns the calendar state available at a cutoff. That doesn't tell it which future policy will occur. I compare three conditional futures:
+## Keep the cohort and the outcome fixed as evidence arrives
 
-- Hold-current: no deterministic drift in the log states, with shared future innovations
-- Continue recent trend: extend each sampled recent state slope, including uncertainty in that slope
-- Fixed early price: freeze future payout at the learned early price reference, while retaining observed history
+For the profitability decision, I select one cohort and keep its target age fixed. Only the information cutoff changes. Otherwise, a line could appear to show learning when it was actually switching to different cohorts.
 
-Hold-current isn't a learned prediction that prices will stabilize. A zero-drift log process also doesn't imply a constant arithmetic mean price. Extrapolating uncertain slopes can produce a strongly skewed monetary forecast, even when the median looks less optimistic.
+I also choose a minimum contribution per originally acquired lead. In shorthand:
 
-Illustration probabilities use256 predictive draws. A reported0% or100% means none or all of those sampled paths met the condition; it does not establish certainty.
+```math
+p_c(T) = P(M_c(H) / N_c > delta | records available at T, future scenario)
+```
+
+Here H is the fixed target age, N_c is the original cohort size and delta is the margin target. This probability concerns the cohort's realized contribution, not just whether its expected contribution is positive.
+
+{{CONFIDENCE_RULE}}
+
+![One fixed cohort's probability of clearing its fixed contribution target changes across information cutoffs, with upper and lower classification thresholds.](assets/08-confidence-over-time.png)
+
+{{CAPTION_08}}
+
+{{CONFIDENCE_COMPARISON}}
+
+For an already acquired cohort, the labels describe whether it is likely to finish above or below the declared target. Below target does not necessarily mean a cash loss: a small positive margin can still miss the required buffer. A prospective purchase can use the same probability threshold as an illustrative buy, skip or wait rule.
+
+The probability can move in either direction as evidence arrives. Sampling error also matters near a threshold. A reported zero or complete success rate means none or all of the sampled predictive paths cleared the target; it does not establish certainty.
+
+“Wait” marks an unresolved classification here. The acquisition-loss calculation treats it as a current nonpurchase. It does not optimize the value of another observation, a later quote or a delayed purchase. Continuing to send to an existing cohort is a separate decision because its acquisition cost is already sunk.
+
+## Change the economics while keeping the comparison clear
+
+The control has no systematic CPC squeeze, acquisition-price inflation or calendar deterioration in human quality. It still has subscriber variation, cohort variation and shared weekly disturbances.
+
+The benchmark worlds then isolate mechanisms:
+
+- A CPC squeeze reduces net revenue per human click while preserving the paired subscriber, engagement and click paths.
+- A CPL increase raises the price of later acquisitions. It does not alter old purchase costs or make the fitted source quality worse.
+- Human and bot deterioration changes the acquired human share by cohort vintage, human engagement over calendar time and bot activity. It does not currently add a calendar trend to the contactability exit hazard.
+- A new cheap source introduces unfamiliar engagement quality. A low quote changes its economics without revealing whether its subscribers will respond well.
+
+These are separate benchmark worlds, not one cumulative scenario containing every change. Age and calendar time still differ: two cohorts observed at the same age can face different prices and response conditions.
+
+The model learns historical calendar conditions from available observations. Holding the fitted current state, extrapolating recent state slopes or restoring a learned early-price reference are conditional future assumptions. None reveals which future will occur. Zero drift in log prices does not imply a constant arithmetic mean price.
 
 {{PRICE_COMPARISON}}
 
-![Common-age arriving-cohort contribution forecasts and same-cohort unconditional first-payback curves compare model scope and future-price assumptions.](assets/04-cohort-contribution-payback.png)
+![Separate synthetic controls show net CPC decline, rising acquisition quotes and later weekly lead purchases.](assets/01-calendar-economics.png)
 
-{{CAPTION_04}}
+*Figure 01. Paired controls isolate a CPC squeeze from rising CPL and later purchasing. Net-human CPC opportunity is evaluator-only truth; fitting does not receive it as a contract rate. Existing purchase costs remain fixed when a later quote changes.*
 
-Each predictive draw uses one future response-calendar trajectory and one future price trajectory across all cohorts. Portfolio contribution is summed within the same draw. Drawing independent calendar shocks for every cohort would create diversification that the model doesn't justify. The two processes are independent of each other in this implementation; it does not learn their cross-process correlation.
+![A new cheap source begins with a broad transferred prior prediction; after source-specific evidence arrives, good and bad source worlds update differently on the same scale.](assets/05-new-source-transfer.png)
 
-{{PORTFOLIO_COMPARISON}}
+*Figure 05. Before purchase, the prediction integrates the global hierarchy with fresh source and cohort variation. Equally cheap sources start with the same uncertainty, then different observations update their source quality. Crosses are evaluator-only outcomes. The offer-price table changes only the cost of a prospective batch while keeping quality and outcome draws fixed.*
 
-## Let a cheap source prove itself
+## Ask what a future price cut would change
 
-The late source arrives on day70 with a low quote and the same prespecified features in both the good and bad worlds. Cheapness changes the cost calculation. It does not reveal response quality.
+The next chart takes one fitted forecast and applies additional future CPC reductions. It reuses the same posterior draws and random outcome paths. Contactability, unique engagement, repeat clicks, acquisition cost and sending costs stay fixed within each paired comparison. Only future net revenue per human click changes.
+
+That makes the monetary difference interpretable. It is the effect of the stated price assumption inside this simulation, rather than a change in the people being compared.
+
+![Paired future CPC scenarios show the probability of clearing the contribution target, the cohort-margin interval and the margin change from the no-additional-squeeze case.](assets/09-cpc-what-if.png)
+
+{{CAPTION_09}}
+
+{{CPC_WHAT_IF}}
+
+The shock begins after the information cutoff and does not reprice earlier booked clicks. The margin interval describes possible cohort outcomes conditional on each shock. It does not assign a probability to that shock occurring.
+
+A separate offered-CPL query changes only the purchase price of a prospective batch, keeping inferred quality and outcome draws fixed. Historical acquisition costs stay fixed. The [offered-cost table](tables/offered-cost.csv) retains the prospective prices, forecast margins, buffer probabilities and shortfall measures.
 
 {{TRANSFER_COMPARISON}}
 
-![The equally inexpensive good and bad new sources share a prelaunch predictive distribution, then update differently as their own observations arrive.](assets/05-new-source-transfer.png)
+## Check whether the confidence deserves trust
 
-{{CAPTION_05}}
+An illustrative probability threshold is easy to implement. Its reliability has to be measured separately.
 
-Download the [offered-cost table](tables/offered-cost.csv).
+The held-out replay forecasts fictional worlds that were not the illustration. One check groups forecasts by predicted probability and compares those predictions with the eventual share clearing the same margin target. Another follows one purchased cohort through prespecified information cutoffs, records its first decisive classification and compares that declaration with its eventual outcome.
 
-The prior integrates the full new-source and new-cohort variation. Even so, there are only two established sources from which to learn the population in this example. Scale priors remain influential. If the model misses both realized outcomes with narrow intervals, that failure belongs next to the transfer plot.
+![Held-out interval coverage, probabilistic forecast scores and decision loss are compared across models; the earlier v1 stress failure is shown separately.](assets/06-heldout-comparison.png)
 
-## Check the uncertainty across held-out worlds
+*Figure 06. Uncertainty is clustered by independent synthetic world. Only three worlds represent each mechanism and eighteen worlds appear overall, so comparisons are exploratory. The historical v1 stress failure is a separate experiment, not pooled with the refreshed model.*
 
-The final comparison keeps eighteen independently seeded worlds, three for each of six scenarios. It compares target-only learning, complete global pooling, complete within-source pooling, a static hierarchy and the dynamic hierarchy. Late-source evaluation includes the unseen launch and subsequent updates. Repeated cohorts and cutoffs within a world are correlated, so the intervals below resample whole worlds.
+![Held-out predicted probabilities are compared with realized target attainment. A separate panel reports false classifications, absent declarations and later opposing declarations.](assets/10-decision-reliability.png)
+
+{{CAPTION_10}}
 
 {{EVALUATION_COMPARISON}}
 
-![Held-out interval coverage, predictive error and conditional acquisition loss compare five model scopes, with the original model's failed coverage kept separately.](assets/06-heldout-comparison.png)
+{{SEQUENTIAL_RELIABILITY}}
 
-{{CAPTION_06}}
+False above-target and false below-target declarations, unresolved cases and later reversals all matter. Sequential error rates here use the evaluated worlds as their denominator. They should not be mistaken for the fraction of above-target declarations that proved wrong. A reversal means a later decisive classification on the opposite side, not simply a return to the inconclusive band.
 
-The acquisition-loss calculation is also conditional. It asks whether to commit to the next batch at the quote visible now, then measures realized loss against a hindsight-perfect buy-or-skip choice. It doesn't estimate a causal marketing effect or prove a production allocation policy. Continuing sends to an existing cohort is a different decision because its acquisition cost is already sunk.
+Repeated cohorts and cutoffs within a world are dependent. Evaluation uncertainty resamples independent worlds, and the tables retain both world and forecast counts. Sparse probability bins cannot establish reliability from an attractive-looking point. Predictive interval coverage and profitability-probability calibration also measure different things; both need checking.
+
+The previous experiments remain part of the record:
+
+{{LEGACY_VALIDATION}}
+
+Those are results from earlier specifications. They are not the coverage or reliability of the subscriber model described here. The refreshed results must stand on their own, including any new failures. Choosing a threshold does not repair a misspecified likelihood.
+
+## Keep the model's limits visible
+
+The implementation fits approximate Gaussian measurements for contactability exits, daily unique response, repeat events and net human CPC, with conditional Gaussian calculations and a finite mixture of scale priors. It is not an exact joint posterior over each subscriber, audit and payment.
+
+Contactability uses a constant exit hazard within a cohort. Calendar effects can change engagement and value, while source and cohort effects share evidence across acquisitions. Those restrictions help separate aging from calendar conditions; overlapping cohorts alone cannot identify unrestricted age, calendar and birth-date trends.
+
+The unique-response and repeat-event predictions are separate processes. The model does not require every sampled daily unique response to reconcile with its independently drawn repeat-click total. It also does not learn all cross-process correlations. Within each monetary forecast draw, shared calendar paths do carry common risks across cohorts; portfolio contribution must be summed within the same draw.
+
+{{PORTFOLIO_COMPARISON}}
+
+Audit selection and instrument accuracy are favorable declared assumptions. Unknown or changing audit errors, nonrepresentative sampling, signed monetary reversals and more flexible exit behavior require further work. Finite monetary moments are also weaker than a stable simulated mean.
 
 {{PRIOR_CHECK}}
 
-## What this changes about the decision
+The useful result is a reviewable chain: people, observed activity, uncertain contribution, a declared decision rule and a held-out check of that rule. It may end with “not enough evidence.” That is an acceptable outcome.
 
-The useful output isn't one confident payback date. It's a distribution that changes as cohorts mature, current prices become visible, audit evidence arrives and a new source establishes its own history. Future-price assumptions should be explicit enough that someone can disagree with them and see the consequence.
-
-The extended model can represent those questions now. Its held-out checks also show how much remains unresolved. Better average predictive error can coexist with intervals that are much too narrow. Added hierarchy and calendar states don't remove the need to check the evidence, the likelihood approximation and the decision loss.
-
-A layout A/B test would still need randomized treatment and a separate causal analysis. A forecast that one source will earn more doesn't establish why it will earn more, or what would happen if the layout changed.
+A layout A/B test would still need randomized treatment and a separate causal analysis. Forecasting a source's contribution does not establish what would happen if its layout changed.
 
 ## Reproduce the experiment
 
-The [public research repository](https://github.com/rothnic/bayesian-email-cohort-lab) contains both versions, their failures, the mathematical specifications, tests, saved summaries and figure code. The extension runs locally with NumPy, pandas, SciPy and Matplotlib. It uses no model API or paid infrastructure.
+The [public research repository](https://github.com/rothnic/bayesian-email-cohort-lab) preserves the implementations, mathematical specifications, saved results, figure code and earlier failures. The [current specification](../extensions/calendar/dynamic_lab/MODEL.md) should be read alongside the exact source and run configuration for these figures.
 
-The article's values are bound to saved output rows and source hashes. Its figures include mobile variants, descriptive text and downloadable numerical tables. The original six row-level exports remain locally reproducible and excluded from the release. This is a draft for review, with no live website deployment.
+Computed claims in this draft are inserted from saved output rows, with their source hashes. Charts include descriptive text and downloadable values. Configuration choices, scenario assumptions and synthetic evaluator truth are labeled separately from observations available to fitting.
+
+This remains a draft for review. No live website publication is implied.

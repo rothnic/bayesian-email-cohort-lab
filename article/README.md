@@ -1,17 +1,15 @@
-# Article draft: changing cohort economics
+# Article draft: when does a subscriber pay for itself?
 
-The main draft is `article.md`; `article.mdx` uses plain-text math fences for portable MDX import. `index.html` is the responsive local preview. `standalone.html` embeds every figure, table and source download needed to open the review copy as one file. External repository links are citations only; there are no external runtime fonts, scripts or analytics.
+`article.md` is the review draft; `article.mdx` uses portable plain-text math fences. `index.html` is a responsive local article preview. All ten figures have desktop/mobile SVG and PNG versions, plain-language captions, alt text and numerical tables. `claims.json` binds narrative quantities to saved synthetic outputs and hashes; `chart_provenance.json` binds chart tables to their source data.
 
-Six figures each have desktop/mobile SVG and PNG versions, descriptive text, captions and numeric tables. `tables/offered-cost.csv` gives the complete future-batch price sensitivity. `claims.json` binds substantive numerical claims to exact saved output rows and hashes. `chart_provenance.json` binds figure values to their extension sources.
+The article follows people and cohorts, shows how aggregate retention and distinct-responder summaries are calculated, and fixes a single cohort and day-180 margin target while evidence accumulates. It also separates CPC deterioration, acquisition-price inflation, human/bot quality change and new-source transfer. A paired future-CPC what-if changes price while holding the same subscriber/activity draws fixed. Held-out probability reliability and a sequential threshold replay show why posterior cutoffs still need empirical checks.
 
-The draft covers the implemented extension with changing net human CPC, rising acquisition quotes, audited bot activity, global/source/cohort learning and late cheap sources. It preserves the original v1 failures separately. The approximate likelihood, favorable known measurement assumptions, poor nominal coverage, conditional future-price scenarios and finite-draw limitations are stated in the article.
+Rebuild the article after reproducing the extension outputs:
 
-To rebuild within the public research repository:
-
-```
+```sh
 python article/build_article.py --extension extensions/calendar
 ```
 
-Install the research repository's existing requirements first. The script reads saved scientific output; it does not fit or select a model. `article.template.md` holds the editorial text and explicit numerical placeholders. `style.css` is self-contained. The six chart families are regenerated separately from `extensions/calendar` with `make figures`.
+The builder binds content from existing outputs; it does not refit a model. `article.template.md` holds editorial text and explicit computed placeholders. The script writes Markdown, MDX, HTML and a self-contained review preview. Mobile figure text is checked at a 390-pixel viewport. Full browser rendering remains unverified here.
 
-All article values, selected table rows, PNG decoding, SVG accessibility metadata, local links and standalone dependencies were checked. Dedicated mobile chart assets were visually inspected and their text measures at least 13.86 CSS pixels at a 390-pixel viewport. Actual browser rendering of the full HTML remains unverified because the available rendering routes were blocked. No browser screenshots are claimed or included. This is a draft, with no live nickroth.com deployment.
+All subscribers, prices and outcomes are fictional. The article preserves undercoverage and other limitations instead of presenting the model as validated. It is a draft only; it has not been published on nickroth.com.

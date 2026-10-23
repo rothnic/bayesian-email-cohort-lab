@@ -1,50 +1,82 @@
 [
   {
     "file": "01-calendar-economics-mobile.svg",
-    "viewbox_width": 338.731062,
+    "viewbox_width": 339.127281,
     "min_text_svg_units": 12.4,
     "viewport_css_px": 390,
-    "min_effective_text_css_px": 14.276812913012389,
+    "min_effective_text_css_px": 14.260132613748642,
     "pass": true
   },
   {
     "file": "02-human-bot-evidence-mobile.svg",
-    "viewbox_width": 338.682625,
+    "viewbox_width": 339.078844,
     "min_text_svg_units": 12.4,
     "viewport_css_px": 390,
-    "min_effective_text_css_px": 14.278854724242203,
+    "min_effective_text_css_px": 14.262169656329252,
     "pass": true
   },
   {
     "file": "03-shared-calendar-states-mobile.svg",
-    "viewbox_width": 338.551312,
+    "viewbox_width": 338.547437,
     "min_text_svg_units": 12.4,
     "viewport_css_px": 390,
-    "min_effective_text_css_px": 14.284393025775662,
+    "min_effective_text_css_px": 14.284556524349053,
     "pass": true
   },
   {
     "file": "04-cohort-contribution-payback-mobile.svg",
-    "viewbox_width": 344.447687,
+    "viewbox_width": 344.847781,
     "min_text_svg_units": 12.4,
     "viewport_css_px": 390,
-    "min_effective_text_css_px": 14.03986783049584,
+    "min_effective_text_css_px": 14.023578710515176,
     "pass": true
   },
   {
     "file": "05-new-source-transfer-mobile.svg",
-    "viewbox_width": 348.897812,
+    "viewbox_width": 348.901687,
     "min_text_svg_units": 12.4,
     "viewport_css_px": 390,
-    "min_effective_text_css_px": 13.860791996024327,
+    "min_effective_text_css_px": 13.860638054180576,
     "pass": true
   },
   {
     "file": "06-heldout-comparison-mobile.svg",
-    "viewbox_width": 341.7115,
+    "viewbox_width": 338.547437,
     "min_text_svg_units": 12.4,
     "viewport_css_px": 390,
-    "min_effective_text_css_px": 14.152289284966997,
+    "min_effective_text_css_px": 14.284556524349053,
+    "pass": true
+  },
+  {
+    "file": "07-cohort-variability-mobile.svg",
+    "viewbox_width": 343.019719,
+    "min_text_svg_units": 12.4,
+    "viewport_css_px": 390,
+    "min_effective_text_css_px": 14.098314855187668,
+    "pass": true
+  },
+  {
+    "file": "08-confidence-over-time-mobile.svg",
+    "viewbox_width": 377.122906,
+    "min_text_svg_units": 12.4,
+    "viewport_css_px": 390,
+    "min_effective_text_css_px": 12.823405640600361,
+    "pass": true
+  },
+  {
+    "file": "09-cpc-what-if-mobile.svg",
+    "viewbox_width": 378.163219,
+    "min_text_svg_units": 12.4,
+    "viewport_css_px": 390,
+    "min_effective_text_css_px": 12.788128926943578,
+    "pass": true
+  },
+  {
+    "file": "10-decision-reliability-mobile.svg",
+    "viewbox_width": 384.324312,
+    "min_text_svg_units": 12.4,
+    "viewport_css_px": 390,
+    "min_effective_text_css_px": 12.58312276637862,
     "pass": true
   }
 ]

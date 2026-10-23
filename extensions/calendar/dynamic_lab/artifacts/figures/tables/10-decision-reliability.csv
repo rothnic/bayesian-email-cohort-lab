@@ -1,0 +1,36 @@
+probability_bin,probability_lower,probability_upper,mean_predicted_probability,predicted_world_bootstrap_lower95,predicted_world_bootstrap_upper95,realized_profitable_share,realized_world_bootstrap_lower95,realized_world_bootstrap_upper95,independent_worlds,forecast_rows,rule,panel,scenario,metric,mean,lower95,upper95,n_worlds
+0.0,0.0,0.1,0.02371361250460391,0.01883269904300082,0.029213601707053696,0.043723910541025805,0.020229774471115326,0.07073690250611774,18.0,774.0,M180 / acquired leads > $0.02; intervals bootstrap independent worlds,reliability,,,,,,
+1.0,0.1,0.2,0.1472050798638451,0.1429711510499704,0.15190058401459428,0.11109630552988459,0.047368343756940115,0.18883053221288496,17.0,203.0,M180 / acquired leads > $0.02; intervals bootstrap independent worlds,reliability,,,,,,
+2.0,0.2,0.30000000000000004,0.23922207442045065,0.23292533155756961,0.24568807734057424,0.16966421378186083,0.07876633986928104,0.259180702195408,18.0,150.0,M180 / acquired leads > $0.02; intervals bootstrap independent worlds,reliability,,,,,,
+3.0,0.30000000000000004,0.4,0.35020718765447356,0.3421643241395823,0.3576083712437181,0.40365793376174,0.23347936233316854,0.5844537815126051,17.0,78.0,M180 / acquired leads > $0.02; intervals bootstrap independent worlds,reliability,,,,,,
+4.0,0.4,0.5,0.4523929398148148,0.44363686342592595,0.46118655960648147,0.33,0.13333333333333333,0.5434166666666662,15.0,63.0,M180 / acquired leads > $0.02; intervals bootstrap independent worlds,reliability,,,,,,
+5.0,0.5,0.6000000000000001,0.5530410561660561,0.541938244047619,0.5645515205280831,0.415995115995116,0.1946153846153846,0.6461691086691086,13.0,43.0,M180 / acquired leads > $0.02; intervals bootstrap independent worlds,reliability,,,,,,
+6.0,0.6000000000000001,0.7000000000000001,0.6348054846938774,0.6183035714285714,0.6495555644132652,0.6020408163265306,0.2857142857142857,0.8877551020408163,7.0,19.0,M180 / acquired leads > $0.02; intervals bootstrap independent worlds,reliability,,,,,,
+7.0,0.7000000000000001,0.8,0.7457254464285714,0.72828125,0.7638964843750001,0.6,0.3,0.9,10.0,33.0,M180 / acquired leads > $0.02; intervals bootstrap independent worlds,reliability,,,,,,
+8.0,0.8,0.9,0.863671875,0.8542936197916666,0.871875,0.6625,0.3625,0.925,10.0,35.0,M180 / acquired leads > $0.02; intervals bootstrap independent worlds,reliability,,,,,,
+9.0,0.9,1.0,0.963919153861002,0.9491405352204986,0.9785230202357386,0.6919844861021331,0.4499030381383322,0.911764705882353,13.0,132.0,M180 / acquired leads > $0.02; intervals bootstrap independent worlds,reliability,,,,,,
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,all_scenarios,false_positive,0.0,0.0,0.0,12.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,all_scenarios,false_negative,0.0,0.0,0.0,12.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,all_scenarios,undecided,0.16666666666666666,0.0,0.4166666666666667,12.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,all_scenarios,any_reversal,0.0,0.0,0.0,12.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,all_scenarios,decision_age,16.1,9.8,23.8,10.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,cpc_squeeze,false_positive,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,cpc_squeeze,false_negative,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,cpc_squeeze,undecided,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,cpc_squeeze,any_reversal,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,cpc_squeeze,decision_age,18.666666666666668,7.0,42.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,fixed_price,false_positive,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,fixed_price,false_negative,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,fixed_price,undecided,0.6666666666666666,0.0,1.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,fixed_price,any_reversal,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,fixed_price,decision_age,7.0,7.0,7.0,1.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,human_decline_bot_rise,false_positive,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,human_decline_bot_rise,false_negative,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,human_decline_bot_rise,undecided,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,human_decline_bot_rise,any_reversal,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,human_decline_bot_rise,decision_age,23.333333333333332,21.0,28.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,rising_cpl,false_positive,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,rising_cpl,false_negative,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,rising_cpl,undecided,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,rising_cpl,any_reversal,0.0,0.0,0.0,3.0
+,,,,,,,,,,,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead,sequential_rule,rising_cpl,decision_age,9.333333333333334,7.0,14.0,3.0

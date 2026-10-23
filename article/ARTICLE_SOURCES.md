@@ -1,20 +1,13 @@
-# Article evidence
+# Article evidence and claim binding
 
-All analytical evidence is fictional simulation output. The opening DealNews motivation and approximate remembered twenty-cent cost are the author's stated recollection, explicitly unverified. No company record or historical result enters the simulator or article.
+All analytical evidence is fictional simulation output. No DealNews records, campaign reports or historical company results enter the model. The opening project motivation reflects Nick's account and should be reviewed as editorial copy before external publication.
 
-The original research code is preserved at commit `8e3443fe287d8e3ee29156d628df931b35fad9d5`. Its 2,000-world known-shape Gamma–Poisson component coverage is 94.2%–95.5%; its richer 12-world coverage by origin is 52.8%–63.9%. The original code, source data definitions and full failure report remain in the repository. The first-cohort information correction explicitly distinguishes no older history at launch from later borrowing from younger same-source cohorts.
+The draft explains a fitted partial-pooling model across population, source and acquisition cohort, with separate contactability, unique human response, repeat events and net CPC streams. It describes the selected assumptions and approximations in `extensions/calendar/dynamic_lab/MODEL.md`; the synthetic worlds, data clocks, complete-window cohort summaries and evaluation design are in `EXPERIMENT.md`.
 
-The new implemented specification is `extensions/calendar/dynamic_lab/MODEL.md`, with experiment boundaries in `EXPERIMENT.md`, independent review in `VALIDATION.md`, and sparse-count derivation in `ZERO_COUNT_DERIVATION.md`. The prior covariance uses a fixed weekly calendar grid at every cutoff, including future interpolation.
+The article focuses on four visual questions: how individual cohort survival/engagement paths vary around pooled summaries; how one fixed cohort's day-180 profitability probability changes with new evidence; how a future CPC reduction changes contribution under paired activity draws; and whether held-out profitability probabilities and threshold declarations agree with later simulated outcomes. A further chart compares isolated CPC, CPL and human/bot mechanisms, while new-source views separate the prelaunch shared prior from source-specific updating.
 
-`claims.json` is the machine-readable narrative binding. It records:
+`claims.json` stores selected output rows and SHA-256 hashes for narrative quantities. It includes the equal-world and row-weighted coverage summaries, probability reliability bins, sequential decision counts, quote sensitivity, portfolio comparison, and prior tail/Monte Carlo diagnostics. `chart_provenance.json` records every chart's source files, selection rules, numerical table, caption, alt text, units and interval meaning. `extensions/calendar/dynamic_lab/artifacts/run_manifest.json` seals the scientific source and output CSVs.
 
-- Exact selected price-scenario rows for established_a-b126, origin119, future purchase of100 leads
-- Good/bad new-source forecasts before launch and after observations, with evaluator-only outcomes
-- Offered-cost sensitivity for a future new_cheap-b126 purchase at origin119, retaining every predictive draw
-- Equal-world held-out scores, raw-row coverage and denominators from18 independent worlds and1,530 forecasts
-- Joint portfolio values at common calendar299, including four existing and two conditional future cohorts
-- Updated analytical prior means, Monte Carlo errors and tail contributions
+The new probabilities are not a production policy. The fitted likelihood is approximate; held-out worlds are few; a 95% posterior threshold does not guarantee 95% empirical reliability. Coverage, probability reliability, CRPS and acquisition decision loss answer different questions. The draft keeps the earlier model's calibration failure visibly separate from the refreshed evaluation and does not claim a universal model advantage.
 
-`chart_provenance.json` specifies chart selectors, every plotted-value table and input hashes. `extensions/calendar/dynamic_lab/artifacts/run_manifest.json` gives scientific-source and complete CSV hashes. Figure tables use their declared units; dollar amounts in the article explicitly distinguish total cohort contribution from per-lead metrics. No posterior probability is assigned to the original point baselines.
-
-The corrected sparse-count approximation remains approximate. The final dynamic model's nominal95% intervals cover56.48% by equal-world averaging and46.41% across all forecast rows. These values have different denominators and both show substantial undercoverage. A lower CRPS point estimate does not establish calibrated probabilities or a decision advantage.
+The article preview is local review material. No nickroth.com deployment is included.

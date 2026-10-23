@@ -1,54 +1,42 @@
-# Implemented experiment and evaluation boundary
+# Fictional worlds and decision replay
 
-This is a fitted extension, separate from the original v1. `MODEL.md` specifies the implemented Gaussian approximation and finite hyperprior. `DESIGN.md` in the parent folder contains the broader staged design; mechanisms proposed there are not automatically claimed as implemented.
+This experiment generates synthetic subscriber-level truth, exports delayed aggregate records, fits the model specified in `MODEL.md`, seals predictions, and only then scores them against hidden truth. Every price, subscriber and outcome is fictional. No original email or company records are used.
 
-## Nested fictional worlds
+## Data-generating process
 
-The generator starts100-lead cohorts weekly. Two established sources arrive from calendar0 through126. A new low-cost source, when present, starts on70. The public age curve is `.75 exp(-age/3)+.25 exp(-age/90)` and is the same fixed curve used by inference. Accepted exposure is100 each day through age365, with no dropout or reactivation in this extension.
+Two established sources acquire equal-sized cohorts weekly from calendar day0 through126. Cohort size defaults to100 leads. Source and cohort effects vary; each cohort receives its own contactability half-life, person engagement frailty and persistent human/bot assignments. Human and bot events use separate streams. Human responders may create repeat clicks, while unique people and event totals are recorded separately. Contactability is absorbing after exit. Sending cost is incurred per contactable address, and acquisition cost is paid once at cohort birth.
 
-1. `fixed_price`: stable underlying human response and net CPC, plus modest shared weekly noise
-2. `cpc_squeeze`: net human CPC declines after calendar42 through126, then stabilizes
-3. `rising_cpl`: the same squeeze, plus higher quotes for later purchases
-4. `human_decline_bot_rise`: also lower human response intensity and more bot response events
-5. `cheap_good`: the preceding mechanisms plus a productive cheap source arriving on70
-6. `cheap_bad`: the same observable prelaunch offer/features, but an unproductive source
+Net CPC has a shared calendar component and source/cohort marks. Each scenario is an independent, named mechanism; the seed-keyed components make suitable comparisons paired. In particular, CPC stress does not quietly add CPL or bot changes.
 
-Commercial net payments are nonnegative Gamma marks; count cells are NB2. Raw human/bot events are sampled by a50% audit, with known label sensitivity95% and specificity98%. Response cells arrive after2days, audit labels after7, and commercially verified human count/net-payment summaries after14. Inference never receives latent simulator rate, true bot counts or true calendar state. Known exposure, known instrument quality and generator-matched age shape are favorable assumptions, not production evidence.
+| Scenario | Mechanism changed |
+|---|---|
+| `fixed_price` | Stable baseline CPC, CPL, human engagement and bot activity apart from shared modest process noise. |
+| `cpc_squeeze` | Net human CPC falls log-linearly from calendar day42 to60% of its day42 level at day126, then holds there. Subscribers, click paths and acquisition costs match the fixed-price world under the same seed. |
+| `rising_cpl` | New purchase quotes rise by0.8% per day after day42; CPC and quality mechanisms remain at baseline. Old acquisition costs stay fixed. |
+| `human_decline_bot_rise` | Calendar human engagement falls to72% of its day42 level by day126; bot event rate rises from0.4% to6%; later-vintage cohorts have declining human share. This does not also squeeze CPC or increase CPL. Contactability exit hazard stays cohort-specific but does not worsen over calendar time. |
+| `cheap_good` | A new source appears at day70 at a low quote, with higher hidden response quality. |
+| `cheap_bad` | Same visible source descriptors and quote as `cheap_good`, but lower hidden response quality. |
 
-The prior and generator are different. This is not a simulation-based-calibration experiment under the exact fitted model. The new model uses approximate Gaussian log measurements, broader net-mark variation and an unknown population/calendar hierarchy. The original exact Gamma–Poisson component check remains separately available.
+Source/cohort traits and response processes contain random variability. The truth objects preserve the latent expected rate, realized person-level activity, contactability and economic path separately. None is included in the model’s as-of snapshot. Audit/event observations arrive after2 days, event and unique-person audit labels after7, and mature net-revenue/human-count summaries after14. The audit labels are sampled with assumed sensitivity95% and specificity98%; these are known fixture assumptions, not learned production characteristics.
 
-## Fixed economics and changing futures
+## Aggregation without erasing cohorts
 
-Each forecast fits the observations available at its calendar cutoff. It then conditions on one future:
+`retention_truth.csv` contains per-cohort age-aligned latent and realized contactability/response curves. `cohort_retention_rollup_detail.csv` contains complete, nonoverlapping 7- and30-day response windows deduplicated within each person across that full window. The response denominator is the number contactable at window start. `cohort_retention_rollups.csv` pools counts across acquisition cohorts before dividing: summed distinct responders / summed eligible people, and summed contactable at window end / summed original acquired leads. It records the number of contributing cohorts and windows. Daily unique counts are never summed and mislabeled as weekly unique people.
 
-- `hold_current`: no deterministic future log-state drift, with sampled weekly innovations and consistent interpolation; this is a scenario, not learned stabilization
-- `continue_recent_trend`: continue each posterior draw's recent response AND payout state slope, preserving uncertainty in those slopes
-- `fixed_price`: freeze future payout at the learned calendar0 reference; observed mature historical receipts stay fixed and future response uncertainty remains
+These views reorganize the same people; daily, weekly, monthly and all-history summaries are not independent observations. Averaging within an acquisition month can reduce visible noise, but also hide a low-performing source or a recent shift. The per-cohort spaghetti view preserves that dispersion beside denominator-weighted pooled lines. Only complete windows are used, and each plotted source table retains the cohort counts and denominators.
 
-All three reuse one response path and one payout path per draw across targets. The two processes' covariance is not learned. Future price quotes cannot rewrite the cost of an existing cohort. Next-purchase evaluation explicitly locks the current observed quote for a planned later batch. That is a conditional purchase assumption, not a forecast of future quote acceptance.
+## Price counterfactuals
 
-## Comparisons
+The model accepts an explicit post-cutoff CPC shock in `predict`. The demonstration applies a0%,15%,30% or45% reduction beginning at calendar day140, with a28-day ramp, to a prospective established-source cohort. Each what-if reuses the same posterior parameters and random marks. It changes only the value per post-shock human event; human activity, exits, bot traffic, acquisition quote and send costs are held constant. It reports probability of clearing the day-180 two-cent-per-lead buffer, contribution quantiles, expected shortfall below the buffer, and the paired margin difference from no shock.
 
-`run_config.json` lists18 independent held-out worlds, three per scenario, with distinct seed streams. These differ from the demonstration seed884000. The original schedule uses cutoffs63 and119. Cheap-source cases also use69 and91 so the new source is directly scored before launch and after evidence arrives. That evaluation-scope correction is recorded in `review_history`; no world was selected by outcome.
+The separate offer-price table varies only a new source’s prospective CPL while holding its posterior outcome paths fixed. It reports fixed-horizon profitability probability and expected downside as well as first-payback probabilities. No already acquired cohort is repriced. These controlled counterfactuals quantify consequences under stated assumptions; they do not predict which future market change will occur or establish causal effects of an acquisition channel.
 
-Every model sees the same records/clocks and uses the same costs and targets. Target-only and source-pooling modes have independent local dispersion hyperposteriors. Global pooling, static hierarchy and dynamic hierarchy progressively change information sharing. All are versions of this new approximation, not relabeled original-v1 models. The original v1 replay and failures remain in their original artifact paths and the separate `prototype/v1_replay` checkpoint.
+## Fixed-cohort confidence and held-out evaluation
 
-Coverage, CRPS, probability Brier scores and mean absolute error are evaluated for day180 contribution. Conditional acquisition loss is `max(actual_margin,0) - buy_decision*actual_margin`, divided by100 leads, with buy when sampled expected contribution is positive. It is realized regret against a hindsight-perfect buy/skip oracle. Only future-purchase targets enter that loss. It does not model adaptive bidding, causal acquisition effects, sending cessation or an optimal production policy.
+The demonstration follows the same established cohort acquired on day70 at information cutoffs77,84,91,98,105,112 and119. It holds the target age at180, future policy at `hold_current`, and the profitability buffer at$0.02 per acquired lead. At each cutoff the model refits the newly visible data from the same declared hyperprior. Its probability is classified as above target at95% or more, below target at5% or less, and inconclusive otherwise. These are posterior classification thresholds, not a claim of95% empirical reliability. The later outcome is hidden from the fit but used by the evaluator.
 
-Repeated forecasts, sources and cohorts within a world are correlated. Aggregates first average within each world and then weight worlds equally. Confidence intervals resample whole worlds. Some scenarios contain more forecast cases because they include a source launch; counts and independent-world totals are explicit. This small suite cannot establish a universal winner. Check interval width/coverage and numerical mean stability together.
+Held-out worlds use three base seeds per six mechanisms and all five model scopes for common cutoffs. The sequential replay separately tracks one fixed established cohort at prespecified weekly cutoffs in the four mechanism worlds that affect the established source. It records first declaration, declaration age, reversals, false profitable/unprofitable classifications and the share left undecided. Only whole worlds are independent evaluation units; repeated cutoffs and cohorts are correlated.
 
-## Joint portfolio and offered-cost query
+The probability-reliability table bins day-180 buffer probabilities and compares their mean with the realized profitable share. Both predictive and observed intervals resample independent worlds, not rows. Bins can contain few worlds, so the result is a diagnostic, not proof of calibration. Coverage, CRPS and decision loss also summarize the distribution and the declared immediate buy/skip rule. In this evaluator, “wait” is treated like no immediate purchase; delayed information, missed offers and an optimal value-of-information policy are not modeled.
 
-`portfolio_summary.csv` and `portfolio_draws.csv` sum the same joint predictive draw across four existing established-source cohorts and two conditional future batches. The common calendar horizon is299,180days after the119 cutoff. The constituent ages differ and are stored explicitly; this does not sum age180 margins reached on different dates. The batch costs are included once. These are total contribution paths, not future incremental cash balances.
-
-`quote_sensitivity.csv` asks about a new cohort from the good/bad cheap source at cutoff119 for planned arrival126. It prices the SAME posterior outcome paths at offered costs5/10/15/20/30cents per lead. Quality inference and outcomes stay fixed; no already purchased cohort is repriced. Every path remains in the first-payback denominator. An absent median payback means fewer than half of draws pay back within the finite policy, not missing data that should be averaged away.
-
-## Computation, corrections and reproduction
-
-Each as-of input is copied from immutable serialized bytes. Every fit starts at the same fixed hyperprior. Final source/output hashes and prediction seals accompany the output. Held-out forecast rows are written before scoring. Demo truth is separately available to plotting/evaluation and is excluded from fitting; the demo does not claim all truth was inaccessible to every function before its global output seal.
-
-Before finalization, review corrected a zero-count log-variance boundary, launch-date calendar uncertainty, a cutoff-dependent prior knot grid, fractional-payout input handling and individual negative-payment rejection. The fixed weekly grid now has invariant historical prior/posterior states when only the cutoff changes with no new data. Prior scale supports and masses were not tuned to observed held-out coverage. Superseded aggregate results are retained as review history and must not be combined with final scores.
-
-Run `make reproduce` from the extension folder after installing the repository's existing requirements. There is no MCMC sampler: Gaussian calculations and discrete hyperprior normalization do not have R-hat or MCMC ESS diagnostics. Component covariance tests, grid weights, predictive Monte Carlo errors and analytical prior moments are the appropriate checks here. `prior_tail_summary.json` includes512/2048/8192-draw checks and smaller/default/larger scale sensitivity. Finite moments do not guarantee stable expected-profit estimates from128 or256 draws.
-
-No raw original row-level export is copied or repackaged. The extension writes only simulation code, aggregated forecasts/evaluation, calendar/measurement summaries, posterior portfolio draws, and figures. All source data is fictional.
+The configuration is frozen in `run_config.json`. Outputs include source hashes and a forecast seal before scoring. Demo truth figures are labelled evaluator-only. Changing configuration or source requires regenerating artifacts, figures, article numeric claims and manifests together. Never cite old CSVs as results of the updated person-level simulator.

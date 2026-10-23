@@ -21,15 +21,9 @@ MODES = ("target_only", "source_pooling", "global_pooling",
          "static_hierarchy", "dynamic_hierarchy")
 SCENARIOS = ("hold_current", "continue_recent_trend", "fixed_price")
 REQUIRED = ("cohort_id", "source_id", "birth_day", "calendar_day", "age",
-            "accepted_exposure", "raw_events", "audit_n", "audit_human",
+            "acquired_leads", "accepted_exposure", "raw_events", "audit_n", "audit_human",
             "net_human_revenue", "net_human_count", "response_report_fraction",
             "payout_complete_fraction", "observed_at")
-
-
-def age_shape(age):
-    """Declared, fixed anchored shape.  This is a public modeling assumption."""
-    a = np.asarray(age, dtype=float)
-    return .75 * np.exp(-a / 3.) + .25 * np.exp(-a / 90.)
 
 
 @dataclass(frozen=True)
@@ -42,8 +36,10 @@ class ModelConfig:
     calendar_weights: tuple = (.35, .45, .20)
     count_dispersions: tuple = (8., 40.)
     dispersion_weights: tuple = (.5, .5)
-    response_log_location: float = float(np.log(.012))
-    payout_log_location: float = float(np.log(.65))
+    response_log_location: float = float(np.log(.004))
+    payout_log_location: float = float(np.log(.20))
+    retention_log_hazard: float = float(np.log(.004))
+    unique_response_log_location: float = float(np.log(.004))
     location_sd: float = 1.0
     feature_sd: float = .5
     net_mark_cv: float = 1.5
@@ -99,14 +95,19 @@ def _snapshot(data, cutoff: int) -> pd.DataFrame:
     d = _frame(data)
     missing = set(REQUIRED) - set(d.columns)
     if missing:
-        raise ValueError(f"Missing observation fields: {sorted(missing)}")
+        optional_acquired = missing == {"acquired_leads"}
+        if not optional_acquired:
+            raise ValueError(f"Missing observation fields: {sorted(missing)}")
+        d["acquired_leads"] = d.groupby("cohort_id").accepted_exposure.transform("max")
     # Only the declared observation contract is retained, never arbitrary columns.
     keep = list(REQUIRED) + [c for c in ("source_feature", "audit_observed_at",
-        "payout_observed_at", "net_human_revenue_sum_squares") if c in d]
+        "unique_audit_observed_at", "unique_audit_n", "unique_audit_human",
+        "raw_unique_responders", "payout_observed_at", "net_human_revenue_sum_squares") if c in d]
     d = d[keep].copy(deep=True)
     d = d[(d.calendar_day <= cutoff) & (d.observed_at <= cutoff) &
           (d.birth_day <= cutoff)].copy()
     for clock, fields in (("audit_observed_at", ("audit_n", "audit_human")),
+                          ("unique_audit_observed_at", ("unique_audit_n", "unique_audit_human")),
                           ("payout_observed_at", ("net_human_revenue", "net_human_count"))):
         if clock in d:
             pending = d[clock].isna() | (d[clock] > cutoff)
@@ -122,6 +123,8 @@ def _snapshot(data, cutoff: int) -> pd.DataFrame:
             raise ValueError("age must equal calendar_day minus birth_day")
         if (d[["accepted_exposure", "raw_events", "response_report_fraction"]] < 0).any().any():
             raise ValueError("Counts, exposure and report fractions cannot be negative")
+        if (d.accepted_exposure > d.acquired_leads).any():
+            raise ValueError("Contactable exposure cannot exceed original acquired leads")
         if (d.response_report_fraction > 1).any() or (d.payout_complete_fraction > 1).any():
             raise ValueError("Completeness fractions cannot exceed one")
         if not d.payout_complete_fraction.isin((0., 1.)).all():
@@ -156,14 +159,62 @@ def _audit_fraction(n, h, config):
 
 def _measurements(d, config, outcome):
     records = []
-    for (cohort, bin_id), g in d.assign(_bin=d.calendar_day // config.calendar_bin_days).groupby(
-            ["cohort_id", "_bin"], sort=True):
-        if outcome == "response":
+    groups = (d.groupby("cohort_id", sort=True) if outcome == "retention" else
+              d.assign(_bin=d.calendar_day // config.calendar_bin_days).groupby(
+                  ["cohort_id", "_bin"], sort=True))
+    for key, g in groups:
+        cohort = key if isinstance(key, str) else key[0]
+        if outcome == "retention":
+            # Group consecutive exposure snapshots into approximately weekly
+            # risk intervals. Exposure is the operationally observed active
+            # mailing list; generator truth is never read by this likelihood.
+            g = g.sort_values("age")
+            active = g.accepted_exposure.to_numpy(float)
+            ages = g.age.to_numpy(int)
+            days = g.calendar_day.to_numpy(float)
+            leads = float(g.acquired_leads.iloc[0])
+            for end in range(1, len(g), config.calendar_bin_days):
+                start = end - 1
+                stop = min(end + config.calendar_bin_days - 1, len(g) - 1)
+                elapsed = int(ages[stop] - ages[start])
+                if elapsed <= 0:
+                    continue
+                exits = max(active[start] - active[stop], 0.)
+                person_days = float(active[start:stop].sum())
+                if person_days <= 0:
+                    continue
+                # Piecewise-exponential survival likelihood: deaths are
+                # Poisson with the observed person-days at risk as offset.
+                value = np.log((exits + .5) / person_days)
+                variance = 1. / (exits + .5)
+                records.append(dict(cohort_id=str(cohort), source_id=str(g.source_id.iloc[0]),
+                    source_feature=float(g.source_feature.iloc[0]),
+                    calendar_day=float(np.average(days[start+1:stop+1])),
+                    value=float(value), variance=max(float(variance), config.measurement_variance_floor),
+                    dispersion_multiplier=0.))
+            continue
+        elif outcome == "unique":
+            if "raw_unique_responders" not in g:
+                continue
+            g = g[g.accepted_exposure > 0]
+            if g.empty:
+                continue
+            exposure = g.accepted_exposure.to_numpy(float) * g.response_report_fraction.to_numpy()
+            total_exposure = exposure.sum()
+            raw = float(g.raw_unique_responders.sum())
+            audited = g.dropna(subset=["unique_audit_n", "unique_audit_human"])
+            n, h = float(audited.unique_audit_n.sum()), float(audited.unique_audit_human.sum())
+            ph, vp = _audit_fraction(n, h, config)
+            human = raw * ph
+            value = np.log((human + .5) / total_exposure)
+            variance = (human + .5 + raw ** 2 * vp) / (human + .5) ** 2
+            dispersion_multiplier = float(np.square(exposure).sum() / total_exposure ** 2)
+            wt = exposure
+        elif outcome == "response":
             g = g[(g.accepted_exposure > 0) & (g.response_report_fraction > 0)]
             if g.empty:
                 continue
-            exposure = (g.accepted_exposure.to_numpy() * age_shape(g.age) *
-                        g.response_report_fraction.to_numpy())
+            exposure = g.accepted_exposure.to_numpy() * g.response_report_fraction.to_numpy()
             total_exposure = exposure.sum()
             raw = float(g.raw_events.sum())
             # Audits are pooled only inside this cohort/calendar bin. Missing
@@ -229,7 +280,9 @@ class _GaussianMixture:
         self.sources = sorted(str(v) for v in all_data.source_id.unique())
         self.cohorts = sorted(str(v) for v in all_data.cohort_id.unique())
         self.source_cols, self.cohort_cols = {}, {}
-        self.location = config.response_log_location if outcome == "response" else config.payout_log_location
+        self.location = (config.retention_log_hazard if outcome == "retention" else
+                         config.unique_response_log_location if outcome == "unique" else
+                         config.response_log_location if outcome == "response" else config.payout_log_location)
         self.feature_col = None
         self.calendar_cols = []
         self.knots = np.array([0.], dtype=float)
@@ -252,7 +305,7 @@ class _GaussianMixture:
                 n += len(self.sources)
                 self.cohort_cols = {c: n + i for i, c in enumerate(self.cohorts)}
                 n += len(self.cohorts)
-                if mode == "dynamic_hierarchy" and cutoff > 0:
+                if mode == "dynamic_hierarchy" and cutoff > 0 and outcome != "retention":
                     # Fixed global knot grid. Inserting the cutoff as a knot
                     # would change the prior law of previously observed days.
                     # The last endpoint may be latent and later than cutoff.
@@ -285,7 +338,11 @@ class _GaussianMixture:
         hierarchy = mode in ("static_hierarchy", "dynamic_hierarchy")
         source_grid = list(zip(config.source_sds, config.effect_weights)) if hierarchy else [(0., 1.)]
         cohort_grid = list(zip(config.cohort_sds, config.effect_weights)) if hierarchy else [(0., 1.)]
-        calendar_grid = list(zip(config.calendar_sds, config.calendar_weights)) if mode == "dynamic_hierarchy" else [(0., 1.)]
+        # Preserve the proper calendar-process prior at cutoff zero even
+        # though no historical increments exist yet.  The sampled q still
+        # controls future innovations in _states().
+        calendar_grid = (list(zip(config.calendar_sds, config.calendar_weights))
+                         if mode == "dynamic_hierarchy" and outcome != "retention" else [(0., 1.)])
         dispersion_grid = list(zip(config.count_dispersions, config.dispersion_weights)) if outcome == "response" else [(40., 1.)]
         m0 = np.zeros(self.dimension)
         if self.global_col is not None:
@@ -388,9 +445,15 @@ class FittedModel:
                                          cutoff, mode, config, "response")
         self.payout = _GaussianMixture(_measurements(data, config, "payout"), data,
                                        cutoff, mode, config, "payout")
+        self.retention = _GaussianMixture(_measurements(data, config, "retention"), data,
+                                          cutoff, mode, config, "retention")
+        self.unique_engagement = _GaussianMixture(_measurements(data, config, "unique"), data,
+                                                   cutoff, mode, config, "unique")
         self.diagnostics = dict(method="conditional Gaussian posterior with integrated discrete hyperprior; approximate likelihood",
             mode=mode, cutoff=int(cutoff), input_hash=self.data_hash, config_hash=self.config_hash,
             response=self.response.report(), payout=self.payout.report(),
+            contactability=self.retention.report(),
+            unique_engagement=self.unique_engagement.report(),
             daily_rows=len(data), cohorts=int(data.cohort_id.nunique()), sources=int(data.source_id.nunique()),
             response_value_correlation="not learned; independent processes",
             past_pending_marks="approximate conditional audit/count imputation")
@@ -459,7 +522,7 @@ class FittedModel:
         return result
 
     def predict(self, targets: Sequence[Mapping[str, Any]], draws=256, horizon=425,
-                scenario="hold_current", seed=None):
+                scenario="hold_current", seed=None, cpc_shock=None):
         if scenario not in SCENARIOS:
             raise ValueError(f"Unknown scenario {scenario!r}; choose {SCENARIOS}")
         if draws < 1 or horizon < 0 or horizon > 425:
@@ -467,6 +530,11 @@ class FittedModel:
         targets = [dict(t) for t in targets]
         if not targets:
             raise ValueError("At least one forecast target is required")
+        if cpc_shock is not None:
+            if not isinstance(cpc_shock, Mapping) or "effective_day" not in cpc_shock or "drop_fraction" not in cpc_shock:
+                raise ValueError("cpc_shock requires effective_day and drop_fraction")
+            if int(cpc_shock["effective_day"]) <= self.cutoff:
+                raise ValueError("A CPC shock must begin after the information cutoff; earlier clicks retain their booked value")
         ids = [str(t["cohort_id"]) for t in targets]
         if len(set(ids)) != len(ids):
             raise ValueError("Each cohort appears once in a joint forecast")
@@ -475,14 +543,25 @@ class FittedModel:
         dates = np.arange(0, max(self.cutoff, max(int(t["birth_day"]) + horizon for t in targets)) + 1)
         rp, rs, response_block_r = self.response.sample(draws, rng)
         vp, vs, _ = self.payout.sample(draws, rng)
+        tp, ts, _ = self.retention.sample(draws, rng)
+        up, us, _ = self.unique_engagement.sample(draws, rng)
         response_state = self._states(self.response, rp, rs, dates, scenario, rng)
         cpc_state = self._states(self.payout, vp, vs, dates, scenario, rng)
+        unique_state = self._states(self.unique_engagement, up, us, dates, scenario, rng)
         ra = self._amplitudes(self.response, rp, rs, targets, rng)
         va = self._amplitudes(self.payout, vp, vs, targets, rng)
+        ta = self._amplitudes(self.retention, tp, ts, targets, rng)
+        ua = self._amplitudes(self.unique_engagement, up, us, targets, rng)
         margins = np.empty((draws, len(targets), horizon + 1))
         revenues = np.empty_like(margins)
+        send_cost_paths = np.empty_like(margins)
         counts = np.empty_like(margins)
+        unique_counts = np.empty_like(margins)
+        contactable_counts = np.empty_like(margins)
+        expected_contactable_counts = np.empty_like(margins)
+        expected_unique_counts = np.empty_like(margins)
         net_cpc = np.empty_like(margins)
+        shock_factors = np.ones_like(margins)
         target_dispersion = np.empty((draws, len(targets)))
         ages = np.arange(horizon + 1)
         for j, target in enumerate(targets):
@@ -491,11 +570,38 @@ class FittedModel:
                 raise ValueError("Calendar origin is day zero; negative births unsupported")
             calendar = birth + ages
             leads = float(target.get("leads", 100.))
-            exposure = np.asarray(target.get("accepted_exposure", leads), float)
-            exposure = np.broadcast_to(exposure, (horizon + 1,)).copy()
-            exposure[ages > self.config.send_last_age] = 0.
-            mean_count = exposure[None, :] * age_shape(ages)[None, :] * np.exp(
-                ra[:, j, None] + response_state[:, calendar])
+            hazard = np.exp(np.clip(ta[:, j], -16., 2.))
+            expected_exposure = leads * np.exp(-hazard[:, None] * ages[None, :])
+            exposure = np.empty((draws, horizon + 1), dtype=float)
+            exposure[:, 0] = leads
+            p_stay = np.exp(-hazard)
+            for age in range(1, horizon + 1):
+                exposure[:, age] = rng.binomial(
+                    np.maximum(np.rint(exposure[:, age - 1]).astype(int), 0), p_stay)
+            past = d[d.cohort_id.astype(str) == str(target["cohort_id"])]
+            observed_rows = past.dropna(subset=["accepted_exposure"]).sort_values("age")
+            if not observed_rows.empty:
+                for row in observed_rows.itertuples(index=False):
+                    a = int(row.age)
+                    if 0 <= a <= horizon:
+                        exposure[:, a] = float(row.accepted_exposure)
+                        expected_exposure[:, a] = float(row.accepted_exposure)
+                last_age = int(observed_rows.age.iloc[-1])
+                for age in range(last_age + 1, horizon + 1):
+                    exposure[:, age] = rng.binomial(
+                        np.maximum(np.rint(exposure[:, age - 1]).astype(int), 0), p_stay)
+                    expected_exposure[:, age] = expected_exposure[:, age - 1] * p_stay
+            contactable_counts[:, j] = exposure
+            expected_contactable_counts[:, j] = expected_exposure
+            activity_exposure = exposure.copy()
+            activity_exposure[:, ages > self.config.send_last_age] = 0.
+            mean_count = activity_exposure * np.exp(ra[:, j, None] + response_state[:, calendar])
+            p_unique = np.clip(np.exp(ua[:, j, None] + unique_state[:, calendar]), 0., 1.)
+            expected_unique_exposure = expected_exposure.copy()
+            expected_unique_exposure[:, ages > self.config.send_last_age] = 0.
+            expected_unique_counts[:, j] = expected_unique_exposure * p_unique
+            unique_counts[:, j] = rng.binomial(
+                np.maximum(np.rint(activity_exposure).astype(int), 0), p_unique)
             # Future NB cell frailty is drawn independently by send date;
             # common calendar and source/cohort amplitudes remain shared.
             block = str(target["cohort_id"] if self.mode == "target_only" else target["source_id"])
@@ -509,7 +615,17 @@ class FittedModel:
             mean_cpc = np.exp(va[:, j, None] + cpc_state[:, calendar])
             if "contracted_cpc_multiplier" in target:
                 mean_cpc *= np.broadcast_to(np.asarray(target["contracted_cpc_multiplier"], float), (horizon + 1,))
-            past = d[d.cohort_id.astype(str) == str(target["cohort_id"])]
+            if cpc_shock is not None:
+                effective = int(cpc_shock["effective_day"])
+                drop = float(cpc_shock["drop_fraction"])
+                ramp = max(0, int(cpc_shock.get("ramp_days", 0)))
+                if not 0 <= drop < 1:
+                    raise ValueError("CPC drop_fraction must lie in [0,1)")
+                elapsed = calendar - effective
+                factor = (1. - drop * np.clip(elapsed / ramp, 0., 1.)) if ramp else np.where(elapsed < 0, 1., 1. - drop)
+                factor = np.where(elapsed < 0, 1., factor)
+                mean_cpc *= factor[None, :]
+                shock_factors[:, j, :] = factor[None, :]
             # Realized mature counts are commercial observations used only to
             # condition past predictions, not as another response likelihood.
             for row in past.itertuples(index=False):
@@ -534,21 +650,33 @@ class FittedModel:
                 a = int(row.age)
                 if 0 <= a <= horizon and pd.notna(row.net_human_revenue) and row.payout_complete_fraction > 0:
                     rev[:, a] = float(row.net_human_revenue)
-            send_cost = np.asarray(target.get("daily_send_cost", .025), float)
-            send_cost = np.broadcast_to(send_cost, (horizon + 1,)).copy()
-            send_cost[ages > self.config.send_last_age] = 0.
+            if "send_cost_per_contactable" in target:
+                send_cost = exposure * float(target["send_cost_per_contactable"])
+            else:
+                send_cost = np.broadcast_to(np.asarray(target.get("daily_send_cost", .025), float),
+                                            (horizon + 1,)).copy()
+            if send_cost.ndim == 2:
+                send_cost[:, ages > self.config.send_last_age] = 0.
+            else:
+                send_cost[ages > self.config.send_last_age] = 0.
             acquisition = float(target.get("acquisition_cost", 0.))
             margins[:, j] = np.cumsum(rev - send_cost, axis=1) - acquisition
+            send_cost_paths[:, j] = send_cost
             revenues[:, j], counts[:, j], net_cpc[:, j] = rev, human, mean_cpc
         diagnostic = dict(self.diagnostics, scenario=scenario, draws=int(draws), horizon=int(horizon),
-            calendar_anchor=0, fixed_age_curve=".75 exp(-age/3)+.25 exp(-age/90)",
+            calendar_anchor=0, retention_model="partial-pooled exponential contactability hazard",
             portfolio_shared_calendar=True, scenario_is_conditional=True,
+            cpc_shock=None if cpc_shock is None else dict(cpc_shock),
             acquisition_cost_semantics="total fixed historical or new-target acquisition cost",
             monetary_predictive_mean=float(revenues.sum(axis=2).mean()),
             top_one_percent_revenue_share=float(np.sort(revenues.sum(axis=(1, 2)))[-max(1, int(draws * .01)):].sum() /
                 max(revenues.sum(), 1e-12)))
         return dict(margin_paths=margins, revenue_paths=revenues, human_count_paths=counts,
-            net_human_cpc=net_cpc, target_ids=ids, calendar_dates=dates,
+            send_cost_paths=send_cost_paths,
+            unique_human_count_paths=unique_counts, contactable_count_paths=contactable_counts,
+            expected_contactable_count_paths=expected_contactable_counts,
+            expected_unique_response_paths=expected_unique_counts,
+            net_human_cpc=net_cpc, cpc_shock_factor=shock_factors,target_ids=ids, calendar_dates=dates,
             calendar_response=response_state, calendar_cpc=cpc_state,
             calendar_response_factor=np.exp(response_state), calendar_cpc_factor=np.exp(cpc_state),
             response_log_amplitudes=ra, payout_log_amplitudes=va,

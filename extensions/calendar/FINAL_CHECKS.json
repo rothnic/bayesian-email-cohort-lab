@@ -1,14 +1,18 @@
 {
-  "dynamic_and_simulation_tests": 24,
-  "prototype_and_v1_replay_tests": 16,
-  "total_extension_tests": 40,
+  "dynamic_and_simulation_tests": 29,
+  "prototype_replay_tests_passed": 13,
+  "legacy_v1_test_module": "skipped; original cohort_lab package is not included",
+  "total_tests_passed": 42,
   "passed": true,
-  "original_v1_files_unchanged": true,
-  "independent_statistical_review": "dynamic_lab/VALIDATION.md",
   "all_scientific_source_and_csv_hashes_verified": true,
-  "figures": 6,
-  "desktop_mobile_png_svg_files": 24,
-  "minimum_mobile_text_css_px_at390": 13.86,
+  "figures": 10,
+  "desktop_mobile_png_svg_files": 40,
+  "minimum_mobile_text_css_px_at390": 12.58312276637862,
+  "mobile_text_checks_passed": true,
   "full_html_browser_render_verified": false,
-  "browser_screenshots_produced": false
+  "browser_screenshots_produced": false,
+  "heldout_worlds": 18,
+  "heldout_forecasts_all_models": 1530,
+  "dynamic_forecasts": 306,
+  "original_v1_failure_kept_separate": true
 }

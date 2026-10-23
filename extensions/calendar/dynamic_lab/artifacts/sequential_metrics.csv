@@ -1,0 +1,26 @@
+scenario,metric,mean,lower95,upper95,n_worlds,rule
+all_scenarios,false_positive,0.0,0.0,0.0,12,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+all_scenarios,false_negative,0.0,0.0,0.0,12,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+all_scenarios,undecided,0.16666666666666666,0.0,0.4166666666666667,12,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+all_scenarios,any_reversal,0.0,0.0,0.0,12,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+all_scenarios,decision_age,16.1,9.8,23.8,10,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+cpc_squeeze,false_positive,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+cpc_squeeze,false_negative,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+cpc_squeeze,undecided,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+cpc_squeeze,any_reversal,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+cpc_squeeze,decision_age,18.666666666666668,7.0,42.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+fixed_price,false_positive,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+fixed_price,false_negative,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+fixed_price,undecided,0.6666666666666666,0.0,1.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+fixed_price,any_reversal,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+fixed_price,decision_age,7.0,7.0,7.0,1,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+human_decline_bot_rise,false_positive,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+human_decline_bot_rise,false_negative,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+human_decline_bot_rise,undecided,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+human_decline_bot_rise,any_reversal,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+human_decline_bot_rise,decision_age,23.333333333333332,21.0,28.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+rising_cpl,false_positive,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+rising_cpl,false_negative,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+rising_cpl,undecided,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+rising_cpl,any_reversal,0.0,0.0,0.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead
+rising_cpl,decision_age,9.333333333333334,7.0,14.0,3,first weekly 95%/5% declaration; fixed day-180 margin vs $0.02/lead

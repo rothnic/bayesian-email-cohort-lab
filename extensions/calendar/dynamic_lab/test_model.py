@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 from scipy.linalg import cho_solve
 
-from dynamic_lab.model import fit, ModelConfig, MODES, REQUIRED, age_shape, _measurements, SCENARIOS as POLICIES
+from dynamic_lab.model import fit, ModelConfig, MODES, REQUIRED, _measurements, SCENARIOS as POLICIES
 from dynamic_lab.simulation import generate, SCENARIOS
 
 
@@ -23,7 +23,7 @@ def prospective():
 
 
 def prior_tail_diagnostics():
-    """Source-free analytical prior expectation and fixed-seed MC sensitivity.
+    """Source-free predictive tail and fixed-seed Monte Carlo sensitivity.
 
     Reproduce without inspecting held-out outcomes:
     OPENBLAS_NUM_THREADS=1 python -m dynamic_lab.test_model --prior-tail-check dynamic_lab/prior_tail_summary.json
@@ -37,27 +37,19 @@ def prior_tail_diagnostics():
             source_sds=tuple(factor * x for x in base.source_sds),
             cohort_sds=tuple(factor * x for x in base.cohort_sds),
             calendar_sds=tuple(factor * x for x in base.calendar_sds))
-        ages = np.arange(366)
-        source_moment = sum(w * np.exp(s * s / 2) for w, s in zip(config.effect_weights, config.source_sds))
-        cohort_moment = sum(w * np.exp(s * s / 2) for w, s in zip(config.effect_weights, config.cohort_sds))
-        # Weekly piecewise-linear process, not a daily Brownian interpolation:
-        # Var(x_a | q)=q²*step*(floor(a/step)+(a/step-floor(a/step))²).
-        step = config.calendar_bin_days
-        bins, fraction = np.divmod(ages, step)
-        variance_time = step * bins + np.square(fraction) / step
-        calendar_moment = sum(w * np.exp(q * q * variance_time / 2) for w, q in zip(config.calendar_weights, config.calendar_sds))
-        analytical = 100 * np.exp(config.response_log_location + config.payout_log_location +
-            config.location_sd ** 2) * (source_moment * cohort_moment) ** 2 * np.sum(
-                age_shape(ages) * calendar_moment ** 2)
         fitted = fit(empty, 1, config=config, seed=1777)
+        reference_paths = fitted.predict([target], draws=8192, horizon=425,
+                                         scenario="hold_current", seed=1778)["revenue_paths"]
+        reference_mean = float(reference_paths.sum(axis=(1, 2)).mean())
         for budget in ((512, 2048, 8192) if label == "default" else (8192,)):
-            p = fitted.predict([target], draws=budget, scenario="hold_current")
+            p = fitted.predict([target], draws=budget, horizon=425,
+                               scenario="hold_current", seed=1777)
             totals = p["revenue_paths"].sum(axis=(1, 2))
             mean, mcse = float(totals.mean()), float(totals.std(ddof=1) / np.sqrt(budget))
             rows.append(dict(scale_sensitivity=label, scale_multiplier=factor,
                 draws=budget, seed=1777, cutoff=1, horizon=425, last_send_age=365,
                 accepted_exposure=100, observed_rows=0, scenario="hold_current",
-                mean_lifetime_revenue=mean, analytic_mean_lifetime_revenue=float(analytical),
+                mean_lifetime_revenue=mean, reference_mc_mean_lifetime_revenue=reference_mean,
                 monte_carlo_standard_error=mcse, relative_monte_carlo_standard_error=mcse / mean,
                 largest_one_percent_draw_revenue_share=p["diagnostics"]["top_one_percent_revenue_share"],
                 config=asdict(config), config_hash=fitted.config_hash))
@@ -166,6 +158,28 @@ class FittedModelChecks(unittest.TestCase):
         self.assertTrue((first_cross(cheaper["margin_paths"]) <= first_cross(baseline["margin_paths"])).all())
         self.assertTrue((first_cross(better_value["margin_paths"]) <= first_cross(baseline["margin_paths"])).all())
 
+    def test_cpc_shock_is_paired_and_only_changes_future_revenue(self):
+        target = prospective()
+        baseline = self.fitted.predict([target], draws=256, seed=404)
+        shocked = self.fitted.predict([target], draws=256, seed=404,
+            cpc_shock={"effective_day": 73, "drop_fraction": .30, "ramp_days": 14})
+        for field in ("human_count_paths", "unique_human_count_paths", "contactable_count_paths"):
+            np.testing.assert_array_equal(baseline[field], shocked[field])
+        origin_age = 73 - target["birth_day"]
+        np.testing.assert_array_equal(baseline["revenue_paths"][:, 0, :origin_age],
+                                      shocked["revenue_paths"][:, 0, :origin_age])
+        np.testing.assert_array_equal(baseline["margin_paths"][:, 0, :origin_age],
+                                      shocked["margin_paths"][:, 0, :origin_age])
+        self.assertTrue((shocked["revenue_paths"][:, 0, origin_age + 14:] <=
+                         baseline["revenue_paths"][:, 0, origin_age + 14:]).all())
+        self.assertTrue((shocked["margin_paths"][:, 0, -1] <=
+                         baseline["margin_paths"][:, 0, -1]).all())
+
+    def test_cpc_shock_must_be_after_information_cutoff(self):
+        with self.assertRaisesRegex(ValueError, "after the information cutoff"):
+            self.fitted.predict([prospective()], draws=16,
+                cpc_shock={"effective_day": self.fitted.cutoff, "drop_fraction": .1})
+
     def test_unseen_source_integrates_full_prior_variation(self):
         empty = pd.DataFrame(columns=list(REQUIRED) + ["source_feature"])
         p = fit(empty, 0, seed=76).predict([dict(prospective(), birth_day=1)], draws=12000, horizon=0)
@@ -249,7 +263,7 @@ if __name__ == "__main__":
         output.write_text(json.dumps(result, indent=2, sort_keys=True, allow_nan=False) + "\n")
         for row in result["rows"]:
             print(row["scale_sensitivity"], row["draws"], round(row["mean_lifetime_revenue"], 3),
-                  round(row["analytic_mean_lifetime_revenue"], 3),
+                  round(row["reference_mc_mean_lifetime_revenue"], 3),
                   round(row["monte_carlo_standard_error"], 3),
                   round(row["largest_one_percent_draw_revenue_share"], 3))
     else:

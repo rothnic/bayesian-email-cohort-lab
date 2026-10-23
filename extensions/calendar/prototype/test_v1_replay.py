@@ -5,6 +5,9 @@ import unittest
 import pandas as pd
 from replay_v1_ablation import DEFAULT_LAB,freeze,select,forecast_frozen
 
+if not (DEFAULT_LAB/'cohort_lab').is_dir():
+    raise unittest.SkipTest('The unchanged-v1 package is outside this public extension snapshot')
+
 sys.path.insert(0,str(DEFAULT_LAB))
 from cohort_lab.accounting import Snapshot,load_parameters
 from cohort_lab.generator import generate_world
